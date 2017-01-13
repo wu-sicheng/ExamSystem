@@ -1,0 +1,116 @@
+#创建数据库
+DROP DATABASE IF EXISTS paper;
+CREATE DATABASE paper;
+USE paper;
+
+#创建表格
+#学生表格
+CREATE TABLE student(
+  id INT AUTO_INCREMENT NOT NULL UNIQUE,  #id自增加
+  studentId INT PRIMARY KEY NOT NULL UNIQUE,#学生Id
+  classId INT NOT NULL,#班级Id
+  paperId VARCHAR(255),#试卷Id,多个
+  studentName VARCHAR(255) NOT NULL,#学生名字
+  studentPassword VARCHAR(255) NOT NULL,#学生登录密码
+  studentGander INT NOT NULL,#学生性别 0男1女
+  studentNo TEXT NOT NULL,#学生学号
+  studentMajor TEXT,#学生专业
+  studentGrader INT,#学生年级
+  studentNum TEXT,#学生准考证号
+  studentMail TEXT,#学生邮箱
+  studentPhone TEXT,#学生电话
+  studentPower INT,#学生的权限
+  studentState INT #学生状态，0删除，1没有删除
+);
+
+#教师表格,管理员同表
+CREATE TABLE teacher(
+  id INT AUTO_INCREMENT NOT NULL UNIQUE,#id自增加
+  teacherId INT PRIMARY KEY NOT NULL UNIQUE,#教师的id
+  classId TEXT,#班级id，多个
+  paperId TEXT,#试卷id，多个
+  teacherName VARCHAR(255) NOT NULL,#教师名称
+  teacherPassword VARCHAR(255) NOT NULL,#教师密码
+  teacherGander INT NOT NULL,#教师性别
+  teacherNo TEXT NOT NULL,#教师工号
+  teacherMail TEXT,#教师邮箱
+  teacherPhone TEXT,#教师电话
+  teacherState INT,#教师状态，0删除，1没有删除
+  teacherPower INT #教师权限
+);
+
+#班级表格
+CREATE TABLE theClass(
+  id INT AUTO_INCREMENT NOT NULL UNIQUE,
+  classId INT PRIMARY KEY NOT NULL UNIQUE
+);
+
+#权限管理
+CREATE TABLE manager(
+  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL UNIQUE, #id自增加
+  createStudent INT NOT NULL,
+  createTeacher INT NOT NULL,
+  createPaper INT NOT NULL,
+  createQuestion INT NOT NULL,
+  createResult INT NOT NULL,
+  createTheClass INT NOT NULL,
+
+  deleteStudent INT NOT NULL,
+  deleteTeacher INT NOT NULL,
+  deletePaper INT NOT NULL,
+  deleteQuestion INT NOT NULL,
+  deleteResult INT NOT NULL,
+  deleteTheClass INT NOT NULL,
+
+  updateStudent INT NOT NULL,
+  updateTeacher INT NOT NULL,
+  updatePaper INT NOT NULL,
+  updateQuestion INT NOT NULL,
+  updateResult INT NOT NULL,
+  updateTheClass INT NOT NULL,
+
+  queryStudent INT NOT NULL,
+  queryTeacher INT NOT NULL,
+  queryPaper INT NOT NULL,
+  queryQuestion INT NOT NULL,
+  queryResult INT NOT NULL,
+  queryTheClass INT NOT NULL
+);
+
+#试卷表格
+CREATE TABLE paper(
+  id INT AUTO_INCREMENT NOT NULL UNIQUE,
+  paperId INT PRIMARY KEY NOT NULL UNIQUE,#试卷id
+  questionId TEXT,#问题列表 question:{{1,2,3,4}}
+  paperTime TEXT #考试时间
+);
+
+#题目表格
+CREATE TABLE question (
+  id INT AUTO_INCREMENT NOT NULL UNIQUE, #id自增加
+  questionId INT PRIMARY KEY, #问题id
+  questionTitle TEXT, #问题标题
+  questionText TEXT, #问题主干
+  questionAnswer TEXT, #问题答案
+  questionRight TEXT, #问题正确答案
+  questionScorce INT, #问题分数
+  questionType INT #问题类型，0单项选择，1不定项选择，2填空，3判断，4简答，5论述，6编程OJ
+);
+
+#考试结果表格
+CREATE TABLE result(
+  id INT AUTO_INCREMENT NOT NULL UNIQUE, #id 自增加
+  resultId INT PRIMARY KEY NOT NULL, #结果id
+  studentId INT NOT NULL UNIQUE, #学生的id
+  paperId INT NOT NULL,#对应的试卷
+  resultScorce INT, #学生的分数
+  resultDetail TEXT #学生的题目结果 格式为detail:{{questionId:result},{questionId:result},...}
+);
+
+#部门信息
+#科目信息
+
+#处理表格之间的关系
+ALTER TABLE student ADD FOREIGN KEY (classId) REFERENCES theClass(classId);
+ALTER TABLE result ADD FOREIGN KEY (studentId) REFERENCES student(studentId);
+#初始化表格数据
