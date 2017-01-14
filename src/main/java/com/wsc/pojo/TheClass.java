@@ -5,4 +5,5 @@ package com.wsc.pojo;
  */
 public class TheClass {
     private int classId;
+    private String className;
 }

@@ -1,6 +1,10 @@
 package com.wsc.dao.inter;
 
 import com.wsc.pojo.Student;
+import org.apache.ibatis.annotations.Param;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created by wsc on 17-1-13.
@@ -16,9 +20,9 @@ public interface IStudentDao {
     /**
      * 通过studentId删除一个学生
      * @param studentId 学生Id
-     * @return 删除学生的信息，这里的删除只是将学生的State由1改为0，在数据库中不会将其完全删除
-     */
+     * @return 删除学生的信息，这里的删除只是将学生的State由1改为0，在数据库中不会将其完全删
     Student deleteStudent(int studentId);
+     */
 
     /**
      * 更新学生信息
@@ -34,4 +38,12 @@ public interface IStudentDao {
      * @return 学生信息
      */
     Student queryStudent(int studentId);
+
+    /**
+     * 查询一个学生集
+     * @param fromStudentId 开始的id
+     * @param manyStudentId 结束的id
+     * @return 结果集
+     */
+    List<Student> queryStudentList(int fromStudentId,int manyStudentId);
 }

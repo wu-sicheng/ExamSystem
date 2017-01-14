@@ -1,0 +1,20 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wsc.dao.inter.IStudentDao">
+    <!--添加一个学生-->
+    <update id="addStudent" parameterType="com.wsc.pojo.Student">
+        INSERT INTO student (id,studentId,classId,paperId,studentName,studentPassword,studentGander,studentNo,studentMajor,studentGrader,studentNum,studentMail,studentPhone,studentPower,studentState)
+        VALUES (NULL,#{studentId},#{classId},#{paperId},#{studentName},#{studentPassword},#{studentGander},#{studentNo},#{studentMajor},#{studentGrader},#{studentNum},#{studentMail},#{studentPhone},#{studentPower},#{studentState});
+    </update>
+    <!--更新学生信息-->
+    <update id="updateStudent" parameterType="boolean">
+        UPDATE student SET classId=#{classId},paperId=#{paperId},studentName=#{studentName},studentGander=#{studentGander},studentNo=#{studentNo},studentMajor=#{studentMajor},studentGrader=#{studentGrader},studentNum=#{studentNum},studentMail=#{studentMail},studentPhone=#{studentPhone},studentPower=#{studentPower},studentState=#{studentState}
+        WHERE studentId=#{studentId}
+    </update>
+    <!--查询学生信息-->
+    <select id="queryStudent" parameterType="int" resultType="com.wsc.pojo.Student">
+        SELECT * FROM student WHERE studentId=#{studentId};
+    </select>
+</mapper>

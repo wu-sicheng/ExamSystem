@@ -12,10 +12,10 @@ public class StudentDaoImpl implements IStudentDao {
         return false;
     }
 
-    @Override
+/*    @Override
     public Student deleteStudent(int studentId) {
         return null;
-    }
+    }*/
 
     @Override
     public boolean updateStudent(Student student, int studentId) {

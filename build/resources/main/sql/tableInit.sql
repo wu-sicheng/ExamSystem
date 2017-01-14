@@ -19,6 +19,7 @@ CREATE TABLE student(
   studentNum TEXT,#学生准考证号
   studentMail TEXT,#学生邮箱
   studentPhone TEXT,#学生电话
+  studentPower INT,#学生的权限
   studentState INT #学生状态，0删除，1没有删除
 );
 
@@ -35,7 +36,7 @@ CREATE TABLE teacher(
   teacherMail TEXT,#教师邮箱
   teacherPhone TEXT,#教师电话
   teacherState INT,#教师状态，0删除，1没有删除
-  teacherPriviledge INT #教师权限
+  teacherPower INT #教师权限
 );
 
 #班级表格
@@ -51,10 +52,29 @@ CREATE TABLE manager(
   createTeacher INT NOT NULL,
   createPaper INT NOT NULL,
   createQuestion INT NOT NULL,
+  createResult INT NOT NULL,
+  createTheClass INT NOT NULL,
+
   deleteStudent INT NOT NULL,
   deleteTeacher INT NOT NULL,
   deletePaper INT NOT NULL,
-  deleteQuestion INT NOT NULL
+  deleteQuestion INT NOT NULL,
+  deleteResult INT NOT NULL,
+  deleteTheClass INT NOT NULL,
+
+  updateStudent INT NOT NULL,
+  updateTeacher INT NOT NULL,
+  updatePaper INT NOT NULL,
+  updateQuestion INT NOT NULL,
+  updateResult INT NOT NULL,
+  updateTheClass INT NOT NULL,
+
+  queryStudent INT NOT NULL,
+  queryTeacher INT NOT NULL,
+  queryPaper INT NOT NULL,
+  queryQuestion INT NOT NULL,
+  queryResult INT NOT NULL,
+  queryTheClass INT NOT NULL
 );
 
 #试卷表格
