@@ -27,8 +27,8 @@ CREATE TABLE student(
 
 #教师表格,管理员同表
 CREATE TABLE teacher(
-  id INT AUTO_INCREMENT NOT NULL UNIQUE,#id自增加
-  teacherId INT PRIMARY KEY NOT NULL UNIQUE,#教师的id
+  id INT AUTO_INCREMENT NOT NULL,#id自增加
+  teacherId INT NOT NULL,#教师的id
   classId TEXT,#班级id，多个
   paperId TEXT,#试卷id，多个
   teacherName VARCHAR(255) NOT NULL,#教师名称
@@ -46,8 +46,9 @@ CREATE TABLE teacher(
 #班级表格
 CREATE TABLE theClass(
   id INT AUTO_INCREMENT NOT NULL UNIQUE,
-  classId INT PRIMARY KEY NOT NULL UNIQUE,
-  className VARCHAR(255)
+  theClassId INT PRIMARY KEY NOT NULL UNIQUE,
+  theClassState INT NOT NULL,
+  theClassName VARCHAR(255)
 );
 
 #权限管理
@@ -132,7 +133,7 @@ ALTER TABLE student ADD FOREIGN KEY (classId) REFERENCES theClass(classId);
 ALTER TABLE result ADD FOREIGN KEY (studentId) REFERENCES student(studentId);
 
 #初始化表格数据
-INSERT INTO theClass VALUES (NULL ,1,"class1");
-INSERT INTO theClass VALUES (NULL ,2,"class2");
+INSERT INTO theClass VALUES (NULL ,1,1,"class1");
+INSERT INTO theClass VALUES (NULL ,2,0,"class2");
 INSERT INTO student VALUES (NULL ,1,1,"1,2","wusicheng","password",1,"studentNo","major","2","num","mail@mail.com","18826222446",1,1,"2016-2-2 00:00:00","2017-2-2 12:12:21");
 INSERT INTO student VALUES (NULL ,2,2,"2,3","wusic","password",1,"studentNo","major","2","num","mail@mail.com","18826222446",1,1,"2016-2-2 00:00:00","2017-2-2 12:12:21");

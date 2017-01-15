@@ -7,7 +7,7 @@ import java.util.Date;
  */
 public class Paper {
     private int paperId;
-    private int questionId;
+    private String questionId;
     private Date paperTimeBegin;
     private Date paperTimeEnd;
     private int paperState;

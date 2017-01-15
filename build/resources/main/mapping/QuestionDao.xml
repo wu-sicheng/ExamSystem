@@ -2,4 +2,34 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.wsc.dao.inter.IQuestionDao"></mapper>
+<mapper namespace="com.wsc.dao.inter.IQuestionDao">
+    <!--创建一个问题-->
+    <insert id="createQuestion" parameterType="Question">
+        INSERT INTO question (id,questionId,questionTitle,questionText,questionAnswer,
+        questionRight,questionScore,questionType,questionCreateTime,questionState)
+        VALUES (NULL,#{questionId},#{questionTitle},#{questionText},#{questionAnswer},
+        #{questionRight},#{questionScore},#{questionType},now(),1);
+    </insert>
+
+    <!--删除一个问题-->
+    <update id="deleteQuestion" parameterType="int">
+        UPDATE question SET questionState=0,questionDeleteTime=now() WHERE questionId=#{questionId};
+    </update>
+
+    <!--更新一个问题-->
+    <update id="updateQuestion">
+        UPDATE question SET questionTitle=#{questionTitle},questionText=#{questionText},questionAnswer=#{questionAnswer},
+        questionRight=#{questionRight},questionScore=#{questionScore},questionType=#{questionType};
+    </update>
+
+    <!--查询一个问题-->
+    <select id="queryQuestion" parameterType="int" resultType="Question">
+        SELECT * FROM question WHERE questionId=#{questionId};
+    </select>
+
+    <!--查询一个问题列表-->
+    <select id="queryQuestionList" parameterType="int">
+        SELECT * FROM question WHERE questionId <![CDATA[>=]]> #{fromQuestionId} AND <![CDATA[<]]]> #{fromQuestionId+manyQuestionId};
+    </select>
+
+</mapper>

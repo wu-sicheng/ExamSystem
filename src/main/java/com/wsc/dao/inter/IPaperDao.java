@@ -40,8 +40,8 @@ public interface IPaperDao {
     /**
      * 查询试题
      * @param fromPaperId 开始的paperId
-     * @param  manypaperId 结束的paperId
+     * @param  manyPaperId 数量
      * @return 查询到的paper
      */
-    List<Paper> queryPaperList(int fromPaperId,int manypaperId);
+    List<Paper> queryPaperList(int fromPaperId,int manyPaperId);
 }

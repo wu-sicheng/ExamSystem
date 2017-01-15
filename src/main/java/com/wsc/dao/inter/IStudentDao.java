@@ -24,6 +24,7 @@ public interface IStudentDao {
     Student deleteStudent(int studentId);
      */
 
+    Student deleteStudent(int studentId);
     /**
      * 更新学生信息
      * @param student 更新的学生的信息

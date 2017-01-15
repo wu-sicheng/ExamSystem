@@ -2,4 +2,66 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.wsc.dao.inter.ITeacherDao"></mapper>
+<mapper namespace="com.wsc.dao.inter.ITeacherDao">
+    <!--创建一个教师-->
+    <insert id="addTeacher" parameterType="Teacher">
+        INSERT INTO teacher (id,teacherId,classId,paperId,teacherName,teacherPassword,
+        teacherGander,teacherNo,teacherMail,teacherPhone,teacherState,teacherPower,
+        teacherCreateTime) VALUES (NULL,#{teacherId},#{classId},#{paperId},#{teacherName},
+        #{teacherPassword},#{teacherGander},#{teacherNo},#{teacherMail},#{teacherPhone},
+        1,2,now());
+    </insert>
+
+    <!--删除一个教师数据，将标志位置为0并插入删除时间-->
+    <update id="deleteTeacher" parameterType="int">
+        UPDATE teacher SET teacherState=0,teacherDeleteTime=now() WHERE teacherId=#{teacherId};
+    </update>
+
+    <!--更新教师数据-->
+    <update id="updateTeacher">
+        UPDATE teacher SET classId=#{classId},paperId=#{paperId},
+        teacherName=#{teacherName},teacherPassword=#{teacherPassword},
+        teacherGander=#{teacherGander},teacherNo=#{teacherNo},
+        teacherMail=#{teacherMail},teacherPhone=#{teacherPhone} WHERE teacherId=#{teacherId};
+    </update>
+
+    <!--通过id来查询教师信息-->
+    <select id="queryTeacher" parameterType="int">
+        SELECT * from teacher WHERE teacherId=#{teacherId};
+    </select>
+
+    <!--查询教师列表-->
+    <select id="queryTeacherIdList" parameterType="int">
+        SELECT * FROM teacher WHERE teacherId <![CDATA[>=]]]> #{fromTeacherId} AND teacherId <![CDATA[<]]]> #{fromTeacherId+manyTeacherId};
+    </select>
+
+    <!--通过class id来查询教师数据集-->
+    <select id="queryTeacherByClassId" parameterType="String">
+        SELECT * FROM teacher WHERE classId LIKE %#{classId}','%;
+    </select>
+
+    <!--提升教师权限-->
+    <update id="upperPower" parameterType="int">
+        UPDATE teacher SET teacherPower=teacherPower+1 WHERE teacherId=#{id};
+    </update>
+
+    <!--降低教师权限-->
+    <update id="lowerPower" parameterType="int">
+        UPDATE teacher SET teacherPower=teacherPower-1 WHERE teacherId=#{id};
+    </update>
+
+    <!--将教师权限设置为3-->
+    <update id="setLevel3" parameterType="int">
+        UPDATE teacher SET teacherPower=3 WHERE teacherId=#{id};
+    </update>
+
+    <!--将教师权限设置为2-->
+    <update id="setLevel2" parameterType="int">
+        UPDATE teacher SET teacherPower=2 WHERE teacherId=#{id};
+    </update>
+
+    <!--将教师权限设置为1-->
+    <update id="setLevel1" parameterType="int">
+        UPDATE teacher SET teacherPower=1 WHERE teacherId=#{id};
+    </update>
+</mapper>

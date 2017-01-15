@@ -2,4 +2,32 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.wsc.dao.inter.IResultDao"></mapper>
+<mapper namespace="com.wsc.dao.inter.IResultDao">
+    <!--创建一个result-->
+    <insert id="createResult" parameterType="Result">
+        INSERT INTO result (id,resultId,studentId,paperId,resultScorce,resultDetail,
+        resultCreateTime,resultState) VALUES (NULL,#{resultId},#{studentId},
+        #{paperId},#{resultScorce},#{resultDetail},now(),1)
+    </insert>
+
+    <!--删除一个result-->
+    <update id="deleteResult" parameterType="int">
+        UPDATE result SET resultState=0 WHERE resultId=#{resultId};
+    </update>
+
+    <!--更新一个result-->
+    <update id="updateResult">
+        UPDATE result SET studentId=#{studentId},paperId=#{paperId},
+        resultScorce=#{resultScorce},resultDetail=#{resultDetail};
+    </update>
+
+    <!--查询一个Result-->
+    <select id="queryResult" parameterType="int">
+        SELECT * FROM result WHERE resultId=#{resultId};
+    </select>
+
+    <!--查询一个结果集-->
+    <select id="queryResultList">
+        SELECT * FROM result WHERE resultId <![CDATA[>=]]]> #{fromResultId} AND resultId <![CDATA[<]]]> #{fromResultId+manyResultId};
+    </select>
+</mapper>

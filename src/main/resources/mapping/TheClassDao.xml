@@ -2,4 +2,25 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.wsc.dao.inter.ITheClassDao"></mapper>
+<mapper namespace="com.wsc.dao.inter.ITheClassDao">
+    <insert id="createTheClass" parameterType="TheClass">
+        INSERT INTO theClass (id,theClassId,theClassState,theClassName) VALUES (NULL,#{classId},
+        1,#{className});
+    </insert>
+
+    <update id="deleteTheClass" parameterType="int">
+        UPDATE theClass SET theClassState=0 WHERE theClassId=#{theClassId};
+    </update>
+
+    <update id="updateTheClass">
+        UPDATE theClass SET theClassName=#{theClassName} WHERE theClassId=#{theClassId};
+    </update>
+
+    <select id="queryTheClass" parameterType="int">
+        SELECT * FROM theClass WHERE theClassId=#{theClassId};
+    </select>
+
+    <select id="queryTheClassList">
+        SELECT * FROM theClass WHERE theClassId <![CDATA[>=]]> theClassId AND theClassId <![CDATA[<]]]> theClassId;
+    </select>
+</mapper>

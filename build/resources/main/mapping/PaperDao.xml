@@ -2,4 +2,33 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.wsc.dao.inter.IPaperDao"></mapper>
+<mapper namespace="com.wsc.dao.inter.IPaperDao">
+    <!--创建一份试卷-->
+    <update id="createPaper" parameterType="Paper">
+        INSERT INTO paper (id,paperId,questionId,paperTimeBegin,paperTimeEnd,
+        paperState,createTime,deleteTime) VALUES (NULL,#{paperId},#{questionId},
+        #{paperTimeBegin},#{paperTimeEnd},#{paperState},#{createTime},#{deleteTime});
+    </update>
+
+    <!--删除一份试卷-->
+    <update id="deletePaper" parameterType="int">
+        UPDATE paper SET paperState=0 WHERE paperId=#{paperId};
+    </update>
+
+    <!--更新一份试卷-->
+    <update id="updatePaper">
+        UPDATE paper SET questionId=#{questionId},
+        paperTimeBegin=#{paperTimeBegin},paperTimeEnd=#{paperTimeEnd} WHERE
+        paperId=#{paperId};
+    </update>
+
+    <!--查询一份试卷-->
+    <select id="queryPaper" parameterType="int" resultType="Paper">
+        SELECT * FROM paper WHERE paperId=#{paperId};
+    </select>
+
+    <!--查询一个试卷列表-->
+    <select id="queryPaperList" parameterType="int">
+        SELECT * FROM paper WHERE paperId <![CDATA[>=]]> #{fromPaperId} and paperId <![CDATA[<]]> #{fromPaperId+manyPaperId};
+    </select>
+</mapper>

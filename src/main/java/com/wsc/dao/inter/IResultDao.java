@@ -1,8 +1,6 @@
 package com.wsc.dao.inter;
 
 import com.wsc.pojo.Result;
-
-import javax.annotation.Resource;
 import java.util.List;
 
 /**

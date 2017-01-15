@@ -44,4 +44,46 @@ public interface ITeacherDao {
      * @return 教师结果集
      */
     List<Teacher> queryTeacherList(int fromTeacherId,int manyTeacherId);
+
+    /**
+     * 通过班级查询老师
+     * @param classId 班级id
+     * @return
+     */
+    List<Teacher> queryTeacherByClassId(String classId);
+
+    /**
+     * 提升某个用户的权限，一次只能够提升一个等级
+     * @param id 用户的id
+     * @return 用户提升后的权限
+     */
+    int upperPower(int id);
+
+    /**
+     * 降低用户权限，一次只能降低一个等级
+     * @param id 用户的id
+     * @return 用户降低后的权限
+     */
+    int lowerPower(int id);
+
+    /**
+     * 讲用户权限设为3
+     * @param id 用户id
+     * @return 设置后的等级
+     */
+    int setLevel3(int id);
+
+    /**
+     * 讲用户权限设为2
+     * @param id 用户id
+     * @return 设置后的等级
+     */
+    int setLevel2(int id);
+
+    /**
+     * 讲用户权限设为1
+     * @param id 用户id
+     * @return 设置后的等级
+     */
+    int setLevel1(int id);
 }
