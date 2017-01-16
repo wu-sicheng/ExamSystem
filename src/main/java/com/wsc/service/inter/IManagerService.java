@@ -57,6 +57,4 @@ public interface IManagerService {
     boolean judgeQueryTheClass(int id);
 
     boolean judgeManageState(int id);
-
-
 }

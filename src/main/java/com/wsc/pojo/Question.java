@@ -7,6 +7,7 @@ import java.util.Date;
  */
 public class Question {
     private int questionId;
+    private int subjectId;
     private String questionTitle;
     private String questiontText;
     private String questionAnswer;

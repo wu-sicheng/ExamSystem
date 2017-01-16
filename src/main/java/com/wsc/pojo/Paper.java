@@ -10,6 +10,7 @@ public class Paper {
     private String questionId;
     private Date paperTimeBegin;
     private Date paperTimeEnd;
+    private int subjectId;
     private int paperState;
     private Date createTime;
     private Date deleteTime;

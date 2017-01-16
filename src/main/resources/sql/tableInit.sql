@@ -27,7 +27,7 @@ CREATE TABLE student(
 
 #教师表格,管理员同表
 CREATE TABLE teacher(
-  id INT AUTO_INCREMENT NOT NULL,#id自增加
+  id INT AUTO_INCREMENT NOT NULL PRIMARY KEY ,#id自增加
   teacherId INT NOT NULL,#教师的id
   classId TEXT,#班级id，多个
   paperId TEXT,#试卷id，多个
@@ -51,9 +51,20 @@ CREATE TABLE theClass(
   theClassName VARCHAR(255)
 );
 
+#科目表格
+CREATE TABLE subject(
+  id INT AUTO_INCREMENT NOT NULL UNIQUE,
+  subjectId INT PRIMARY KEY NOT NULL UNIQUE,
+  subjectName VARCHAR(255),
+  subjectCreateTime DATETIME,
+  subjectDeleteTime DATETIME,
+  subjectState INT
+);
+
 #权限管理
 CREATE TABLE manager(
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL UNIQUE, #id自增加
+  managerId INT NOT NULL UNIQUE,
   createStudent INT NOT NULL,
   createTeacher INT NOT NULL,
   createPaper INT NOT NULL,
@@ -90,6 +101,7 @@ CREATE TABLE paper(
   id INT AUTO_INCREMENT NOT NULL UNIQUE,
   paperId INT PRIMARY KEY NOT NULL UNIQUE,#试卷id
   questionId TEXT,#问题列表 question:{{1,2,3,4}}
+  subjectId INT, #科目
   paperTimeBegin DATETIME, #考试开始时间
   paperTimeEnd DATETIME, #考试结束时间
   paperState INT NOT NULL,
@@ -101,6 +113,7 @@ CREATE TABLE paper(
 CREATE TABLE question (
   id INT AUTO_INCREMENT NOT NULL UNIQUE, #id自增加
   questionId INT PRIMARY KEY, #问题id
+  subjectId INT,
   questionTitle TEXT, #问题标题
   questionText TEXT, #问题主干
   questionAnswer TEXT, #问题答案

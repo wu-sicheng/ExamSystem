@@ -23,4 +23,16 @@
         UPDATE manager SET managerState=0 WHERE id=#{id} AND id>3;
     </update>
 
+    <select id="queryAllManager">
+        SELECT * FROM manager;
+    </select>
+
+    <select id="judgePower" parameterType="int" resultType="int">
+        SELECT id FROM manager WHERE managerId=#{managerId};
+    </select>
+
+    <select id="queryManagerByManagerId" parameterType="int" resultType="Manager">
+        SELECT * FROM manager WHERE managerId=#{managerId};
+    </select>
+
 </mapper>

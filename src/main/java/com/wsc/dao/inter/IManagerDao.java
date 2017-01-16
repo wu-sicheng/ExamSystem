@@ -2,6 +2,8 @@ package com.wsc.dao.inter;
 
 import com.wsc.pojo.Manager;
 
+import java.util.List;
+
 /**
  * Created by wsc on 17-1-13.
  * 权限控制，分level1,level2,level3　３个等级
@@ -24,4 +26,24 @@ public interface IManagerDao {
      * @return 删除的id值
      */
     int deletePower(int id);
+
+    /**
+     * 查询所有的Manager
+     * @return Manager列表
+     */
+    List<Manager> queryAllManager();
+
+    /**
+     * 通过manager判断id
+     * @param managerId
+     * @return id
+     */
+    int judgePower(int managerId);
+
+    /**
+     * 通过ManagerId查找Manager
+     * @param managerId
+     * @return 查找的Manager
+     */
+    Manager queryManagerByManagerId(int managerId);
 }

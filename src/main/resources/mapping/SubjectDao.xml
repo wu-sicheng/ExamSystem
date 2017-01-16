@@ -1,0 +1,14 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wsc.dao.inter.ISubjectDao">
+    <insert id="createSubject" parameterType="Subject">
+        INSERT INTO subject (id,subjectId,subjectName,subjectCreateTime,subjectTime) VALUES
+        (NULL,#{subjectId},#{subjectName},now(),1);
+    </insert>
+    <update id="deleteSubject" parameterType="int">
+        UPDATE subject SET subjectName=#{subjectName} WHERE subjectId=#{subjectId};
+    </update>
+
+</mapper>
