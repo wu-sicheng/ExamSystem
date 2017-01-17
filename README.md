@@ -330,6 +330,6 @@ public class IStudentDaoTestSpring {
 ```
 ### 测试结果
 ```
-[main] INFO com.wsc.dao.inter.IStudentDaoTestSpring - Student{studentId=1, classId=1, paperId='1,2', studentName='wusicheng', studentPassword='password', studentGander=1, studentNo='studentNo', studentMajor='major', studentGrader=2, studentNum='num', studentMail='mail@mail.com', studentPhone='12312313213', studentPower=1, studentState=1, studentCreateTime=Tue Feb 02 14:00:00 CST 2016, studentDeleteTime=Fri Feb 03 02:12:21 CST 2017}
+[main] INFO com.wsc.dao.inter.IStudentDaoTest - Student{studentId=1, classId=1, paperId='1,2', studentName='wusicheng', studentPassword='password', studentGander=1, studentNo='studentNo', studentMajor='major', studentGrader=2, studentNum='num', studentMail='mail@mail.com', studentPhone='12312313213', studentPower=1, studentState=1, studentCreateTime=Tue Feb 02 14:00:00 CST 2016, studentDeleteTime=Fri Feb 03 02:12:21 CST 2017}
 ```
 ### 通过测试，Spring和MyBatis整合成功

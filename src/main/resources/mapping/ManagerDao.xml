@@ -35,4 +35,12 @@
         SELECT * FROM manager WHERE managerId=#{managerId};
     </select>
 
+    <select id="queryIdList">
+        SELECT id FROM manager WHERE managerState=1;
+    </select>
+
+    <select id="queryManagerIdList">
+        SELECT managerId FROM manager WHERE managerState=1;
+    </select>
+
 </mapper>

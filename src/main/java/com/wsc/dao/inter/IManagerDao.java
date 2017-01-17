@@ -1,6 +1,8 @@
 package com.wsc.dao.inter;
 
 import com.wsc.pojo.Manager;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -12,6 +14,7 @@ import java.util.List;
  * level2：教师，创建，查询，更新teacher，创建，查询，更新paper，question，创建，查询class，查询更新result
  * level3：管理员，能够执行所有的数据库操作，以及提升，降低各用户权限。删除的只是标志位的删除
  */
+@Repository
 public interface IManagerDao {
     /**
      * 创建一个新的用户权限
@@ -46,4 +49,16 @@ public interface IManagerDao {
      * @return 查找的Manager
      */
     Manager queryManagerByManagerId(int managerId);
+
+    /**
+     * 返回manager的id值
+     * @return id列表
+     */
+    List<Integer> queryIdList();
+
+    /**
+     * 返回managerId的列表
+     * @return managerId
+     */
+    List<Integer> queryManagerIdList();
 }

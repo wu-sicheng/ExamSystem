@@ -4,38 +4,58 @@ import com.wsc.dao.inter.IManagerDao;
 import com.wsc.exceptions.ManagerException;
 import com.wsc.pojo.Manager;
 import com.wsc.service.inter.IManagerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.test.context.ContextConfiguration;
 
 import javax.annotation.Resource;
+import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by wsc on 17-1-16.
- */
-@Service
+ * Created by wsc on 17-1-16.*/
+
+
+@Service("ManagerServiceImpl")
 public class ManagerServiceImpl implements IManagerService {
-    @Resource
+
+    @Autowired
     private IManagerDao iManagerDao;
 
     List<Manager> managerList=iManagerDao.queryAllManager();
+    List<Integer> idList=queryIdList();
+    List<Integer> managerIdList=queryManagerIdList();
+
+    public ManagerServiceImpl() {
+    }
+
+    public ManagerServiceImpl(IManagerDao iManagerDao){
+        this.iManagerDao=iManagerDao;
+    }
 
     @Override
     public int createPower(Manager manager) throws ManagerException{
+        manager.setManagerId(Collections.max(managerIdList)+1);
         iManagerDao.createPower(manager);
         return judgePower(manager.getManagerId());
     }
 
     @Override
     public int deletePower(int managerId) {
-        int power=iManagerDao.judgePower(managerId);
-        if(power>3){
-            iManagerDao.deletePower(power);
-            return power;
+        if(managerIdList.contains(managerId)){
+            int power=iManagerDao.judgePower(managerId);
+            if(power>3){
+                iManagerDao.deletePower(power);
+                return power;
+            }
+            else if(0<power&&power<=3){
+                throw new ManagerException("不能删除1-3的权限值");
+            }
+            return -1;
         }
-        else if(0<power&&power<=3){
-            throw new ManagerException("不能删除1-3的权限值");
+        else{
+            throw new ManagerException("没有所示的权限");
         }
-        return -1;
     }
 
     @Override
@@ -170,5 +190,13 @@ public class ManagerServiceImpl implements IManagerService {
 
     private Manager getManagerByManagerId(int managerId){
         return iManagerDao.queryManagerByManagerId(managerId);
+    }
+
+    private List<Integer> queryIdList() {
+        return iManagerDao.queryIdList();
+    }
+
+    private List<Integer> queryManagerIdList(){
+        return iManagerDao.queryManagerIdList();
     }
 }

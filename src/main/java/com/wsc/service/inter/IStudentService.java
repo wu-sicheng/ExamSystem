@@ -72,5 +72,5 @@ public interface IStudentService {
      * @param paperId id
      * @return 学生
      */
-    Student queryStudentByPaperId(int paperId);
+    List<Student> queryStudentByPaperId(int paperId);
 }

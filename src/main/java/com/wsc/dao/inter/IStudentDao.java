@@ -47,4 +47,25 @@ public interface IStudentDao {
      * @return 结果集
      */
     List<Student> queryStudentList(int fromStudentId,int manyStudentId);
+
+    /**
+     * 通过id查找一个班级的学生
+     * @param classId classid
+     * @return 学生结果集
+     */
+    List<Student> queryStudentByTheClassId(int classId);
+
+    /**
+     * 通过准考证号查找学生
+     * @param studentNum
+     * @return 学生
+     */
+    Student queryStudentByStudentNum(String studentNum);
+
+    /**
+     * 通过paperId查询学生
+     * @param papaerId paperid
+     * @return 学生列表
+     */
+    List<Student> queryStudentByPaperId(String papaerId);
 }
