@@ -40,6 +40,10 @@
         SELECT * FROM teacher WHERE classId LIKE %#{classId}','%;
     </select>
 
+    <select id="queryTeacherIdAll" resultType="Integer">
+        SELECT teacherId FROM teacher;
+    </select>
+
     <!--提升教师权限-->
     <update id="upperPower" parameterType="int">
         UPDATE teacher SET teacherPower=teacherPower+1 WHERE teacherId=#{id};

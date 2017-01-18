@@ -20,15 +20,14 @@ public interface ITeacherDao {
      * @param teacherId id
      * @return 删除老师的详情
      */
-    Teacher deleteTeacher(int teacherId);
+    void deleteTeacher(int teacherId);
 
     /**
      * 通过id更新学生信息
-     * @param teacherId 教师的id
      * @param teacher 教师的详情
      * @return 更新前教师的信息
      */
-    Teacher updateTeacher(int teacherId,Teacher teacher);
+    void updateTeacher(Teacher teacher);
 
     /**
      * 通过id查询一个教师的情况
@@ -51,6 +50,8 @@ public interface ITeacherDao {
      * @return
      */
     List<Teacher> queryTeacherByClassId(String classId);
+
+    List<Integer> queryTeacherIdAll();
 
     /**
      * 提升某个用户的权限，一次只能够提升一个等级
