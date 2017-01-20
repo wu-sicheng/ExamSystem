@@ -1,6 +1,7 @@
 package com.wsc.dao.inter;
 
 import com.wsc.pojo.Teacher;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -34,15 +35,15 @@ public interface ITeacherDao {
      * @param teacherId id
      * @return 教师的情况
      */
-    Teacher queryTeacher(int teacherId);
+    Teacher queryTeacherById(int teacherId);
 
     /**
      * 查询教师结果集
      * @param fromTeacherId 开始的id
-     * @param manyTeacherId 数量
+     * @param toTeacherId 到什么的地方为止
      * @return 教师结果集
      */
-    List<Teacher> queryTeacherList(int fromTeacherId,int manyTeacherId);
+    List<Teacher> queryTeacherList(@Param("fromTeacherId") int fromTeacherId,@Param("toTeacherId") int toTeacherId);
 
     /**
      * 通过班级查询老师
@@ -50,6 +51,10 @@ public interface ITeacherDao {
      * @return
      */
     List<Teacher> queryTeacherByClassId(String classId);
+
+    List<Teacher> queryTeacherByPaperId(String paperId);
+
+    List<Teacher> queryTeacherByTeacherName(String teacherName);
 
     List<Integer> queryTeacherIdAll();
 

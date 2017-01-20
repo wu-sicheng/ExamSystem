@@ -24,14 +24,13 @@ public interface IStudentDao {
     Student deleteStudent(int studentId);
      */
 
-    Student deleteStudent(int studentId);
+    void deleteStudent(int studentId);
     /**
      * 更新学生信息
      * @param student 更新的学生的信息
-     * @param studentId 更新信息学生的id
      * @return 是否更新成功
      */
-    boolean updateStudent(Student student,int studentId);
+    void updateStudent(Student student);
 
     /**
      * 通过学生id查询学生信息
@@ -43,10 +42,10 @@ public interface IStudentDao {
     /**
      * 查询一个学生集
      * @param fromStudentId 开始的id
-     * @param manyStudentId 结束的id
+     * @param toStudentId 结束的id
      * @return 结果集
      */
-    List<Student> queryStudentList(int fromStudentId,int manyStudentId);
+    List<Student> queryStudentList(@Param("fromStudentId") int fromStudentId,@Param("toStudentId") int toStudentId);
 
     /**
      * 通过id查找一个班级的学生
@@ -68,4 +67,6 @@ public interface IStudentDao {
      * @return 学生列表
      */
     List<Student> queryStudentByPaperId(String papaerId);
+
+    List<Integer> queryStudentIdAll();
 }

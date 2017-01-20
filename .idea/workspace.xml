@@ -2,50 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86f9bc11-dc71-4a55-ac9b-0e1004cc31bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/exceptions/PersonException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/exceptions/PersonExistException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/exceptions/PersonNotExistException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IExamService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IPersonService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/ITestDBService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/PersonServiceImplTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/exceptions/CantFindPower.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/exceptions/ManagerException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/service/impl/PaperServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/service/impl/StudentService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/service/inter/IManagerService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/service/inter/IPaperService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/service/inter/IQuestionService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/service/inter/IStudentService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/service/inter/ITeacherService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/service/inter/ITheClassSerivce.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/test/com/wsc/service/impl/ManagerServiceImplTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/test/com/wsc/service/impl/StudentServiceTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/exceptions/CantFindPower.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/exceptions/ManagerException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/ManagerServiceImpl.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PaperServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/StudentService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IManagerService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IPaperService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IQuestionService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IStudentService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/ITeacherService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/ITheClassSerivce.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/ManagerServiceImplTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/StudentServiceTest.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/dao/inter/IManagerDao.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/dao/inter/IManagerDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/dao/inter/ITeacherDao.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/dao/inter/ITeacherDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/pojo/Teacher.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/pojo/Teacher.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/service/inter/IResultService.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/service/inter/IResultService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/mapping/TeacherDao.xml" afterPath="$PROJECT_DIR$/build/resources/main/mapping/TeacherDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IManagerDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IManagerDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IStudentDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IStudentDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/ITeacherDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/ITeacherDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/pojo/Teacher.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/pojo/Teacher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IResultService.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IResultService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IPersonService.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IPersonService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapping/StudentDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/StudentDao.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapping/TeacherDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/TeacherDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/PersonServiceImplTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/PersonServiceImplTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -148,8 +112,8 @@
       <file leaf-file-name="PersonServiceImplTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/wsc/service/impl/PersonServiceImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="35" column="50" lean-forward="true" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+            <state relative-caret-position="331">
+              <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -157,31 +121,117 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="542">
+                <caret line="347" column="3" lean-forward="false" selection-start-line="347" selection-start-column="3" selection-end-line="347" selection-end-column="3" />
+                <folding>
+                  <marker date="1484909783831" expanded="true" signature="1614:1960" ph="..." />
+                  <marker date="1484909783831" expanded="true" signature="1629:1943" ph="..." />
+                  <marker date="1484909783831" expanded="true" signature="2116:3887" ph="..." />
+                  <marker date="1484909783831" expanded="true" signature="2810:3216" ph="..." />
+                  <marker date="1484909783831" expanded="true" signature="3337:3625" ph="..." />
+                  <marker date="1484909783831" expanded="true" signature="3722:3878" ph="..." />
+                  <marker date="1484909783831" expanded="true" signature="4150:4187" ph="/**...*/" />
+                  <marker date="1484909783831" expanded="false" signature="4857:4980" ph="..." />
+                  <marker date="1484909783831" expanded="true" signature="4982:5019" ph="/**...*/" />
+                  <marker date="1484909783831" expanded="true" signature="5055:5149" ph="/**...*/" />
+                  <marker date="1484909783831" expanded="true" signature="5196:5361" ph="/**...*/" />
+                  <marker date="1484909783831" expanded="true" signature="5409:5521" ph="/**...*/" />
+                  <marker date="1484909783831" expanded="true" signature="5585:5660" ph="/**...*/" />
+                  <marker date="1484909783831" expanded="true" signature="5707:5820" ph="/**...*/" />
+                  <marker date="1484909783831" expanded="true" signature="6111:8454" ph="..." />
+                  <marker date="1484909783831" expanded="true" signature="6182:6567" ph="..." />
+                  <marker date="1484909783831" expanded="true" signature="6655:6765" ph="..." />
+                  <marker date="1484909783831" expanded="true" signature="6816:7124" ph="..." />
+                  <marker date="1484909783831" expanded="true" signature="7199:7273" ph="..." />
+                  <marker date="1484909783831" expanded="true" signature="7349:7503" ph="..." />
+                  <marker date="1484909783831" expanded="true" signature="7597:7677" ph="..." />
+                  <marker date="1484909783831" expanded="true" signature="7745:7837" ph="..." />
+                  <marker date="1484909783831" expanded="true" signature="7905:7997" ph="..." />
+                  <marker date="1484909783831" expanded="true" signature="8067:8146" ph="..." />
+                  <marker date="1484909783831" expanded="true" signature="8216:8295" ph="..." />
+                  <marker date="1484909783831" expanded="true" signature="8365:8444" ph="..." />
+                  <marker date="1484909783831" expanded="false" signature="8512:8850" ph="..." />
+                  <marker date="1484909783831" expanded="true" signature="8852:8914" ph="/**...*/" />
+                  <marker date="1484909783831" expanded="true" signature="8915:9033" ph="@{...}" />
+                  <marker date="1484909783831" expanded="true" signature="9295:9396" ph="{...}" />
+                  <marker date="1484909783831" expanded="true" signature="9912:9980" ph="SELECT * FRO... teacher" />
+                  <marker date="1484909783831" expanded="true" signature="10010:10142" ph="SELECT * FRO... teacher" />
+                </folding>
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IPersonService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IPersonService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="401">
+              <caret line="34" column="39" lean-forward="false" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="TeacherDao.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/TeacherDao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+            <state relative-caret-position="270">
+              <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
               <folding>
-                <marker date="1484738348500" expanded="true" signature="255:616" ph="INSERT INTO teacher... " />
-                <marker date="1484738348500" expanded="true" signature="728:814" ph="UPDATE teach... " />
-                <marker date="1484738348500" expanded="true" signature="889:1173" ph="UPDATE teach... " />
-                <marker date="1484738348500" expanded="true" signature="1272:1322" ph="SELECT * fro... teacher" />
-                <marker date="1484738348500" expanded="true" signature="1422:1459" ph="SELECT * FRO... teacher" />
-                <marker date="1484738348500" expanded="true" signature="1422:1472" ph="SELECT * FRO... teacher" />
-                <marker date="1484738348500" expanded="true" signature="1422:1475" ph="SELECT * FRO... teacher" />
-                <marker date="1484738348500" expanded="true" signature="1422:1506" ph="SELECT * FRO... teacher" />
-                <marker date="1484738348500" expanded="true" signature="1422:1518" ph="SELECT * FRO... teacher" />
-                <marker date="1484738348500" expanded="true" signature="1422:1521" ph="SELECT * FRO... teacher" />
-                <marker date="1484738348500" expanded="true" signature="1422:1552" ph="SELECT * FRO... teacher" />
-                <marker date="1484738348500" expanded="true" signature="1670:1722" ph="SELECT * FRO... teacher" />
-                <marker date="1484738348500" expanded="true" signature="1670:1726" ph="SELECT * FRO... teacher" />
-                <marker date="1484738348500" expanded="true" signature="1808:1837" ph="SELECT teach... teacher" />
-                <marker date="1484738348500" expanded="true" signature="1929:1997" ph="UPDATE teach... " />
-                <marker date="1484738348500" expanded="true" signature="2089:2157" ph="UPDATE teach... " />
-                <marker date="1484738348500" expanded="true" signature="2251:2306" ph="UPDATE teach... " />
-                <marker date="1484738348500" expanded="true" signature="2400:2455" ph="UPDATE teach... " />
-                <marker date="1484738348500" expanded="true" signature="2549:2604" ph="UPDATE teach... " />
+                <marker date="1484916886249" expanded="true" signature="255:616" ph="INSERT INTO teacher... " />
+                <marker date="1484916886249" expanded="true" signature="728:814" ph="UPDATE teach... " />
+                <marker date="1484916886249" expanded="true" signature="889:1173" ph="UPDATE teach... " />
+                <marker date="1484916886249" expanded="true" signature="1301:1351" ph="SELECT * fro... teacher" />
+                <marker date="1484916886249" expanded="true" signature="1301:1370" ph="SELECT * fro... teacher" />
+                <marker date="1484916886249" expanded="true" signature="1469:1506" ph="SELECT * FRO... teacher" />
+                <marker date="1484916886249" expanded="true" signature="1469:1519" ph="SELECT * FRO... teacher" />
+                <marker date="1484916886249" expanded="true" signature="1469:1521" ph="SELECT * FRO... teacher" />
+                <marker date="1484916886249" expanded="true" signature="1469:1552" ph="SELECT * FRO... teacher" />
+                <marker date="1484916886249" expanded="true" signature="1469:1565" ph="SELECT * FRO... teacher" />
+                <marker date="1484916886249" expanded="true" signature="1469:1567" ph="SELECT * FRO... teacher" />
+                <marker date="1484916886249" expanded="true" signature="1469:1582" ph="SELECT * FRO... teacher" />
+                <marker date="1484916886249" expanded="true" signature="1469:1601" ph="SELECT * FRO... teacher" />
+                <marker date="1484916886249" expanded="true" signature="1719:1760" ph="SELECT * FRO... teacher" />
+                <marker date="1484916886249" expanded="true" signature="1719:1787" ph="SELECT * FRO... teacher" />
+                <marker date="1484916886249" expanded="true" signature="1873:1941" ph="SELECT * FRO... teacher" />
+                <marker date="1484916886249" expanded="true" signature="2031:2106" ph="SELECT * FRO... teacher" />
+                <marker date="1484916886249" expanded="true" signature="2188:2217" ph="SELECT teach... teacher" />
+                <marker date="1484916886249" expanded="true" signature="2188:2238" ph="SELECT teach... teacher" />
+                <marker date="1484916886249" expanded="true" signature="2330:2398" ph="UPDATE teach... " />
+                <marker date="1484916886249" expanded="true" signature="2490:2558" ph="UPDATE teach... " />
+                <marker date="1484916886249" expanded="true" signature="2652:2707" ph="UPDATE teach... " />
+                <marker date="1484916886249" expanded="true" signature="2801:2856" ph="UPDATE teach... " />
+                <marker date="1484916886249" expanded="true" signature="2950:3005" ph="UPDATE teach... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudentDao.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/StudentDao.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+              <folding>
+                <marker date="1484919253652" expanded="true" signature="268:747" ph="INSERT INTO student... " />
+                <marker date="1484919253652" expanded="true" signature="268:755" ph="INSERT INTO student... " />
+                <marker date="1484919253652" expanded="true" signature="830:916" ph="UPDATE stude... " />
+                <marker date="1484919253652" expanded="true" signature="991:1364" ph="UPDATE stude... " />
+                <marker date="1484919253652" expanded="true" signature="991:1383" ph="UPDATE stude... " />
+                <marker date="1484919253652" expanded="true" signature="1511:1561" ph="SELECT * FRO... student" />
+                <marker date="1484919253652" expanded="true" signature="1511:1580" ph="SELECT * FRO... student" />
+                <marker date="1484919253652" expanded="true" signature="1680:1793" ph="SELECT * FRO... student" />
+                <marker date="1484919253652" expanded="true" signature="1680:1812" ph="SELECT * FRO... student" />
+                <marker date="1484919253652" expanded="true" signature="1900:1946" ph="SELECT * FRO... student" />
+                <marker date="1484919253652" expanded="true" signature="2037:2089" ph="SELECT * FRO... student" />
+                <marker date="1484919253652" expanded="true" signature="2198:2260" ph="SELECT * FRO... student" />
+                <marker date="1484919253652" expanded="true" signature="2198:2266" ph="SELECT * FRO... student" />
+                <marker date="1484919253652" expanded="true" signature="2348:2377" ph="SELECT stude... student" />
               </folding>
             </state>
           </provider>
@@ -190,11 +240,25 @@
       <file leaf-file-name="PersonServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="70" column="55" lean-forward="false" selection-start-line="70" selection-start-column="55" selection-end-line="70" selection-end-column="55" />
+            <state relative-caret-position="223">
+              <caret line="223" column="61" lean-forward="false" selection-start-line="223" selection-start-column="61" selection-end-line="223" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#8500#8501#0" expanded="true" />
+                <element signature="e#8554#8555#0" expanded="true" />
+                <element signature="e#8600#8601#0" expanded="true" />
+                <element signature="e#8654#8655#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IStudentDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IStudentDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="68" column="18" lean-forward="false" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -202,7 +266,7 @@
       <file leaf-file-name="Teacher.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/pojo/Teacher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
+            <state relative-caret-position="1447">
               <caret line="146" column="18" lean-forward="false" selection-start-line="146" selection-start-column="18" selection-end-line="146" selection-end-column="18" />
               <folding />
             </state>
@@ -212,8 +276,8 @@
       <file leaf-file-name="ITeacherDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/ITeacherDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+            <state relative-caret-position="493">
+              <caret line="37" column="28" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -601,7 +665,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/TheClassDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/dao/impl/StudentDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
@@ -633,25 +696,26 @@
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PaperServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/ManagerServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/ManagerServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IStudentDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/StudentService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/StudentDao.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/StudentServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IManagerDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IStudentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/old/ITheClassSerivce.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IExamService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/ITestDBService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IPersonService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/exceptions/PersonException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/exceptions/PersonExistException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/old/StudentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/exceptions/PersonNotExistException.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/TeacherDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/ITeacherDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/pojo/Teacher.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/ITeacherDao.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/TeacherDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IPersonService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IStudentDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/PersonServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/StudentDao.xml" />
       </list>
     </option>
   </component>
@@ -677,6 +741,7 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="-1440" />
     <option name="y" value="24" />
     <option name="width" value="1440" />
     <option name="height" value="841" />
@@ -1064,7 +1129,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/spring-service.xml" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
-    <property name="SearchEverywhereHistoryKey" value="Spring&#9;ACTION&#9;ActivateSpringToolWindow" />
+    <property name="SearchEverywhereHistoryKey" value="queryTeacherIdAll&#9;PSI&#9;JAVA://com.wsc.dao.inter.ITeacherDao#queryTeacherIdAll&#10;Spring&#9;ACTION&#9;ActivateSpringToolWindow" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -1079,60 +1144,8 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PersonServiceImplTest.updateTeacher">
-    <configuration default="false" name="StudentServiceTest.queryStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.wsc.service.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ExamSystem_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.wsc.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.wsc.service.impl.StudentServiceTest" />
-      <option name="METHOD_NAME" value="queryStudent" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="StudentServiceTest.addStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.wsc.service.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ExamSystem_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.wsc.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.wsc.service.impl.StudentServiceTest" />
-      <option name="METHOD_NAME" value="addStudent" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="PersonServiceImplTest.createTeacher" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PersonServiceImplTest.queryStudentByPaperId">
+    <configuration default="false" name="PersonServiceImplTest.createStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.wsc.service.impl.*" />
@@ -1144,7 +1157,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.wsc.service.impl" />
       <option name="MAIN_CLASS_NAME" value="com.wsc.service.impl.PersonServiceImplTest" />
-      <option name="METHOD_NAME" value="createTeacher" />
+      <option name="METHOD_NAME" value="createStudent" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1158,7 +1171,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="PersonServiceImplTest.updateTeacher" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="PersonServiceImplTest.updateStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.wsc.service.impl.*" />
@@ -1170,7 +1183,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.wsc.service.impl" />
       <option name="MAIN_CLASS_NAME" value="com.wsc.service.impl.PersonServiceImplTest" />
-      <option name="METHOD_NAME" value="updateTeacher" />
+      <option name="METHOD_NAME" value="updateStudent" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1184,20 +1197,72 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="IStudentDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="PersonServiceImplTest.deleteStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.wsc.dao.inter.*" />
+          <option name="PATTERN" value="com.wsc.service.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="ExamSystem_test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.wsc.dao.inter" />
-      <option name="MAIN_CLASS_NAME" value="com.wsc.dao.inter.IStudentDaoTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.wsc.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.wsc.service.impl.PersonServiceImplTest" />
+      <option name="METHOD_NAME" value="deleteStudent" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="PersonServiceImplTest.queryStudentAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.wsc.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ExamSystem_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.wsc.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.wsc.service.impl.PersonServiceImplTest" />
+      <option name="METHOD_NAME" value="queryStudentAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="PersonServiceImplTest.queryStudentByPaperId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.wsc.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ExamSystem_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.wsc.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.wsc.service.impl.PersonServiceImplTest" />
+      <option name="METHOD_NAME" value="queryStudentByPaperId" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -1675,19 +1740,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.ExamSystemLocal" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.StudentServiceTest.queryStudent" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.StudentServiceTest.addStudent" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.createTeacher" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.updateTeacher" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.IStudentDaoTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.createStudent" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.updateStudent" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.deleteStudent" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.queryStudentAll" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.queryStudentByPaperId" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.updateTeacher" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.createTeacher" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.IStudentDaoTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.StudentServiceTest.addStudent" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.StudentServiceTest.queryStudent" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.queryStudentByPaperId" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.queryStudentAll" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.deleteStudent" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.updateStudent" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.createStudent" />
       </list>
     </recent_temporary>
   </component>
@@ -1708,47 +1773,47 @@
       <workItem from="1484387749219" duration="13368000" />
       <workItem from="1484450059186" duration="36733000" />
       <workItem from="1484561987392" duration="5663000" />
-      <workItem from="1484572191804" duration="44441000" />
+      <workItem from="1484572191804" duration="62122000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PersonServiceImplTest_createTeacher - 2017.01.18 at 21h 00m 08s.xml">
-      <configuration name="PersonServiceImplTest.createTeacher" configurationId="JUnit" />
+    <history-entry file="PersonServiceImplTest_deleteStudent - 2017.01.20 at 21h 23m 47s.xml">
+      <configuration name="PersonServiceImplTest.deleteStudent" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PersonServiceImplTest_updateTeacher - 2017.01.18 at 20h 36m 03s.xml">
-      <configuration name="PersonServiceImplTest.updateTeacher" configurationId="JUnit" />
+    <history-entry file="PersonServiceImplTest_deleteStudent - 2017.01.20 at 21h 24m 30s.xml">
+      <configuration name="PersonServiceImplTest.deleteStudent" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PersonServiceImplTest_updateTeacher - 2017.01.18 at 20h 41m 04s.xml">
-      <configuration name="PersonServiceImplTest.updateTeacher" configurationId="JUnit" />
+    <history-entry file="PersonServiceImplTest_queryStudentAll - 2017.01.20 at 21h 28m 08s.xml">
+      <configuration name="PersonServiceImplTest.queryStudentAll" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PersonServiceImplTest_updateTeacher - 2017.01.18 at 20h 53m 55s.xml">
-      <configuration name="PersonServiceImplTest.updateTeacher" configurationId="JUnit" />
+    <history-entry file="PersonServiceImplTest_queryStudentAll - 2017.01.20 at 21h 28m 45s.xml">
+      <configuration name="PersonServiceImplTest.queryStudentAll" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PersonServiceImplTest_updateTeacher - 2017.01.18 at 20h 54m 04s.xml">
-      <configuration name="PersonServiceImplTest.updateTeacher" configurationId="JUnit" />
+    <history-entry file="PersonServiceImplTest_queryStudentAll - 2017.01.20 at 21h 29m 10s.xml">
+      <configuration name="PersonServiceImplTest.queryStudentAll" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PersonServiceImplTest_updateTeacher - 2017.01.18 at 20h 59m 46s.xml">
-      <configuration name="PersonServiceImplTest.updateTeacher" configurationId="JUnit" />
+    <history-entry file="PersonServiceImplTest_queryStudentAll - 2017.01.20 at 21h 29m 33s.xml">
+      <configuration name="PersonServiceImplTest.queryStudentAll" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PersonServiceImplTest_updateTeacher - 2017.01.18 at 21h 00m 11s.xml">
-      <configuration name="PersonServiceImplTest.updateTeacher" configurationId="JUnit" />
+    <history-entry file="PersonServiceImplTest_queryStudentByPaperId - 2017.01.20 at 21h 33m 57s.xml">
+      <configuration name="PersonServiceImplTest.queryStudentByPaperId" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PersonServiceImplTest_updateTeacher - 2017.01.18 at 21h 12m 06s.xml">
-      <configuration name="PersonServiceImplTest.updateTeacher" configurationId="JUnit" />
+    <history-entry file="PersonServiceImplTest_queryStudentByPaperId - 2017.01.20 at 21h 34m 22s.xml">
+      <configuration name="PersonServiceImplTest.queryStudentByPaperId" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PersonServiceImplTest_updateTeacher - 2017.01.18 at 21h 12m 50s.xml">
-      <configuration name="PersonServiceImplTest.updateTeacher" configurationId="JUnit" />
+    <history-entry file="PersonServiceImplTest_updateStudent - 2017.01.20 at 21h 20m 23s.xml">
+      <configuration name="PersonServiceImplTest.updateStudent" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PersonServiceImplTest_updateTeacher - 2017.01.18 at 21h 13m 05s.xml">
-      <configuration name="PersonServiceImplTest.updateTeacher" configurationId="JUnit" />
+    <history-entry file="PersonServiceImplTest_updateStudent - 2017.01.20 at 21h 23m 39s.xml">
+      <configuration name="PersonServiceImplTest.updateStudent" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133164000" />
+    <option name="totallyTimeSpent" value="150845000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1440" height="841" extended-state="7" />
+    <frame x="-1440" y="24" width="1440" height="841" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1759,12 +1824,12 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Memory View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Memory View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2360515" sideWeight="0.5115741" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3991655" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3991655" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32823366" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1772,10 +1837,10 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299566" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2892907" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2892907" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962447" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2360515" sideWeight="0.48842594" order="10" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2360515" sideWeight="0.48842594" order="10" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962447" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1797,7 +1862,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1806,30 +1871,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/exceptions/CantFindPower.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/pojo/Manager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="280" column="30" lean-forward="false" selection-start-line="280" selection-start-column="15" selection-end-line="280" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/pojo/Paper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../../lib/spring/spring-beans-4.3.4.RELEASE.jar!/org/springframework/beans/factory/annotation/Autowired.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1904,48 +1945,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-4148">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding>
-              <marker date="1484655994695" expanded="true" signature="1614:1960" ph="..." />
-              <marker date="1484655994695" expanded="true" signature="1629:1943" ph="..." />
-              <marker date="1484655994695" expanded="true" signature="2116:3887" ph="..." />
-              <marker date="1484655994695" expanded="true" signature="2810:3216" ph="..." />
-              <marker date="1484655994695" expanded="true" signature="3337:3625" ph="..." />
-              <marker date="1484655994695" expanded="true" signature="3722:3878" ph="..." />
-              <marker date="1484655994695" expanded="true" signature="4150:4187" ph="/**...*/" />
-              <marker date="1484655994695" expanded="false" signature="4857:4980" ph="..." />
-              <marker date="1484655994695" expanded="true" signature="4982:5019" ph="/**...*/" />
-              <marker date="1484655994695" expanded="true" signature="5055:5149" ph="/**...*/" />
-              <marker date="1484655994695" expanded="true" signature="5196:5361" ph="/**...*/" />
-              <marker date="1484655994695" expanded="true" signature="5409:5521" ph="/**...*/" />
-              <marker date="1484655994695" expanded="true" signature="5585:5660" ph="/**...*/" />
-              <marker date="1484655994695" expanded="true" signature="5707:5820" ph="/**...*/" />
-              <marker date="1484655994695" expanded="true" signature="6111:8454" ph="..." />
-              <marker date="1484655994695" expanded="true" signature="6182:6567" ph="..." />
-              <marker date="1484655994695" expanded="true" signature="6655:6765" ph="..." />
-              <marker date="1484655994695" expanded="true" signature="6816:7124" ph="..." />
-              <marker date="1484655994695" expanded="true" signature="7199:7273" ph="..." />
-              <marker date="1484655994695" expanded="true" signature="7349:7503" ph="..." />
-              <marker date="1484655994695" expanded="true" signature="7597:7677" ph="..." />
-              <marker date="1484655994695" expanded="true" signature="7745:7837" ph="..." />
-              <marker date="1484655994695" expanded="true" signature="7905:7997" ph="..." />
-              <marker date="1484655994695" expanded="true" signature="8067:8146" ph="..." />
-              <marker date="1484655994695" expanded="true" signature="8216:8295" ph="..." />
-              <marker date="1484655994695" expanded="true" signature="8365:8444" ph="..." />
-              <marker date="1484655994695" expanded="false" signature="8512:8850" ph="..." />
-              <marker date="1484655994695" expanded="true" signature="8852:8914" ph="/**...*/" />
-              <marker date="1484655994695" expanded="true" signature="8915:9033" ph="@{...}" />
-              <marker date="1484655994695" expanded="true" signature="9295:9396" ph="{...}" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/impl/ManagerServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
@@ -1959,24 +1958,6 @@
         <state relative-caret-position="252">
           <caret line="34" column="38" lean-forward="false" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/StudentDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="112" lean-forward="false" selection-start-line="10" selection-start-column="112" selection-end-line="10" selection-end-column="112" />
-          <folding>
-            <marker date="1484660384378" expanded="true" signature="268:747" ph="INSERT INTO student... " />
-            <marker date="1484660384378" expanded="true" signature="268:755" ph="INSERT INTO student... " />
-            <marker date="1484660384378" expanded="true" signature="850:912" ph="UPDATE stude... " />
-            <marker date="1484660384378" expanded="true" signature="1011:1384" ph="UPDATE stude... " />
-            <marker date="1484660384378" expanded="true" signature="1511:1561" ph="SELECT * FRO... student" />
-            <marker date="1484660384378" expanded="true" signature="1640:1770" ph="SELECT * FRO... student" />
-            <marker date="1484660384378" expanded="true" signature="1858:1904" ph="SELECT * FRO... student" />
-            <marker date="1484660384378" expanded="true" signature="1995:2047" ph="SELECT * FRO... student" />
-            <marker date="1484660384378" expanded="true" signature="2135:2189" ph="SELECT * FRO... student" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2141,14 +2122,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IStudentDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="66" column="30" lean-forward="true" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/exceptions/PersonNotExistException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -2172,58 +2145,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IPersonService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/TeacherDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-          <folding>
-            <marker date="1484738348500" expanded="true" signature="255:616" ph="INSERT INTO teacher... " />
-            <marker date="1484738348500" expanded="true" signature="728:814" ph="UPDATE teach... " />
-            <marker date="1484738348500" expanded="true" signature="889:1173" ph="UPDATE teach... " />
-            <marker date="1484738348500" expanded="true" signature="1272:1322" ph="SELECT * fro... teacher" />
-            <marker date="1484738348500" expanded="true" signature="1422:1459" ph="SELECT * FRO... teacher" />
-            <marker date="1484738348500" expanded="true" signature="1422:1472" ph="SELECT * FRO... teacher" />
-            <marker date="1484738348500" expanded="true" signature="1422:1475" ph="SELECT * FRO... teacher" />
-            <marker date="1484738348500" expanded="true" signature="1422:1506" ph="SELECT * FRO... teacher" />
-            <marker date="1484738348500" expanded="true" signature="1422:1518" ph="SELECT * FRO... teacher" />
-            <marker date="1484738348500" expanded="true" signature="1422:1521" ph="SELECT * FRO... teacher" />
-            <marker date="1484738348500" expanded="true" signature="1422:1552" ph="SELECT * FRO... teacher" />
-            <marker date="1484738348500" expanded="true" signature="1670:1722" ph="SELECT * FRO... teacher" />
-            <marker date="1484738348500" expanded="true" signature="1670:1726" ph="SELECT * FRO... teacher" />
-            <marker date="1484738348500" expanded="true" signature="1808:1837" ph="SELECT teach... teacher" />
-            <marker date="1484738348500" expanded="true" signature="1929:1997" ph="UPDATE teach... " />
-            <marker date="1484738348500" expanded="true" signature="2089:2157" ph="UPDATE teach... " />
-            <marker date="1484738348500" expanded="true" signature="2251:2306" ph="UPDATE teach... " />
-            <marker date="1484738348500" expanded="true" signature="2400:2455" ph="UPDATE teach... " />
-            <marker date="1484738348500" expanded="true" signature="2549:2604" ph="UPDATE teach... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/ITeacherDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/pojo/Teacher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="146" column="18" lean-forward="false" selection-start-line="146" selection-start-column="18" selection-end-line="146" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -2308,20 +2229,180 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mybatis/mybatis/3.4.2/28fa71b6d5671fd878fa769956e08cee7d89bb62/mybatis-3.4.2-sources.jar!/org/apache/ibatis/binding/MapperProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/jdk1.8.0_111/src.zip!/java/lang/Override.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="50" column="18" lean-forward="false" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mybatis/mybatis/3.4.2/28fa71b6d5671fd878fa769956e08cee7d89bb62/mybatis-3.4.2-sources.jar!/org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/pojo/Teacher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1447">
+          <caret line="146" column="18" lean-forward="false" selection-start-line="146" selection-start-column="18" selection-end-line="146" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/ITeacherDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="37" column="28" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="542">
+            <caret line="347" column="3" lean-forward="false" selection-start-line="347" selection-start-column="3" selection-end-line="347" selection-end-column="3" />
+            <folding>
+              <marker date="1484909783831" expanded="true" signature="1614:1960" ph="..." />
+              <marker date="1484909783831" expanded="true" signature="1629:1943" ph="..." />
+              <marker date="1484909783831" expanded="true" signature="2116:3887" ph="..." />
+              <marker date="1484909783831" expanded="true" signature="2810:3216" ph="..." />
+              <marker date="1484909783831" expanded="true" signature="3337:3625" ph="..." />
+              <marker date="1484909783831" expanded="true" signature="3722:3878" ph="..." />
+              <marker date="1484909783831" expanded="true" signature="4150:4187" ph="/**...*/" />
+              <marker date="1484909783831" expanded="false" signature="4857:4980" ph="..." />
+              <marker date="1484909783831" expanded="true" signature="4982:5019" ph="/**...*/" />
+              <marker date="1484909783831" expanded="true" signature="5055:5149" ph="/**...*/" />
+              <marker date="1484909783831" expanded="true" signature="5196:5361" ph="/**...*/" />
+              <marker date="1484909783831" expanded="true" signature="5409:5521" ph="/**...*/" />
+              <marker date="1484909783831" expanded="true" signature="5585:5660" ph="/**...*/" />
+              <marker date="1484909783831" expanded="true" signature="5707:5820" ph="/**...*/" />
+              <marker date="1484909783831" expanded="true" signature="6111:8454" ph="..." />
+              <marker date="1484909783831" expanded="true" signature="6182:6567" ph="..." />
+              <marker date="1484909783831" expanded="true" signature="6655:6765" ph="..." />
+              <marker date="1484909783831" expanded="true" signature="6816:7124" ph="..." />
+              <marker date="1484909783831" expanded="true" signature="7199:7273" ph="..." />
+              <marker date="1484909783831" expanded="true" signature="7349:7503" ph="..." />
+              <marker date="1484909783831" expanded="true" signature="7597:7677" ph="..." />
+              <marker date="1484909783831" expanded="true" signature="7745:7837" ph="..." />
+              <marker date="1484909783831" expanded="true" signature="7905:7997" ph="..." />
+              <marker date="1484909783831" expanded="true" signature="8067:8146" ph="..." />
+              <marker date="1484909783831" expanded="true" signature="8216:8295" ph="..." />
+              <marker date="1484909783831" expanded="true" signature="8365:8444" ph="..." />
+              <marker date="1484909783831" expanded="false" signature="8512:8850" ph="..." />
+              <marker date="1484909783831" expanded="true" signature="8852:8914" ph="/**...*/" />
+              <marker date="1484909783831" expanded="true" signature="8915:9033" ph="@{...}" />
+              <marker date="1484909783831" expanded="true" signature="9295:9396" ph="{...}" />
+              <marker date="1484909783831" expanded="true" signature="9912:9980" ph="SELECT * FRO... teacher" />
+              <marker date="1484909783831" expanded="true" signature="10010:10142" ph="SELECT * FRO... teacher" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/TeacherDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+          <folding>
+            <marker date="1484916886249" expanded="true" signature="255:616" ph="INSERT INTO teacher... " />
+            <marker date="1484916886249" expanded="true" signature="728:814" ph="UPDATE teach... " />
+            <marker date="1484916886249" expanded="true" signature="889:1173" ph="UPDATE teach... " />
+            <marker date="1484916886249" expanded="true" signature="1301:1351" ph="SELECT * fro... teacher" />
+            <marker date="1484916886249" expanded="true" signature="1301:1370" ph="SELECT * fro... teacher" />
+            <marker date="1484916886249" expanded="true" signature="1469:1506" ph="SELECT * FRO... teacher" />
+            <marker date="1484916886249" expanded="true" signature="1469:1519" ph="SELECT * FRO... teacher" />
+            <marker date="1484916886249" expanded="true" signature="1469:1521" ph="SELECT * FRO... teacher" />
+            <marker date="1484916886249" expanded="true" signature="1469:1552" ph="SELECT * FRO... teacher" />
+            <marker date="1484916886249" expanded="true" signature="1469:1565" ph="SELECT * FRO... teacher" />
+            <marker date="1484916886249" expanded="true" signature="1469:1567" ph="SELECT * FRO... teacher" />
+            <marker date="1484916886249" expanded="true" signature="1469:1582" ph="SELECT * FRO... teacher" />
+            <marker date="1484916886249" expanded="true" signature="1469:1601" ph="SELECT * FRO... teacher" />
+            <marker date="1484916886249" expanded="true" signature="1719:1760" ph="SELECT * FRO... teacher" />
+            <marker date="1484916886249" expanded="true" signature="1719:1787" ph="SELECT * FRO... teacher" />
+            <marker date="1484916886249" expanded="true" signature="1873:1941" ph="SELECT * FRO... teacher" />
+            <marker date="1484916886249" expanded="true" signature="2031:2106" ph="SELECT * FRO... teacher" />
+            <marker date="1484916886249" expanded="true" signature="2188:2217" ph="SELECT teach... teacher" />
+            <marker date="1484916886249" expanded="true" signature="2188:2238" ph="SELECT teach... teacher" />
+            <marker date="1484916886249" expanded="true" signature="2330:2398" ph="UPDATE teach... " />
+            <marker date="1484916886249" expanded="true" signature="2490:2558" ph="UPDATE teach... " />
+            <marker date="1484916886249" expanded="true" signature="2652:2707" ph="UPDATE teach... " />
+            <marker date="1484916886249" expanded="true" signature="2801:2856" ph="UPDATE teach... " />
+            <marker date="1484916886249" expanded="true" signature="2950:3005" ph="UPDATE teach... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IPersonService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="34" column="39" lean-forward="false" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="70" column="55" lean-forward="false" selection-start-line="70" selection-start-column="55" selection-end-line="70" selection-end-column="55" />
+        <state relative-caret-position="223">
+          <caret line="223" column="61" lean-forward="false" selection-start-line="223" selection-start-column="61" selection-end-line="223" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#8500#8501#0" expanded="true" />
+            <element signature="e#8554#8555#0" expanded="true" />
+            <element signature="e#8600#8601#0" expanded="true" />
+            <element signature="e#8654#8655#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IStudentDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="68" column="18" lean-forward="false" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/StudentDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <marker date="1484919253652" expanded="true" signature="268:747" ph="INSERT INTO student... " />
+            <marker date="1484919253652" expanded="true" signature="268:755" ph="INSERT INTO student... " />
+            <marker date="1484919253652" expanded="true" signature="830:916" ph="UPDATE stude... " />
+            <marker date="1484919253652" expanded="true" signature="991:1364" ph="UPDATE stude... " />
+            <marker date="1484919253652" expanded="true" signature="991:1383" ph="UPDATE stude... " />
+            <marker date="1484919253652" expanded="true" signature="1511:1561" ph="SELECT * FRO... student" />
+            <marker date="1484919253652" expanded="true" signature="1511:1580" ph="SELECT * FRO... student" />
+            <marker date="1484919253652" expanded="true" signature="1680:1793" ph="SELECT * FRO... student" />
+            <marker date="1484919253652" expanded="true" signature="1680:1812" ph="SELECT * FRO... student" />
+            <marker date="1484919253652" expanded="true" signature="1900:1946" ph="SELECT * FRO... student" />
+            <marker date="1484919253652" expanded="true" signature="2037:2089" ph="SELECT * FRO... student" />
+            <marker date="1484919253652" expanded="true" signature="2198:2260" ph="SELECT * FRO... student" />
+            <marker date="1484919253652" expanded="true" signature="2198:2266" ph="SELECT * FRO... student" />
+            <marker date="1484919253652" expanded="true" signature="2348:2377" ph="SELECT stude... student" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/wsc/service/impl/PersonServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="35" column="50" lean-forward="true" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+        <state relative-caret-position="331">
+          <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

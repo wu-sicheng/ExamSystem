@@ -26,22 +26,30 @@
     </update>
 
     <!--通过id来查询教师信息-->
-    <select id="queryTeacher" parameterType="int">
-        SELECT * from teacher WHERE teacherId=#{teacherId};
+    <select id="queryTeacherById" parameterType="Integer" resultType="Teacher">
+        SELECT * from teacher WHERE teacherId=#{teacherId} AND teacherState=1;
     </select>
 
     <!--查询教师列表-->
-    <select id="queryTeacherIdList" parameterType="int">
-        SELECT * FROM teacher WHERE teacherId <![CDATA[>=]]]> #{fromTeacherId} AND teacherId <![CDATA[<]]]> #{fromTeacherId+manyTeacherId};
+    <select id="queryTeacherList" resultType="Teacher">
+        SELECT * FROM teacher WHERE teacherId <![CDATA[>=]]> #{fromTeacherId} AND teacherId <![CDATA[<=]]> #{toTeacherId} AND teacherState=1;
     </select>
 
     <!--通过class id来查询教师数据集-->
     <select id="queryTeacherByClassId" parameterType="String">
-        SELECT * FROM teacher WHERE classId LIKE %#{classId}','%;
+        SELECT * FROM teacher WHERE classId LIKE CONCAT('%',#{classId},',%');
+    </select>
+
+    <select id="queryTeacherByPaperId" resultType="Teacher">
+        SELECT * FROM teacher WHERE paperId LIKE CONCAT('%',#{paperId},',%');
+    </select>
+
+    <select id="queryTeacherByTeacherName" resultType="Teacher">
+        SELECT * FROM teacher WHERE teacherName LIKE CONCAT('%',#{teacherName},'%');
     </select>
 
     <select id="queryTeacherIdAll" resultType="Integer">
-        SELECT teacherId FROM teacher;
+        SELECT teacherId FROM teacher WHERE teacherState=1;
     </select>
 
     <!--提升教师权限-->

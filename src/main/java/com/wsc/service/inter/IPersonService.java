@@ -32,7 +32,7 @@ public interface IPersonService {
     List<Student> queryStudentByPaperId(int studentId);
     List<Student> queryStudentByClassId(int classId);
     List<Student> queryStudentByStudentName(String name);
-    Student queryStudentByStudentId(String studentId);
+    Student queryStudentByStudentId(int studentId);
 
 
     /**

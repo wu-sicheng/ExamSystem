@@ -333,3 +333,16 @@ public class IStudentDaoTestSpring {
 [main] INFO com.wsc.dao.inter.IStudentDaoTest - Student{studentId=1, classId=1, paperId='1,2', studentName='wusicheng', studentPassword='password', studentGander=1, studentNo='studentNo', studentMajor='major', studentGrader=2, studentNum='num', studentMail='mail@mail.com', studentPhone='12312313213', studentPower=1, studentState=1, studentCreateTime=Tue Feb 02 14:00:00 CST 2016, studentDeleteTime=Fri Feb 03 02:12:21 CST 2017}
 ```
 ### 通过测试，Spring和MyBatis整合成功
+
+
+
+## 那些坑
+### MyBatis的模糊搜索
+```SQL
+SELECT * FROM teacher WHERE paperId LIKE CONCAT('%',#{paperId},',%');
+```
+
+### MyBatis的大小写
+```SQL
+SELECT * FROM teacher WHERE teacherId <![CDATA[>=]]> #{fromTeacherId} AND teacherId <![CDATA[<=]]> #{toTeacherId} AND teacherState=1;
+```
