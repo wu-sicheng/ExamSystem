@@ -76,4 +76,8 @@
     <update id="setLevel1" parameterType="int">
         UPDATE teacher SET teacherPower=1 WHERE teacherId=#{id};
     </update>
+
+    <select id="queryTeacherPower" parameterType="Integer" resultType="Integer">
+        SELECT teacherPower FROM teacher WHERE teacherId=#{teacherId};
+    </select>
 </mapper>

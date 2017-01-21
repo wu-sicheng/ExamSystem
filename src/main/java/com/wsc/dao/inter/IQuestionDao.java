@@ -13,7 +13,7 @@ public interface IQuestionDao {
      * @param question 创建问题
      * @return 是否创建成功
      */
-    boolean createQuestion(Question question);
+    void createQuestion(Question question);
 
     /**
      * 删一个问题，将state由1改为0，并添加删除时间
@@ -44,4 +44,6 @@ public interface IQuestionDao {
      * @return 问题列表
      */
     List<Question> queryQuestionList(int fromQuestionId,int manyQuestionId);
+
+    List<Integer> queryQuestionIdList();
 }

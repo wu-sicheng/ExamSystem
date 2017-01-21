@@ -27,12 +27,12 @@
         SELECT * FROM manager;
     </select>
 
-    <select id="judgePower" parameterType="int" resultType="int">
+    <select id="judgePower" parameterType="Integer" resultType="Integer">
         SELECT id FROM manager WHERE managerId=#{managerId};
     </select>
 
-    <select id="queryManagerByManagerId" parameterType="int" resultType="Manager">
-        SELECT * FROM manager WHERE managerId=#{managerId};
+    <select id="queryManagerByManagerId" parameterType="Integer" resultType="Manager">
+        SELECT * FROM manager WHERE id=#{id};
     </select>
 
     <select id="queryIdList">

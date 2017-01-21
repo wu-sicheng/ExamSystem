@@ -69,4 +69,8 @@ public interface IStudentDao {
     List<Student> queryStudentByPaperId(String papaerId);
 
     List<Integer> queryStudentIdAll();
+
+    List<Student> queryStudentByStudentName(String studentName);
+
+
 }

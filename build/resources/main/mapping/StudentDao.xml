@@ -32,7 +32,7 @@
         SELECT * FROM student WHERE studentId <![CDATA[>=]]> #{fromStudentId} AND studentId <![CDATA[<=]]> #{toStudentId} AND studentState=1;
     </select>
 
-    <select id="queryStudentByTheClassId" parameterType="int">
+    <select id="queryStudentByTheClassId" parameterType="Integer" resultType="Student">
         SELECT * FROM student WHERE classId=#{classId};
     </select>
 
@@ -46,6 +46,10 @@
 
     <select id="queryStudentIdAll" resultType="Integer">
         SELECT studentId FROM student;
+    </select>
+
+    <select id="queryStudentByStudentName" resultType="Student" parameterType="String">
+        SELECT * FROM student WHERE studentName LIKE CONCAT('%',#{studentName},'%') AND studentState=1;
     </select>
 
 </mapper>

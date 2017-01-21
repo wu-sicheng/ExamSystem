@@ -58,6 +58,8 @@ public interface ITeacherDao {
 
     List<Integer> queryTeacherIdAll();
 
+    int queryTeacherPower(int teacherId);
+
     /**
      * 提升某个用户的权限，一次只能够提升一个等级
      * @param id 用户的id

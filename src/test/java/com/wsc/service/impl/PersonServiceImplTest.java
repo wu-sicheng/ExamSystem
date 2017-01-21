@@ -78,13 +78,13 @@ public class PersonServiceImplTest {
 
     @Test
     public void createStudent() throws Exception {
-        Student student=new Student(6,1,"1,2","test","test",1,"sstes","major",1,"12323","134@qq.com","12313",1,1,new Date(),new Date());
+        Student student=new Student(8,8,"1,2","testforName","test",1,"sstes","major",1,"12323","134@qq.com","12313",1,1,new Date(),new Date());
         iPersonService.createStudent(student);
     }
 
     @Test
     public void updateStudent() throws Exception {
-        Student student=new Student(6,1,"changefor1","test","test",1,"sstes","major",1,"12323","134@qq.com","12313",1,1,new Date(),new Date());
+        Student student=new Student(7,8,"changefor1","test","test",1,"sstes","major",1,"12323","134@qq.com","12313",1,1,new Date(),new Date());
         iPersonService.updateStudent(1,student);
     }
 
@@ -107,22 +107,26 @@ public class PersonServiceImplTest {
 
     @Test
     public void queryStudentByClassId() throws Exception {
-
+        List<Student> students=iPersonService.queryStudentByClassId(8);
+        LOGGER.info(students.toString());
     }
 
     @Test
     public void queryStudentByStudentName() throws Exception {
-
+        List<Student> students=iPersonService.queryStudentByStudentName("testforName");
+        LOGGER.info(students.toString());
     }
 
     @Test
     public void queryStudentByStudentId() throws Exception {
-
+        Student student=iPersonService.queryStudentByStudentId(2);
+        LOGGER.info(student.toString());
     }
 
     @Test
     public void createPerson() throws Exception {
-
+        boolean b=iPersonService.createPerson(5);
+        LOGGER.info(String.valueOf(b));
     }
 
     @Test

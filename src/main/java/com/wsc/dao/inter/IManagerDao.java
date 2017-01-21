@@ -44,7 +44,7 @@ public interface IManagerDao {
      * @param managerId
      * @return 查找的Manager
      */
-    Manager queryManagerByManagerId(int managerId);
+    Manager queryManagerByManagerId(int id);
 
     /**
      * 返回manager的id值

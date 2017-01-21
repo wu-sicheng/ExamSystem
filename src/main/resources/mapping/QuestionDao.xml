@@ -32,4 +32,8 @@
         SELECT * FROM question WHERE questionId <![CDATA[>=]]> #{fromQuestionId} AND <![CDATA[<]]]> #{fromQuestionId+manyQuestionId};
     </select>
 
+    <select id="queryQuestionIdList" resultType="Integer">
+        SELECT questionId FROM question;
+    </select>
+
 </mapper>

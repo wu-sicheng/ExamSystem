@@ -118,7 +118,7 @@ CREATE TABLE question (
   questionText TEXT, #问题主干
   questionAnswer TEXT, #问题答案
   questionRight TEXT, #问题正确答案
-  questionScorce INT, #问题分数
+  questionScore INT, #问题分数
   questionType INT, #问题类型，0单项选择，1不定项选择，2填空，3判断，4简答，5论述，6编程OJ
   questionCreateTime DATETIME, #创建时间
   questionDeleteTiem DATETIME, #删除时间
