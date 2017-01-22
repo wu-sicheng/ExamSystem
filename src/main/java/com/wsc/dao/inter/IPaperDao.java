@@ -20,15 +20,14 @@ public interface IPaperDao {
      * @param paperId
      * @return
      */
-    Paper deletePaper(int paperId);
+    void deletePaper(int paperId);
 
     /**
      * 更新试卷参数
-     * @param paperId 试卷id
      * @param paper 更新后的试卷的详情
      * @return 更新后试卷的参数
      */
-    Paper updatePaper(int paperId,Paper paper);
+    void updatePaper(Paper paper);
 
     /**
      * 通过paperId查询一份试卷

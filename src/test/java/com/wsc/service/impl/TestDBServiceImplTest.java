@@ -90,7 +90,7 @@ public class TestDBServiceImplTest {
 
     @Test
     public void createPaper() throws Exception {
-        Paper paper=new Paper(1,"12",new Date(),new Date(),1,1,new Date(),new Date());
+        Paper paper=new Paper(5,"12",new Date(),new Date(),1,1,new Date(),new Date());
         iTestDBService.createPaper(4,paper);
     }
 
@@ -111,12 +111,14 @@ public class TestDBServiceImplTest {
 
     @Test
     public void deletePaper() throws Exception {
-
+        iTestDBService.deletePaper(4,1);
     }
 
     @Test
     public void updatePaper() throws Exception {
-
+        Paper paper=new Paper(5,"change1",new Date(),new Date(),1,1,new Date(),new Date());
+        iTestDBService.updatePaper(4,5,paper);
+        //ERROR
     }
 
     @Test

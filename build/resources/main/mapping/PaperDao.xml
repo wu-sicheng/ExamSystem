@@ -5,21 +5,19 @@
 <mapper namespace="com.wsc.dao.inter.IPaperDao">
     <!--创建一份试卷-->
     <update id="createPaper" parameterType="Paper">
-        INSERT INTO paper (id,paperId,questionId,subjectId,paperTimeBegin,paperTimeEnd,
-        paperState,createTime,deleteTime) VALUES (NULL,#{paperId},#{questionId},#{subjectId}
-        #{paperTimeBegin},#{paperTimeEnd},#{paperState},#{createTime},#{deleteTime});
+        INSERT INTO paper (id,paperId,questionId,subjectId,paperTimeBegin,paperTimeEnd,paperState,createTime,deleteTime) VALUES (NULL,#{paperId},#{questionId},#{subjectId},#{paperTimeBegin},#{paperTimeEnd},#{paperState},#{createTime},NULL);
     </update>
 
     <!--删除一份试卷-->
-    <update id="deletePaper" parameterType="int">
-        UPDATE paper SET paperState=0 WHERE paperId=#{paperId};
+    <update id="deletePaper" parameterType="Integer">
+        UPDATE paper SET paperState=0,deleteTime=now() WHERE paperId=#{paperId};
     </update>
 
     <!--更新一份试卷-->
-    <update id="updatePaper">
-        UPDATE paper SET questionId=#{questionId},subjectId=#{subjectId}
+    <update id="updatePaper" parameterType="Paper">
+        UPDATE paper SET questionId=#{questionId},subjectId=#{subjectId},
         paperTimeBegin=#{paperTimeBegin},paperTimeEnd=#{paperTimeEnd} WHERE
-        paperId=#{paperId};
+        paperId=#{paperId} AND paperState=1;
     </update>
 
     <!--查询一份试卷-->

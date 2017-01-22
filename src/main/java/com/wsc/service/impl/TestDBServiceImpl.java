@@ -259,7 +259,25 @@ public class TestDBServiceImpl implements ITestDBService{
 
     @Override
     public Paper updatePaper(int teacherId, int paperId, Paper paper) {
-        return null;
+        paperIdList=qetPapaerIdList();
+        Paper paperRe=null;
+        if(iPersonService.updateTestDB(teacherId)){
+            if(paperIdList.contains(paperId)){
+                paper=iPaperDao.queryPaper(paperId);
+                paper.setPaperId(paperId);
+                iPaperDao.updatePaper(paper);
+                LOGGER.info("更新数据成功");
+                return paper;
+            }
+            else{
+                LOGGER.info("数据库中不包含符合条件的数据");
+                throw new TestDBException("数据库中不包含符合条件的数据库");
+            }
+        }
+        else{
+            LOGGER.info("没有权限创建数据");
+            throw new ManagerException("没有权限");
+        }
     }
 
     @Override
