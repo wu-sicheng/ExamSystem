@@ -31,4 +31,8 @@
     <select id="queryPaperList" parameterType="int">
         SELECT * FROM paper WHERE paperId <![CDATA[>=]]> #{fromPaperId} and paperId <![CDATA[<]]> #{fromPaperId+manyPaperId};
     </select>
+
+    <select id="queryPaperIdList" resultType="Integer">
+        SELECT paperId FROM paper WHERE paperState=1;
+    </select>
 </mapper>

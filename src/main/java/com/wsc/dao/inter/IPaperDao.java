@@ -44,4 +44,6 @@ public interface IPaperDao {
      * @return 查询到的paper
      */
     List<Paper> queryPaperList(int fromPaperId,int manyPaperId);
+
+    List<Integer> queryPaperIdList();
 }

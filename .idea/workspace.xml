@@ -2,31 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86f9bc11-dc71-4a55-ac9b-0e1004cc31bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/exceptions/ManagerException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/exceptions/TestDBException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/TestDBServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/TestDBServiceImplTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/dao/inter/IStudentDao.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/dao/inter/IStudentDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/dao/inter/ITeacherDao.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/dao/inter/ITeacherDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/service/impl/PersonServiceImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/service/impl/PersonServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/test/com/wsc/service/impl/PersonServiceImplTest.class" afterPath="$PROJECT_DIR$/build/classes/test/com/wsc/service/impl/PersonServiceImplTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/mapping/ManagerDao.xml" afterPath="$PROJECT_DIR$/build/resources/main/mapping/ManagerDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/mapping/StudentDao.xml" afterPath="$PROJECT_DIR$/build/resources/main/mapping/StudentDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/mapping/TeacherDao.xml" afterPath="$PROJECT_DIR$/build/resources/main/mapping/TeacherDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IManagerDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IManagerDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IPaperDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IPaperDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IQuestionDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IQuestionDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IStudentDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IStudentDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/ITeacherDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/ITeacherDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/pojo/Question.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/pojo/Question.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/ITestDBService.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/ITestDBService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapping/ManagerDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/ManagerDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/pojo/Paper.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/pojo/Paper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/TestDBServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/TestDBServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapping/PaperDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/PaperDao.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapping/QuestionDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/QuestionDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapping/StudentDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/StudentDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapping/TeacherDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/TeacherDao.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/sql/tableInit.sql" afterPath="$PROJECT_DIR$/src/main/resources/sql/tableInit.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/PersonServiceImplTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/PersonServiceImplTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/TestDBServiceImplTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/TestDBServiceImplTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -126,11 +109,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="tableInit.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tableInit.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/sql/tableInit.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="120" column="15" lean-forward="false" selection-start-line="120" selection-start-column="15" selection-end-line="120" selection-end-column="15" />
+            <state relative-caret-position="288">
+              <caret line="123" column="20" lean-forward="false" selection-start-line="123" selection-start-column="20" selection-end-line="123" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -139,50 +122,36 @@
       <file leaf-file-name="TestDBServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/impl/TestDBServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state relative-caret-position="1104">
+              <caret line="250" column="61" lean-forward="false" selection-start-line="250" selection-start-column="61" selection-end-line="250" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1787#1788#0" expanded="true" />
-                <element signature="e#1814#1815#0" expanded="true" />
-                <element signature="e#1916#1917#0" expanded="true" />
-                <element signature="e#1943#1944#0" expanded="true" />
-                <element signature="e#2025#2026#0" expanded="true" />
-                <element signature="e#2052#2053#0" expanded="true" />
-                <element signature="e#2156#2157#0" expanded="true" />
-                <element signature="e#2183#2184#0" expanded="true" />
-                <element signature="e#2299#2300#0" expanded="true" />
-                <element signature="e#2326#2327#0" expanded="true" />
-                <element signature="e#2426#2427#0" expanded="true" />
-                <element signature="e#2453#2454#0" expanded="true" />
-                <element signature="e#2525#2526#0" expanded="true" />
-                <element signature="e#2552#2553#0" expanded="true" />
-                <element signature="e#2778#2779#0" expanded="true" />
-                <element signature="e#2806#2807#0" expanded="true" />
-                <element signature="e#3159#3160#0" expanded="true" />
-                <element signature="e#3186#3187#0" expanded="true" />
-                <element signature="e#3273#3274#0" expanded="true" />
-                <element signature="e#3300#3301#0" expanded="true" />
-                <element signature="e#3373#3374#0" expanded="true" />
-                <element signature="e#3400#3401#0" expanded="true" />
-                <element signature="e#3504#3505#0" expanded="true" />
-                <element signature="e#3531#3532#0" expanded="true" />
-                <element signature="e#3623#3624#0" expanded="true" />
-                <element signature="e#3650#3651#0" expanded="true" />
-                <element signature="e#3717#3718#0" expanded="true" />
-                <element signature="e#3744#3745#0" expanded="true" />
-                <element signature="e#3905#3906#0" expanded="true" />
-                <element signature="e#3933#3934#0" expanded="true" />
-                <element signature="e#4013#4014#0" expanded="true" />
-                <element signature="e#4040#4041#0" expanded="true" />
-                <element signature="e#4122#4123#0" expanded="true" />
-                <element signature="e#4149#4150#0" expanded="true" />
-                <element signature="e#4228#4229#0" expanded="true" />
-                <element signature="e#4255#4256#0" expanded="true" />
-                <element signature="e#4367#4368#0" expanded="true" />
-                <element signature="e#4394#4395#0" expanded="true" />
-                <element signature="e#4442#4443#0" expanded="true" />
-                <element signature="e#4499#4500#0" expanded="true" />
+                <element signature="e#5809#5810#0" expanded="true" />
+                <element signature="e#5842#5843#0" expanded="true" />
+                <element signature="e#7796#7797#0" expanded="true" />
+                <element signature="e#7823#7824#0" expanded="true" />
+                <element signature="e#7896#7897#0" expanded="true" />
+                <element signature="e#7923#7924#0" expanded="true" />
+                <element signature="e#8027#8028#0" expanded="true" />
+                <element signature="e#8054#8055#0" expanded="true" />
+                <element signature="e#8146#8147#0" expanded="true" />
+                <element signature="e#8173#8174#0" expanded="true" />
+                <element signature="e#8240#8241#0" expanded="true" />
+                <element signature="e#8267#8268#0" expanded="true" />
+                <element signature="e#8428#8429#0" expanded="true" />
+                <element signature="e#8456#8457#0" expanded="true" />
+                <element signature="e#8536#8537#0" expanded="true" />
+                <element signature="e#8563#8564#0" expanded="true" />
+                <element signature="e#8645#8646#0" expanded="true" />
+                <element signature="e#8672#8673#0" expanded="true" />
+                <element signature="e#8751#8752#0" expanded="true" />
+                <element signature="e#8778#8779#0" expanded="true" />
+                <element signature="e#8890#8891#0" expanded="true" />
+                <element signature="e#8917#8918#0" expanded="true" />
+                <element signature="e#8965#8966#0" expanded="true" />
+                <element signature="e#9022#9023#0" expanded="true" />
+                <element signature="e#9067#9068#0" expanded="true" />
+                <element signature="e#9118#9119#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -191,7 +160,7 @@
       <file leaf-file-name="PersonServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
+            <state relative-caret-position="-2208">
               <caret line="350" column="0" lean-forward="false" selection-start-line="350" selection-start-column="0" selection-end-line="350" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -200,71 +169,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Question.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/pojo/Question.java">
+      <file leaf-file-name="Paper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/pojo/Paper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="134" column="50" lean-forward="false" selection-start-line="134" selection-start-column="50" selection-end-line="134" selection-end-column="50" />
+            <state relative-caret-position="306">
+              <caret line="20" column="11" lean-forward="false" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
               <folding>
-                <element signature="e#1271#1272#0" expanded="true" />
-                <element signature="e#1304#1305#0" expanded="true" />
+                <element signature="e#867#868#0" expanded="true" />
+                <element signature="e#897#898#0" expanded="true" />
+                <element signature="e#940#941#0" expanded="true" />
+                <element signature="e#978#979#0" expanded="true" />
+                <element signature="e#1015#1016#0" expanded="true" />
+                <element signature="e#1048#1049#0" expanded="true" />
+                <element signature="e#1100#1101#0" expanded="true" />
+                <element signature="e#1144#1145#0" expanded="true" />
+                <element signature="e#1183#1184#0" expanded="true" />
+                <element signature="e#1220#1221#0" expanded="true" />
+                <element signature="e#1278#1279#0" expanded="true" />
+                <element signature="e#1330#1331#0" expanded="true" />
+                <element signature="e#1367#1368#0" expanded="true" />
+                <element signature="e#1402#1403#0" expanded="true" />
+                <element signature="e#1456#1457#0" expanded="true" />
+                <element signature="e#1504#1505#0" expanded="true" />
+                <element signature="e#1537#1538#0" expanded="true" />
+                <element signature="e#1569#1570#0" expanded="true" />
+                <element signature="e#1616#1617#0" expanded="true" />
+                <element signature="e#1658#1659#0" expanded="true" />
+                <element signature="e#1692#1693#0" expanded="true" />
+                <element signature="e#1725#1726#0" expanded="true" />
                 <element signature="e#1774#1775#0" expanded="true" />
-                <element signature="e#1809#1810#0" expanded="true" />
-                <element signature="e#1865#1866#0" expanded="true" />
-                <element signature="e#1913#1914#0" expanded="true" />
-                <element signature="e#2324#2325#0" expanded="true" />
-                <element signature="e#2360#2361#0" expanded="true" />
-                <element signature="e#2415#2416#0" expanded="true" />
-                <element signature="e#2465#2466#0" expanded="true" />
+                <element signature="e#1818#1819#0" expanded="true" />
+                <element signature="e#1853#1854#0" expanded="true" />
+                <element signature="e#1886#1887#0" expanded="true" />
+                <element signature="e#1936#1937#0" expanded="true" />
+                <element signature="e#1980#1981#0" expanded="true" />
+                <element signature="e#2015#2016#0" expanded="true" />
+                <element signature="e#2048#2049#0" expanded="true" />
+                <element signature="e#2098#2099#0" expanded="true" />
+                <element signature="e#2142#2143#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ITestDBService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/inter/ITestDBService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="58" column="43" lean-forward="false" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConcurrentHashMap.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///usr/lib/jvm/jdk1.8.0_111/src.zip!/java/util/concurrent/ConcurrentHashMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="935" column="0" lean-forward="false" selection-start-line="935" selection-start-column="0" selection-end-line="935" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Method.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///usr/lib/jvm/jdk1.8.0_111/src.zip!/java/lang/reflect/Method.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="330" column="0" lean-forward="false" selection-start-line="330" selection-start-column="0" selection-end-line="330" selection-end-column="0" />
-              <folding>
-                <element signature="e#6024#6025#0" expanded="true" />
-                <element signature="e#6052#6053#0" expanded="true" />
-                <element signature="e#6333#6334#0" expanded="true" />
-                <element signature="e#6365#6366#0" expanded="true" />
-                <element signature="e#10626#10627#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Class.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///usr/lib/jvm/jdk1.8.0_111/src.zip!/java/lang/Class.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="639" column="0" lean-forward="false" selection-start-line="639" selection-start-column="0" selection-end-line="639" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -272,26 +215,38 @@
       <file leaf-file-name="TestDBServiceImplTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/wsc/service/impl/TestDBServiceImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="28" column="39" lean-forward="false" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-              <folding />
+            <state relative-caret-position="234">
+              <caret line="93" column="44" lean-forward="false" selection-start-line="93" selection-start-column="44" selection-end-line="93" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuestionDao.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/QuestionDao.xml">
+      <file leaf-file-name="PaperDao.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/PaperDao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="35" />
+            <state relative-caret-position="630">
+              <caret line="35" column="53" lean-forward="false" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
               <folding>
-                <marker date="1485004848416" expanded="true" signature="261:599" ph="INSERT INTO question... " />
-                <marker date="1485004848416" expanded="true" signature="695:786" ph="UPDATE quest... " />
-                <marker date="1485004848416" expanded="true" signature="862:1097" ph="UPDATE quest... " />
-                <marker date="1485004848416" expanded="true" signature="1214:1267" ph="SELECT * FRO... question" />
-                <marker date="1485004848416" expanded="true" signature="1368:1492" ph="SELECT * FRO... question" />
-                <marker date="1485004848416" expanded="true" signature="1576:1607" ph="SELECT quest... question" />
+                <marker date="1485071615815" expanded="true" signature="252:509" ph="INSERT INTO paper... " />
+                <marker date="1485071615815" expanded="true" signature="602:656" ph="UPDATE paper... " />
+                <marker date="1485071615815" expanded="true" signature="729:896" ph="UPDATE paper... " />
+                <marker date="1485071615815" expanded="true" signature="1007:1051" ph="SELECT * FRO... paper" />
+                <marker date="1485071615815" expanded="true" signature="1149:1265" ph="SELECT * FRO... paper" />
+                <marker date="1485071615815" expanded="true" signature="1346:1390" ph="SELECT paper... paper" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IPaperDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IPaperDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="47" column="34" lean-forward="false" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -680,12 +635,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/ISubjectDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/pojo/Student.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/pojo/Subject.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/SubjectDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wsc/pojo/Paper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/PaperDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/enums/ExamState.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IPaperService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IQuestionService.java" />
@@ -723,14 +675,17 @@
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IManagerDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/ManagerDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/ITestDBService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/QuestionDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/exceptions/TestDBException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/TestDBServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IQuestionDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/TestDBServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/pojo/Question.java" />
         <option value="$PROJECT_DIR$/src/main/resources/sql/tableInit.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IQuestionDao.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/QuestionDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IPaperDao.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/PaperDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wsc/pojo/Paper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/TestDBServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/TestDBServiceImplTest.java" />
       </list>
     </option>
   </component>
@@ -1184,112 +1139,8 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestDBServiceImplTest.createQuestion">
-    <configuration default="false" name="PersonServiceImplTest.createStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.wsc.service.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ExamSystem_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.wsc.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.wsc.service.impl.PersonServiceImplTest" />
-      <option name="METHOD_NAME" value="createStudent" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="PersonServiceImplTest.queryStudentByStudentName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.wsc.service.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ExamSystem_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.wsc.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.wsc.service.impl.PersonServiceImplTest" />
-      <option name="METHOD_NAME" value="queryStudentByStudentName" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="PersonServiceImplTest.queryStudentByStudentId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.wsc.service.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ExamSystem_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.wsc.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.wsc.service.impl.PersonServiceImplTest" />
-      <option name="METHOD_NAME" value="queryStudentByStudentId" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="PersonServiceImplTest.createPerson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.wsc.service.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ExamSystem_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.wsc.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.wsc.service.impl.PersonServiceImplTest" />
-      <option name="METHOD_NAME" value="createPerson" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="TestDBServiceImplTest.createQuestion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestDBServiceImplTest.createPaper">
+    <configuration default="false" name="TestDBServiceImplTest.queryQuestion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.wsc.service.impl.*" />
@@ -1301,7 +1152,111 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.wsc.service.impl" />
       <option name="MAIN_CLASS_NAME" value="com.wsc.service.impl.TestDBServiceImplTest" />
-      <option name="METHOD_NAME" value="createQuestion" />
+      <option name="METHOD_NAME" value="queryQuestion" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestDBServiceImplTest.queryQuestionByQuestionType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.wsc.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ExamSystem_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.wsc.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.wsc.service.impl.TestDBServiceImplTest" />
+      <option name="METHOD_NAME" value="queryQuestionByQuestionType" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestDBServiceImplTest.queryQuestionList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.wsc.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ExamSystem_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.wsc.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.wsc.service.impl.TestDBServiceImplTest" />
+      <option name="METHOD_NAME" value="queryQuestionList" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestDBServiceImplTest.queryQuestionListBySubject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.wsc.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ExamSystem_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.wsc.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.wsc.service.impl.TestDBServiceImplTest" />
+      <option name="METHOD_NAME" value="queryQuestionListBySubject" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestDBServiceImplTest.createPaper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.wsc.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ExamSystem_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.wsc.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.wsc.service.impl.TestDBServiceImplTest" />
+      <option name="METHOD_NAME" value="createPaper" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1780,19 +1735,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.ExamSystemLocal" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.createStudent" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.queryStudentByStudentName" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.queryStudentByStudentId" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.createPerson" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.TestDBServiceImplTest.createQuestion" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.TestDBServiceImplTest.queryQuestion" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.TestDBServiceImplTest.queryQuestionByQuestionType" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.TestDBServiceImplTest.queryQuestionList" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.TestDBServiceImplTest.queryQuestionListBySubject" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.TestDBServiceImplTest.createPaper" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TestDBServiceImplTest.createQuestion" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.createPerson" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.queryStudentByStudentId" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.queryStudentByStudentName" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.PersonServiceImplTest.createStudent" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.TestDBServiceImplTest.createPaper" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TestDBServiceImplTest.queryQuestionListBySubject" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.TestDBServiceImplTest.queryQuestionList" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TestDBServiceImplTest.queryQuestionByQuestionType" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TestDBServiceImplTest.queryQuestion" />
       </list>
     </recent_temporary>
   </component>
@@ -1813,44 +1768,44 @@
       <workItem from="1484387749219" duration="13368000" />
       <workItem from="1484450059186" duration="36733000" />
       <workItem from="1484561987392" duration="5663000" />
-      <workItem from="1484572191804" duration="73378000" />
+      <workItem from="1484572191804" duration="80251000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestDBServiceImplTest_createQuestion - 2017.01.21 at 21h 30m 57s.xml">
-      <configuration name="TestDBServiceImplTest.createQuestion" configurationId="JUnit" />
+    <history-entry file="TestDBServiceImplTest_createPaper - 2017.01.22 at 16h 08m 11s.xml">
+      <configuration name="TestDBServiceImplTest.createPaper" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestDBServiceImplTest_createQuestion - 2017.01.21 at 21h 31m 27s.xml">
-      <configuration name="TestDBServiceImplTest.createQuestion" configurationId="JUnit" />
+    <history-entry file="TestDBServiceImplTest_queryQuestion - 2017.01.22 at 15h 00m 45s.xml">
+      <configuration name="TestDBServiceImplTest.queryQuestion" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestDBServiceImplTest_createQuestion - 2017.01.21 at 21h 33m 10s.xml">
-      <configuration name="TestDBServiceImplTest.createQuestion" configurationId="JUnit" />
+    <history-entry file="TestDBServiceImplTest_queryQuestion - 2017.01.22 at 15h 01m 31s.xml">
+      <configuration name="TestDBServiceImplTest.queryQuestion" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestDBServiceImplTest_createQuestion - 2017.01.21 at 21h 35m 00s.xml">
-      <configuration name="TestDBServiceImplTest.createQuestion" configurationId="JUnit" />
+    <history-entry file="TestDBServiceImplTest_queryQuestionByQuestionType - 2017.01.22 at 15h 29m 57s.xml">
+      <configuration name="TestDBServiceImplTest.queryQuestionByQuestionType" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestDBServiceImplTest_createQuestion - 2017.01.21 at 21h 36m 03s.xml">
-      <configuration name="TestDBServiceImplTest.createQuestion" configurationId="JUnit" />
+    <history-entry file="TestDBServiceImplTest_queryQuestionList - 2017.01.22 at 15h 36m 41s.xml">
+      <configuration name="TestDBServiceImplTest.queryQuestionList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestDBServiceImplTest_createQuestion - 2017.01.21 at 21h 37m 09s.xml">
-      <configuration name="TestDBServiceImplTest.createQuestion" configurationId="JUnit" />
+    <history-entry file="TestDBServiceImplTest_queryQuestionList - 2017.01.22 at 15h 37m 18s.xml">
+      <configuration name="TestDBServiceImplTest.queryQuestionList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestDBServiceImplTest_createQuestion - 2017.01.21 at 21h 37m 16s.xml">
-      <configuration name="TestDBServiceImplTest.createQuestion" configurationId="JUnit" />
+    <history-entry file="TestDBServiceImplTest_queryQuestionList - 2017.01.22 at 15h 37m 38s.xml">
+      <configuration name="TestDBServiceImplTest.queryQuestionList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestDBServiceImplTest_createQuestion - 2017.01.21 at 21h 38m 44s.xml">
-      <configuration name="TestDBServiceImplTest.createQuestion" configurationId="JUnit" />
+    <history-entry file="TestDBServiceImplTest_queryQuestionList - 2017.01.22 at 15h 39m 12s.xml">
+      <configuration name="TestDBServiceImplTest.queryQuestionList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestDBServiceImplTest_createQuestion - 2017.01.21 at 21h 40m 17s.xml">
-      <configuration name="TestDBServiceImplTest.createQuestion" configurationId="JUnit" />
+    <history-entry file="TestDBServiceImplTest_queryQuestionListBySubject - 2017.01.22 at 15h 43m 18s.xml">
+      <configuration name="TestDBServiceImplTest.queryQuestionListBySubject" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestDBServiceImplTest_createQuestion - 2017.01.21 at 21h 41m 41s.xml">
-      <configuration name="TestDBServiceImplTest.createQuestion" configurationId="JUnit" />
+    <history-entry file="TestDBServiceImplTest_queryQuestionListBySubject - 2017.01.22 at 15h 43m 34s.xml">
+      <configuration name="TestDBServiceImplTest.queryQuestionListBySubject" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162101000" />
+    <option name="totallyTimeSpent" value="168974000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1440" height="841" extended-state="6" />
@@ -1911,14 +1866,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/pojo/TheClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/exceptions/PersonException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -2219,22 +2166,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IPaperDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="45" column="64" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="45" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/pojo/Paper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IPersonService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
@@ -2267,14 +2198,6 @@
             <element signature="e#779#780#0" expanded="true" />
             <element signature="e#809#810#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IQuestionDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2325,7 +2248,7 @@
         <state relative-caret-position="146">
           <caret line="299" column="0" lean-forward="false" selection-start-line="299" selection-start-column="0" selection-end-line="299" selection-end-column="0" />
           <folding>
-            <element signature="e#10945#10946#0" expanded="true" />
+            <element signature="e#10945#10946#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2335,7 +2258,7 @@
         <state relative-caret-position="155">
           <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
           <folding>
-            <element signature="e#5784#5785#0" expanded="true" />
+            <element signature="e#5784#5785#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2352,7 +2275,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="935" column="0" lean-forward="false" selection-start-line="935" selection-start-column="0" selection-end-line="935" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#262622#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#30335#30336#0" expanded="false" />
+            <element signature="e#30400#30401#0" expanded="false" />
+            <element signature="e#32334#32335#0" expanded="false" />
+            <element signature="e#32385#32386#0" expanded="false" />
+            <element signature="e#39094#39095#0" expanded="false" />
+            <element signature="e#39146#39147#0" expanded="false" />
+            <element signature="e#40959#40960#0" expanded="false" />
+            <element signature="e#41034#41035#0" expanded="false" />
+            <element signature="e#42680#42681#0" expanded="false" />
+            <element signature="e#42719#42720#0" expanded="false" />
+            <element signature="e#44347#44348#0" expanded="false" />
+            <element signature="e#44395#44396#0" expanded="false" />
+            <element signature="e#48122#48123#0" expanded="false" />
+            <element signature="e#48173#48174#0" expanded="false" />
+            <element signature="e#65240#65241#0" expanded="false" />
+            <element signature="e#65287#65288#0" expanded="false" />
+            <element signature="e#88654#88655#0" expanded="false" />
+            <element signature="e#88697#88698#0" expanded="false" />
+            <element signature="e#93306#93307#0" expanded="false" />
+            <element signature="e#93363#93364#0" expanded="false" />
+            <element signature="e#93406#93407#0" expanded="false" />
+            <element signature="e#93441#93442#0" expanded="false" />
+            <element signature="e#93710#93711#0" expanded="false" />
+            <element signature="e#93797#93798#0" expanded="false" />
+            <element signature="e#112403#112404#0" expanded="false" />
+            <element signature="e#112458#112459#0" expanded="false" />
+            <element signature="e#117483#117484#0" expanded="false" />
+            <element signature="e#117520#117521#0" expanded="false" />
+            <element signature="e#146809#146810#0" expanded="false" />
+            <element signature="e#146884#146885#0" expanded="false" />
+            <element signature="e#192348#192349#0" expanded="false" />
+            <element signature="e#192399#192400#0" expanded="false" />
+            <element signature="e#193040#193041#0" expanded="false" />
+            <element signature="e#193105#193106#0" expanded="false" />
+            <element signature="e#193170#193171#0" expanded="false" />
+            <element signature="e#193235#193236#0" expanded="false" />
+            <element signature="e#195463#195464#0" expanded="false" />
+            <element signature="e#195545#195546#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2361,11 +2325,11 @@
         <state relative-caret-position="146">
           <caret line="330" column="0" lean-forward="false" selection-start-line="330" selection-start-column="0" selection-end-line="330" selection-end-column="0" />
           <folding>
-            <element signature="e#6024#6025#0" expanded="true" />
-            <element signature="e#6052#6053#0" expanded="true" />
-            <element signature="e#6333#6334#0" expanded="true" />
-            <element signature="e#6365#6366#0" expanded="true" />
-            <element signature="e#10626#10627#0" expanded="true" />
+            <element signature="e#6024#6025#0" expanded="false" />
+            <element signature="e#6052#6053#0" expanded="false" />
+            <element signature="e#6333#6334#0" expanded="false" />
+            <element signature="e#6365#6366#0" expanded="false" />
+            <element signature="e#10626#10627#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2382,66 +2346,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="429">
           <caret line="58" column="43" lean-forward="false" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/impl/TestDBServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1787#1788#0" expanded="true" />
-            <element signature="e#1814#1815#0" expanded="true" />
-            <element signature="e#1916#1917#0" expanded="true" />
-            <element signature="e#1943#1944#0" expanded="true" />
-            <element signature="e#2025#2026#0" expanded="true" />
-            <element signature="e#2052#2053#0" expanded="true" />
-            <element signature="e#2156#2157#0" expanded="true" />
-            <element signature="e#2183#2184#0" expanded="true" />
-            <element signature="e#2299#2300#0" expanded="true" />
-            <element signature="e#2326#2327#0" expanded="true" />
-            <element signature="e#2426#2427#0" expanded="true" />
-            <element signature="e#2453#2454#0" expanded="true" />
-            <element signature="e#2525#2526#0" expanded="true" />
-            <element signature="e#2552#2553#0" expanded="true" />
-            <element signature="e#2778#2779#0" expanded="true" />
-            <element signature="e#2806#2807#0" expanded="true" />
-            <element signature="e#3159#3160#0" expanded="true" />
-            <element signature="e#3186#3187#0" expanded="true" />
-            <element signature="e#3273#3274#0" expanded="true" />
-            <element signature="e#3300#3301#0" expanded="true" />
-            <element signature="e#3373#3374#0" expanded="true" />
-            <element signature="e#3400#3401#0" expanded="true" />
-            <element signature="e#3504#3505#0" expanded="true" />
-            <element signature="e#3531#3532#0" expanded="true" />
-            <element signature="e#3623#3624#0" expanded="true" />
-            <element signature="e#3650#3651#0" expanded="true" />
-            <element signature="e#3717#3718#0" expanded="true" />
-            <element signature="e#3744#3745#0" expanded="true" />
-            <element signature="e#3905#3906#0" expanded="true" />
-            <element signature="e#3933#3934#0" expanded="true" />
-            <element signature="e#4013#4014#0" expanded="true" />
-            <element signature="e#4040#4041#0" expanded="true" />
-            <element signature="e#4122#4123#0" expanded="true" />
-            <element signature="e#4149#4150#0" expanded="true" />
-            <element signature="e#4228#4229#0" expanded="true" />
-            <element signature="e#4255#4256#0" expanded="true" />
-            <element signature="e#4367#4368#0" expanded="true" />
-            <element signature="e#4394#4395#0" expanded="true" />
-            <element signature="e#4442#4443#0" expanded="true" />
-            <element signature="e#4499#4500#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="350" column="0" lean-forward="false" selection-start-line="350" selection-start-column="0" selection-end-line="350" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -2467,34 +2371,160 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/wsc/service/impl/TestDBServiceImplTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/QuestionDao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="28" column="39" lean-forward="false" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-          <folding />
+        <state relative-caret-position="334">
+          <caret line="43" column="42" lean-forward="true" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
+          <folding>
+            <marker date="1485070931488" expanded="true" signature="261:599" ph="INSERT INTO question... " />
+            <marker date="1485070931488" expanded="true" signature="700:791" ph="UPDATE quest... " />
+            <marker date="1485070931488" expanded="true" signature="700:811" ph="UPDATE quest... " />
+            <marker date="1485070931488" expanded="true" signature="887:1122" ph="UPDATE quest... " />
+            <marker date="1485070931488" expanded="true" signature="887:1173" ph="UPDATE quest... " />
+            <marker date="1485070931488" expanded="true" signature="1290:1343" ph="SELECT * FRO... question" />
+            <marker date="1485070931488" expanded="true" signature="1290:1363" ph="SELECT * FRO... question" />
+            <marker date="1485070931488" expanded="true" signature="1490:1608" ph="SELECT * FRO... question" />
+            <marker date="1485070931488" expanded="true" signature="1692:1723" ph="SELECT quest... question" />
+            <marker date="1485070931488" expanded="true" signature="1692:1745" ph="SELECT quest... question" />
+            <marker date="1485070931488" expanded="true" signature="1842:1919" ph="SELECT * FRO... question" />
+            <marker date="1485070931488" expanded="true" signature="2033:2104" ph="SELECT * FRO... question" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/QuestionDao.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IQuestionDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="35" />
-          <folding>
-            <marker date="1485004848416" expanded="true" signature="261:599" ph="INSERT INTO question... " />
-            <marker date="1485004848416" expanded="true" signature="695:786" ph="UPDATE quest... " />
-            <marker date="1485004848416" expanded="true" signature="862:1097" ph="UPDATE quest... " />
-            <marker date="1485004848416" expanded="true" signature="1214:1267" ph="SELECT * FRO... question" />
-            <marker date="1485004848416" expanded="true" signature="1368:1492" ph="SELECT * FRO... question" />
-            <marker date="1485004848416" expanded="true" signature="1576:1607" ph="SELECT quest... question" />
-          </folding>
+        <state relative-caret-position="330">
+          <caret line="51" column="43" lean-forward="false" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/sql/tableInit.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="120" column="15" lean-forward="false" selection-start-line="120" selection-start-column="15" selection-end-line="120" selection-end-column="15" />
+        <state relative-caret-position="288">
+          <caret line="123" column="20" lean-forward="false" selection-start-line="123" selection-start-column="20" selection-end-line="123" selection-end-column="20" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IPaperDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="47" column="34" lean-forward="false" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/impl/TestDBServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1104">
+          <caret line="250" column="61" lean-forward="false" selection-start-line="250" selection-start-column="61" selection-end-line="250" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5809#5810#0" expanded="true" />
+            <element signature="e#5842#5843#0" expanded="true" />
+            <element signature="e#7796#7797#0" expanded="true" />
+            <element signature="e#7823#7824#0" expanded="true" />
+            <element signature="e#7896#7897#0" expanded="true" />
+            <element signature="e#7923#7924#0" expanded="true" />
+            <element signature="e#8027#8028#0" expanded="true" />
+            <element signature="e#8054#8055#0" expanded="true" />
+            <element signature="e#8146#8147#0" expanded="true" />
+            <element signature="e#8173#8174#0" expanded="true" />
+            <element signature="e#8240#8241#0" expanded="true" />
+            <element signature="e#8267#8268#0" expanded="true" />
+            <element signature="e#8428#8429#0" expanded="true" />
+            <element signature="e#8456#8457#0" expanded="true" />
+            <element signature="e#8536#8537#0" expanded="true" />
+            <element signature="e#8563#8564#0" expanded="true" />
+            <element signature="e#8645#8646#0" expanded="true" />
+            <element signature="e#8672#8673#0" expanded="true" />
+            <element signature="e#8751#8752#0" expanded="true" />
+            <element signature="e#8778#8779#0" expanded="true" />
+            <element signature="e#8890#8891#0" expanded="true" />
+            <element signature="e#8917#8918#0" expanded="true" />
+            <element signature="e#8965#8966#0" expanded="true" />
+            <element signature="e#9022#9023#0" expanded="true" />
+            <element signature="e#9067#9068#0" expanded="true" />
+            <element signature="e#9118#9119#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2208">
+          <caret line="350" column="0" lean-forward="false" selection-start-line="350" selection-start-column="0" selection-end-line="350" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/pojo/Paper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="11" lean-forward="false" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+          <folding>
+            <element signature="e#867#868#0" expanded="true" />
+            <element signature="e#897#898#0" expanded="true" />
+            <element signature="e#940#941#0" expanded="true" />
+            <element signature="e#978#979#0" expanded="true" />
+            <element signature="e#1015#1016#0" expanded="true" />
+            <element signature="e#1048#1049#0" expanded="true" />
+            <element signature="e#1100#1101#0" expanded="true" />
+            <element signature="e#1144#1145#0" expanded="true" />
+            <element signature="e#1183#1184#0" expanded="true" />
+            <element signature="e#1220#1221#0" expanded="true" />
+            <element signature="e#1278#1279#0" expanded="true" />
+            <element signature="e#1330#1331#0" expanded="true" />
+            <element signature="e#1367#1368#0" expanded="true" />
+            <element signature="e#1402#1403#0" expanded="true" />
+            <element signature="e#1456#1457#0" expanded="true" />
+            <element signature="e#1504#1505#0" expanded="true" />
+            <element signature="e#1537#1538#0" expanded="true" />
+            <element signature="e#1569#1570#0" expanded="true" />
+            <element signature="e#1616#1617#0" expanded="true" />
+            <element signature="e#1658#1659#0" expanded="true" />
+            <element signature="e#1692#1693#0" expanded="true" />
+            <element signature="e#1725#1726#0" expanded="true" />
+            <element signature="e#1774#1775#0" expanded="true" />
+            <element signature="e#1818#1819#0" expanded="true" />
+            <element signature="e#1853#1854#0" expanded="true" />
+            <element signature="e#1886#1887#0" expanded="true" />
+            <element signature="e#1936#1937#0" expanded="true" />
+            <element signature="e#1980#1981#0" expanded="true" />
+            <element signature="e#2015#2016#0" expanded="true" />
+            <element signature="e#2048#2049#0" expanded="true" />
+            <element signature="e#2098#2099#0" expanded="true" />
+            <element signature="e#2142#2143#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/wsc/service/impl/TestDBServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="93" column="44" lean-forward="false" selection-start-line="93" selection-start-column="44" selection-end-line="93" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/PaperDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="35" column="53" lean-forward="false" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
+          <folding>
+            <marker date="1485071615815" expanded="true" signature="252:509" ph="INSERT INTO paper... " />
+            <marker date="1485071615815" expanded="true" signature="602:656" ph="UPDATE paper... " />
+            <marker date="1485071615815" expanded="true" signature="729:896" ph="UPDATE paper... " />
+            <marker date="1485071615815" expanded="true" signature="1007:1051" ph="SELECT * FRO... paper" />
+            <marker date="1485071615815" expanded="true" signature="1149:1265" ph="SELECT * FRO... paper" />
+            <marker date="1485071615815" expanded="true" signature="1346:1390" ph="SELECT paper... paper" />
+          </folding>
         </state>
       </provider>
     </entry>

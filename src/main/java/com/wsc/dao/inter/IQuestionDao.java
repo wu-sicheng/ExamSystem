@@ -1,6 +1,7 @@
 package com.wsc.dao.inter;
 
 import com.wsc.pojo.Question;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -20,15 +21,14 @@ public interface IQuestionDao {
      * @param questionId 删除问题的id
      * @return 删除问题的详情
      */
-    Question deleteQuestion(int questionId);
+    void deleteQuestion(int questionId);
 
     /**
      * 通过id更改一个问题
-     * @param questionId question id
      * @param question 更改后的问题
      * @return 更改前的问题
      */
-    Question updateQuestion(int questionId,Question question);
+    void updateQuestion(Question question);
 
     /**
      * 通过questionId查询一个问题
@@ -40,10 +40,14 @@ public interface IQuestionDao {
     /**
      * 查询一个问题列表
      * @param fromQuestionId 开始的id
-     * @param manyQuestionId 结束的id
+     * @param toQuestionId 结束的id
      * @return 问题列表
      */
-    List<Question> queryQuestionList(int fromQuestionId,int manyQuestionId);
+    List<Question> queryQuestionList(@Param("fromQuestionId") int fromQuestionId,@Param("toQuestionId") int toQuestionId);
 
     List<Integer> queryQuestionIdList();
+
+    List<Question> queryQuestionByQuestionType(int questionType);
+
+    List<Question> queryQuestionBySubjectId(int subjectId);
 }
