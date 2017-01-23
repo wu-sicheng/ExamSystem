@@ -8,7 +8,9 @@
 在线的考试系统，其主要的业务为在线考试，在线试题分析，人员管理，OJ（待定）
 
 ## 目录结构
+
 ![](http://ww3.sinaimg.cn/large/63f8de7fgw1fbrh2gj9xaj208t0fn3zq.jpg)
+
 ![](http://ww3.sinaimg.cn/large/63f8de7fgw1fbrh3fiblkj208p0cuwfn.jpg)
 
 ### 各文件夹及其作用
@@ -48,7 +50,9 @@
 
 ### 定义相关依赖
 - spring的相关依赖(待更改)
+
 ![](http://ww2.sinaimg.cn/large/63f8de7fgw1fbrhmw35l0j20e90b70v0.jpg)
+
 - MyBatis相关依赖
 ```
 compile 'org.mybatis:mybatis:3.4.2'//MyBatis本身的库
@@ -346,6 +350,7 @@ SELECT * FROM teacher WHERE paperId LIKE CONCAT('%',#{paperId},',%');
 ```SQL
 SELECT * FROM teacher WHERE teacherId <![CDATA[>=]]> #{fromTeacherId} AND teacherId <![CDATA[<=]]> #{toTeacherId} AND teacherState=1;
 ```
+<<<<<<< HEAD
 ### MyBatis的问题
 数据库
 
@@ -372,4 +377,3 @@ SELECT * FROM teacher WHERE teacherId <![CDATA[>=]]> #{fromTeacherId} AND teache
         }
     }
 ```
-
