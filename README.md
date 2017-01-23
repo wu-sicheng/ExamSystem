@@ -350,3 +350,33 @@ SELECT * FROM teacher WHERE paperId LIKE CONCAT('%',#{paperId},',%');
 ```SQL
 SELECT * FROM teacher WHERE teacherId <![CDATA[>=]]> #{fromTeacherId} AND teacherId <![CDATA[<=]]> #{toTeacherId} AND teacherState=1;
 ```
+<<<<<<< HEAD
+### MyBatis的问题
+数据库
+
+![](http://ww1.sinaimg.cn/large/63f8de7fgy1fc0wo1p8paj20je02twek&690)
+
+![](http://ww1.sinaimg.cn/large/63f8de7fgy1fc0wpe4fdtj20ob03i74a&690)
+
+```Java
+    public boolean createSubject(int teacherId, Subject subject) {
+        subjectIdList=getQuestionIdList();
+        if(iPersonService.createTestDB(teacherId)){
+            if(subjectIdList.contains(subject.getSubjectId())){
+                LOGGER.info("数据库subject中已经包含id为"+subject.getSubjectId()+"的数据");
+                throw new TestDBException("数据库subject中已经包含id为"+subject.getSubjectId()+"的数据");
+            }
+            else{
+                iSubjectDao.createSubject(subject);
+                return true;
+            }
+        }
+        else{
+            LOGGER.info("没有权限创建数据");
+            throw new ManagerException("没有权限");
+        }
+    }
+```
+
+=======
+>>>>>>> 16de79fd17fbfbba9e73969e1f43f3638fac8374
