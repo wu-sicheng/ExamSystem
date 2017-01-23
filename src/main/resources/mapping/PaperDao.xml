@@ -24,11 +24,15 @@
     </select>
 
     <!--查询一个试卷列表-->
-    <select id="queryPaperList" parameterType="int">
-        SELECT * FROM paper WHERE paperId <![CDATA[>=]]> #{fromPaperId} and paperId <![CDATA[<]]> #{fromPaperId+manyPaperId};
+    <select id="queryPaperList" parameterType="Integer" resultType="Paper">
+        SELECT * FROM paper WHERE paperId <![CDATA[>=]]> #{fromPaperId} and paperId <![CDATA[<=]]> #{toPaperId};
     </select>
 
     <select id="queryPaperIdList" resultType="Integer">
         SELECT paperId FROM paper WHERE paperState=1;
+    </select>
+
+    <select id="queryPaperBySubjectId" resultType="Paper" parameterType="Integer">
+        SELECT * FROM paper WHERE subjectId=#{subjectId} AND paperState=1;
     </select>
 </mapper>

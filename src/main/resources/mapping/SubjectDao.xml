@@ -4,11 +4,21 @@
 
 <mapper namespace="com.wsc.dao.inter.ISubjectDao">
     <insert id="createSubject" parameterType="Subject">
-        INSERT INTO subject (id,subjectId,subjectName,subjectCreateTime,subjectTime) VALUES
+        INSERT INTO subject (id,subjectId,subjectName,subjectCreateTime,subjectState) VALUES
         (NULL,#{subjectId},#{subjectName},now(),1);
     </insert>
-    <update id="deleteSubject" parameterType="int">
-        UPDATE subject SET subjectName=#{subjectName} WHERE subjectId=#{subjectId};
+
+    <update id="deleteSubject" parameterType="Integer">
+        UPDATE subject SET subjectState=0,subjectDeleteTime=now() WHERE subjectId=#{subjectId} AND subjectState=1;
     </update>
+
+    <select id="querySubjectIdList" resultType="Integer">
+        SELECT subjectId FROM subject WHERE subjectState=1;
+    </select>
+
+    <select id="querySubject" resultType="Subject">
+        SELECT * FROM subject WHERE subjectId=#{subjectId} AND subjectState=1;
+    </select>
+
 
 </mapper>

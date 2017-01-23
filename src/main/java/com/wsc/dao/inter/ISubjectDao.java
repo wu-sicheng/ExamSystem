@@ -8,8 +8,10 @@ import java.util.List;
  */
 public interface ISubjectDao {
     boolean createSubject(Subject subject);
-    Subject deleteSubject(int subjectId);
+    void deleteSubject(int subjectId);
     Subject updateSubject(Subject subject);
     Subject querySubject(int subjectId);
     List<Subject> querySubjectList(int formSubjectId,int manySubjectId);
+
+    List<Integer> querySubjectIdList();
 }

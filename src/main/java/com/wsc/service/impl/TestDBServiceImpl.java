@@ -45,6 +45,7 @@ public class TestDBServiceImpl implements ITestDBService{
 
     private List<Integer> questionIdList;
     private List<Integer> paperIdList;
+    private List<Integer> subjectIdList;
 
     /*
      * 试题
@@ -257,7 +258,7 @@ public class TestDBServiceImpl implements ITestDBService{
         }
     }
 
-    @Override
+    @Override //TODO //ERROR
     public Paper updatePaper(int teacherId, int paperId, Paper paper) {
         paperIdList=qetPapaerIdList();
         Paper paperRe=null;
@@ -282,17 +283,54 @@ public class TestDBServiceImpl implements ITestDBService{
 
     @Override
     public Paper queryPaper(int teacherId, int paperId) {
-        return null;
+        paperIdList=qetPapaerIdList();
+        if(iPersonService.queryTestDB(teacherId)){
+            if(paperIdList.contains(paperId)){
+                return iPaperDao.queryPaper(paperId);
+            }
+            else{
+                LOGGER.info("数据库中不包含符合条件的数据");
+                throw new TestDBException("数据库中不包含符合条件的数据库");
+            }
+        }
+        else{
+            LOGGER.info("没有权限创建数据");
+            throw new ManagerException("没有权限");
+        }
     }
 
     @Override
-    public List<Paper> queryPaperList(int teacherId, int fromPaperId, int manyPaperId) {
-        return null;
+    public List<Paper> queryPaperList(int teacherId, int fromPaperId, int toPaperId) {
+        if(iPersonService.queryTestDB(teacherId)){
+            List<Paper> paperRe=iPaperDao.queryPaperList(fromPaperId,toPaperId);
+            try{
+                if(paperRe.get(0)!=null){
+                    return paperRe;
+                }
+            }catch(IndexOutOfBoundsException e){
+                LOGGER.info(e.getMessage());
+                throw new TestDBException("没有符合条件的paper");
+            }
+        }
+        LOGGER.info("没有权限创建数据");
+        throw new ManagerException("没有权限");
     }
 
     @Override
     public List<Paper> queryPaperBySubjectId(int teacherId, int subjectId) {
-        return null;
+        if(iPersonService.queryTestDB(teacherId)){
+            List<Paper> paperRe=iPaperDao.queryPaperBySubjectId(subjectId);
+            try{
+                if(paperRe.get(0)!=null){
+                    return paperRe;
+                }
+            }catch(IndexOutOfBoundsException e){
+                LOGGER.info(e.getMessage());
+                throw new TestDBException("找不到符合条件的数据");
+            }
+        }
+        LOGGER.info("没有权限创建数据");
+        throw new ManagerException("没有权限");
     }
 
     @Override
@@ -308,12 +346,41 @@ public class TestDBServiceImpl implements ITestDBService{
      */
     @Override
     public boolean createSubject(int teacherId, Subject subject) {
-        return false;
+        subjectIdList=getSubjectIdList();
+        if(iPersonService.createTestDB(teacherId)){
+            if(!subjectIdList.contains(subject.getSubjectId())){
+                iSubjectDao.createSubject(subject);
+                return true;
+            }
+            else{
+                LOGGER.info("数据库subject中已经包含id为"+subject.getSubjectId()+"的数据");
+                throw new TestDBException("数据库subject中已经包含id为"+subject.getSubjectId()+"的数据");
+            }
+        }
+        else{
+            LOGGER.info("没有权限创建数据");
+            throw new ManagerException("没有权限");
+        }
     }
 
     @Override
     public Subject deleteSubject(int teacherId, int subjectId) {
-        return null;
+        subjectIdList=getSubjectIdList();
+        if(iPersonService.createTestDB(teacherId)){
+            if(subjectIdList.contains(subjectId)){
+                Subject subject=iSubjectDao.querySubject(subjectId);
+                iSubjectDao.deleteSubject(subjectId);
+                return subject;
+            }
+            else{
+                LOGGER.info("数据库subject中没有id为"+subjectId+"的数据");
+                throw new TestDBException("数据库subject中没有id为"+subjectId+"的数据");
+            }
+        }
+        else{
+            LOGGER.info("没有权限创建数据");
+            throw new ManagerException("没有权限");
+        }
     }
 
     @Override
@@ -334,7 +401,12 @@ public class TestDBServiceImpl implements ITestDBService{
     private List<Integer> getQuestionIdList(){
         return iQuestionDao.queryQuestionIdList();
     }
+
     private List<Integer> qetPapaerIdList(){
         return iPaperDao.queryPaperIdList();
+    }
+
+    private List<Integer> getSubjectIdList(){
+        return iSubjectDao.querySubjectIdList();
     }
 }

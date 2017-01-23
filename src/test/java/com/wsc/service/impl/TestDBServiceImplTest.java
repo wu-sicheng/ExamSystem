@@ -2,6 +2,7 @@ package com.wsc.service.impl;
 
 import com.wsc.pojo.Paper;
 import com.wsc.pojo.Question;
+import com.wsc.pojo.Subject;
 import com.wsc.service.inter.ITestDBService;
 import org.apache.ibatis.annotations.Param;
 import org.junit.Test;
@@ -123,17 +124,20 @@ public class TestDBServiceImplTest {
 
     @Test
     public void queryPaper() throws Exception {
-
+        Paper paper=iTestDBService.queryPaper(4,2);
+        LOGGER.info(paper.toString());
     }
 
     @Test
     public void queryPaperList() throws Exception {
-
+        List<Paper> list=iTestDBService.queryPaperList(4,1,2);
+        LOGGER.info(list.toString());
     }
 
     @Test
     public void queryPaperBySubjectId() throws Exception {
-
+        List<Paper> list=iTestDBService.queryPaperBySubjectId(4,2);
+        LOGGER.info(list.toString());
     }
 
     @Test
@@ -143,12 +147,14 @@ public class TestDBServiceImplTest {
 
     @Test
     public void createSubject() throws Exception {
-
+        Subject subject=new Subject(2,"subjectName3",new Date(),new Date(),1);
+        iTestDBService.createSubject(4,subject);
     }
 
     @Test
     public void deleteSubject() throws Exception {
-
+        Subject subject=iTestDBService.deleteSubject(4,1);
+        LOGGER.info(subject.toString());
     }
 
     @Test

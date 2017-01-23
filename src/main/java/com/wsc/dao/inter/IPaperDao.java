@@ -1,6 +1,7 @@
 package com.wsc.dao.inter;
 
 import com.wsc.pojo.Paper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -39,10 +40,12 @@ public interface IPaperDao {
     /**
      * 查询试题
      * @param fromPaperId 开始的paperId
-     * @param  manyPaperId 数量
+     * @param  toPaperId 数量
      * @return 查询到的paper
      */
-    List<Paper> queryPaperList(int fromPaperId,int manyPaperId);
+    List<Paper> queryPaperList(@Param("fromPaperId") int fromPaperId,@Param("toPaperId") int toPaperId);
 
     List<Integer> queryPaperIdList();
+
+    List<Paper> queryPaperBySubjectId(int subjectId);
 }
