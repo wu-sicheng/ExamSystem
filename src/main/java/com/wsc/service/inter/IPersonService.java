@@ -36,20 +36,20 @@ public interface IPersonService {
 
 
     /**
-     * 教师及管理员的权限管理
+     * 权限管理
      */
-    boolean createPerson(int teacherId);
-    boolean deletePerson(int teacherId);
-    boolean updatePerson(int teacherId);
-    boolean queryPerson(int teacherId);
+    boolean createPerson(int powerId);
+    boolean deletePerson(int powerId);
+    boolean updatePerson(int powerId);
+    boolean queryPerson(int powerId);
 
-    boolean createTestDB(int teacherId);
-    boolean deleteTestDB(int teacherId);
-    boolean updateTestDB(int teacherId);
-    boolean queryTestDB(int teacherId);
+    boolean createTestDB(int powerId);
+    boolean deleteTestDB(int powerId);
+    boolean updateTestDB(int powerId);
+    boolean queryTestDB(int powerId);
 
-    boolean createResult(int teacherId);
-    boolean deleteResult(int teacherId);
-    boolean updateResult(int teacherId);
-    boolean queryResult(int teacherId);
+    boolean createResult(int powerId);
+    boolean deleteResult(int powerId);
+    boolean updateResult(int powerId);
+    boolean queryResult(int powerId);
 }

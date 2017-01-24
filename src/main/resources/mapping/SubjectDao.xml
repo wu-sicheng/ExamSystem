@@ -20,5 +20,13 @@
         SELECT * FROM subject WHERE subjectId=#{subjectId} AND subjectState=1;
     </select>
 
+    <update id="updateSubject" parameterType="Subject">
+        UPDATE subject SET  subjectName=#{subjectName} WHERE subjectId=#{subjectId} AND subjectState=1;
+    </update>
+
+    <select id="querySubjectList" resultType="Subject">
+        SELECT * FROM subject WHERE subjectId <![CDATA[>=]]> #{fromSubjectId} AND subjectId <![CDATA[<=]]> #{toSubjectId} AND subjectState=1;
+    </select>
+
 
 </mapper>

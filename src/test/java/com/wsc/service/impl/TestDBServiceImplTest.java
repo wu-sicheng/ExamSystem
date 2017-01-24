@@ -159,17 +159,21 @@ public class TestDBServiceImplTest {
 
     @Test
     public void updateSubject() throws Exception {
-
+        Subject subject=new Subject(3,"change",new Date(),new Date(),1);
+        Subject subjectRe=iTestDBService.updateSubject(4,subject);
+        LOGGER.info(subjectRe.toString());
     }
 
     @Test
     public void querySubject() throws Exception {
-
+        Subject subject=iTestDBService.querySubject(4,2);
+        LOGGER.info(subject.toString());
     }
 
     @Test
     public void querySubjectList() throws Exception {
-
+        List<Subject> subjects=iTestDBService.querySubjectList(4,1,2);
+        LOGGER.info(subjects.toString());
     }
 
 }

@@ -11,6 +11,8 @@ import com.wsc.pojo.Manager;
 import com.wsc.pojo.Student;
 import com.wsc.pojo.Teacher;
 import com.wsc.service.inter.IPersonService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +24,7 @@ import java.util.List;
  */
 @Service
 public class PersonServiceImpl implements IPersonService {
+    private static final Logger LOGGER= LoggerFactory.getLogger(PersonServiceImpl.class);
 
     @Autowired
     private ITeacherDao iTeacherDao;
@@ -273,202 +276,199 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     /**
-     * 教师及管理员的权限管理
-     *
-     * @param teacherId
+     * 权限管理
+     * @param powerId
      */
     @Override
-    public boolean createPerson(int teacherId) {
-        listTeacherId=getAllTeacherId();
-        if(listTeacherId.contains(teacherId)){
-            int teacherPower=iTeacherDao.queryTeacherPower(teacherId);
-            Manager manager=iManagerDao.queryManagerByManagerId(teacherPower);
+    public boolean createPerson(int powerId) {
+        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
+        try {
             if(manager.getCreateStudent()==1&&manager.getCreateTeacher()==1&&manager.getCreateTheClass()==1){
                 return true;
             }
             else{
                 return false;
             }
+        }catch (NullPointerException e){
+            LOGGER.info(e.getMessage());
+            throw new ManagerException("找不到所示权限");
         }
-        throw new ManagerException("找不到所示的权限");
     }
 
     @Override
-    public boolean deletePerson(int teacherId) {
-        listTeacherId=getAllTeacherId();
-        if(listTeacherId.contains(teacherId)){
-            int teacherPower=iTeacherDao.queryTeacherPower(teacherId);
-            Manager manager=iManagerDao.queryManagerByManagerId(teacherPower);
+    public boolean deletePerson(int powerId) {
+        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
+        try {
             if(manager.getDeleteTeacher()==1&&manager.getDeleteStudent()==1&&manager.getDeleteTheClass()==1){
                 return true;
             }
             else{
                 return false;
             }
+        }catch (NullPointerException e){
+            LOGGER.info(e.getMessage());
+            throw new ManagerException("找不到所示权限");
         }
-        throw new ManagerException("找不到所示的权限");
     }
 
     @Override
-    public boolean updatePerson(int teacherId) {
-        listTeacherId=getAllTeacherId();
-        if(listTeacherId.contains(teacherId)){
-            int teacherPower=iTeacherDao.queryTeacherPower(teacherId);
-            Manager manager=iManagerDao.queryManagerByManagerId(teacherPower);
+    public boolean updatePerson(int powerId) {
+        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
+        try {
             if(manager.getUpdateStudent()==1&&manager.getUpdateTeacher()==1&&manager.getUpdateTheClass()==1){
                 return true;
             }
             else{
                 return false;
             }
+        }catch (NullPointerException e){
+            LOGGER.info(e.getMessage());
+            throw new ManagerException("找不到所示权限");
         }
-        throw new ManagerException("找不到所示的权限");
     }
 
     @Override
-    public boolean queryPerson(int teacherId) {
-        listTeacherId=getAllTeacherId();
-        if(listTeacherId.contains(teacherId)){
-            int teacherPower=iTeacherDao.queryTeacherPower(teacherId);
-            Manager manager=iManagerDao.queryManagerByManagerId(teacherPower);
+    public boolean queryPerson(int powerId) {
+        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
+        try {
             if(manager.getQueryStudent()==1&&manager.getQueryTeacher()==1&&manager.getQueryTheClass()==1){
                 return true;
             }
             else{
                 return false;
             }
+        }catch (NullPointerException e){
+            LOGGER.info(e.getMessage());
+            throw new ManagerException("找不到所示权限");
         }
-        throw new ManagerException("找不到所示的权限");
     }
 
     @Override
-    public boolean createTestDB(int teacherId) {
-        listTeacherId=getAllTeacherId();
-        if(listTeacherId.contains(teacherId)){
-            int teacherPower=iTeacherDao.queryTeacherPower(teacherId);
-            Manager manager=iManagerDao.queryManagerByManagerId(teacherPower);
+    public boolean createTestDB(int powerId) {
+        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
+        try {
             if(manager.getCreateQuestion()==1&&manager.getCreatePaper()==1){
                 return true;
             }
             else{
                 return false;
             }
-        }
-        else{
-            throw new ManagerException("找不到所示的权限");
+        }catch (NullPointerException e){
+            LOGGER.info(e.getMessage());
+            throw new ManagerException("找不到所示权限");
         }
     }
 
     @Override
-    public boolean deleteTestDB(int teacherId) {
-        listTeacherId=getAllTeacherId();
-        if(listTeacherId.contains(teacherId)){
-            int teacherPower=iTeacherDao.queryTeacherPower(teacherId);
-            Manager manager=iManagerDao.queryManagerByManagerId(teacherPower);
+    public boolean deleteTestDB(int powerId) {
+        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
+        try {
             if(manager.getDeletePaper()==1&&manager.getDeleteQuestion()==1){
                 return true;
             }
             else{
                 return false;
             }
+        }catch (NullPointerException e){
+            LOGGER.info(e.getMessage());
+            throw new ManagerException("找不到所示权限");
         }
-        throw new ManagerException("找不到所示的权限");
     }
 
     @Override
-    public boolean updateTestDB(int teacherId) {
-        listTeacherId=getAllTeacherId();
-        if(listTeacherId.contains(teacherId)){
-            int teacherPower=iTeacherDao.queryTeacherPower(teacherId);
-            Manager manager=iManagerDao.queryManagerByManagerId(teacherPower);
+    public boolean updateTestDB(int powerId) {
+        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
+        try {
             if(manager.getUpdatePaper()==1&&manager.getUpdateQuestion()==1){
                 return true;
             }
             else{
                 return false;
             }
+        }catch (NullPointerException e){
+            LOGGER.info(e.getMessage());
+            throw new ManagerException("找不到所示权限");
         }
-        throw new ManagerException("找不到所示的权限");
     }
 
     @Override
-    public boolean queryTestDB(int teacherId) {
-        listTeacherId=getAllTeacherId();
-        if(listTeacherId.contains(teacherId)){
-            int teacherPower=iTeacherDao.queryTeacherPower(teacherId);
-            Manager manager=iManagerDao.queryManagerByManagerId(teacherPower);
+    public boolean queryTestDB(int powerId) {
+        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
+        try {
             if(manager.getQueryPaper()==1&&manager.getQueryQuestion()==1){
                 return true;
             }
             else{
                 return false;
             }
+        }catch (NullPointerException e){
+            LOGGER.info(e.getMessage());
+            throw new ManagerException("找不到所示权限");
         }
-        throw new ManagerException("找不到所示的权限");
     }
 
     @Override
-    public boolean createResult(int teacherId) {
-        listTeacherId=getAllTeacherId();
-        if(listTeacherId.contains(teacherId)){
-            int teacherPower=iTeacherDao.queryTeacherPower(teacherId);
-            Manager manager=iManagerDao.queryManagerByManagerId(teacherPower);
+    public boolean createResult(int powerId) {
+        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
+        try {
             if(manager.getCreateResult()==1){
                 return true;
             }
             else{
                 return false;
             }
+        }catch (NullPointerException e){
+            LOGGER.info(e.getMessage());
+            throw new ManagerException("找不到所示权限");
         }
-        throw new ManagerException("找不到所示的权限");
     }
 
     @Override
-    public boolean deleteResult(int teacherId) {
-        listTeacherId=getAllTeacherId();
-        if(listTeacherId.contains(teacherId)){
-            int teacherPower=iTeacherDao.queryTeacherPower(teacherId);
-            Manager manager=iManagerDao.queryManagerByManagerId(teacherPower);
+    public boolean deleteResult(int powerId) {
+        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
+        try {
             if(manager.getDeleteResult()==1){
                 return true;
             }
             else{
                 return false;
             }
+        }catch (NullPointerException e){
+            LOGGER.info(e.getMessage());
+            throw new ManagerException("找不到所示权限");
         }
-        throw new ManagerException("找不到所示的权限");
     }
 
     @Override
-    public boolean updateResult(int teacherId) {
-        listTeacherId=getAllTeacherId();
-        if(listTeacherId.contains(teacherId)){
-            int teacherPower=iTeacherDao.queryTeacherPower(teacherId);
-            Manager manager=iManagerDao.queryManagerByManagerId(teacherPower);
+    public boolean updateResult(int powerId) {
+        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
+        try {
             if(manager.getUpdateResult()==1){
                 return true;
             }
             else{
                 return false;
             }
+        }catch (NullPointerException e){
+            LOGGER.info(e.getMessage());
+            throw new ManagerException("找不到所示权限");
         }
-        throw new ManagerException("找不到所示的权限");
     }
 
     @Override
-    public boolean queryResult(int teacherId) {
-        listTeacherId=getAllTeacherId();
-        if(listTeacherId.contains(teacherId)){
-            int teacherPower=iTeacherDao.queryTeacherPower(teacherId);
-            Manager manager=iManagerDao.queryManagerByManagerId(teacherPower);
+    public boolean queryResult(int powerId) {
+        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
+        try {
             if(manager.getQueryResult()==1){
                 return true;
             }
             else{
                 return false;
             }
+        }catch (NullPointerException e){
+            LOGGER.info(e.getMessage());
+            throw new ManagerException("找不到所示权限");
         }
-        throw new ManagerException("找不到所示的权限");
     }
 
     private List<Integer> getAllTeacherId(){

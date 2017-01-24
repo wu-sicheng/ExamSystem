@@ -14,21 +14,21 @@ public interface ITestDBService {
     /**
      * 试题
      */
-    boolean createQuestion(int teacherId,Question question);
+    boolean createQuestion(int powerId,Question question);
 
-    void createQuestionList(int teacherId,List<Question> questions);
+    void createQuestionList(int powerId,List<Question> questions);
 
-    Question deleteQuestion(int teacherId,int questionId);
+    Question deleteQuestion(int powerId,int questionId);
 
-    Question updateQuestion(int teacherId,int questionId,Question question);
+    Question updateQuestion(int powerId,int questionId,Question question);
 
-    Question queryQuestion(int teacherId,int questionId);
+    Question queryQuestion(int powerId,int questionId);
 
-    List<Question> queryQuestionByQuestionType(int teacherId,int questionType);
+    List<Question> queryQuestionByQuestionType(int powerId,int questionType);
 
-    List<Question> queryQuestionList(int teacherId,int fromQuestionId, int manyQuestionId);
+    List<Question> queryQuestionList(int powerId,int fromQuestionId, int manyQuestionId);
 
-    List<Question> queryQuestionListBySubject(int teacherId,int subjectId);
+    List<Question> queryQuestionListBySubject(int powerId,int subjectId);
 
     File outPutQuestionBySubject(int subjectId);
 
@@ -38,38 +38,38 @@ public interface ITestDBService {
      * 试卷
      */
 
-    boolean createPaper(int teacherId,Paper paper);
+    boolean createPaper(int powerId,Paper paper);
 
-    void createPaperTemple1(int teacherId,String questionId);
+    void createPaperTemple1(int powerId,String questionId);
 
-    void createPaperTemple2(int teacherId,String questionId);
+    void createPaperTemple2(int powerId,String questionId);
 
-    void createPaperTemple3(int teacherId,String questionId);
+    void createPaperTemple3(int powerId,String questionId);
 
-    Paper deletePaper(int teacherId,int paperId);
+    Paper deletePaper(int powerId,int paperId);
 
-    Paper updatePaper(int teacherId,int paperId,Paper paper);
+    Paper updatePaper(int powerId,int paperId,Paper paper);
 
-    Paper queryPaper(int teacherId,int paperId);
+    Paper queryPaper(int powerId,int paperId);
 
-    List<Paper> queryPaperList(int teacherId,int fromPaperId,int manyPaperId);
+    List<Paper> queryPaperList(int powerId,int fromPaperId,int manyPaperId);
 
-    List<Paper> queryPaperBySubjectId(int teacherId,int subjectId);
+    List<Paper> queryPaperBySubjectId(int powerId,int subjectId);
 
     File outputPaperByPaperId(int paperId);
 
     /**
      * 科目
      */
-    boolean createSubject(int teacherId,Subject subject);
+    boolean createSubject(int powerId,Subject subject);
 
-    Subject deleteSubject(int teacherId,int subjectId);
+    Subject deleteSubject(int powerId,int subjectId);
 
-    Subject updateSubject(int teacherId,Subject subject);
+    Subject updateSubject(int powerId,Subject subject);
 
-    Subject querySubject(int teacherId,int subjectId);
+    Subject querySubject(int powerId,int subjectId);
 
-    List<Subject> querySubjectList(int teacherId,int formSubjectId,int manySubjectId);
+    List<Subject> querySubjectList(int powerId,int formSubjectId,int manySubjectId);
 
 
 }

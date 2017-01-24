@@ -22,4 +22,7 @@ dependencies {
 
     /*连接池*/
     compile 'com.alibaba:druid:1.0.26'
+
+    /*时间处理，joda-time*/
+    compile 'joda-time:joda-time:2.9.6'
 }

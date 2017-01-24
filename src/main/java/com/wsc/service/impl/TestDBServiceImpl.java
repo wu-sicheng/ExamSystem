@@ -11,9 +11,10 @@ import com.wsc.pojo.Question;
 import com.wsc.pojo.Subject;
 import com.wsc.service.inter.IPersonService;
 import com.wsc.service.inter.ITestDBService;
-import org.apache.ibatis.io.ResolverUtil;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -51,9 +52,9 @@ public class TestDBServiceImpl implements ITestDBService{
      * 试题
      */
     @Override
-    public boolean createQuestion(int teacherId, Question question) {
+    public boolean createQuestion(int powerId, Question question) {
         questionIdList=getQuestionIdList();
-        if(iPersonService.createTestDB(teacherId)){
+        if(iPersonService.createTestDB(powerId)){
             if(!questionIdList.contains(question.getQuestionId())){
                 iQuestionDao.createQuestion(question);
                 return true;
@@ -68,9 +69,9 @@ public class TestDBServiceImpl implements ITestDBService{
     }
 
     @Override
-    public void createQuestionList(int teacherId, List<Question> questions) {
+    public void createQuestionList(int powerId, List<Question> questions) {
         questionIdList=getQuestionIdList();
-        if(iPersonService.createTestDB(teacherId)){
+        if(iPersonService.createTestDB(powerId)){
             for(int i=0;i<questions.size();i++){
                 if(!questionIdList.contains(questions.get(i).getQuestionId())){
                     iQuestionDao.createQuestion(questions.get(i));
@@ -86,10 +87,10 @@ public class TestDBServiceImpl implements ITestDBService{
     }
 
     @Override
-    public Question deleteQuestion(int teacherId, int questionId) {
+    public Question deleteQuestion(int powerId, int questionId) {
         questionIdList=getQuestionIdList();
         Question question=null;
-        if(iPersonService.deleteTestDB(teacherId)){
+        if(iPersonService.deleteTestDB(powerId)){
             if(questionIdList.contains(questionId)){
                 question=iQuestionDao.queryQuestion(questionId);
                 iQuestionDao.deleteQuestion(questionId);
@@ -106,10 +107,10 @@ public class TestDBServiceImpl implements ITestDBService{
     }
 
     @Override
-    public Question updateQuestion(int teacherId, int questionId, Question question) {
+    public Question updateQuestion(int powerId, int questionId, Question question) {
         questionIdList=getQuestionIdList();
         Question questionRe=null;
-        if(iPersonService.updateTestDB(teacherId)){
+        if(iPersonService.updateTestDB(powerId)){
             if(questionIdList.contains(questionId)){
                 questionRe=iQuestionDao.queryQuestion(questionId);
                 question.setQuestionId(questionId);
@@ -127,9 +128,9 @@ public class TestDBServiceImpl implements ITestDBService{
     }
 
     @Override
-    public Question queryQuestion(int teacherId, int questionId) {
+    public Question queryQuestion(int powerId, int questionId) {
         questionIdList=getQuestionIdList();
-        if(iPersonService.queryTestDB(teacherId)){
+        if(iPersonService.queryTestDB(powerId)){
             if(questionIdList.contains(questionId)){
                 return iQuestionDao.queryQuestion(questionId);
             }
@@ -144,9 +145,9 @@ public class TestDBServiceImpl implements ITestDBService{
     }
 
     @Override
-    public List<Question> queryQuestionByQuestionType(int teacherId, int questionType) {
+    public List<Question> queryQuestionByQuestionType(int powerId, int questionType) {
         List<Question> questions=null;
-        if(iPersonService.queryTestDB(teacherId)){
+        if(iPersonService.queryTestDB(powerId)){
             questions=iQuestionDao.queryQuestionByQuestionType(questionType);
             try{
                 if(questions.get(0)!=null){
@@ -161,8 +162,8 @@ public class TestDBServiceImpl implements ITestDBService{
     }
 
     @Override
-    public List<Question> queryQuestionList(int teacherId, int fromQuestionId, int toQuestionId) {
-        if(iPersonService.queryTestDB(teacherId)){
+    public List<Question> queryQuestionList(int powerId, int fromQuestionId, int toQuestionId) {
+        if(iPersonService.queryTestDB(powerId)){
             List<Question> questions=iQuestionDao.queryQuestionList(fromQuestionId,toQuestionId);
             return questions;
         }
@@ -172,8 +173,8 @@ public class TestDBServiceImpl implements ITestDBService{
     }
 
     @Override
-    public List<Question> queryQuestionListBySubject(int teacherId, int subjectId) {
-        if(iPersonService.queryTestDB(teacherId)){
+    public List<Question> queryQuestionListBySubject(int powerId, int subjectId) {
+        if(iPersonService.queryTestDB(powerId)){
             List<Question> questions=iQuestionDao.queryQuestionBySubjectId(subjectId);
             return questions;
         }
@@ -196,9 +197,9 @@ public class TestDBServiceImpl implements ITestDBService{
      * 试卷
      */
     @Override
-    public boolean createPaper(int teacherId, Paper paper) {
+    public boolean createPaper(int powerId, Paper paper) {
         paperIdList=qetPapaerIdList();
-        if(iPersonService.createTestDB(teacherId)){
+        if(iPersonService.createTestDB(powerId)){
             if(!paperIdList.contains(paper.getPaperId())){
                 iPaperDao.createPaper(paper);
                 return true;
@@ -216,9 +217,9 @@ public class TestDBServiceImpl implements ITestDBService{
 
 
     @Override
-    public void createPaperTemple1(int teacherId, String questionId) {
+    public void createPaperTemple1(int powerId, String questionId) {
         paperIdList=qetPapaerIdList();
-        if(iPersonService.createTestDB(teacherId)){
+        if(iPersonService.createTestDB(powerId)){
             //TODO
         }
         else{
@@ -228,20 +229,20 @@ public class TestDBServiceImpl implements ITestDBService{
     }
 
     @Override
-    public void createPaperTemple2(int teacherId, String questionId) {
+    public void createPaperTemple2(int powerId, String questionId) {
         //TODO
     }
 
     @Override
-    public void createPaperTemple3(int teacherId, String questionId) {
+    public void createPaperTemple3(int powerId, String questionId) {
         //TODO
     }
 
     @Override
-    public Paper deletePaper(int teacherId, int paperId) {
+    public Paper deletePaper(int powerId, int paperId) {
         paperIdList=qetPapaerIdList();
         Paper paper=null;
-        if(iPersonService.deleteTestDB(teacherId)){
+        if(iPersonService.deleteTestDB(powerId)){
             if(paperIdList.contains(paperId)){
                 paper=iPaperDao.queryPaper(paperId);
                 iPaperDao.deletePaper(paperId);
@@ -259,10 +260,10 @@ public class TestDBServiceImpl implements ITestDBService{
     }
 
     @Override //TODO //ERROR
-    public Paper updatePaper(int teacherId, int paperId, Paper paper) {
+    public Paper updatePaper(int powerId, int paperId, Paper paper) {
         paperIdList=qetPapaerIdList();
         Paper paperRe=null;
-        if(iPersonService.updateTestDB(teacherId)){
+        if(iPersonService.updateTestDB(powerId)){
             if(paperIdList.contains(paperId)){
                 paper=iPaperDao.queryPaper(paperId);
                 paper.setPaperId(paperId);
@@ -282,9 +283,9 @@ public class TestDBServiceImpl implements ITestDBService{
     }
 
     @Override
-    public Paper queryPaper(int teacherId, int paperId) {
+    public Paper queryPaper(int powerId, int paperId) {
         paperIdList=qetPapaerIdList();
-        if(iPersonService.queryTestDB(teacherId)){
+        if(iPersonService.queryTestDB(powerId)){
             if(paperIdList.contains(paperId)){
                 return iPaperDao.queryPaper(paperId);
             }
@@ -300,8 +301,8 @@ public class TestDBServiceImpl implements ITestDBService{
     }
 
     @Override
-    public List<Paper> queryPaperList(int teacherId, int fromPaperId, int toPaperId) {
-        if(iPersonService.queryTestDB(teacherId)){
+    public List<Paper> queryPaperList(int powerId, int fromPaperId, int toPaperId) {
+        if(iPersonService.queryTestDB(powerId)){
             List<Paper> paperRe=iPaperDao.queryPaperList(fromPaperId,toPaperId);
             try{
                 if(paperRe.get(0)!=null){
@@ -317,8 +318,8 @@ public class TestDBServiceImpl implements ITestDBService{
     }
 
     @Override
-    public List<Paper> queryPaperBySubjectId(int teacherId, int subjectId) {
-        if(iPersonService.queryTestDB(teacherId)){
+    public List<Paper> queryPaperBySubjectId(int powerId, int subjectId) {
+        if(iPersonService.queryTestDB(powerId)){
             List<Paper> paperRe=iPaperDao.queryPaperBySubjectId(subjectId);
             try{
                 if(paperRe.get(0)!=null){
@@ -341,13 +342,13 @@ public class TestDBServiceImpl implements ITestDBService{
     /**
      * 科目
      *
-     * @param teacherId
+     * @param powerId
      * @param subject
      */
     @Override
-    public boolean createSubject(int teacherId, Subject subject) {
+    public boolean createSubject(int powerId, Subject subject) {
         subjectIdList=getSubjectIdList();
-        if(iPersonService.createTestDB(teacherId)){
+        if(iPersonService.createTestDB(powerId)){
             if(!subjectIdList.contains(subject.getSubjectId())){
                 iSubjectDao.createSubject(subject);
                 return true;
@@ -364,9 +365,9 @@ public class TestDBServiceImpl implements ITestDBService{
     }
 
     @Override
-    public Subject deleteSubject(int teacherId, int subjectId) {
+    public Subject deleteSubject(int powerId, int subjectId) {
         subjectIdList=getSubjectIdList();
-        if(iPersonService.createTestDB(teacherId)){
+        if(iPersonService.deleteTestDB(powerId)){
             if(subjectIdList.contains(subjectId)){
                 Subject subject=iSubjectDao.querySubject(subjectId);
                 iSubjectDao.deleteSubject(subjectId);
@@ -384,18 +385,59 @@ public class TestDBServiceImpl implements ITestDBService{
     }
 
     @Override
-    public Subject updateSubject(int teacherId, Subject subject) {
-        return null;
+    public Subject updateSubject(int powerId, Subject subject) {
+        subjectIdList=getSubjectIdList();
+        if(iPersonService.updateTestDB(powerId)){
+            if(subjectIdList.contains(subject.getSubjectId())){
+                Subject subjectRe=iSubjectDao.querySubject(subject.getSubjectId());
+                iSubjectDao.updateSubject(subject);
+                return subjectRe;
+            }
+            else{
+                LOGGER.info("数据库subject中没有id为"+subject.getSubjectId()+"的数据");
+                throw new TestDBException("数据库subject中没有id为"+subject.getSubjectId()+"的数据");
+            }
+        }
+        else{
+            LOGGER.info("没有权限创建数据");
+            throw new ManagerException("没有权限");
+        }
     }
 
     @Override
-    public Subject querySubject(int teacherId, int subjectId) {
-        return null;
+    public Subject querySubject(int powerId, int subjectId) {
+        subjectIdList=getSubjectIdList();
+        if(iPersonService.queryTestDB(powerId)){
+            if(subjectIdList.contains(subjectId)){
+                return iSubjectDao.querySubject(subjectId);
+            }
+            else{
+                LOGGER.info("数据库subject中没有id为"+subjectId+"的数据");
+                throw new TestDBException("数据库subject中没有id为"+subjectId+"的数据");
+            }
+        }
+        else{
+            LOGGER.info("没有权限创建数据");
+            throw new ManagerException("没有权限");
+        }
     }
 
     @Override
-    public List<Subject> querySubjectList(int teacherId, int formSubjectId, int manySubjectId) {
-        return null;
+    public List<Subject> querySubjectList(int powerId, int fromSubjectId, int toSubjectId) {
+        List<Subject> subjects=null;
+        if(iPersonService.queryTestDB(powerId)){
+            subjects=iSubjectDao.querySubjectList(fromSubjectId,toSubjectId);
+            try{
+                if(subjects.get(0)!=null){
+                    return subjects;
+                }
+            }catch (IndexOutOfBoundsException e){
+                LOGGER.info(e.getMessage());
+                throw new TestDBException("数据库subject找不到数据符合条件的数据");
+            }
+        }
+        LOGGER.info("没有权限创建数据");
+        throw new ManagerException("没有权限");
     }
 
     private List<Integer> getQuestionIdList(){

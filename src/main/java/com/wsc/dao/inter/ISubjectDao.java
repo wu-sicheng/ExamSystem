@@ -1,6 +1,8 @@
 package com.wsc.dao.inter;
 
 import com.wsc.pojo.Subject;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 /**
@@ -9,9 +11,9 @@ import java.util.List;
 public interface ISubjectDao {
     boolean createSubject(Subject subject);
     void deleteSubject(int subjectId);
-    Subject updateSubject(Subject subject);
+    void updateSubject(Subject subject);
     Subject querySubject(int subjectId);
-    List<Subject> querySubjectList(int formSubjectId,int manySubjectId);
+    List<Subject> querySubjectList(@Param("fromSubjectId") int fromSubjectId,@Param("toSubjectId") int toSubjectId);
 
     List<Integer> querySubjectIdList();
 }
