@@ -19,11 +19,15 @@ public interface IExamService {
     /*
     学生考试的相关信息
      */
-    List<ExamMess> getExamMess(int powerId,int studentId);
+    List<ExamMess> getExamMess(int studentId);
 
     /*
     考试学生的做题
      */
+    boolean canExam(int studentId,int paperId);
+
+
+
 
 
 }

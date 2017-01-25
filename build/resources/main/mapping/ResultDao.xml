@@ -11,23 +11,26 @@
     </insert>
 
     <!--删除一个result-->
-    <update id="deleteResult" parameterType="int">
-        UPDATE result SET resultState=0 WHERE resultId=#{resultId};
+    <update id="deleteResult" parameterType="Integer">
+        UPDATE result SET resultState=0,resultDeleteTime=now() WHERE resultId=#{resultId};
     </update>
 
     <!--更新一个result-->
     <update id="updateResult">
-        UPDATE result SET studentId=#{studentId},paperId=#{paperId},
-        resultScorce=#{resultScorce},resultDetail=#{resultDetail};
+        UPDATE result SET studentId=#{studentId},paperId=#{paperId},resultScorce=#{resultScorce},resultDetail=#{resultDetail} WHERE resultId=#{resultId} AND resultState=1;
     </update>
 
     <!--查询一个Result-->
-    <select id="queryResult" parameterType="int">
-        SELECT * FROM result WHERE resultId=#{resultId};
+    <select id="queryResult" parameterType="Integer" resultType="Result">
+        SELECT * FROM result WHERE resultId=#{resultId} AND resultState=1;
     </select>
 
     <!--查询一个结果集-->
-    <select id="queryResultList">
-        SELECT * FROM result WHERE resultId <![CDATA[>=]]]> #{fromResultId} AND resultId <![CDATA[<]]]> #{fromResultId+manyResultId};
+    <select id="queryResultList" resultType="Result">
+        SELECT * FROM result WHERE resultId <![CDATA[>=]]> #{fromResultId} AND resultId <![CDATA[<=]]> #{toResultId} AND resultState=1;
+    </select>
+
+    <select id="queryResultIdList" resultType="Integer">
+        SELECT resultId FROM result WHERE resultState=1;
     </select>
 </mapper>

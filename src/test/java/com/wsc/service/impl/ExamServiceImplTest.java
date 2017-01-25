@@ -1,6 +1,7 @@
 package com.wsc.service.impl;
 
 import com.wsc.dto.Exam;
+import com.wsc.dto.ExamMess;
 import com.wsc.dto.ExamPaper;
 import com.wsc.service.inter.IExamService;
 import org.joda.time.DateTime;
@@ -14,6 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import javax.annotation.Resource;
 
 import java.sql.Date;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -32,5 +34,17 @@ public class ExamServiceImplTest {
     public void getExamPaper() throws Exception {
         ExamPaper examPaper=iExamService.getExamPaper(1,2);
         LOGGER.info(examPaper.toString());
+    }
+
+    @Test
+    public void getExamMess() throws Exception{
+        List<ExamMess> examMess=iExamService.getExamMess(7);
+        LOGGER.info(examMess.toString());
+    }
+
+    @Test
+    public void canExam() throws Exception{
+        boolean b=iExamService.canExam(7,2);
+        LOGGER.info(String.valueOf(b));
     }
 }

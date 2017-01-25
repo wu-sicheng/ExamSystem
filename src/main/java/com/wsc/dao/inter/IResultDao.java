@@ -1,6 +1,8 @@
 package com.wsc.dao.inter;
 
 import com.wsc.pojo.Result;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 /**
@@ -13,22 +15,21 @@ public interface IResultDao {
      * @param result 结果
      * @return 是否创建成功
      */
-    boolean createResult(Result result);
+    void createResult(Result result);
 
     /**
      * 通过id删除一个结果，将state置为0，添加删除时间
      * @param resultId 删除的id
      * @return 删除的结果
      */
-    Result deleteResult(int resultId);
+    void deleteResult(int resultId);
 
     /**
      * 通过resultId更新结果
-     * @param resultId
      * @param result
      * @return 更新前的结果
      */
-    Result updateResult(int resultId,Result result);
+    void updateResult(Result result);
 
     /**
      * 通过id来查询一个结果
@@ -40,8 +41,12 @@ public interface IResultDao {
     /**
      * 查询结果集
      * @param fromResultId 开始的id
-     * @param manyResultId 结束的id
+     * @param toResultId 结束的id
      * @return 查询的id
      */
-    List<Result> queryResultList(int fromResultId,int manyResultId);
+    List<Result> queryResultList(@Param("fromResultId")int fromResultId,@Param("toResultId")int toResultId);
+
+    List<Integer> queryResultIdList();
+
+    List<Result> queryResultListByStudentId(int studentId);
 }
