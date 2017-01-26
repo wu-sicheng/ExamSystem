@@ -1,5 +1,6 @@
 package com.wsc.service.impl;
 
+import com.sun.org.apache.regexp.internal.RE;
 import com.wsc.pojo.Result;
 import com.wsc.service.inter.IResultService;
 import org.junit.Test;
@@ -55,12 +56,14 @@ public class ResultServiceImplTest {
 
     @Test
     public void queryResultListByStudentId() throws Exception {
-
+        List<Result> results=iResultService.queryResultListByStudentId(1,1);
+        LOGGER.info(results.toString());
     }
 
     @Test
     public void queryResultListByPaperId() throws Exception {
-
+        List<Result> results=iResultService.queryResultListByPaperId(1,2);
+        LOGGER.info(results.toString());
     }
 
 }

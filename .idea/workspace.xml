@@ -2,26 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86f9bc11-dc71-4a55-ac9b-0e1004cc31bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/exceptions/ResultException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/ResultServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/ResultServiceImplTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/dao/inter/IResultDao.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/dao/inter/IResultDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/dto/ExamMess.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/dto/ExamMess.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/pojo/Result.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/pojo/Result.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/service/impl/ExamServiceImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/service/impl/ExamServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/service/inter/IExamService.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/service/inter/IExamService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/service/inter/IResultService.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/service/inter/IResultService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/test/com/wsc/service/impl/ExamServiceImplTest.class" afterPath="$PROJECT_DIR$/build/classes/test/com/wsc/service/impl/ExamServiceImplTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/mapping/ResultDao.xml" afterPath="$PROJECT_DIR$/build/resources/main/mapping/ResultDao.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IResultDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IResultDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/dto/ExamMess.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/dto/ExamMess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/pojo/Result.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/pojo/Result.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/ExamServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/ExamServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IExamService.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IExamService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/ResultServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/ResultServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IResultService.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IResultService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapping/ResultDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/ResultDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/ExamServiceImplTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/ExamServiceImplTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/ResultServiceImplTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/ResultServiceImplTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -124,14 +109,12 @@
       <file leaf-file-name="ResultServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/impl/ResultServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="151" column="20" lean-forward="false" selection-start-line="151" selection-start-column="20" selection-end-line="151" selection-end-column="20" />
+            <state relative-caret-position="1037">
+              <caret line="198" column="0" lean-forward="true" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5516#5517#0" expanded="true" />
-                <element signature="e#5543#5544#0" expanded="true" />
-                <element signature="e#5589#5590#0" expanded="true" />
-                <element signature="e#5642#5643#0" expanded="true" />
+                <element signature="e#6956#6957#0" expanded="true" />
+                <element signature="e#7009#7010#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -140,8 +123,8 @@
       <file leaf-file-name="ResultServiceImplTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/wsc/service/impl/ResultServiceImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="51" column="65" lean-forward="false" selection-start-line="51" selection-start-column="65" selection-end-line="51" selection-end-column="65" />
+            <state relative-caret-position="313">
+              <caret line="65" column="40" lean-forward="false" selection-start-line="65" selection-start-column="40" selection-end-line="65" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -152,19 +135,20 @@
       <file leaf-file-name="ResultDao.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/ResultDao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="37" column="76" lean-forward="false" selection-start-line="37" selection-start-column="76" selection-end-line="37" selection-end-column="76" />
+            <state relative-caret-position="601">
+              <caret line="41" column="72" lean-forward="false" selection-start-line="41" selection-start-column="72" selection-end-line="41" selection-end-column="72" />
               <folding>
-                <marker date="1485354516645" expanded="true" signature="259:472" ph="INSERT INTO result... " />
-                <marker date="1485354516645" expanded="true" signature="573:654" ph="UPDATE resul... " />
-                <marker date="1485354516645" expanded="true" signature="732:849" ph="UPDATE resul... " />
-                <marker date="1485354516645" expanded="true" signature="732:894" ph="UPDATE resul... " />
-                <marker date="1485354516645" expanded="true" signature="1015:1062" ph="SELECT * FRO... result" />
-                <marker date="1485354516645" expanded="true" signature="1015:1080" ph="SELECT * FRO... result" />
-                <marker date="1485354516645" expanded="true" signature="1178:1286" ph="SELECT * FRO... result" />
-                <marker date="1485354516645" expanded="true" signature="1178:1304" ph="SELECT * FRO... result" />
-                <marker date="1485354516645" expanded="true" signature="1386:1433" ph="SELECT resul... result" />
-                <marker date="1485354516645" expanded="true" signature="1523:1590" ph="SELECT * FRO... result" />
+                <marker date="1485401654222" expanded="true" signature="259:472" ph="INSERT INTO result... " />
+                <marker date="1485401654222" expanded="true" signature="573:654" ph="UPDATE resul... " />
+                <marker date="1485401654222" expanded="true" signature="732:849" ph="UPDATE resul... " />
+                <marker date="1485401654222" expanded="true" signature="732:894" ph="UPDATE resul... " />
+                <marker date="1485401654222" expanded="true" signature="1015:1062" ph="SELECT * FRO... result" />
+                <marker date="1485401654222" expanded="true" signature="1015:1080" ph="SELECT * FRO... result" />
+                <marker date="1485401654222" expanded="true" signature="1178:1286" ph="SELECT * FRO... result" />
+                <marker date="1485401654222" expanded="true" signature="1178:1304" ph="SELECT * FRO... result" />
+                <marker date="1485401654222" expanded="true" signature="1386:1433" ph="SELECT resul... result" />
+                <marker date="1485401654222" expanded="true" signature="1523:1590" ph="SELECT * FRO... result" />
+                <marker date="1485401654222" expanded="true" signature="1678:1741" ph="SELECT * FRO... result" />
               </folding>
             </state>
           </provider>
@@ -216,8 +200,8 @@
       <file leaf-file-name="IResultService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IResultService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="46" column="43" lean-forward="false" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="43" />
+            <state relative-caret-position="349">
+              <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -228,8 +212,8 @@
       <file leaf-file-name="IResultDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IResultDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="50" column="43" lean-forward="false" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="43" />
+            <state relative-caret-position="385">
+              <caret line="52" column="41" lean-forward="false" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -669,10 +653,10 @@
         <option value="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/ExamServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/pojo/Result.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/exceptions/ResultException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IResultService.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/ResultServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IResultDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/ResultDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IResultService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/wsc/service/impl/ResultServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/ResultServiceImpl.java" />
       </list>
     </option>
@@ -1007,59 +991,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ResultServiceImplTest.queryResultList">
-    <configuration default="false" name="ResultServiceImplTest.createResult" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.wsc.service.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ExamSystem_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.wsc.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.wsc.service.impl.ResultServiceImplTest" />
-      <option name="METHOD_NAME" value="createResult" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="ResultServiceImplTest.deleteResult" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.wsc.service.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ExamSystem_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.wsc.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.wsc.service.impl.ResultServiceImplTest" />
-      <option name="METHOD_NAME" value="deleteResult" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.ResultServiceImplTest.queryResultListByPaperId">
     <configuration default="false" name="ResultServiceImplTest.updateResult" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1125,6 +1057,58 @@
       <option name="PACKAGE_NAME" value="com.wsc.service.impl" />
       <option name="MAIN_CLASS_NAME" value="com.wsc.service.impl.ResultServiceImplTest" />
       <option name="METHOD_NAME" value="queryResultList" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ResultServiceImplTest.queryResultListByStudentId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.wsc.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ExamSystem_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.wsc.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.wsc.service.impl.ResultServiceImplTest" />
+      <option name="METHOD_NAME" value="queryResultListByStudentId" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ResultServiceImplTest.queryResultListByPaperId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.wsc.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ExamSystem_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.wsc.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.wsc.service.impl.ResultServiceImplTest" />
+      <option name="METHOD_NAME" value="queryResultListByPaperId" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1603,19 +1587,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.ExamSystemLocal" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.ResultServiceImplTest.createResult" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ResultServiceImplTest.deleteResult" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ResultServiceImplTest.updateResult" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.ResultServiceImplTest.queryResult" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.ResultServiceImplTest.queryResultList" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ResultServiceImplTest.updateResult" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ResultServiceImplTest.queryResult" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ResultServiceImplTest.queryResultList" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ResultServiceImplTest.queryResultListByStudentId" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.ResultServiceImplTest.queryResultListByPaperId" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ResultServiceImplTest.queryResultList" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ResultServiceImplTest.queryResult" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ResultServiceImplTest.updateResult" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ResultServiceImplTest.deleteResult" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.ResultServiceImplTest.createResult" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ResultServiceImplTest.queryResultListByPaperId" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ResultServiceImplTest.queryResultListByStudentId" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ResultServiceImplTest.queryResultList" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ResultServiceImplTest.queryResult" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ResultServiceImplTest.updateResult" />
       </list>
     </recent_temporary>
   </component>
@@ -1638,7 +1622,7 @@
       <workItem from="1484561987392" duration="5663000" />
       <workItem from="1484572191804" duration="98883000" />
       <workItem from="1485258587401" duration="12192000" />
-      <workItem from="1485351033061" duration="3664000" />
+      <workItem from="1485351033061" duration="8084000" />
     </task>
     <servers />
   </component>
@@ -1661,21 +1645,21 @@
     <history-entry file="ResultServiceImplTest_queryResultList - 2017.01.25 at 22h 26m 58s.xml">
       <configuration name="ResultServiceImplTest.queryResultList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ResultServiceImplTest_updateResult - 2017.01.25 at 22h 09m 12s.xml">
-      <configuration name="ResultServiceImplTest.updateResult" configurationId="JUnit" />
+    <history-entry file="ResultServiceImplTest_queryResultListByPaperId - 2017.01.26 at 11h 43m 26s.xml">
+      <configuration name="ResultServiceImplTest.queryResultListByPaperId" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ResultServiceImplTest_updateResult - 2017.01.25 at 22h 10m 15s.xml">
-      <configuration name="ResultServiceImplTest.updateResult" configurationId="JUnit" />
+    <history-entry file="ResultServiceImplTest_queryResultListByPaperId - 2017.01.26 at 11h 43m 58s.xml">
+      <configuration name="ResultServiceImplTest.queryResultListByPaperId" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ResultServiceImplTest_updateResult - 2017.01.25 at 22h 13m 57s.xml">
-      <configuration name="ResultServiceImplTest.updateResult" configurationId="JUnit" />
+    <history-entry file="ResultServiceImplTest_queryResultListByStudentId - 2017.01.26 at 11h 26m 56s.xml">
+      <configuration name="ResultServiceImplTest.queryResultListByStudentId" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ResultServiceImplTest_updateResult - 2017.01.25 at 22h 14m 30s.xml">
-      <configuration name="ResultServiceImplTest.updateResult" configurationId="JUnit" />
+    <history-entry file="ResultServiceImplTest_queryResultListByStudentId - 2017.01.26 at 11h 43m 01s.xml">
+      <configuration name="ResultServiceImplTest.queryResultListByStudentId" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203462000" />
+    <option name="totallyTimeSpent" value="207882000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -2128,7 +2112,46 @@
         <state relative-caret-position="1204">
           <caret line="466" column="13" lean-forward="true" selection-start-line="466" selection-start-column="13" selection-end-line="466" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/exceptions/ResultException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#204#205#0" expanded="true" />
+            <element signature="e#234#235#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IResultDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="52" column="41" lean-forward="false" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/ResultDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="41" column="72" lean-forward="false" selection-start-line="41" selection-start-column="72" selection-end-line="41" selection-end-column="72" />
+          <folding>
+            <marker date="1485401654222" expanded="true" signature="259:472" ph="INSERT INTO result... " />
+            <marker date="1485401654222" expanded="true" signature="573:654" ph="UPDATE resul... " />
+            <marker date="1485401654222" expanded="true" signature="732:849" ph="UPDATE resul... " />
+            <marker date="1485401654222" expanded="true" signature="732:894" ph="UPDATE resul... " />
+            <marker date="1485401654222" expanded="true" signature="1015:1062" ph="SELECT * FRO... result" />
+            <marker date="1485401654222" expanded="true" signature="1015:1080" ph="SELECT * FRO... result" />
+            <marker date="1485401654222" expanded="true" signature="1178:1286" ph="SELECT * FRO... result" />
+            <marker date="1485401654222" expanded="true" signature="1178:1304" ph="SELECT * FRO... result" />
+            <marker date="1485401654222" expanded="true" signature="1386:1433" ph="SELECT resul... result" />
+            <marker date="1485401654222" expanded="true" signature="1523:1590" ph="SELECT * FRO... result" />
+            <marker date="1485401654222" expanded="true" signature="1678:1741" ph="SELECT * FRO... result" />
           </folding>
         </state>
       </provider>
@@ -2174,58 +2197,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/exceptions/ResultException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#204#205#0" expanded="true" />
-            <element signature="e#234#235#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IResultService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="46" column="43" lean-forward="false" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="43" />
+        <state relative-caret-position="349">
+          <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IResultDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="50" column="43" lean-forward="false" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/ResultDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="37" column="76" lean-forward="false" selection-start-line="37" selection-start-column="76" selection-end-line="37" selection-end-column="76" />
-          <folding>
-            <marker date="1485354516645" expanded="true" signature="259:472" ph="INSERT INTO result... " />
-            <marker date="1485354516645" expanded="true" signature="573:654" ph="UPDATE resul... " />
-            <marker date="1485354516645" expanded="true" signature="732:849" ph="UPDATE resul... " />
-            <marker date="1485354516645" expanded="true" signature="732:894" ph="UPDATE resul... " />
-            <marker date="1485354516645" expanded="true" signature="1015:1062" ph="SELECT * FRO... result" />
-            <marker date="1485354516645" expanded="true" signature="1015:1080" ph="SELECT * FRO... result" />
-            <marker date="1485354516645" expanded="true" signature="1178:1286" ph="SELECT * FRO... result" />
-            <marker date="1485354516645" expanded="true" signature="1178:1304" ph="SELECT * FRO... result" />
-            <marker date="1485354516645" expanded="true" signature="1386:1433" ph="SELECT resul... result" />
-            <marker date="1485354516645" expanded="true" signature="1523:1590" ph="SELECT * FRO... result" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/wsc/service/impl/ResultServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="51" column="65" lean-forward="false" selection-start-line="51" selection-start-column="65" selection-end-line="51" selection-end-column="65" />
+        <state relative-caret-position="313">
+          <caret line="65" column="40" lean-forward="false" selection-start-line="65" selection-start-column="40" selection-end-line="65" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -2234,14 +2219,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/impl/ResultServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="151" column="20" lean-forward="false" selection-start-line="151" selection-start-column="20" selection-end-line="151" selection-end-column="20" />
+        <state relative-caret-position="1037">
+          <caret line="198" column="0" lean-forward="true" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5516#5517#0" expanded="true" />
-            <element signature="e#5543#5544#0" expanded="true" />
-            <element signature="e#5589#5590#0" expanded="true" />
-            <element signature="e#5642#5643#0" expanded="true" />
+            <element signature="e#6956#6957#0" expanded="true" />
+            <element signature="e#7009#7010#0" expanded="true" />
           </folding>
         </state>
       </provider>

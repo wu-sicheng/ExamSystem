@@ -49,4 +49,6 @@ public interface IResultDao {
     List<Integer> queryResultIdList();
 
     List<Result> queryResultListByStudentId(int studentId);
+
+    List<Result> queryResultListByPaperId(int paperId);
 }

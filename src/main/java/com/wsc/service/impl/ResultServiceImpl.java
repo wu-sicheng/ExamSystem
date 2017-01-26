@@ -1,5 +1,6 @@
 package com.wsc.service.impl;
 
+import com.mysql.cj.api.mysqla.result.ResultsetRow;
 import com.wsc.dao.inter.IResultDao;
 import com.wsc.exceptions.ManagerException;
 import com.wsc.exceptions.ResultException;
@@ -152,16 +153,49 @@ public class ResultServiceImpl implements IResultService {
     @Override //TODO
     public List<Result> queryResultListByStudentId(int powerId, int studentId) {
         if(iPersonService.queryResult(powerId)){
-            return iResultDao.queryResultList(fromResultId,toResultId);
+            List<Result> resultRe=iResultDao.queryResultListByStudentId(studentId);
+            try{
+                if(resultRe.get(0)!=null){
+                    return resultRe;
+                }
+            }catch (IndexOutOfBoundsException e){
+                LOGGER.info(e.getMessage());
+                LOGGER.info("数据库result没有符合student_id为"+studentId+"的数据");
+                throw new ResultException("数据库result没有符合student_id为"+studentId+"的数据");
+            }
         }
         LOGGER.info("权限值为"+powerId+",没有创建result的权限");
         throw new ManagerException("权限值为"+powerId+",没有访问result的权限");
     }
 
     @Override
-    public List<Result> queryResultListByPaperId(int powerId, int studentId) {
-        return null;
+    public List<Result> queryResultListByPaperId(int powerId, int paperId) {
+        if(iPersonService.queryResult(powerId)){
+            List<Result> resultRe=iResultDao.queryResultListByPaperId(paperId);
+            try{
+                if(resultRe.get(0)!=null){
+                    return resultRe;
+                }
+            }catch (IndexOutOfBoundsException e){
+                LOGGER.info(e.getMessage());
+                LOGGER.info("数据库result没有符合paper_id为"+paperId+"的数据");
+                throw new ResultException("数据库result没有符合paperId_id为"+paperId+"的数据");
+            }
+        }
+        LOGGER.info("权限值为"+powerId+",没有创建result的权限");
+        throw new ManagerException("权限值为"+powerId+",没有访问result的权限");
     }
+
+    @Override
+    public List<Result> queryResultListByTheClassId(int powerId, int theClassId) {
+        if(iPersonService.queryResult(powerId)){
+
+            }
+        }
+        LOGGER.info("权限值为"+powerId+",没有创建result的权限");
+        throw new ManagerException("权限值为"+powerId+",没有访问result的权限");
+    }
+
 
     private List<Integer> getResultIdList(){
         return iResultDao.queryResultIdList();

@@ -47,4 +47,6 @@ public interface IResultService {
     List<Result> queryResultListByStudentId(int powerId,int studentId);
 
     List<Result> queryResultListByPaperId(int powerId,int studentId);
+
+    List<Result> queryResultListByTheClassId(int powerId,int theClassId);
 }

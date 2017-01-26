@@ -37,4 +37,8 @@
     <select id="queryResultListByStudentId" resultType="Result">
         SELECT * FROM result WHERE studentId=#{studentId} AND resultState=1;
     </select>
+
+    <select id="queryResultListByPaperId" resultType="Result">
+        SELECT * FROM result WHERE paperId=#{paperId} AND resultState=1;
+    </select>
 </mapper>
