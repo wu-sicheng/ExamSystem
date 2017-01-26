@@ -10,6 +10,7 @@ import com.wsc.exceptions.PersonNotExistException;
 import com.wsc.pojo.Manager;
 import com.wsc.pojo.Student;
 import com.wsc.pojo.Teacher;
+import com.wsc.pojo.TheClass;
 import com.wsc.service.inter.IPersonService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,11 +41,10 @@ public class PersonServiceImpl implements IPersonService {
 
     private List<Integer> listTeacherId;
     private List<Integer> listStudentId;
+    private List<Integer> listTheClassId;
 
-    /**
+    /*
      * 教师及管理员的人员管理
-     *
-     * @param teacher
      */
     @Override
     public boolean createTeacher(Teacher teacher) throws PersonException{
@@ -158,10 +158,8 @@ public class PersonServiceImpl implements IPersonService {
         }
     }
 
-    /**
+    /*
      * 学生的人员管理
-     *
-     * @param student
      */
     @Override
     public boolean createStudent(Student student) {
@@ -275,9 +273,80 @@ public class PersonServiceImpl implements IPersonService {
         }
     }
 
-    /**
+    /*
+    班级管理
+     */
+    @Override
+    public boolean createTheClass(TheClass theClass) {
+        listTheClassId=getAllTheClassId();
+        if(!listTheClassId.contains(theClass.getTheClassId())){
+            iTheClassDao.createTheClass(theClass);
+            return true;
+        }
+        else{
+            LOGGER.info("数据库the_class中含有数据the_class_id为"+theClass.getTheClassId()+"的数据");
+            throw new PersonException("数据库the_class中含有数据the_class_id为"+theClass.getTheClassId()+"的数据");
+        }
+    }
+
+    @Override
+    public TheClass deleteTheClass(int theClassId) {
+        listTheClassId=getAllTheClassId();
+        if(listTheClassId.contains(theClassId)){
+            TheClass theClassRe=iTheClassDao.queryTheClass(theClassId);
+            iTheClassDao.deleteTheClass(theClassId);
+            return theClassRe;
+        }
+        else{
+            LOGGER.info("数据库the_class中不含有数据the_class_id为"+theClassId+"的数据");
+            throw new PersonException("数据库the_class中不含有数据the_class_id为"+theClassId+"的数据");
+        }
+    }
+
+    @Override
+    public TheClass updateTheClass(TheClass theClass) {
+        listTheClassId=getAllTheClassId();
+        if(listTheClassId.contains(theClass.getTheClassId())){
+            TheClass theClassRe=iTheClassDao.queryTheClass(theClass.getTheClassId());
+            iTheClassDao.updateTheClass(theClass);
+            return theClassRe;
+        }
+        else{
+            LOGGER.info("数据库the_class中不含有数据the_class_id为"+theClass.getTheClassId()+"的数据");
+            throw new PersonException("数据库the_class中不含有数据the_class_id为"+theClass.getTheClassId()+"的数据");
+        }
+    }
+
+    @Override
+    public TheClass queryTheClass(int theClassId) {
+        listTheClassId=getAllTheClassId();
+        if(listTheClassId.contains(theClassId)){
+            return iTheClassDao.queryTheClass(theClassId);
+        }
+        else{
+            LOGGER.info("数据库the_class中不含有数据the_class_id为"+theClassId+"的数据");
+            throw new PersonException("数据库the_class中不含有数据the_class_id为"+theClassId+"的数据");
+        }
+    }
+
+    @Override
+    public List<TheClass> queryTheClassList(int fromTheClassId, int toTheClassId) {
+        listTheClassId=getAllTheClassId();
+        try{
+            if(listTheClassId.get(0)!=null){
+                return iTheClassDao.queryTheClassList(fromTheClassId,toTheClassId);
+            }
+        }catch (IndexOutOfBoundsException e){
+            LOGGER.info(e.getMessage());
+            LOGGER.info("数据库theClass中不含有符合"+fromTheClassId+"到"+toTheClassId+"的数据");
+            throw new PersonException("数据库theClass中不含有符合"+fromTheClassId+"到"+toTheClassId+"的数据");
+        }
+        throw new PersonException("数据库theClass中不含有符合"+fromTheClassId+"到"+toTheClassId+"的数据");
+    }
+
+
+    /*
      * 权限管理
-     * @param powerId
      */
     @Override
     public boolean createPerson(int powerId) {
@@ -478,6 +547,11 @@ public class PersonServiceImpl implements IPersonService {
     private List<Integer> getAllStudentId(){
         return iStudentDao.queryStudentIdAll();
     }
+
+    private List<Integer> getAllTheClassId(){
+        return iTheClassDao.queryTheClassIdAll();
+    }
+
 
     private boolean judgeNull(Teacher teacher){
         if(teacher.getTeacherName()==null||teacher.getTeacherMail()==null||teacher.getTeacherPassword()==null){

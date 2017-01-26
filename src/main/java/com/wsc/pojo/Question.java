@@ -12,7 +12,7 @@ public class Question {
     private String questionText;
     private String questionAnswer;
     private String questionRight;
-    private int questionScore;
+    private double questionScore;
     private int questionType;
     private Date questionCreateTime;
     private Date questionDeleteTime;
@@ -21,7 +21,7 @@ public class Question {
     public Question() {
     }
 
-    public Question(int questionId, int subjectId, String questionTitle, String questionText, String questionAnswer, String questionRight, int questionScore, int questionType, Date questionCreateTime, Date questionDeleteTime, int questionState) {
+    public Question(int questionId, int subjectId, String questionTitle, String questionText, String questionAnswer, String questionRight, double questionScore, int questionType, Date questionCreateTime, Date questionDeleteTime, int questionState) {
         this.questionId = questionId;
         this.subjectId = subjectId;
         this.questionTitle = questionTitle;
@@ -83,11 +83,11 @@ public class Question {
         this.questionRight = questionRight;
     }
 
-    public int getQuestionScore() {
+    public double getQuestionScore() {
         return questionScore;
     }
 
-    public void setQuestionScore(int questionScore) {
+    public void setQuestionScore(double questionScore) {
         this.questionScore = questionScore;
     }
 

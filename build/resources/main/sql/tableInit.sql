@@ -48,7 +48,9 @@ CREATE TABLE theClass(
   id INT AUTO_INCREMENT NOT NULL UNIQUE,
   theClassId INT PRIMARY KEY NOT NULL UNIQUE,
   theClassState INT NOT NULL,
-  theClassName VARCHAR(255)
+  theClassName VARCHAR(255),
+  theClassCreateTime DATETIME,
+  theClassDeleteTime DATETIME
 );
 
 #科目表格

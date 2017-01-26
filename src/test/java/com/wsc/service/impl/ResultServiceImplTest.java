@@ -66,4 +66,10 @@ public class ResultServiceImplTest {
         LOGGER.info(results.toString());
     }
 
+    @Test
+    public void queryResultByTheClassId() throws Exception{
+        List<Result> results=iResultService.queryResultListByTheClassId(1,1);
+        LOGGER.info(results.toString());
+    }
+
 }

@@ -9,6 +9,7 @@ import java.util.List;
 
 /**
  * Created by wsc on 17-1-18.
+ * 考务管理接口，主要的功能包括组卷，查询考试信息，监控考试
  */
 public interface IExamService {
     /*

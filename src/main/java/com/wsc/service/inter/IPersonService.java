@@ -2,6 +2,7 @@ package com.wsc.service.inter;
 
 import com.wsc.pojo.Student;
 import com.wsc.pojo.Teacher;
+import com.wsc.pojo.TheClass;
 
 import java.util.List;
 
@@ -22,7 +23,7 @@ public interface IPersonService {
     Teacher queryTeacherByTeacherId(int teacherId);
 
 
-    /**
+    /*
      * 学生的人员管理
      */
     boolean createStudent(Student student);
@@ -34,8 +35,16 @@ public interface IPersonService {
     List<Student> queryStudentByStudentName(String name);
     Student queryStudentByStudentId(int studentId);
 
+    /*
+    班级管理
+     */
+    boolean createTheClass(TheClass theClass);
+    TheClass deleteTheClass(int theClassId);
+    TheClass updateTheClass(TheClass theClass);
+    TheClass queryTheClass(int theClassId);
+    List<TheClass> queryTheClassList(int fromTheClassId,int toTheClassId);
 
-    /**
+    /*
      * 权限管理
      */
     boolean createPerson(int powerId);

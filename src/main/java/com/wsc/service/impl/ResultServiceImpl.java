@@ -1,10 +1,12 @@
 package com.wsc.service.impl;
 
 import com.mysql.cj.api.mysqla.result.ResultsetRow;
+import com.sun.org.apache.regexp.internal.RE;
 import com.wsc.dao.inter.IResultDao;
 import com.wsc.exceptions.ManagerException;
 import com.wsc.exceptions.ResultException;
 import com.wsc.pojo.Result;
+import com.wsc.pojo.Student;
 import com.wsc.service.inter.IPersonService;
 import com.wsc.service.inter.IResultService;
 import org.slf4j.Logger;
@@ -12,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -189,8 +192,12 @@ public class ResultServiceImpl implements IResultService {
     @Override
     public List<Result> queryResultListByTheClassId(int powerId, int theClassId) {
         if(iPersonService.queryResult(powerId)){
-
+            List<Student> studentList=iPersonService.queryStudentByClassId(theClassId);
+            List<Result> studentResultByClassId=new ArrayList<>();
+            for(int i=0;i<studentList.size();i++){
+                studentResultByClassId.addAll(iResultDao.queryResultListByStudentId(studentList.get(i).getStudentId()));
             }
+            return studentResultByClassId;
         }
         LOGGER.info("权限值为"+powerId+",没有创建result的权限");
         throw new ManagerException("权限值为"+powerId+",没有访问result的权限");

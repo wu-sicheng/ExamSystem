@@ -3,6 +3,7 @@ package com.wsc.service.impl;
 import com.wsc.dao.inter.IStudentDao;
 import com.wsc.pojo.Student;
 import com.wsc.pojo.Teacher;
+import com.wsc.pojo.TheClass;
 import com.wsc.service.inter.IPersonService;
 import org.junit.Before;
 import org.junit.Test;
@@ -123,6 +124,34 @@ public class PersonServiceImplTest {
         LOGGER.info(student.toString());
     }
 
+    @Test
+    public void createTheClass() throws Exception{
+        TheClass theClass=new TheClass(3,1,"name",new Date(),new Date());
+        iPersonService.createTheClass(theClass);
+    }
+
+    @Test
+    public void deleteTheClass() throws Exception{
+        iPersonService.deleteTheClass(1);
+    }
+
+    @Test
+    public void updateTheClass() throws Exception{
+        TheClass theClass=new TheClass(3,1,"changetheClass",new Date(),new Date());
+        iPersonService.updateTheClass(theClass);
+    }
+
+    @Test
+    public void queryTheClassByClassId() throws Exception{
+        TheClass theClass=iPersonService.queryTheClass(2);
+        LOGGER.info(theClass.toString());
+    }
+
+    @Test
+    public void queryTheClassList() throws Exception{
+        List<TheClass> theClasses=iPersonService.queryTheClassList(1,3);
+        LOGGER.info(theClasses.toString());
+    }
     @Test
     public void createPerson() throws Exception {
         boolean b=iPersonService.createPerson(5);
