@@ -79,6 +79,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public Teacher deleteTeacher(int teacherId) {
         listTeacherId=getAllTeacherId();
         Teacher teacher=queryTeacherByTeacherId(teacherId);
@@ -92,6 +93,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public List<Teacher> queryTeacherAll() {
         listTeacherId =getAllTeacherId();
         try{
@@ -106,6 +108,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public List<Teacher> queryTeacherByPaperId(int paperId) {
         List<Teacher> teacherList=iTeacherDao.queryTeacherByPaperId(String.valueOf(paperId));
         try{
@@ -120,6 +123,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public List<Teacher> queryTeacherByClassId(int classId) {
         List<Teacher> teacherList=iTeacherDao.queryTeacherByPaperId(String.valueOf(classId));
         try{
@@ -134,6 +138,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public List<Teacher> queryTeacherByTeacherName(String name) {
         List<Teacher> teacherList=iTeacherDao.queryTeacherByTeacherName(name);
         try{
@@ -148,6 +153,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public Teacher queryTeacherByTeacherId(int teacherId) {
         listTeacherId=getAllTeacherId();
         if(listTeacherId.contains(teacherId)){
@@ -162,6 +168,7 @@ public class PersonServiceImpl implements IPersonService {
      * 学生的人员管理
      */
     @Override
+    
     public boolean createStudent(Student student) {
         if(!judgeStudentNull(student)){
             listStudentId=getAllStudentId();
@@ -179,6 +186,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public Student updateStudent(int studentId, Student student) {
         Student studentRe=null;
         listStudentId=getAllStudentId();
@@ -194,6 +202,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public Student deleteStudent(int studentId) {
         listStudentId=getAllStudentId();
         Student student=queryStudentByStudentId(studentId);
@@ -207,6 +216,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public List<Student> queryStudentAll() {
         listStudentId =getAllStudentId();
         try{
@@ -221,6 +231,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public List<Student> queryStudentByPaperId(int paperId) {
         List<Student> studentList=iStudentDao.queryStudentByPaperId(String.valueOf(paperId));
         try{
@@ -235,6 +246,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public List<Student> queryStudentByClassId(int classId) {
         List<Student> studentList=iStudentDao.queryStudentByTheClassId(classId);
         try{
@@ -249,6 +261,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public List<Student> queryStudentByStudentName(String name) {
         List<Student> studentList=iStudentDao.queryStudentByStudentName(name);
         try{
@@ -263,6 +276,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public Student queryStudentByStudentId(int studentId) {
         listStudentId=getAllStudentId();
         if(listStudentId.contains(studentId)){
@@ -277,6 +291,7 @@ public class PersonServiceImpl implements IPersonService {
     班级管理
      */
     @Override
+    
     public boolean createTheClass(TheClass theClass) {
         listTheClassId=getAllTheClassId();
         if(!listTheClassId.contains(theClass.getTheClassId())){
@@ -290,6 +305,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public TheClass deleteTheClass(int theClassId) {
         listTheClassId=getAllTheClassId();
         if(listTheClassId.contains(theClassId)){
@@ -304,6 +320,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public TheClass updateTheClass(TheClass theClass) {
         listTheClassId=getAllTheClassId();
         if(listTheClassId.contains(theClass.getTheClassId())){
@@ -318,6 +335,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public TheClass queryTheClass(int theClassId) {
         listTheClassId=getAllTheClassId();
         if(listTheClassId.contains(theClassId)){
@@ -330,6 +348,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public List<TheClass> queryTheClassList(int fromTheClassId, int toTheClassId) {
         listTheClassId=getAllTheClassId();
         try{
@@ -349,6 +368,7 @@ public class PersonServiceImpl implements IPersonService {
      * 权限管理
      */
     @Override
+    
     public boolean createPerson(int powerId) {
         Manager manager=iManagerDao.queryManagerByManagerId(powerId);
         try {
@@ -365,6 +385,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public boolean deletePerson(int powerId) {
         Manager manager=iManagerDao.queryManagerByManagerId(powerId);
         try {
@@ -381,6 +402,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public boolean updatePerson(int powerId) {
         Manager manager=iManagerDao.queryManagerByManagerId(powerId);
         try {
@@ -397,6 +419,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public boolean queryPerson(int powerId) {
         Manager manager=iManagerDao.queryManagerByManagerId(powerId);
         try {
@@ -413,6 +436,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public boolean createTestDB(int powerId) {
         Manager manager=iManagerDao.queryManagerByManagerId(powerId);
         try {
@@ -429,6 +453,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public boolean deleteTestDB(int powerId) {
         Manager manager=iManagerDao.queryManagerByManagerId(powerId);
         try {
@@ -445,6 +470,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public boolean updateTestDB(int powerId) {
         Manager manager=iManagerDao.queryManagerByManagerId(powerId);
         try {
@@ -461,6 +487,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public boolean queryTestDB(int powerId) {
         Manager manager=iManagerDao.queryManagerByManagerId(powerId);
         try {
@@ -477,6 +504,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public boolean createResult(int powerId) {
         Manager manager=iManagerDao.queryManagerByManagerId(powerId);
         try {
@@ -493,6 +521,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public boolean deleteResult(int powerId) {
         Manager manager=iManagerDao.queryManagerByManagerId(powerId);
         try {
@@ -509,6 +538,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public boolean updateResult(int powerId) {
         Manager manager=iManagerDao.queryManagerByManagerId(powerId);
         try {
@@ -525,6 +555,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    
     public boolean queryResult(int powerId) {
         Manager manager=iManagerDao.queryManagerByManagerId(powerId);
         try {
@@ -540,14 +571,17 @@ public class PersonServiceImpl implements IPersonService {
         }
     }
 
+    
     private List<Integer> getAllTeacherId(){
         return iTeacherDao.queryTeacherIdAll();
     }
 
+    
     private List<Integer> getAllStudentId(){
         return iStudentDao.queryStudentIdAll();
     }
 
+    
     private List<Integer> getAllTheClassId(){
         return iTheClassDao.queryTheClassIdAll();
     }

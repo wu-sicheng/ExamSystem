@@ -1,6 +1,8 @@
 package com.wsc.service.impl;
 
 import com.wsc.dto.ResultRe;
+import com.wsc.exceptions.ManagerException;
+import com.wsc.exceptions.TestDBException;
 import com.wsc.pojo.Question;
 import com.wsc.service.inter.IPersonService;
 import com.wsc.service.inter.IResultService;
@@ -10,6 +12,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Arrays;
 
 /**
  * Created by wsc on 17-1-26.
@@ -33,22 +37,45 @@ public class ScoreServiceImpl implements IScoreService {
 
     }
 
-    @Override
+    @Override //TODO 判分
     public double computeScore(int powerId,ResultRe.QuestionRe questionRe) {
         if(iPersonService.queryTestDB(powerId)&&iPersonService.createTestDB(powerId)&&
                 iPersonService.queryResult(powerId)&&iPersonService.createResult(powerId)){
             Question question=iTestDBService.queryQuestion(powerId,questionRe.getQuestionId());
             double fullScore=question.getQuestionScore();
             if(question.getQuestionType()==1){//单选，选对得分，选错不得分
-                if(questionRe.getAnswer().equals(question.getQuestionAnswer())){
+                if(questionRe.getAnswer().equals(question.getQuestionRight())){
                     return fullScore;
                 }
                 else{
-                    return 0L;
+                    return 0;
                 }
             }
             else if(question.getQuestionType()==2){//多选，选对得满分，选少没选错得一半分，选多或选错不得分
-
+                String questionReIn=questionRe.getAnswer();//学生返回的数据
+                String questionRight=question.getQuestionRight();//正确的答案
+                double scoreRe=0;
+                String[] computeTheQues= questionReIn.split("|");//返回的数据经过分割之后
+                String[] questionRightQues=questionRight.split("|");//正确答案的分割
+                for(int i=0;i<computeTheQues.length;i++){
+                    if(questionRight.contains(computeTheQues[i])){
+                        if(computeTheQues.length>questionRightQues.length){
+                            scoreRe=0;
+                            break;
+                        }
+                        else if(computeTheQues.length==questionRightQues.length){
+                            scoreRe=fullScore;
+                        }
+                        else{
+                            scoreRe=1/2*fullScore;
+                        }
+                    }
+                    else{
+                        scoreRe=0;
+                        break;
+                    }
+                }
+                return scoreRe;
             }
             else if(question.getQuestionType()==3){//填空，题目n个空，填对m个得m/n*fullScore分，支持教师改卷
 
@@ -67,7 +94,13 @@ public class ScoreServiceImpl implements IScoreService {
             else if(question.getQuestionType()==6){//OJ(待实现)//TODO OJ
 
             }
+            else{
+                LOGGER.info("数据库question不存在question_type类型为"+question.getQuestionType()+"的数据");
+                throw new TestDBException("数据库question不存在question_type类型为"+question.getQuestionType()+"的数据");
+            }
         }
+        LOGGER.info("权限值为"+powerId+",没有创建result的权限");
+        throw new ManagerException("权限值为"+powerId+",没有访问result的权限");
     }
 
     @Override

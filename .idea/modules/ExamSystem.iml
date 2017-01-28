@@ -6,6 +6,7 @@
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/../../src/main/resources/spring-mybatis.xml</file>
           <file>file://$MODULE_DIR$/../../src/main/resources/spring-service.xml</file>
+          <file>file://$MODULE_DIR$/../../src/main/resources/spring-mvc.xml</file>
         </fileset>
       </configuration>
     </facet>
@@ -18,7 +19,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="Spring" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.alibaba:druid:1.0.26" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-logging:commons-logging:1.2" level="project" />
     <orderEntry type="library" exported="" name="Gradle: joda-time:joda-time:2.9.6" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="Gradle: junit:junit:4.12" level="project" />
     <orderEntry type="library" exported="" name="Gradle: mysql:mysql-connector-java:6.0.5" level="project" />
@@ -27,6 +30,12 @@
     <orderEntry type="library" exported="" name="Gradle: org.mybatis:mybatis:3.4.2" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.slf4j:slf4j-api:1.7.22" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.slf4j:slf4j-simple:1.7.22" level="project" />
-    <orderEntry type="library" exported="" name="Spring" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-aop:4.3.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-beans:4.3.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-context:4.3.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-core:4.3.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-expression:4.3.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-web:4.3.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-webmvc:4.3.5.RELEASE" level="project" />
   </component>
 </module>

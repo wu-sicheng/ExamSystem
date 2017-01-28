@@ -25,4 +25,10 @@ dependencies {
 
     /*时间处理，joda-time*/
     compile 'joda-time:joda-time:2.9.6'
+
+    /*spring-mvc*/
+    compile 'org.springframework:spring-webmvc:4.3.5.RELEASE'
+
+
+
 }
