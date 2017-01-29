@@ -1,23 +1,42 @@
 package com.wsc.pojo;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
 /**
  * Created by wsc on 17-1-13.
  */
+@XmlRootElement(name="teacher")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Teacher {
+    @XmlElement
     private int teacherId;
+    @XmlElement
     private String classId;
+    @XmlElement
     private String paperId;
+    @XmlElement
     private String teacherName;
+    @XmlElement
     private String teacherPassword;
+    @XmlElement
     private int teacherGander;
+    @XmlElement
     private String teacherNo;
+    @XmlElement
     private String teacherMail;
+    @XmlElement
     private String teacherPhone;
+    @XmlElement
     private int teacherState;
+    @XmlElement
     private int teacherPower;
+    @XmlElement
     private Date teacherCreateTime;
+    @XmlElement
     private Date teacherDeleteTime;
 
     public Teacher() {

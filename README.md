@@ -338,6 +338,7 @@ public class IStudentDaoTestSpring {
 ```
 ### 通过测试，Spring和MyBatis整合成功
 
+## Spring MVC整合
 
 
 ## 那些坑
@@ -350,13 +351,9 @@ SELECT * FROM teacher WHERE paperId LIKE CONCAT('%',#{paperId},',%');
 ```SQL
 SELECT * FROM teacher WHERE teacherId <![CDATA[>=]]> #{fromTeacherId} AND teacherId <![CDATA[<=]]> #{toTeacherId} AND teacherState=1;
 ```
-<<<<<<< HEAD
+
 ### MyBatis的问题
 数据库
-
-![](http://ww1.sinaimg.cn/large/63f8de7fgy1fc0wo1p8paj20je02twek&690)
-
-![](http://ww1.sinaimg.cn/large/63f8de7fgy1fc0wpe4fdtj20ob03i74a&690)
 
 ```Java
     public boolean createSubject(int teacherId, Subject subject) {
@@ -377,9 +374,4 @@ SELECT * FROM teacher WHERE teacherId <![CDATA[>=]]> #{fromTeacherId} AND teache
         }
     }
 ```
-<<<<<<< HEAD
-=======
 
-=======
->>>>>>> 16de79fd17fbfbba9e73969e1f43f3638fac8374
->>>>>>> 5b309b624807dc9b94c51d9809bfade372adff89
