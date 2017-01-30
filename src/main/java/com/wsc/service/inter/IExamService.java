@@ -26,9 +26,4 @@ public interface IExamService {
     考试学生的做题
      */
     boolean canExam(int studentId,int paperId);
-
-
-
-
-
 }

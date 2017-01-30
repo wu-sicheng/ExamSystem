@@ -15,25 +15,25 @@ public class Teacher {
     @XmlElement
     private int teacherId;
     @XmlElement
-    private String classId;
+    private String classId="";
     @XmlElement
-    private String paperId;
+    private String paperId="";
     @XmlElement
     private String teacherName;
     @XmlElement
     private String teacherPassword;
     @XmlElement
-    private int teacherGander;
+    private int teacherGander=-1;
     @XmlElement
-    private String teacherNo;
+    private String teacherNo="";
     @XmlElement
     private String teacherMail;
     @XmlElement
-    private String teacherPhone;
+    private String teacherPhone="";
     @XmlElement
-    private int teacherState;
+    private int teacherState=-1;
     @XmlElement
-    private int teacherPower;
+    private int teacherPower=-1;
     @XmlElement
     private Date teacherCreateTime;
     @XmlElement
