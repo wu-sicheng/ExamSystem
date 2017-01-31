@@ -348,7 +348,6 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
-    
     public List<TheClass> queryTheClassList(int fromTheClassId, int toTheClassId) {
         listTheClassId=getAllTheClassId();
         try{
@@ -361,6 +360,12 @@ public class PersonServiceImpl implements IPersonService {
             throw new PersonException("数据库theClass中不含有符合"+fromTheClassId+"到"+toTheClassId+"的数据");
         }
         throw new PersonException("数据库theClass中不含有符合"+fromTheClassId+"到"+toTheClassId+"的数据");
+    }
+
+    @Override
+    public List<TheClass> queryTheClassListAll() {
+        listTheClassId=getAllTheClassId();
+        return queryTheClassList(Collections.min(listTheClassId),Collections.max(listTheClassId));
     }
 
 

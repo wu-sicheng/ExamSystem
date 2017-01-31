@@ -10,7 +10,7 @@ import java.util.List;
  * Created by wsc on 17-1-18.
  */
 public interface IPersonService {
-    /**
+    /*
      * 教师及管理员的人员管理
      */
     boolean createTeacher(Teacher teacher);
@@ -43,6 +43,7 @@ public interface IPersonService {
     TheClass updateTheClass(TheClass theClass);
     TheClass queryTheClass(int theClassId);
     List<TheClass> queryTheClassList(int fromTheClassId,int toTheClassId);
+    List<TheClass> queryTheClassListAll();
 
     /*
      * 权限管理

@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * Created by wsc on 17-1-28.
- * 初始化相关操作，
+ * 初始化相关操作
  * 包括数据库的配置
  * 管理员账号的配置
  */
@@ -38,7 +38,7 @@ public class InitController {
         return iPersonService.queryTeacherByTeacherId(teacher.getTeacherId());
     }
 
-    @RequestMapping(value = "controldb",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/controldb",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     @ResponseBody
     public void setDBMessage(@RequestBody DBMess dbMessage){
         try {
