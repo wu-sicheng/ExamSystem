@@ -152,7 +152,7 @@ public class PersonController {
     @ResponseBody
     TheClass updateTheClass(@RequestBody TheClass theClass){
         TheClass theClassRe=iPersonService.queryTheClass(theClass.getTheClassId());
-        iPersonService.queryTheClass(theClass.getTheClassId());
+        iPersonService.updateTheClass(theClass);
         return theClassRe;
     }
 
