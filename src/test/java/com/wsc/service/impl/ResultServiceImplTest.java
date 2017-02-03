@@ -28,47 +28,47 @@ public class ResultServiceImplTest {
     @Test
     public void createResult() throws Exception {
         Result result=new Result(5,1,1,1,"str",new Date(),new Date(),1);
-        iResultService.createResult(1,result);
+        iResultService.createResult(result);
     }
 
     @Test
     public void deleteResult() throws Exception {
-        iResultService.deleteResult(1,1);
+        iResultService.deleteResult(1);
     }
 
     @Test
     public void updateResult() throws Exception {
         Result result=new Result(2,1,1,1,"changeStr",new Date(),new Date(),1);
-        iResultService.updateResult(1,result);
+        iResultService.updateResult(result);
     }
 
     @Test
     public void queryResult() throws Exception {
-        Result result=iResultService.queryResult(1,1);
+        Result result=iResultService.queryResult(1);
         LOGGER.info(result.toString());
     }
 
     @Test
     public void queryResultList() throws Exception {
-        List<Result> results=iResultService.queryResultList(1,1,2);
+        List<Result> results=iResultService.queryResultList(1,2);
         LOGGER.info(results.toString());
     }
 
     @Test
     public void queryResultListByStudentId() throws Exception {
-        List<Result> results=iResultService.queryResultListByStudentId(1,1);
+        List<Result> results=iResultService.queryResultListByStudentId(1);
         LOGGER.info(results.toString());
     }
 
     @Test
     public void queryResultListByPaperId() throws Exception {
-        List<Result> results=iResultService.queryResultListByPaperId(1,2);
+        List<Result> results=iResultService.queryResultListByPaperId(2);
         LOGGER.info(results.toString());
     }
 
     @Test
     public void queryResultByTheClassId() throws Exception{
-        List<Result> results=iResultService.queryResultListByTheClassId(1,1);
+        List<Result> results=iResultService.queryResultListByTheClassId(1);
         LOGGER.info(results.toString());
     }
 

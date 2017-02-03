@@ -52,4 +52,13 @@
         SELECT * FROM student WHERE studentName LIKE CONCAT('%',#{studentName},'%') AND studentState=1;
     </select>
 
+    <select id="findRoles" parameterType="String" resultType="String">
+        select r.roleName from student s,role r where s.roleId=r.id and s.studentName=#{studentName};
+    </select>
+
+    <select id="findPermissions" parameterType="String" resultType="String">
+        select p.permissionName from student s,role r,permission p
+        where s.roleId=r.id and p.roleId=r.id and s.studentName=#{studentName};
+    </select>
+
 </mapper>

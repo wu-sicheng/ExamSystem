@@ -32,77 +32,58 @@ public class ExamServiceImpl implements IExamService{
     private ITestDBService iTestDBService;
 
     @Override
-    public ExamPaper getExamPaper(int powerId, int paperId) {
-        if(iPersonService.queryTestDB(powerId)){
-            Paper paper=iTestDBService.queryPaper(powerId,paperId);
-            DateTime begin=new DateTime(paper.getPaperTimeBegin());
-            DateTime end=new DateTime(paper.getPaperTimeEnd());
-            List<Question> questions=new ArrayList<>();
-            String questionStr=iTestDBService.queryPaper(powerId,paperId).getQuestionId();
-            String[] questionList=questionStr.split(",");
-            for(int i=0;i<questionList.length;i++){
-                questions.add(iTestDBService.queryQuestion(powerId,Integer.valueOf(questionList[i])));
-            }
-            ExamPaper examPaper=new ExamPaper(begin,end,questions);
-            return examPaper;
+    public ExamPaper getExamPaper(int paperId) {
+        Paper paper=iTestDBService.queryPaper(paperId);
+        DateTime begin=new DateTime(paper.getPaperTimeBegin());
+        DateTime end=new DateTime(paper.getPaperTimeEnd());
+        List<Question> questions=new ArrayList<>();
+        String questionStr=iTestDBService.queryPaper(paperId).getQuestionId();
+        String[] questionList=questionStr.split(",");
+        for(int i=0;i<questionList.length;i++){
+            questions.add(iTestDBService.queryQuestion(Integer.valueOf(questionList[i])));
         }
-        else{
-            LOGGER.info("powerId为"+powerId+"没有查询试卷的权限");
-            throw new ManagerException("powerId为"+powerId+"没有查询试卷的权限");
-        }
+        ExamPaper examPaper=new ExamPaper(begin,end,questions);
+        return examPaper;
     }
 
     @Override
     public List<ExamMess> getExamMess(int studentId) {
         Student student=iPersonService.queryStudentByStudentId(studentId);
         List<ExamMess> examMesses=new ArrayList<>();
-        if(iPersonService.queryTestDB(student.getStudentPower())){
-            String[] paperIdStr=student.getPaperId().split(",");
-            for(int i=0;i<paperIdStr.length;i++){
-                Paper paper=iTestDBService.queryPaper(student.getStudentPower(),Integer.valueOf(paperIdStr[i]));
-                DateTime begin=new DateTime(paper.getPaperTimeBegin());
-                DateTime end=new DateTime(paper.getPaperTimeEnd());
-                String paperName=iTestDBService.querySubject(student.getStudentPower(),paper.getSubjectId()).getSubjectName();
-                int paperId=iTestDBService.queryPaper(student.getStudentPower(),paper.getPaperId()).getPaperId();
-                ExamMess examMess=new ExamMess(begin,end,paperName,paperId);
-                examMesses.add(examMess);
-            }
-            return examMesses;
+        String[] paperIdStr=student.getPaperId().split(",");
+        for(int i=0;i<paperIdStr.length;i++){
+            Paper paper=iTestDBService.queryPaper(Integer.valueOf(paperIdStr[i]));
+            DateTime begin=new DateTime(paper.getPaperTimeBegin());
+            DateTime end=new DateTime(paper.getPaperTimeEnd());
+            String paperName=iTestDBService.querySubject(paper.getSubjectId()).getSubjectName();
+            int paperId=iTestDBService.queryPaper(paper.getPaperId()).getPaperId();
+            ExamMess examMess=new ExamMess(begin,end,paperName,paperId);
+            examMesses.add(examMess);
         }
-        else{
-            LOGGER.info("powerId为"+student.getStudentPower()+"没有查询试卷的权限");
-            throw new ManagerException("powerId为"+student.getStudentPower()+"没有查询试卷的权限");
-        }
+        return examMesses;
     }
 
     @Override
-    public boolean canExam(int studentId, int paperId) {
-        Student student=iPersonService.queryStudentByStudentId(studentId);
-        List<ExamMess> examMesses=new ArrayList<>();
-        if(iPersonService.queryTestDB(student.getStudentPower())){
-            Paper paper=iTestDBService.queryPaper(student.getStudentPower(),paperId);
-            DateTime now=DateTime.now();
-            DateTime begin=new DateTime(paper.getPaperTimeBegin());
-            DateTime end=new DateTime(paper.getPaperTimeEnd());
-            LOGGER.info("now:"+now.toString()+",begin:"+begin+",end:"+end);
-            if(now.isBefore(begin)){
-                LOGGER.info("离考试开始还有"+(begin.minus(now.getMillis()))+"分钟");
-                return false;
-            }
-            else if(now.isAfter(begin)&&now.isBefore(begin.plusMillis(15))){
-                LOGGER.info("允许考试");
-                return true;
-            }
-            else if(now.isAfter(begin.plusMillis(15))&&now.isBefore(end)){
-                LOGGER.info("考试中，不允许考试");
-                return false;
-            }
-            else if(now.isAfter(end)){
-                LOGGER.info("考试结束，不允许考试");
-                return false;
-            }
+    public boolean canExam(int studentId,int paperId) {
+        Student student = iPersonService.queryStudentByStudentId(studentId);
+        List<ExamMess> examMesses = new ArrayList<>();
+        Paper paper = iTestDBService.queryPaper(paperId);
+        DateTime now = DateTime.now();
+        DateTime begin = new DateTime(paper.getPaperTimeBegin());
+        DateTime end = new DateTime(paper.getPaperTimeEnd());
+        LOGGER.info("now:" + now.toString() + ",begin:" + begin + ",end:" + end);
+        if (now.isBefore(begin)) {
+            LOGGER.info("离考试开始还有" + (begin.minus(now.getMillis())) + "分钟");
+            return false;
+        } else if (now.isAfter(begin) && now.isBefore(begin.plusMillis(15))) {
+            LOGGER.info("允许考试");
+            return true;
+        } else if (now.isAfter(begin.plusMillis(15)) && now.isBefore(end)) {
+            LOGGER.info("考试中，不允许考试");
+            return false;
+        }else{
+            LOGGER.info("考试结束，不允许考试");
+            return false;
         }
-        LOGGER.info("powerId为"+student.getStudentPower()+"没有查询试卷的权限");
-        throw new ManagerException("powerId为"+student.getStudentPower()+"没有查询试卷的权限");
     }
 }

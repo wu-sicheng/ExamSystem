@@ -18,7 +18,7 @@ public class Student {
     private String studentNum;
     private String studentMail;
     private String studentPhone;
-    private int studentPower;
+    private int roleId;
     private int studentState;
     private Date studentCreateTime;
     private Date studentDeleteTime;
@@ -26,7 +26,7 @@ public class Student {
     public Student() {
     }
 
-    public Student(int studentId, int classId, String paperId, String studentName, String studentPassword, int studentGander, String studentNo, String studentMajor, int studentGrader, String studentNum, String studentMail, String studentPhone, int studentPower, int studentState, Date studentCreateTime, Date studentDeleteTime) {
+    public Student(int studentId, int classId, String paperId, String studentName, String studentPassword, int studentGander, String studentNo, String studentMajor, int studentGrader, String studentNum, String studentMail, String studentPhone, int roleId, int studentState, Date studentCreateTime, Date studentDeleteTime) {
         this.studentId = studentId;
         this.classId = classId;
         this.paperId = paperId;
@@ -39,7 +39,7 @@ public class Student {
         this.studentNum = studentNum;
         this.studentMail = studentMail;
         this.studentPhone = studentPhone;
-        this.studentPower = studentPower;
+        this.roleId = roleId;
         this.studentState = studentState;
         this.studentCreateTime = studentCreateTime;
         this.studentDeleteTime = studentDeleteTime;
@@ -141,12 +141,12 @@ public class Student {
         this.studentPhone = studentPhone;
     }
 
-    public int getStudentPower() {
-        return studentPower;
+    public int getRoleId() {
+        return roleId;
     }
 
-    public void setStudentPower(int studentPower) {
-        this.studentPower = studentPower;
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
     }
 
     public int getStudentState() {
@@ -188,7 +188,7 @@ public class Student {
                 ", studentNum='" + studentNum + '\'' +
                 ", studentMail='" + studentMail + '\'' +
                 ", studentPhone='" + studentPhone + '\'' +
-                ", studentPower=" + studentPower +
+                ", roleId=" + roleId +
                 ", studentState=" + studentState +
                 ", studentCreateTime=" + studentCreateTime +
                 ", studentDeleteTime=" + studentDeleteTime +

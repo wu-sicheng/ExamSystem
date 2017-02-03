@@ -13,28 +13,28 @@ public interface IResultService {
      * @param result 结果
      * @return 是否创建成功
      */
-    boolean createResult(int powerId,Result result);
+    boolean createResult(Result result);
 
     /**
      * 通过id删除一个结果，将state置为0，添加删除时间
      * @param resultId 删除的id
      * @return 删除的结果
      */
-    Result deleteResult(int powerId,int resultId);
+    Result deleteResult(int resultId);
 
     /**
      * 通过resultId更新结果
      * @param result
      * @return 更新前的结果
      */
-    Result updateResult(int powerId,Result result);
+    Result updateResult(Result result);
 
     /**
      * 通过id来查询一个结果
      * @param resultId id
      * @return 查询到的结果
      */
-    Result queryResult(int powerId,int resultId);
+    Result queryResult(int resultId);
 
     /**
      * 查询结果集
@@ -42,11 +42,11 @@ public interface IResultService {
      * @param toResultId 结束的id
      * @return 查询的id
      */
-    List<Result> queryResultList(int powerId,int fromResultId, int toResultId);
+    List<Result> queryResultList(int fromResultId, int toResultId);
 
-    List<Result> queryResultListByStudentId(int powerId,int studentId);
+    List<Result> queryResultListByStudentId(int studentId);
 
-    List<Result> queryResultListByPaperId(int powerId,int studentId);
+    List<Result> queryResultListByPaperId(int studentId);
 
-    List<Result> queryResultListByTheClassId(int powerId,int theClassId);
+    List<Result> queryResultListByTheClassId(int theClassId);
 }

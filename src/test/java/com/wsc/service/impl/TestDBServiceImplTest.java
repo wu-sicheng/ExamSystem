@@ -34,7 +34,7 @@ public class TestDBServiceImplTest {
     @Test
     public void createQuestion() throws Exception {
         Question question=new Question(1,1,"question_title","question_text","question_answer","question_right",1,1,new Date(),new Date(),1);
-        iTestDBService.createQuestion(4,question);
+        iTestDBService.createQuestion(question);
     }
 
     @Test
@@ -42,40 +42,40 @@ public class TestDBServiceImplTest {
         List<Question> questions=new ArrayList<>();
         questions.add(new Question(2,1,"question_title","question_text","question_answer","question_right",1,1,new Date(),new Date(),1));
         questions.add(new Question(3,1,"question_title","question_text","question_answer","question_right",1,1,new Date(),new Date(),1));
-        iTestDBService.createQuestionList(4,questions);
+        iTestDBService.createQuestionList(questions);
     }
 
     @Test
     public void deleteQuestion() throws Exception {
-        iTestDBService.deleteQuestion(4,1);
+        iTestDBService.deleteQuestion(1);
     }
 
     @Test
     public void updateQuestion() throws Exception {
         Question question=new Question(1,1,"question-change1231","question_text","question_answer","question_right",1,1,new Date(),new Date(),1);
-        iTestDBService.updateQuestion(4,2,question);
+        iTestDBService.updateQuestion(2,question);
     }
 
     @Test
     public void queryQuestion() throws Exception {
-        Question question=iTestDBService.queryQuestion(4,1);
+        Question question=iTestDBService.queryQuestion(1);
         LOGGER.info(question.toString());
     }
 
     @Test
     public void queryQuestionByQuestionType() throws Exception {
-        List<Question> questions = iTestDBService.queryQuestionByQuestionType(4, 1);
+        List<Question> questions = iTestDBService.queryQuestionByQuestionType( 1);
         LOGGER.info(questions.toString());
     }
     @Test
     public void queryQuestionList() throws Exception {
-        List<Question> questions=iTestDBService.queryQuestionList(4,1,3);
+        List<Question> questions=iTestDBService.queryQuestionList(1,3);
         LOGGER.info(questions.toString());
     }
 
     @Test
     public void queryQuestionListBySubject() throws Exception {
-        List<Question> questions=iTestDBService.queryQuestionListBySubject(1,1);
+        List<Question> questions=iTestDBService.queryQuestionListBySubject(1);
         LOGGER.info(questions.toString());
     }
 
@@ -92,7 +92,7 @@ public class TestDBServiceImplTest {
     @Test
     public void createPaper() throws Exception {
         Paper paper=new Paper(5,"12",new Date(),new Date(),1,1,new Date(),new Date());
-        iTestDBService.createPaper(4,paper);
+        iTestDBService.createPaper(paper);
     }
 
     @Test
@@ -112,31 +112,31 @@ public class TestDBServiceImplTest {
 
     @Test
     public void deletePaper() throws Exception {
-        iTestDBService.deletePaper(4,1);
+        iTestDBService.deletePaper(1);
     }
 
     @Test
     public void updatePaper() throws Exception {
         Paper paper=new Paper(5,"change1",new Date(),new Date(),1,1,new Date(),new Date());
-        iTestDBService.updatePaper(4,5,paper);
+        iTestDBService.updatePaper(5,paper);
         //ERROR
     }
 
     @Test
     public void queryPaper() throws Exception {
-        Paper paper=iTestDBService.queryPaper(4,2);
+        Paper paper=iTestDBService.queryPaper(2);
         LOGGER.info(paper.toString());
     }
 
     @Test
     public void queryPaperList() throws Exception {
-        List<Paper> list=iTestDBService.queryPaperList(4,1,2);
+        List<Paper> list=iTestDBService.queryPaperList(1,2);
         LOGGER.info(list.toString());
     }
 
     @Test
     public void queryPaperBySubjectId() throws Exception {
-        List<Paper> list=iTestDBService.queryPaperBySubjectId(4,2);
+        List<Paper> list=iTestDBService.queryPaperBySubjectId(2);
         LOGGER.info(list.toString());
     }
 
@@ -148,31 +148,31 @@ public class TestDBServiceImplTest {
     @Test
     public void createSubject() throws Exception {
         Subject subject=new Subject(2,"subjectName3",new Date(),new Date(),1);
-        iTestDBService.createSubject(4,subject);
+        iTestDBService.createSubject(subject);
     }
 
     @Test
     public void deleteSubject() throws Exception {
-        Subject subject=iTestDBService.deleteSubject(4,1);
+        Subject subject=iTestDBService.deleteSubject(1);
         LOGGER.info(subject.toString());
     }
 
     @Test
     public void updateSubject() throws Exception {
         Subject subject=new Subject(3,"change",new Date(),new Date(),1);
-        Subject subjectRe=iTestDBService.updateSubject(4,subject);
+        Subject subjectRe=iTestDBService.updateSubject(subject);
         LOGGER.info(subjectRe.toString());
     }
 
     @Test
     public void querySubject() throws Exception {
-        Subject subject=iTestDBService.querySubject(4,2);
+        Subject subject=iTestDBService.querySubject(2);
         LOGGER.info(subject.toString());
     }
 
     @Test
     public void querySubjectList() throws Exception {
-        List<Subject> subjects=iTestDBService.querySubjectList(4,1,2);
+        List<Subject> subjects=iTestDBService.querySubjectList(1,2);
         LOGGER.info(subjects.toString());
     }
 

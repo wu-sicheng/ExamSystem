@@ -10,6 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+import java.util.Set;
 
 /**
  * 用于spring和mybatis的整合测试
@@ -26,6 +27,9 @@ public class IStudentDaoTest {
     @Resource
     private IManagerDao iManagerDao;
 
+    @Resource
+    private ITeacherDao iTeacherDao;
+
     @Test
     public void queryStudent() throws Exception {
         Student student=iStudentDao.queryStudent(1);
@@ -36,5 +40,29 @@ public class IStudentDaoTest {
     public void addManager() throws Exception{
         Manager manager=new Manager(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
         iManagerDao.createPower(manager);
+    }
+
+    @Test
+    public void findRoles() throws Exception{
+        Set<String> roles=iStudentDao.findRoles("wusicheng2");
+        LOGGER.info(roles.toString());
+    }
+
+    @Test
+    public void findPermission() throws Exception{
+        Set<String> permissions=iStudentDao.findPermissions("wusicheng2");
+        LOGGER.info(permissions.toString());
+    }
+
+    @Test
+    public void findRolesT() throws Exception{
+        Set<String> roles=iTeacherDao.findRoles("change");
+        LOGGER.info(roles.toString());
+    }
+
+    @Test
+    public void findPermissionT() throws Exception{
+        Set<String> permissions=iTeacherDao.findPermissions("change");
+        LOGGER.info(permissions.toString());
     }
 }

@@ -80,4 +80,13 @@
     <select id="queryTeacherPower" parameterType="Integer" resultType="Integer">
         SELECT teacherPower FROM teacher WHERE teacherId=#{teacherId};
     </select>
+
+    <select id="findRoles" parameterType="String" resultType="String">
+        select r.roleName from teacher t,role r where t.roleId=r.id and t.teacherName=#{teacherName};
+    </select>
+
+    <select id="findPermissions" parameterType="String" resultType="String">
+        select p.permissionName from teacher t,role r,permission p
+        where t.roleId=r.id and p.roleId=r.id and t.teacherName=#{teacherName};
+    </select>
 </mapper>

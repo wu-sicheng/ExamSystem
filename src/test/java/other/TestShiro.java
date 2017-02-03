@@ -21,7 +21,7 @@ public class TestShiro {
     private static final Logger LOGGER= LoggerFactory.getLogger(TestShiro.class);
     @Test
     public void main() {
-        //创建一个SecurityManager工厂
+        //创建一个SecurityManager工厂,使用ini的方式创建一个Realm
         Factory<SecurityManager> factory = new IniSecurityManagerFactory("/media/wsc/Work/workspace/paper/src/test/java/other/shiro.ini");
         SecurityManager securityManager = factory.getInstance();
         //将工厂绑定到SecurityUtils

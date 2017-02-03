@@ -5,6 +5,7 @@ import com.wsc.pojo.Teacher;
 import com.wsc.pojo.TheClass;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by wsc on 17-1-18.
@@ -19,7 +20,7 @@ public interface IPersonService {
     List<Teacher> queryTeacherAll();
     List<Teacher> queryTeacherByPaperId(int paperId);
     List<Teacher> queryTeacherByClassId(int classId);
-    List<Teacher> queryTeacherByTeacherName(String name);
+    Teacher queryTeacherByTeacherName(String name);
     Teacher queryTeacherByTeacherId(int teacherId);
 
 
@@ -46,7 +47,7 @@ public interface IPersonService {
     List<TheClass> queryTheClassListAll();
 
     /*
-     * 权限管理
+     * 权限管理1
      */
     boolean createPerson(int powerId);
     boolean deletePerson(int powerId);
@@ -62,4 +63,10 @@ public interface IPersonService {
     boolean deleteResult(int powerId);
     boolean updateResult(int powerId);
     boolean queryResult(int powerId);
+
+    /*
+    权限管理2
+     */
+    Set<String> findRoles(String name);
+    Set<String> findPermissions(String name);
 }

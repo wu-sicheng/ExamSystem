@@ -15,7 +15,7 @@ public interface IExamService {
     /*
     考试的试题
      */
-    ExamPaper getExamPaper(int powerId,int paperId);
+    ExamPaper getExamPaper(int paperId);
 
     /*
     学生考试的相关信息

@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by wsc on 17-1-18.
@@ -138,18 +139,8 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
-    
-    public List<Teacher> queryTeacherByTeacherName(String name) {
-        List<Teacher> teacherList=iTeacherDao.queryTeacherByTeacherName(name);
-        try{
-            if(teacherList.get(0)!=null){
-                return teacherList;
-            }
-        }catch (IndexOutOfBoundsException e){
-            e.printStackTrace();
-            throw new PersonNotExistException("找不到符合条件的");
-        }
-        return null;
+    public Teacher queryTeacherByTeacherName(String name) {
+        return iTeacherDao.queryTeacherByTeacherName(name);
     }
 
     @Override
@@ -576,7 +567,17 @@ public class PersonServiceImpl implements IPersonService {
         }
     }
 
-    
+    @Override
+    public Set<String> findRoles(String name) {
+        return iTeacherDao.findRoles(name);
+    }
+
+    @Override
+    public Set<String> findPermissions(String name) {
+        return iTeacherDao.findPermissions(name);
+    }
+
+
     private List<Integer> getAllTeacherId(){
         return iTeacherDao.queryTeacherIdAll();
     }

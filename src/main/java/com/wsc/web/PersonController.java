@@ -76,7 +76,7 @@ public class PersonController {
 
     @RequestMapping(value = "teacher/teacher-name/{name}",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
-    public List<Teacher> queryTeacherByTeacherName(@PathVariable String name){
+    public Teacher queryTeacherByTeacherName(@PathVariable String name){
         return iPersonService.queryTeacherByTeacherName(name);
     }
 

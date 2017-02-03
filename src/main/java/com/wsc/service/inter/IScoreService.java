@@ -19,7 +19,7 @@ public interface IScoreService {
     计算分数
      */
     //选择
-    double computeScore(int powerId,ResultRe.QuestionRe questionRe);
+    double computeScore(ResultRe.QuestionRe questionRe);
 
     //多选
 

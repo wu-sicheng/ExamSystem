@@ -33,7 +33,7 @@ public class Teacher {
     @XmlElement
     private int teacherState=-1;
     @XmlElement
-    private int teacherPower=-1;
+    private int roleId=-1;
     @XmlElement
     private Date teacherCreateTime;
     @XmlElement
@@ -42,7 +42,7 @@ public class Teacher {
     public Teacher() {
     }
 
-    public Teacher(int teacherId, String classId, String paperId, String teacherName, String teacherPassword, int teacherGander, String teacherNo, String teacherMail, String teacherPhone, int teacherState, int teacherPower, Date teacherCreateTime, Date teacherDeleteTime) {
+    public Teacher(int teacherId, String classId, String paperId, String teacherName, String teacherPassword, int teacherGander, String teacherNo, String teacherMail, String teacherPhone, int teacherState, int roleId, Date teacherCreateTime, Date teacherDeleteTime) {
         this.teacherId = teacherId;
         this.classId = classId;
         this.paperId = paperId;
@@ -53,7 +53,7 @@ public class Teacher {
         this.teacherMail = teacherMail;
         this.teacherPhone = teacherPhone;
         this.teacherState = teacherState;
-        this.teacherPower = teacherPower;
+        this.roleId = roleId;
         this.teacherCreateTime = teacherCreateTime;
         this.teacherDeleteTime = teacherDeleteTime;
     }
@@ -138,12 +138,12 @@ public class Teacher {
         this.teacherState = teacherState;
     }
 
-    public int getTeacherPower() {
-        return teacherPower;
+    public int getRoleId() {
+        return roleId;
     }
 
-    public void setTeacherPower(int teacherPower) {
-        this.teacherPower = teacherPower;
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
     }
 
     public Date getTeacherCreateTime() {
@@ -175,7 +175,7 @@ public class Teacher {
                 ", teacherMail='" + teacherMail + '\'' +
                 ", teacherPhone='" + teacherPhone + '\'' +
                 ", teacherState=" + teacherState +
-                ", teacherPower=" + teacherPower +
+                ", roleId=" + roleId +
                 ", teacherCreateTime=" + teacherCreateTime +
                 ", teacherDeleteTime=" + teacherDeleteTime +
                 '}';

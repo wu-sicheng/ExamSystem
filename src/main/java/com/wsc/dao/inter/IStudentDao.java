@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Param;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by wsc on 17-1-13.
@@ -71,6 +72,10 @@ public interface IStudentDao {
     List<Integer> queryStudentIdAll();
 
     List<Student> queryStudentByStudentName(String studentName);
+
+    Set<String> findRoles(String studentName);
+
+    Set<String> findPermissions(String studentName);
 
 
 }

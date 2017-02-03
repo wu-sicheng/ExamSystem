@@ -19,10 +19,11 @@ CREATE TABLE student(
   studentNum TEXT,#学生准考证号
   studentMail TEXT,#学生邮箱
   studentPhone TEXT,#学生电话
-  studentPower INT,#学生的权限
+  roleId INT,#学生的权限
   studentState INT, #学生状态，0删除，1没有删除
   studentCreateTime DATETIME,
-  studentDeleteTime DATETIME
+  studentDeleteTime DATETIME,
+  CONSTRAINT `t_user_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `t_role` (`id`)
 );
 
 #教师表格,管理员同表
@@ -38,9 +39,10 @@ CREATE TABLE teacher(
   teacherMail TEXT,#教师邮箱
   teacherPhone TEXT,#教师电话
   teacherState INT,#教师状态，0删除，1没有删除
-  teacherPower INT, #教师权限
+  roleId INT, #教师权限
   teacherCreateTime DATETIME,
-  teacherDeleteTime DATETIME
+  teacherDeleteTime DATETIME,
+  CONSTRAINT `t_user_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `t_role` (`id`)
 );
 
 #班级表格
@@ -152,3 +154,23 @@ INSERT INTO theClass VALUES (NULL ,1,1,"class1");
 INSERT INTO theClass VALUES (NULL ,2,0,"class2");
 INSERT INTO student VALUES (NULL ,1,1,"1,2","wusicheng","password",1,"studentNo","major","2","num","mail@mail.com","18826222446",1,1,"2016-2-2 00:00:00","2017-2-2 12:12:21");
 INSERT INTO student VALUES (NULL ,2,2,"2,3","wusic","password",1,"studentNo","major","2","num","mail@mail.com","18826222446",1,1,"2016-2-2 00:00:00","2017-2-2 12:12:21");
+
+
+# 权限控制
+DROP TABLE IF EXISTS role;
+CREATE TABLE role (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  roleName varchar(20) DEFAULT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS permission;
+CREATE TABLE permission (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  permissionName varchar(50) DEFAULT NULL,
+  roleId int(11) DEFAULT NULL,
+  PRIMARY KEY (id),
+  KEY roleId (roleId),
+  CONSTRAINT t_permission_ibfk_1 FOREIGN KEY (roleId) REFERENCES role(id)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+

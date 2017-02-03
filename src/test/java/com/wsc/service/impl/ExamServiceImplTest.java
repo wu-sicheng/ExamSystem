@@ -32,7 +32,7 @@ public class ExamServiceImplTest {
 
     @Test
     public void getExamPaper() throws Exception {
-        ExamPaper examPaper=iExamService.getExamPaper(1,2);
+        ExamPaper examPaper=iExamService.getExamPaper(2);
         LOGGER.info(examPaper.toString());
     }
 

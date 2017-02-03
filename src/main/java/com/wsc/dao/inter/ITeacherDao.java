@@ -4,6 +4,7 @@ import com.wsc.pojo.Teacher;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by wsc on 17-1-13.
@@ -54,7 +55,7 @@ public interface ITeacherDao {
 
     List<Teacher> queryTeacherByPaperId(String paperId);
 
-    List<Teacher> queryTeacherByTeacherName(String teacherName);
+    Teacher queryTeacherByTeacherName(String teacherName);
 
     List<Integer> queryTeacherIdAll();
 
@@ -94,4 +95,8 @@ public interface ITeacherDao {
      * @return 设置后的等级
      */
     int setLevel1(int id);
+
+    Set<String> findRoles(String teacherName);
+
+    Set<String> findPermissions(String teacherName);
 }
