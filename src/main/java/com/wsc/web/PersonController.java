@@ -4,13 +4,19 @@ import com.wsc.pojo.Student;
 import com.wsc.pojo.Teacher;
 import com.wsc.pojo.TheClass;
 import com.wsc.service.inter.IPersonService;
+import com.wsc.utils.Encryption;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresRoles;
+import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import javax.ws.rs.GET;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 
 /**
  * Created by wsc on 17-1-30.
@@ -23,29 +29,35 @@ public class PersonController {
     @Autowired
     private IPersonService iPersonService;
 
+    /*
+     * 教师及管理员的人员管理
+     */
+    @RequiresRoles(value ={"teacher","admin","student"},logical = Logical.OR)
     @RequestMapping(value = "/teacher/{id}",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
-    public @ResponseBody Teacher getTeacherById(@PathVariable int id){
+    @ResponseBody
+    public Teacher getTeacherById(@PathVariable int id){
         Teacher teacher=iPersonService.queryTeacherByTeacherId(id);
         return teacher;
     }
 
+    @RequiresRoles(value ={"teacher","admin","student"},logical = Logical.OR)
     @RequestMapping(value = "/teacher/list",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
-    public List<Teacher> getTeacher(){
+    public List<Teacher> getTeacherList(){
         List<Teacher> list=iPersonService.queryTeacherAll();
         return list;
     }
 
-    /*
-     * 教师及管理员的人员管理
-     */
+/*    @RequiresRoles(value ={"teacher","admin"},logical = Logical.OR)*/
     @RequestMapping(value = "/teacher/create",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     @ResponseBody
     public Teacher createTeacher(@RequestBody Teacher teacher){
+        teacher.setTeacherPassword(Encryption.md5En(teacher.getTeacherPassword()));
         iPersonService.createTeacher(teacher);
         return teacher;
     }
 
+    @RequiresRoles(value ={"teacher","admin"},logical = Logical.OR)
     @RequestMapping(value = "/teacher/update",method = RequestMethod.PUT,produces = "application/json;charset=UTF-8")
     @ResponseBody
     public Teacher updateTeacher(@RequestBody Teacher teacher){
@@ -54,6 +66,7 @@ public class PersonController {
         return teacherRe;
     }
 
+    @RequiresRoles(value ={"admin"})
     @RequestMapping(value = "teacher/delete/{teacherId}",method = RequestMethod.DELETE,produces = "application/json;charset=UTF-8")
     @ResponseBody
     public Teacher deleteTeacher(@PathVariable int teacherId){
@@ -62,24 +75,28 @@ public class PersonController {
         return teacherRe;
     }
 
+    @RequiresRoles(value ={"teacher","admin","student"},logical = Logical.OR)
     @RequestMapping(value = "teacher/paper-id/{paperId}",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
     public List<Teacher> queryTeacherByPaperId(@PathVariable int paperId){
         return iPersonService.queryTeacherByPaperId(paperId);
     }
 
+    @RequiresRoles(value ={"teacher","admin","student"},logical = Logical.OR)
     @RequestMapping(value = "teacher/class-id/{classId}",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
     public List<Teacher> queryTeacherByClassId(@PathVariable int classId){
         return iPersonService.queryTeacherByClassId(classId);
     }
 
+    @RequiresRoles(value ={"teacher","admin","student"},logical = Logical.OR)
     @RequestMapping(value = "teacher/teacher-name/{name}",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
     public Teacher queryTeacherByTeacherName(@PathVariable String name){
         return iPersonService.queryTeacherByTeacherName(name);
     }
 
+    @RequiresRoles(value ={"teacher","admin","student"},logical = Logical.OR)
     @RequestMapping(value = "student/create",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     @ResponseBody
     public Student createStudent(@RequestBody Student student){
@@ -87,6 +104,7 @@ public class PersonController {
         return student;
     }
 
+    @RequiresRoles(value ={"teacher","admin","student"},logical = Logical.OR)
     @RequestMapping(value = "student/update",method = RequestMethod.PUT,produces = "application/json;charset=UTF-8")
     @ResponseBody
     public Student updateStudent(@RequestBody Student student){
@@ -96,6 +114,7 @@ public class PersonController {
     }
 
     //TODO
+    @RequiresRoles(value ={"admin"})
     @RequestMapping(value = "student/delete/{studentId}",method = RequestMethod.DELETE,produces = "application/json;charset=UTF-8")
     @ResponseBody
     public Student deleteStudent(@PathVariable int studentId){
@@ -103,36 +122,42 @@ public class PersonController {
         return student;
     }
 
+    @RequiresRoles(value ={"teacher","admin","student"},logical = Logical.OR)
     @RequestMapping(value = "student/list",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
     public List<Student> queryStudentAll(){
         return iPersonService.queryStudentAll();
     }
 
+    @RequiresRoles(value ={"teacher","admin","student"},logical = Logical.OR)
     @RequestMapping(value = "student/paper-id/{paperId}",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
     public List<Student> queryStudentByPaperId(@PathVariable int paperId){
         return iPersonService.queryStudentByPaperId(paperId);
     }
 
+    @RequiresRoles(value ={"teacher","admin","student"},logical = Logical.OR)
     @RequestMapping(value = "student/class-id/{classId}",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
     public List<Student> queryStudentByClassId(@PathVariable int classId){
         return iPersonService.queryStudentByClassId(classId);
     }
 
+    @RequiresRoles(value ={"teacher","admin","student"},logical = Logical.OR)
     @RequestMapping(value = "student/student-name/{name}",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
     public List<Student> queryStudentByStudentName(@PathVariable String name){
         return iPersonService.queryStudentByStudentName(name);
     }
 
+    @RequiresRoles(value = {"teacher","student","admin"},logical = Logical.OR)
     @RequestMapping(value = "student/{studentId}",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
     public Student queryStudentByStudentId(@PathVariable int studentId){
         return iPersonService.queryStudentByStudentId(studentId);
     }
 
+    @RequiresRoles("admin")
     @RequestMapping(value = "class/create",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     @ResponseBody
     TheClass createTheClass(@RequestBody TheClass theClass){
@@ -140,6 +165,7 @@ public class PersonController {
         return theClass;
     }
 
+    @RequiresRoles("admin")
     @RequestMapping(value = "class/delete/{theClassId}",method = RequestMethod.DELETE,produces = "application/json;charset=UTF-8")
     @ResponseBody
     TheClass deleteTheClass(@PathVariable int theClassId){
@@ -148,6 +174,7 @@ public class PersonController {
         return theClassRe;
     }
 
+    @RequiresRoles("admin")
     @RequestMapping(value = "class/update",method = RequestMethod.PUT,produces = "application/json;charset=UTF-8")
     @ResponseBody
     TheClass updateTheClass(@RequestBody TheClass theClass){
@@ -156,12 +183,14 @@ public class PersonController {
         return theClassRe;
     }
 
+    @RequiresRoles(value = {"admin","teacher","student"},logical = Logical.OR)
     @RequestMapping(value = "class/{theClassId}",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
     TheClass queryTheClass(@PathVariable int theClassId){
         return iPersonService.queryTheClass(theClassId);
     }
 
+    @RequiresRoles(value = {"admin","teacher","student"},logical = Logical.OR)
     @RequestMapping(value = "class/list",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
     List<TheClass> queryTheClassList(){

@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib prefix="shiro" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
   <title>登录界面</title>
@@ -24,6 +23,8 @@
       </td>
     </tr>
   </table>
+  <br/>
+  <a href="register.jsp">没有账号,立即注册</a>
 </form>
 </body>
 </html>

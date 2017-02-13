@@ -13,7 +13,7 @@
         <td>${name}</td>
     </tr>
     <tr>
-        <td>年龄：</td>
+        <td>密码：</td>
         <td>${password}</td>
     </tr>
 </table>

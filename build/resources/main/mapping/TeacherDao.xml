@@ -6,7 +6,7 @@
     <!--创建一个教师-->
     <insert id="addTeacher" parameterType="Teacher">
         INSERT INTO teacher (id,teacherId,classId,paperId,teacherName,teacherPassword,
-        teacherGander,teacherNo,teacherMail,teacherPhone,teacherState,teacherPower,
+        teacherGander,teacherNo,teacherMail,teacherPhone,teacherState,roleId,
         teacherCreateTime) VALUES (NULL,#{teacherId},#{classId},#{paperId},#{teacherName},
         #{teacherPassword},#{teacherGander},#{teacherNo},#{teacherMail},#{teacherPhone},
         1,2,now());

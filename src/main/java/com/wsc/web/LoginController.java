@@ -1,6 +1,7 @@
 package com.wsc.web;
 
 import com.wsc.pojo.Teacher;
+import com.wsc.utils.Encryption;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
@@ -17,9 +18,10 @@ public class LoginController {
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String login(@ModelAttribute("SpringWeb") Teacher teacher, Model model) {
         Subject subject = SecurityUtils.getSubject();
-        UsernamePasswordToken token = new UsernamePasswordToken(teacher.getTeacherName(),teacher.getTeacherPassword());
+        UsernamePasswordToken token = new UsernamePasswordToken(teacher.getTeacherName(), Encryption.md5En(teacher.getTeacherPassword()));
         try {
             subject.login(token);
+            token.setRememberMe(true);
             model.addAttribute("name",teacher.getTeacherName());
             model.addAttribute("password",teacher.getTeacherPassword());
             return "mess";
