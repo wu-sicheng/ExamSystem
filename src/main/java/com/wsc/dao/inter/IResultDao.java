@@ -11,38 +11,38 @@ import java.util.List;
 public interface IResultDao {
 
     /**
-     * 创建一个学生考试结果，state置为1，添加创建时间
-     * @param result 结果
-     * @return 是否创建成功
+     * ???????????state??1???????
+     * @param result ??
+     * @return ??????
      */
     void createResult(Result result);
 
     /**
-     * 通过id删除一个结果，将state置为0，添加删除时间
-     * @param resultId 删除的id
-     * @return 删除的结果
+     * ??id????????state??0???????
+     * @param resultId ???id
+     * @return ?????
      */
     void deleteResult(int resultId);
 
     /**
-     * 通过resultId更新结果
+     * ??resultId????
      * @param result
-     * @return 更新前的结果
+     * @return ??????
      */
     void updateResult(Result result);
 
     /**
-     * 通过id来查询一个结果
+     * ??id???????
      * @param resultId id
-     * @return 查询到的结果
+     * @return ??????
      */
     Result queryResult(int resultId);
 
     /**
-     * 查询结果集
-     * @param fromResultId 开始的id
-     * @param toResultId 结束的id
-     * @return 查询的id
+     * ?????
+     * @param fromResultId ???id
+     * @param toResultId ???id
+     * @return ???id
      */
     List<Result> queryResultList(@Param("fromResultId")int fromResultId,@Param("toResultId")int toResultId);
 

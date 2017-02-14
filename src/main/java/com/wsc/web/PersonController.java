@@ -4,19 +4,15 @@ import com.wsc.pojo.Student;
 import com.wsc.pojo.Teacher;
 import com.wsc.pojo.TheClass;
 import com.wsc.service.inter.IPersonService;
-import com.wsc.utils.Encryption;
+import com.wsc.util.Encryption;
 import org.apache.shiro.authz.annotation.Logical;
 import org.apache.shiro.authz.annotation.RequiresRoles;
-import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.List;
-import java.util.Properties;
+import java.util.Set;
 
 /**
  * Created by wsc on 17-1-30.
@@ -43,8 +39,8 @@ public class PersonController {
     @RequiresRoles(value ={"teacher","admin","student"},logical = Logical.OR)
     @RequestMapping(value = "/teacher/list",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
-    public List<Teacher> getTeacherList(){
-        List<Teacher> list=iPersonService.queryTeacherAll();
+    public Set<Teacher> getTeacherList(){
+        Set<Teacher> list=iPersonService.queryTeacherAll();
         return list;
     }
 
@@ -71,21 +67,21 @@ public class PersonController {
     @ResponseBody
     public Teacher deleteTeacher(@PathVariable int teacherId){
         Teacher teacherRe=iPersonService.queryTeacherByTeacherId(teacherId);
-        iPersonService.deleteTeacher(teacherId);
+        iPersonService.deleteTeacherByTeacherId(teacherId);
         return teacherRe;
     }
 
     @RequiresRoles(value ={"teacher","admin","student"},logical = Logical.OR)
     @RequestMapping(value = "teacher/paper-id/{paperId}",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
-    public List<Teacher> queryTeacherByPaperId(@PathVariable int paperId){
+    public Set<Teacher> queryTeacherByPaperId(@PathVariable int paperId){
         return iPersonService.queryTeacherByPaperId(paperId);
     }
 
     @RequiresRoles(value ={"teacher","admin","student"},logical = Logical.OR)
     @RequestMapping(value = "teacher/class-id/{classId}",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
-    public List<Teacher> queryTeacherByClassId(@PathVariable int classId){
+    public Set<Teacher> queryTeacherByClassId(@PathVariable int classId){
         return iPersonService.queryTeacherByClassId(classId);
     }
 

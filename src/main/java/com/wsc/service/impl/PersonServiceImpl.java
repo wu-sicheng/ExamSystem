@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 /**
@@ -26,7 +27,7 @@ import java.util.Set;
  */
 @Service
 public class PersonServiceImpl implements IPersonService {
-    private static final Logger LOGGER= LoggerFactory.getLogger(PersonServiceImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(PersonServiceImpl.class);
 
     @Autowired
     private ITeacherDao iTeacherDao;
@@ -35,12 +36,9 @@ public class PersonServiceImpl implements IPersonService {
     private IStudentDao iStudentDao;
 
     @Autowired
-    private IManagerDao iManagerDao;
-
-    @Autowired
     private ITheClassDao iTheClassDao;
 
-    private List<Integer> listTeacherId;
+    private Set<Integer> listTeacherId;
     private List<Integer> listStudentId;
     private List<Integer> listTheClassId;
 
@@ -48,75 +46,87 @@ public class PersonServiceImpl implements IPersonService {
      * 教师及管理员的人员管理
      */
     @Override
-    public boolean createTeacher(Teacher teacher) throws PersonException{
-        if(!judgeNull(teacher)){
-            listTeacherId=getAllTeacherId();
-            if(listTeacherId==null||!listTeacherId.contains(teacher.getTeacherId())){
+    public boolean createTeacher(Teacher teacher) throws PersonException {
+        int maxTeacherId=Collections.max(iTeacherDao.queryListTeacherId());
+        if(!judgeExistMail(teacher)){
+            teacher.setTeacherId(maxTeacherId+1);
+            teacher.setTeacherDisplayName(teacher.getTeacherMail());
+            if (!judgeNull(teacher)) {
                 iTeacherDao.addTeacher(teacher);
                 return true;
             }
-            else{
-                throw new PersonException("数据库中已经有该数据");
+            else {
+                LOGGER.info("create teacher中存在空值");
+                throw new PersonException("存储的数据存在空值");
             }
         }
         else{
-            throw new PersonException("存储的数据存在空值");
+            LOGGER.info("数据库teacher中已存在数据为"+teacher.toString()+"的数据");
+            throw new PersonException("数据库teacher中已存在数据为"+teacher.toString()+"的数据");
         }
     }
 
     @Override
     public Teacher updateTeacher(int teacherId, Teacher teacher) {
-        Teacher teacherRet=null;
-        listTeacherId=getAllTeacherId();
-        if(listTeacherId.contains(teacherId)){
-            teacherRet=queryTeacherByTeacherId(teacherId);
+        Teacher teacherRet = null;
+        listTeacherId = getAllTeacherId();
+        if (listTeacherId.contains(teacherId)) {
+            teacherRet = queryTeacherByTeacherId(teacherId);
             teacher.setTeacherId(teacherId);
             iTeacherDao.updateTeacher(teacher);
             return teacherRet;
-        }
-        else{
-            throw new PersonNotExistException("数据库中找不到这个人");
+        } else {
+            throw new PersonNotExistException("数据库teacher中找不到teacherId为" + teacherId + "这个人");
         }
     }
 
     @Override
-    
-    public Teacher deleteTeacher(int teacherId) {
-        listTeacherId=getAllTeacherId();
-        Teacher teacher=queryTeacherByTeacherId(teacherId);
-        if(listTeacherId.contains(teacherId)){
-            iTeacherDao.deleteTeacher(teacherId);
+    public Teacher updateTeacherByMail(Teacher teacher){
+        int id=iTeacherDao.queryTeacherIdByMail(teacher.getTeacherMail());
+        return updateTeacher(id,teacher);
+    }
+
+    @Override
+    public Teacher deleteTeacherByTeacherId(int teacherId) {
+        listTeacherId = getAllTeacherId();
+        Teacher teacher = queryTeacherByTeacherId(teacherId);
+        if (listTeacherId.contains(teacherId)) {
+            iTeacherDao.deleteTeacherByTeacherId(teacherId);
             return teacher;
-        }
-        else{
+        } else {
+            LOGGER.info("数据库teacher中找不到id为"+teacherId+"的数据");
             throw new PersonNotExistException("数据库中找不到这个人");
         }
     }
 
     @Override
-    
-    public List<Teacher> queryTeacherAll() {
-        listTeacherId =getAllTeacherId();
-        try{
-            if(listTeacherId.get(0)!=null){
-                return iTeacherDao.queryTeacherList(Collections.min(listTeacherId),Collections.max(listTeacherId));
+    public Teacher deleteTeacherByTeacherMail(String teacherMail){
+        int id=iTeacherDao.queryTeacherIdByMail(teacherMail);
+        return deleteTeacherByTeacherId(id);
+    }
+
+    @Override
+    public Set<Teacher> queryTeacherAll() {
+        listTeacherId = getAllTeacherId();
+        try {
+            if (listTeacherId.size() != 0) {
+                return iTeacherDao.queryTeacherList(Collections.min(listTeacherId), Collections.max(listTeacherId));
             }
-        }catch (IndexOutOfBoundsException e){
+        } catch (IndexOutOfBoundsException e) {
             e.printStackTrace();
-            throw new PersonException("数据库中找不到数据");
+            throw new PersonException("数据库teacher中没有数据");
         }
         return null;
     }
 
     @Override
-    
-    public List<Teacher> queryTeacherByPaperId(int paperId) {
-        List<Teacher> teacherList=iTeacherDao.queryTeacherByPaperId(String.valueOf(paperId));
-        try{
-            if(teacherList.get(0)!=null){
+    public Set<Teacher> queryTeacherByPaperId(int paperId) {
+        Set<Teacher> teacherList = iTeacherDao.queryTeacherByPaperId(String.valueOf(paperId));
+        try {
+            if (teacherList.size() != 0) {
                 return teacherList;
             }
-        }catch (IndexOutOfBoundsException e){
+        } catch (IndexOutOfBoundsException e) {
             e.printStackTrace();
             throw new PersonNotExistException("找不到符合条件的");
         }
@@ -124,14 +134,13 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
-    
-    public List<Teacher> queryTeacherByClassId(int classId) {
-        List<Teacher> teacherList=iTeacherDao.queryTeacherByPaperId(String.valueOf(classId));
-        try{
-            if(teacherList.get(0)!=null){
+    public Set<Teacher> queryTeacherByClassId(int classId) {
+        Set<Teacher> teacherList = iTeacherDao.queryTeacherByClassId(String.valueOf(classId));
+        try {
+            if (teacherList.size() != 0) {
                 return teacherList;
             }
-        }catch (IndexOutOfBoundsException e){
+        } catch (IndexOutOfBoundsException e) {
             e.printStackTrace();
             throw new PersonNotExistException("找不到符合条件的");
         }
@@ -144,77 +153,107 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
-    
     public Teacher queryTeacherByTeacherId(int teacherId) {
-        listTeacherId=getAllTeacherId();
-        if(listTeacherId.contains(teacherId)){
+        listTeacherId = getAllTeacherId();
+        if (listTeacherId.contains(teacherId)) {
             return iTeacherDao.queryTeacherById(teacherId);
-        }
-        else{
-            throw new PersonNotExistException("id为"+teacherId+"的数据不存在");
+        } else {
+            throw new PersonNotExistException("id为" + teacherId + "的数据不存在");
         }
     }
+
+    @Override
+    public Set<Integer> queryListTeacherId() {
+        return iTeacherDao.queryListTeacherId();
+    }
+
+    @Override
+    public Set<String> queryListTeacherName() {
+        return iTeacherDao.queryListTeacherName();
+    }
+
+    @Override
+    public Set<String> queryListTeacherMail() {
+        return iTeacherDao.queryListTeacherMail();
+    }
+
+    @Override
+    public Set<String> queryListTeacherPhone() {
+        return iTeacherDao.queryListTeacherPhone();
+    }
+
+    @Override
+    public Teacher queryTeacherByMail(String mail) {
+        return iTeacherDao.queryTeacherByMail(mail);
+    }
+
+    @Override
+    public Teacher queryTeacherByName(String name) {
+        return iTeacherDao.queryTeacherByName(name);
+    }
+
+    @Override
+    public Teacher queryTeacherByPhone(String phone) {
+        return iTeacherDao.queryTeacherByPhone(phone);
+    }
+
 
     /*
      * 学生的人员管理
      */
     @Override
-    
+
     public boolean createStudent(Student student) {
-        if(!judgeStudentNull(student)){
-            listStudentId=getAllStudentId();
-            if(listStudentId==null||!listStudentId.contains(student.getStudentId())){
+        if (!judgeStudentNull(student)) {
+            listStudentId = getAllStudentId();
+            if (listStudentId == null || !listStudentId.contains(student.getStudentId())) {
                 iStudentDao.addStudent(student);
                 return true;
-            }
-            else{
+            } else {
                 throw new PersonException("数据库student中已经有该数据");
             }
-        }
-        else{
+        } else {
             throw new PersonException("存储的数据存在空值");
         }
     }
 
     @Override
-    
+
     public Student updateStudent(int studentId, Student student) {
-        Student studentRe=null;
-        listStudentId=getAllStudentId();
-        if(listStudentId.contains(studentId)){
-            studentRe=queryStudentByStudentId(studentId);
+        Student studentRe = null;
+        listStudentId = getAllStudentId();
+        if (listStudentId.contains(studentId)) {
+            studentRe = queryStudentByStudentId(studentId);
             student.setStudentId(studentId);
             iStudentDao.updateStudent(student);
             return studentRe;
-        }
-        else{
+        } else {
             throw new PersonNotExistException("数据库中找不到这个人");
         }
     }
 
     @Override
-    
+
     public Student deleteStudent(int studentId) {
-        listStudentId=getAllStudentId();
-        Student student=queryStudentByStudentId(studentId);
-        if(listStudentId.contains(studentId)){
+        listStudentId = getAllStudentId();
+        Student student = queryStudentByStudentId(studentId);
+        if (listStudentId.contains(studentId)) {
             iStudentDao.deleteStudent(studentId);
             return student;
-        }
-        else{
+        } else {
             throw new PersonNotExistException("数据库中找不到这个人");
         }
     }
 
     @Override
-    
+
     public List<Student> queryStudentAll() {
-        listStudentId =getAllStudentId();
-        try{
-            if(listStudentId.get(0)!=null){
-                return iStudentDao.queryStudentList(Collections.min(listStudentId),Collections.max(listStudentId));
+        listStudentId = getAllStudentId();
+        try {
+            if (listStudentId.get(0) != null) {
+                return iStudentDao.queryStudentList(Collections.min(listStudentId), Collections.max(listStudentId));
             }
-        }catch (IndexOutOfBoundsException e){
+        } catch (IndexOutOfBoundsException e) {
             e.printStackTrace();
             throw new PersonException("数据库中找不到数据");
         }
@@ -222,14 +261,14 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
-    
+
     public List<Student> queryStudentByPaperId(int paperId) {
-        List<Student> studentList=iStudentDao.queryStudentByPaperId(String.valueOf(paperId));
-        try{
-            if(studentList.get(0)!=null){
+        List<Student> studentList = iStudentDao.queryStudentByPaperId(String.valueOf(paperId));
+        try {
+            if (studentList.get(0) != null) {
                 return studentList;
             }
-        }catch (IndexOutOfBoundsException e){
+        } catch (IndexOutOfBoundsException e) {
             e.printStackTrace();
             throw new PersonNotExistException("找不到符合条件的");
         }
@@ -237,14 +276,14 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
-    
+
     public List<Student> queryStudentByClassId(int classId) {
-        List<Student> studentList=iStudentDao.queryStudentByTheClassId(classId);
-        try{
-            if(studentList.get(0)!=null){
+        List<Student> studentList = iStudentDao.queryStudentByTheClassId(classId);
+        try {
+            if (studentList.get(0) != null) {
                 return studentList;
             }
-        }catch (IndexOutOfBoundsException e){
+        } catch (IndexOutOfBoundsException e) {
             e.printStackTrace();
             throw new PersonNotExistException("找不到符合条件的");
         }
@@ -252,14 +291,14 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
-    
+
     public List<Student> queryStudentByStudentName(String name) {
-        List<Student> studentList=iStudentDao.queryStudentByStudentName(name);
-        try{
-            if(studentList.get(0)!=null){
+        List<Student> studentList = iStudentDao.queryStudentByStudentName(name);
+        try {
+            if (studentList.get(0) != null) {
                 return studentList;
             }
-        }catch (IndexOutOfBoundsException e){
+        } catch (IndexOutOfBoundsException e) {
             e.printStackTrace();
             throw new PersonNotExistException("找不到符合条件的");
         }
@@ -267,13 +306,12 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
-    
+
     public Student queryStudentByStudentId(int studentId) {
-        listStudentId=getAllStudentId();
-        if(listStudentId.contains(studentId)){
+        listStudentId = getAllStudentId();
+        if (listStudentId.contains(studentId)) {
             return iStudentDao.queryStudent(studentId);
-        }
-        else{
+        } else {
             throw new PersonNotExistException("找不到这个人");
         }
     }
@@ -282,326 +320,144 @@ public class PersonServiceImpl implements IPersonService {
     班级管理
      */
     @Override
-    
+
     public boolean createTheClass(TheClass theClass) {
-        listTheClassId=getAllTheClassId();
-        if(!listTheClassId.contains(theClass.getTheClassId())){
+        listTheClassId = getAllTheClassId();
+        if (!listTheClassId.contains(theClass.getTheClassId())) {
             iTheClassDao.createTheClass(theClass);
             return true;
-        }
-        else{
-            LOGGER.info("数据库the_class中含有数据the_class_id为"+theClass.getTheClassId()+"的数据");
-            throw new PersonException("数据库the_class中含有数据the_class_id为"+theClass.getTheClassId()+"的数据");
+        } else {
+            LOGGER.info("数据库the_class中含有数据the_class_id为" + theClass.getTheClassId() + "的数据");
+            throw new PersonException("数据库the_class中含有数据the_class_id为" + theClass.getTheClassId() + "的数据");
         }
     }
 
     @Override
-    
+
     public TheClass deleteTheClass(int theClassId) {
-        listTheClassId=getAllTheClassId();
-        if(listTheClassId.contains(theClassId)){
-            TheClass theClassRe=iTheClassDao.queryTheClass(theClassId);
+        listTheClassId = getAllTheClassId();
+        if (listTheClassId.contains(theClassId)) {
+            TheClass theClassRe = iTheClassDao.queryTheClass(theClassId);
             iTheClassDao.deleteTheClass(theClassId);
             return theClassRe;
-        }
-        else{
-            LOGGER.info("数据库the_class中不含有数据the_class_id为"+theClassId+"的数据");
-            throw new PersonException("数据库the_class中不含有数据the_class_id为"+theClassId+"的数据");
+        } else {
+            LOGGER.info("数据库the_class中不含有数据the_class_id为" + theClassId + "的数据");
+            throw new PersonException("数据库the_class中不含有数据the_class_id为" + theClassId + "的数据");
         }
     }
 
     @Override
-    
+
     public TheClass updateTheClass(TheClass theClass) {
-        listTheClassId=getAllTheClassId();
-        if(listTheClassId.contains(theClass.getTheClassId())){
-            TheClass theClassRe=iTheClassDao.queryTheClass(theClass.getTheClassId());
+        listTheClassId = getAllTheClassId();
+        if (listTheClassId.contains(theClass.getTheClassId())) {
+            TheClass theClassRe = iTheClassDao.queryTheClass(theClass.getTheClassId());
             iTheClassDao.updateTheClass(theClass);
             return theClassRe;
-        }
-        else{
-            LOGGER.info("数据库the_class中不含有数据the_class_id为"+theClass.getTheClassId()+"的数据");
-            throw new PersonException("数据库the_class中不含有数据the_class_id为"+theClass.getTheClassId()+"的数据");
+        } else {
+            LOGGER.info("数据库the_class中不含有数据the_class_id为" + theClass.getTheClassId() + "的数据");
+            throw new PersonException("数据库the_class中不含有数据the_class_id为" + theClass.getTheClassId() + "的数据");
         }
     }
 
     @Override
-    
+
     public TheClass queryTheClass(int theClassId) {
-        listTheClassId=getAllTheClassId();
-        if(listTheClassId.contains(theClassId)){
+        listTheClassId = getAllTheClassId();
+        if (listTheClassId.contains(theClassId)) {
             return iTheClassDao.queryTheClass(theClassId);
-        }
-        else{
-            LOGGER.info("数据库the_class中不含有数据the_class_id为"+theClassId+"的数据");
-            throw new PersonException("数据库the_class中不含有数据the_class_id为"+theClassId+"的数据");
+        } else {
+            LOGGER.info("数据库the_class中不含有数据the_class_id为" + theClassId + "的数据");
+            throw new PersonException("数据库the_class中不含有数据the_class_id为" + theClassId + "的数据");
         }
     }
 
     @Override
     public List<TheClass> queryTheClassList(int fromTheClassId, int toTheClassId) {
-        listTheClassId=getAllTheClassId();
-        try{
-            if(listTheClassId.get(0)!=null){
-                return iTheClassDao.queryTheClassList(fromTheClassId,toTheClassId);
+        listTheClassId = getAllTheClassId();
+        try {
+            if (listTheClassId.get(0) != null) {
+                return iTheClassDao.queryTheClassList(fromTheClassId, toTheClassId);
             }
-        }catch (IndexOutOfBoundsException e){
+        } catch (IndexOutOfBoundsException e) {
             LOGGER.info(e.getMessage());
-            LOGGER.info("数据库theClass中不含有符合"+fromTheClassId+"到"+toTheClassId+"的数据");
-            throw new PersonException("数据库theClass中不含有符合"+fromTheClassId+"到"+toTheClassId+"的数据");
+            LOGGER.info("数据库theClass中不含有符合" + fromTheClassId + "到" + toTheClassId + "的数据");
+            throw new PersonException("数据库theClass中不含有符合" + fromTheClassId + "到" + toTheClassId + "的数据");
         }
-        throw new PersonException("数据库theClass中不含有符合"+fromTheClassId+"到"+toTheClassId+"的数据");
+        throw new PersonException("数据库theClass中不含有符合" + fromTheClassId + "到" + toTheClassId + "的数据");
     }
 
     @Override
     public List<TheClass> queryTheClassListAll() {
-        listTheClassId=getAllTheClassId();
-        return queryTheClassList(Collections.min(listTheClassId),Collections.max(listTheClassId));
+        listTheClassId = getAllTheClassId();
+        return queryTheClassList(Collections.min(listTheClassId), Collections.max(listTheClassId));
     }
 
 
-    /*
-     * 权限管理
-     */
     @Override
-    
-    public boolean createPerson(int powerId) {
-        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
-        try {
-            if(manager.getCreateStudent()==1&&manager.getCreateTeacher()==1&&manager.getCreateTheClass()==1){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }catch (NullPointerException e){
-            LOGGER.info(e.getMessage());
-            throw new ManagerException("找不到所示权限");
-        }
+    public Set<String> findRoles(String mail) {
+        return iTeacherDao.findRoles(mail);
     }
 
     @Override
-    
-    public boolean deletePerson(int powerId) {
-        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
-        try {
-            if(manager.getDeleteTeacher()==1&&manager.getDeleteStudent()==1&&manager.getDeleteTheClass()==1){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }catch (NullPointerException e){
-            LOGGER.info(e.getMessage());
-            throw new ManagerException("找不到所示权限");
-        }
-    }
-
-    @Override
-    
-    public boolean updatePerson(int powerId) {
-        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
-        try {
-            if(manager.getUpdateStudent()==1&&manager.getUpdateTeacher()==1&&manager.getUpdateTheClass()==1){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }catch (NullPointerException e){
-            LOGGER.info(e.getMessage());
-            throw new ManagerException("找不到所示权限");
-        }
-    }
-
-    @Override
-    
-    public boolean queryPerson(int powerId) {
-        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
-        try {
-            if(manager.getQueryStudent()==1&&manager.getQueryTeacher()==1&&manager.getQueryTheClass()==1){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }catch (NullPointerException e){
-            LOGGER.info(e.getMessage());
-            throw new ManagerException("找不到所示权限");
-        }
-    }
-
-    @Override
-    
-    public boolean createTestDB(int powerId) {
-        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
-        try {
-            if(manager.getCreateQuestion()==1&&manager.getCreatePaper()==1){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }catch (NullPointerException e){
-            LOGGER.info(e.getMessage());
-            throw new ManagerException("找不到所示权限");
-        }
-    }
-
-    @Override
-    
-    public boolean deleteTestDB(int powerId) {
-        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
-        try {
-            if(manager.getDeletePaper()==1&&manager.getDeleteQuestion()==1){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }catch (NullPointerException e){
-            LOGGER.info(e.getMessage());
-            throw new ManagerException("找不到所示权限");
-        }
-    }
-
-    @Override
-    
-    public boolean updateTestDB(int powerId) {
-        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
-        try {
-            if(manager.getUpdatePaper()==1&&manager.getUpdateQuestion()==1){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }catch (NullPointerException e){
-            LOGGER.info(e.getMessage());
-            throw new ManagerException("找不到所示权限");
-        }
-    }
-
-    @Override
-    
-    public boolean queryTestDB(int powerId) {
-        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
-        try {
-            if(manager.getQueryPaper()==1&&manager.getQueryQuestion()==1){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }catch (NullPointerException e){
-            LOGGER.info(e.getMessage());
-            throw new ManagerException("找不到所示权限");
-        }
-    }
-
-    @Override
-    
-    public boolean createResult(int powerId) {
-        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
-        try {
-            if(manager.getCreateResult()==1){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }catch (NullPointerException e){
-            LOGGER.info(e.getMessage());
-            throw new ManagerException("找不到所示权限");
-        }
-    }
-
-    @Override
-    
-    public boolean deleteResult(int powerId) {
-        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
-        try {
-            if(manager.getDeleteResult()==1){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }catch (NullPointerException e){
-            LOGGER.info(e.getMessage());
-            throw new ManagerException("找不到所示权限");
-        }
-    }
-
-    @Override
-    
-    public boolean updateResult(int powerId) {
-        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
-        try {
-            if(manager.getUpdateResult()==1){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }catch (NullPointerException e){
-            LOGGER.info(e.getMessage());
-            throw new ManagerException("找不到所示权限");
-        }
-    }
-
-    @Override
-    
-    public boolean queryResult(int powerId) {
-        Manager manager=iManagerDao.queryManagerByManagerId(powerId);
-        try {
-            if(manager.getQueryResult()==1){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }catch (NullPointerException e){
-            LOGGER.info(e.getMessage());
-            throw new ManagerException("找不到所示权限");
-        }
-    }
-
-    @Override
-    public Set<String> findRoles(String name) {
-        return iTeacherDao.findRoles(name);
-    }
-
-    @Override
-    public Set<String> findPermissions(String name) {
-        return iTeacherDao.findPermissions(name);
+    public Set<String> findPermissions(String mail) {
+        return iTeacherDao.findPermissions(mail);
     }
 
 
-    private List<Integer> getAllTeacherId(){
+    private Set<Integer> getAllTeacherId() {
         return iTeacherDao.queryTeacherIdAll();
     }
 
-    
-    private List<Integer> getAllStudentId(){
+
+    private List<Integer> getAllStudentId() {
         return iStudentDao.queryStudentIdAll();
     }
 
-    
-    private List<Integer> getAllTheClassId(){
+
+    private List<Integer> getAllTheClassId() {
         return iTheClassDao.queryTheClassIdAll();
     }
 
 
-    private boolean judgeNull(Teacher teacher){
-        if(teacher.getTeacherName()==null||teacher.getTeacherMail()==null||teacher.getTeacherPassword()==null){
+    private boolean judgeNull(Teacher teacher) {
+        if (teacher.getTeacherName() == null || teacher.getTeacherMail() == null || teacher.getTeacherPassword() == null) {
             return true;
         }
         return false;
     }
 
-    private boolean judgeStudentNull(Student student){
-        if(student.getStudentName()==null||student.getStudentPassword()==null||student.getStudentMail()==null){
+    private boolean judgeStudentNull(Student student) {
+        if (student.getStudentName() == null || student.getStudentPassword() == null || student.getStudentMail() == null) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean judgeExist(Teacher teacher) {
+        Set<String> teacherNameSet=iTeacherDao.queryListTeacherName();
+        Set<String> teacherMailSet=iTeacherDao.queryListTeacherMail();
+        Set<String> teacherPhoneSet=iTeacherDao.queryListTeacherPhone();
+        if(teacherMailSet.contains(teacher.getTeacherMail())){
+            LOGGER.info("数据库teacher中存在teacher_mail为"+teacher.getTeacherMail()+"的用户");
+            return true;
+        }
+        else if(teacherNameSet.contains(teacher.getTeacherName())){
+            LOGGER.info("数据库teacher中存在teacher_name为"+teacher.getTeacherName()+"的用户");
+            return true;
+        }
+        else if(teacherPhoneSet.contains(teacher.getTeacherPhone())){
+            LOGGER.info("数据库teacher中存在teacher_phone为"+teacher.getTeacherPhone()+"的用户");
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    private boolean judgeExistMail(Teacher teacher){
+        Set<String> teacherMailSet=iTeacherDao.queryListTeacherMail();
+        if(teacherMailSet.contains(teacher.getTeacherMail())){
+            LOGGER.info("数据库teacher中存在teacher_mail为"+teacher.getTeacherMail()+"的用户");
             return true;
         }
         return false;

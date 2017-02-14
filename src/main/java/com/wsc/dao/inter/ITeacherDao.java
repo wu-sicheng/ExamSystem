@@ -22,7 +22,7 @@ public interface ITeacherDao {
      * @param teacherId id
      * @return 删除老师的详情
      */
-    void deleteTeacher(int teacherId);
+    void deleteTeacherByTeacherId(int teacherId);
 
     /**
      * 通过id更新学生信息
@@ -44,59 +44,35 @@ public interface ITeacherDao {
      * @param toTeacherId 到什么的地方为止
      * @return 教师结果集
      */
-    List<Teacher> queryTeacherList(@Param("fromTeacherId") int fromTeacherId,@Param("toTeacherId") int toTeacherId);
+    Set<Teacher> queryTeacherList(@Param("fromTeacherId") int fromTeacherId,@Param("toTeacherId") int toTeacherId);
 
     /**
      * 通过班级查询老师
      * @param classId 班级id
      * @return
      */
-    List<Teacher> queryTeacherByClassId(String classId);
+    Set<Teacher> queryTeacherByClassId(String classId);
 
-    List<Teacher> queryTeacherByPaperId(String paperId);
+    Set<Teacher> queryTeacherByPaperId(String paperId);
 
     Teacher queryTeacherByTeacherName(String teacherName);
 
-    List<Integer> queryTeacherIdAll();
+    Set<Integer> queryTeacherIdAll();
 
-    int queryTeacherPower(int teacherId);
+    Set<String> findRoles(String teacherMail);
 
-    /**
-     * 提升某个用户的权限，一次只能够提升一个等级
-     * @param id 用户的id
-     * @return 用户提升后的权限
-     */
-    int upperPower(int id);
+    Set<String> findPermissions(String teacherMail);
 
-    /**
-     * 降低用户权限，一次只能降低一个等级
-     * @param id 用户的id
-     * @return 用户降低后的权限
-     */
-    int lowerPower(int id);
+    Teacher queryTeacherByMail(String mail);
+    Teacher queryTeacherByName(String name);
+    Teacher queryTeacherByPhone(String phone);
 
-    /**
-     * 讲用户权限设为3
-     * @param id 用户id
-     * @return 设置后的等级
-     */
-    int setLevel3(int id);
+    int queryTeacherIdByPhone(String phone);
+    int queryTeacherIdByMail(String mail);
+    int queryTeacherIdByName(String name);
 
-    /**
-     * 讲用户权限设为2
-     * @param id 用户id
-     * @return 设置后的等级
-     */
-    int setLevel2(int id);
-
-    /**
-     * 讲用户权限设为1
-     * @param id 用户id
-     * @return 设置后的等级
-     */
-    int setLevel1(int id);
-
-    Set<String> findRoles(String teacherName);
-
-    Set<String> findPermissions(String teacherName);
+    Set<Integer> queryListTeacherId();
+    Set<String> queryListTeacherName();
+    Set<String> queryListTeacherMail();
+    Set<String> queryListTeacherPhone();
 }

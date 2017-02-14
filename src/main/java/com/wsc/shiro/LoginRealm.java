@@ -27,10 +27,10 @@ public class LoginRealm extends AuthorizingRealm {
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-        String username = principals.getPrimaryPrincipal().toString() ;
+        String usermail = principals.getPrimaryPrincipal().toString() ;
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo() ;
-        Set<String> roleName = iPersonService.findRoles(username) ;
-        Set<String> permissions = iPersonService.findPermissions(username) ;
+        Set<String> roleName = iPersonService.findRoles(usermail) ;
+        Set<String> permissions = iPersonService.findPermissions(usermail) ;
         info.setRoles(roleName);
         info.setStringPermissions(permissions);
         return info;
@@ -38,12 +38,12 @@ public class LoginRealm extends AuthorizingRealm {
 
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
-        String username = token.getPrincipal().toString() ;
+        String mail = token.getPrincipal().toString() ;
         LOGGER.info(token.toString());
-        Teacher teacher = iPersonService.queryTeacherByTeacherName(username);
+        Teacher teacher = iPersonService.queryTeacherByMail(mail);
         if (teacher != null){
             //将查询到的用户账号和密码存放到 authenticationInfo用于后面的权限判断。第三个参数传入realName。
-            AuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(teacher.getTeacherName(),teacher.getTeacherPassword(),
+            AuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(teacher.getTeacherMail(),teacher.getTeacherPassword(),
                     "a") ;
             LOGGER.info("realm登录操作");
             return authenticationInfo ;

@@ -24,7 +24,11 @@
     </tr>
   </table>
   <br/>
-  <a href="register.jsp">没有账号,立即注册</a>
+  <input type="checkbox" name="student" value="学生"/>学生
+  <input type="checkbox" name="teacher" value="教师"/>教师
+  <input type="checkbox" name="admin" value="后台"/>后台
+  <input type="checkbox" name="guest" value="游客"/>游客
 </form>
+<a href="register.jsp">没有账号,立即注册</a>
 </body>
 </html>

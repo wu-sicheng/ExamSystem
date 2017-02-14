@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by wsc on 17-1-28.
@@ -55,7 +56,7 @@ public class InitController {
 
     @RequestMapping(value = "/list",method = RequestMethod.GET)
     public String list(Model model){
-        List<Teacher> list=iPersonService.queryTeacherAll();
+        Set<Teacher> list=iPersonService.queryTeacherAll();
         model.addAttribute("list",list);
         return "list";
     }

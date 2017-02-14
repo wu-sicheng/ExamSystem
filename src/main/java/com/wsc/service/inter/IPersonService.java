@@ -16,14 +16,27 @@ public interface IPersonService {
      */
     boolean createTeacher(Teacher teacher);
     Teacher updateTeacher(int teacherId,Teacher teacher);
-    Teacher deleteTeacher(int teacherId);
-    List<Teacher> queryTeacherAll();
-    List<Teacher> queryTeacherByPaperId(int paperId);
-    List<Teacher> queryTeacherByClassId(int classId);
+    Teacher deleteTeacherByTeacherId(int teacherId);
+    Set<Teacher> queryTeacherAll();
+    Set<Teacher> queryTeacherByPaperId(int paperId);
+    Set<Teacher> queryTeacherByClassId(int classId);
     Teacher queryTeacherByTeacherName(String name);
     Teacher queryTeacherByTeacherId(int teacherId);
 
+    Teacher updateTeacherByMail(Teacher teacher);
+    Teacher deleteTeacherByTeacherMail(String teacherMail);
 
+    Set<String> findRoles(String name);
+    Set<String> findPermissions(String name);
+
+
+    Set<Integer> queryListTeacherId();
+    Set<String> queryListTeacherName();
+    Set<String> queryListTeacherMail();
+    Set<String> queryListTeacherPhone();
+    Teacher queryTeacherByMail(String mail);
+    Teacher queryTeacherByName(String name);
+    Teacher queryTeacherByPhone(String phone);
     /*
      * 学生的人员管理
      */
@@ -45,28 +58,4 @@ public interface IPersonService {
     TheClass queryTheClass(int theClassId);
     List<TheClass> queryTheClassList(int fromTheClassId,int toTheClassId);
     List<TheClass> queryTheClassListAll();
-
-    /*
-     * 权限管理1
-     */
-    boolean createPerson(int powerId);
-    boolean deletePerson(int powerId);
-    boolean updatePerson(int powerId);
-    boolean queryPerson(int powerId);
-
-    boolean createTestDB(int powerId);
-    boolean deleteTestDB(int powerId);
-    boolean updateTestDB(int powerId);
-    boolean queryTestDB(int powerId);
-
-    boolean createResult(int powerId);
-    boolean deleteResult(int powerId);
-    boolean updateResult(int powerId);
-    boolean queryResult(int powerId);
-
-    /*
-    权限管理2
-     */
-    Set<String> findRoles(String name);
-    Set<String> findPermissions(String name);
 }

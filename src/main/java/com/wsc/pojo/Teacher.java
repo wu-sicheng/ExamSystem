@@ -13,13 +13,14 @@ import java.util.Date;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Teacher {
     @XmlElement
-    private int teacherId;
+    private int teacherId=-1;
     @XmlElement
     private String classId="";
     @XmlElement
     private String paperId="";
     @XmlElement
-    private String teacherName;
+    private String teacherName="";
+    private String teacherDisplayName="";
     @XmlElement
     private String teacherPassword;
     @XmlElement
@@ -42,11 +43,12 @@ public class Teacher {
     public Teacher() {
     }
 
-    public Teacher(int teacherId, String classId, String paperId, String teacherName, String teacherPassword, int teacherGander, String teacherNo, String teacherMail, String teacherPhone, int teacherState, int roleId, Date teacherCreateTime, Date teacherDeleteTime) {
+    public Teacher(int teacherId, String classId, String paperId, String teacherName,String teacherDisplayName,String teacherPassword, int teacherGander, String teacherNo, String teacherMail, String teacherPhone, int teacherState, int roleId, Date teacherCreateTime, Date teacherDeleteTime) {
         this.teacherId = teacherId;
         this.classId = classId;
         this.paperId = paperId;
         this.teacherName = teacherName;
+        this.teacherDisplayName=teacherDisplayName;
         this.teacherPassword = teacherPassword;
         this.teacherGander = teacherGander;
         this.teacherNo = teacherNo;
@@ -88,6 +90,14 @@ public class Teacher {
 
     public void setTeacherName(String teacherName) {
         this.teacherName = teacherName;
+    }
+
+    public String getTeacherDisplayName() {
+        return teacherDisplayName;
+    }
+
+    public void setTeacherDisplayName(String teacherDisplayName) {
+        this.teacherDisplayName = teacherDisplayName;
     }
 
     public String getTeacherPassword() {
@@ -169,7 +179,8 @@ public class Teacher {
                 ", classId='" + classId + '\'' +
                 ", paperId='" + paperId + '\'' +
                 ", teacherName='" + teacherName + '\'' +
-                ", teacherPassword='" + teacherPassword + '\'' +
+                ", teacherDisplayName='" + teacherDisplayName + '\'' +
+                ", teacherPassword=*******'" + '\'' +
                 ", teacherGander=" + teacherGander +
                 ", teacherNo='" + teacherNo + '\'' +
                 ", teacherMail='" + teacherMail + '\'' +

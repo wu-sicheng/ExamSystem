@@ -12,9 +12,9 @@
 </head>
 <body>
     <div>
-        <form id="register" method="post" action="">
-            <div id="mail">邮箱<input id="mail_input" name="mail_input" type="text"/></div>
-            <div id="password">密码<input id="password_input" name="password_input" type="password"/></div>
+        <form id="register" method="post" action="/ExamSystem/register">
+            <div id="mail">邮箱<input id="mail_input" name="mail" type="text"/></div>
+            <div id="password">密码<input id="password_input" name="password" type="password"/></div>
             <div id="submit"><input id="submit_input" name="submit_input" type="submit" value="提交"/></div>
         </form>
     </div>
@@ -24,7 +24,7 @@
         </form>
     </div>
     <div>
-        <a href="">条例</a>
+        <a href="regulation.jsp">条例</a>
     </div>
 </body>
 </html>

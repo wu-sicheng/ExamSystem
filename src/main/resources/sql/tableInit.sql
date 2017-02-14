@@ -33,6 +33,7 @@ CREATE TABLE teacher(
   classId TEXT,#班级id，多个
   paperId TEXT,#试卷id，多个
   teacherName VARCHAR(255) NOT NULL,#教师名称
+  teacherDisplayName VARCHAR(20),#显示的名称
   teacherPassword VARCHAR(255) NOT NULL,#教师密码
   teacherGander INT NOT NULL,#教师性别
   teacherNo TEXT NOT NULL,#教师工号
