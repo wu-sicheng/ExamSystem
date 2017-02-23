@@ -46,14 +46,14 @@ public interface IStudentDao {
      * @param toStudentId 结束的id
      * @return 结果集
      */
-    List<Student> queryStudentList(@Param("fromStudentId") int fromStudentId,@Param("toStudentId") int toStudentId);
+    Set<Student> queryStudentList(@Param("fromStudentId") int fromStudentId,@Param("toStudentId") int toStudentId);
 
     /**
      * 通过id查找一个班级的学生
      * @param classId classid
      * @return 学生结果集
      */
-    List<Student> queryStudentByTheClassId(int classId);
+    Set<Student> queryStudentByTheClassId(int classId);
 
     /**
      * 通过准考证号查找学生
@@ -67,15 +67,21 @@ public interface IStudentDao {
      * @param papaerId paperid
      * @return 学生列表
      */
-    List<Student> queryStudentByPaperId(String papaerId);
+    Set<Student> queryStudentByPaperId(String papaerId);
 
-    List<Integer> queryStudentIdAll();
+    Set<Integer> queryStudentIdAll();
 
-    List<Student> queryStudentByStudentName(String studentName);
+    Student queryStudentByStudentName(String studentName);
 
-    Set<String> findRoles(String studentName);
+    Student queryStudentByStudentMail(String studentMail);
 
-    Set<String> findPermissions(String studentName);
+    Set<String> findRoles(String studentMail);
 
+    Set<String> findPermissions(String studentMail);
 
+    Student queryStudentByStudentNo(String studentNo);
+    Student queryStudentByStudentPhone(String studentPhone);
+    Set<String> querySetStudentMail();
+    Set<String> querySetStudentPhone();
+    Set<String> querySetStudentName();
 }

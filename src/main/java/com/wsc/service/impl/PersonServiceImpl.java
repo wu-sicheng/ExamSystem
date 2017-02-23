@@ -4,9 +4,7 @@ import com.wsc.dao.inter.IManagerDao;
 import com.wsc.dao.inter.IStudentDao;
 import com.wsc.dao.inter.ITeacherDao;
 import com.wsc.dao.inter.ITheClassDao;
-import com.wsc.exceptions.ManagerException;
-import com.wsc.exceptions.PersonException;
-import com.wsc.exceptions.PersonNotExistException;
+import com.wsc.exceptions.*;
 import com.wsc.pojo.Manager;
 import com.wsc.pojo.Student;
 import com.wsc.pojo.Teacher;
@@ -39,7 +37,7 @@ public class PersonServiceImpl implements IPersonService {
     private ITheClassDao iTheClassDao;
 
     private Set<Integer> listTeacherId;
-    private List<Integer> listStudentId;
+    private Set<Integer> listStudentId;
     private List<Integer> listTheClassId;
 
     /*
@@ -184,7 +182,13 @@ public class PersonServiceImpl implements IPersonService {
 
     @Override
     public Teacher queryTeacherByMail(String mail) {
-        return iTeacherDao.queryTeacherByMail(mail);
+        Teacher teacher=iTeacherDao.queryTeacherByMail(mail);
+        if (teacher!=null) {
+            return teacher;
+        }
+        else {
+            throw new TeacherNotExistException("数据库student中找不到usermail为"+mail+"这个人");
+        }
     }
 
     @Override
@@ -204,21 +208,26 @@ public class PersonServiceImpl implements IPersonService {
     @Override
 
     public boolean createStudent(Student student) {
-        if (!judgeStudentNull(student)) {
-            listStudentId = getAllStudentId();
-            if (listStudentId == null || !listStudentId.contains(student.getStudentId())) {
+        int maxTeacherId=Collections.max(iStudentDao.queryStudentIdAll());
+        if(!judgeExistMail(student)){
+            student.setStudentId(maxTeacherId+1);
+            student.setStudentDisplayName(student.getStudentMail());
+            if (!judgeNull(student)) {
                 iStudentDao.addStudent(student);
                 return true;
-            } else {
-                throw new PersonException("数据库student中已经有该数据");
             }
-        } else {
-            throw new PersonException("存储的数据存在空值");
+            else {
+                LOGGER.info("create teacher中存在空值");
+                throw new PersonException("存储的数据存在空值");
+            }
+        }
+        else{
+            LOGGER.info("数据库teacher中已存在数据为"+student.toString()+"的数据");
+            throw new PersonException("数据库teacher中已存在数据为"+student.toString()+"的数据");
         }
     }
 
     @Override
-
     public Student updateStudent(int studentId, Student student) {
         Student studentRe = null;
         listStudentId = getAllStudentId();
@@ -233,7 +242,17 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    public Student updateStudentByMail(Student student) {
+        Integer studentId=queryStudentByMail(student.getStudentMail()).getStudentId();
+        if(studentId!=null){
+            return updateStudent(studentId,student);
+        }
+        else{
+            throw new PersonNotExistException("数据库student中找不到mail为"+student.getStudentMail()+"这个人");
+        }
+    }
 
+    @Override
     public Student deleteStudent(int studentId) {
         listStudentId = getAllStudentId();
         Student student = queryStudentByStudentId(studentId);
@@ -246,11 +265,22 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    public Student deleteStudentByTeacherMail(String studentMail) {
+        Integer studentId=queryStudentByMail(studentMail).getStudentId();
+        if(studentId!=null){
+            return deleteStudent(studentId);
+        }
+        else{
+            throw new PersonNotExistException("数据库student中找不到mail为"+studentMail+"这个人");
+        }
+    }
 
-    public List<Student> queryStudentAll() {
+    @Override
+
+    public Set<Student> queryStudentAll() {
         listStudentId = getAllStudentId();
         try {
-            if (listStudentId.get(0) != null) {
+            if (listStudentId.size() != 0) {
                 return iStudentDao.queryStudentList(Collections.min(listStudentId), Collections.max(listStudentId));
             }
         } catch (IndexOutOfBoundsException e) {
@@ -262,10 +292,10 @@ public class PersonServiceImpl implements IPersonService {
 
     @Override
 
-    public List<Student> queryStudentByPaperId(int paperId) {
-        List<Student> studentList = iStudentDao.queryStudentByPaperId(String.valueOf(paperId));
+    public Set<Student> queryStudentByPaperId(int paperId) {
+        Set<Student> studentList = iStudentDao.queryStudentByPaperId(String.valueOf(paperId));
         try {
-            if (studentList.get(0) != null) {
+            if (studentList.size() != 0) {
                 return studentList;
             }
         } catch (IndexOutOfBoundsException e) {
@@ -277,10 +307,10 @@ public class PersonServiceImpl implements IPersonService {
 
     @Override
 
-    public List<Student> queryStudentByClassId(int classId) {
-        List<Student> studentList = iStudentDao.queryStudentByTheClassId(classId);
+    public Set<Student> queryStudentByClassId(int classId) {
+        Set<Student> studentList = iStudentDao.queryStudentByTheClassId(classId);
         try {
-            if (studentList.get(0) != null) {
+            if (studentList.size() != 0) {
                 return studentList;
             }
         } catch (IndexOutOfBoundsException e) {
@@ -291,12 +321,11 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
-
-    public List<Student> queryStudentByStudentName(String name) {
-        List<Student> studentList = iStudentDao.queryStudentByStudentName(name);
+    public Student queryStudentByStudentName(String name) {
+        Student student= iStudentDao.queryStudentByStudentName(name);
         try {
-            if (studentList.get(0) != null) {
-                return studentList;
+            if (student != null) {
+                return student;
             }
         } catch (IndexOutOfBoundsException e) {
             e.printStackTrace();
@@ -311,8 +340,86 @@ public class PersonServiceImpl implements IPersonService {
         listStudentId = getAllStudentId();
         if (listStudentId.contains(studentId)) {
             return iStudentDao.queryStudent(studentId);
-        } else {
+        }
+        else {
             throw new PersonNotExistException("找不到这个人");
+        }
+    }
+
+    @Override
+    public Student queryStudentByMail(String usermail) {
+        Student student=iStudentDao.queryStudentByStudentMail(usermail);
+        if (student!=null) {
+            return student;
+        }
+        else {
+            throw new StudentNotExistException("数据库student中找不到usermail为"+usermail+"这个人");
+        }
+    }
+
+    @Override
+    public Student queryStudentByPhone(String phone) {
+        Student student=iStudentDao.queryStudentByStudentPhone(phone);
+        if (student!=null) {
+            return student;
+        }
+        else {
+            throw new PersonNotExistException("数据库student中找不到phone为"+phone+"这个人");
+        }
+    }
+
+    @Override
+    public Student queryStudentByNum(String num) {
+        Student student=iStudentDao.queryStudentByStudentNum(num);
+        if (student!=null) {
+            return student;
+        }
+        else {
+            throw new PersonNotExistException("数据库student中找不到num为"+num+"这个人");
+        }
+    }
+
+    @Override
+    public Student queryStudentByNo(String no) {
+        Student student=iStudentDao.queryStudentByStudentNo(no);
+        if (student!=null) {
+            return student;
+        }
+        else {
+            throw new PersonNotExistException("数据库student中找不到no为"+no+"这个人");
+        }
+    }
+
+    @Override
+    public Set<String> queryListStudentMail() {
+        Set<String> mailSet=iStudentDao.querySetStudentMail();
+        if(mailSet.size()!=0){
+            return mailSet;
+        }
+        else{
+            throw new PersonNotExistException("数据库student中不存在数据");
+        }
+    }
+
+    @Override
+    public Set<String> queryListStudentPhone() {
+        Set<String> mailSet=iStudentDao.querySetStudentPhone();
+        if(mailSet.size()!=0){
+            return mailSet;
+        }
+        else{
+            throw new PersonNotExistException("数据库student中不存在数据");
+        }
+    }
+
+    @Override
+    public Set<String> queryListStudentName() {
+        Set<String> mailSet=iStudentDao.querySetStudentName();
+        if(mailSet.size()!=0){
+            return mailSet;
+        }
+        else{
+            throw new PersonNotExistException("数据库student中不存在数据");
         }
     }
 
@@ -396,12 +503,34 @@ public class PersonServiceImpl implements IPersonService {
 
     @Override
     public Set<String> findRoles(String mail) {
-        return iTeacherDao.findRoles(mail);
+        Teacher teacher=iTeacherDao.queryTeacherByMail(mail);
+        Student student=iStudentDao.queryStudentByStudentMail(mail);
+        if(teacher!=null){
+            return iTeacherDao.findRoles(mail);
+        }
+        else if (student!=null){
+            return iStudentDao.findRoles(mail);
+        }
+        else{
+            LOGGER.info("数据库teacher和student中找不到mail为"+mail+"的人员");
+            throw new PersonNotExistException("数据库teacher和student中找不到mail为"+mail+"的人员");
+        }
     }
 
     @Override
     public Set<String> findPermissions(String mail) {
-        return iTeacherDao.findPermissions(mail);
+        Teacher teacher=iTeacherDao.queryTeacherByMail(mail);
+        Student student=iStudentDao.queryStudentByStudentMail(mail);
+        if(teacher!=null){
+            return iTeacherDao.findPermissions(mail);
+        }
+        else if (student!=null){
+            return iStudentDao.findPermissions(mail);
+        }
+        else{
+            LOGGER.info("数据库teacher和student中找不到mail为"+mail+"的人员");
+            throw new PersonNotExistException("数据库teacher和student中找不到mail为"+mail+"的人员");
+        }
     }
 
 
@@ -410,7 +539,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
 
-    private List<Integer> getAllStudentId() {
+    private Set<Integer> getAllStudentId() {
         return iStudentDao.queryStudentIdAll();
     }
 
@@ -427,7 +556,7 @@ public class PersonServiceImpl implements IPersonService {
         return false;
     }
 
-    private boolean judgeStudentNull(Student student) {
+    private boolean judgeNull(Student student) {
         if (student.getStudentName() == null || student.getStudentPassword() == null || student.getStudentMail() == null) {
             return true;
         }
@@ -458,6 +587,15 @@ public class PersonServiceImpl implements IPersonService {
         Set<String> teacherMailSet=iTeacherDao.queryListTeacherMail();
         if(teacherMailSet.contains(teacher.getTeacherMail())){
             LOGGER.info("数据库teacher中存在teacher_mail为"+teacher.getTeacherMail()+"的用户");
+            return true;
+        }
+        return false;
+    }
+
+    private boolean judgeExistMail(Student student){
+        Set<String> studentMailSet=iStudentDao.querySetStudentMail();
+        if(studentMailSet.contains(student.getStudentMail())){
+            LOGGER.info("数据库student中存在student_mail为"+student.getStudentMail()+"的用户");
             return true;
         }
         return false;

@@ -11,6 +11,7 @@ CREATE TABLE student(
   classId INT NOT NULL,#班级Id
   paperId VARCHAR(255),#试卷Id,多个
   studentName VARCHAR(255) NOT NULL,#学生名字
+  studentDisplayName VARCHAR(50),
   studentPassword VARCHAR(255) NOT NULL,#学生登录密码
   studentGander INT NOT NULL,#学生性别 0男1女
   studentNo TEXT NOT NULL,#学生学号

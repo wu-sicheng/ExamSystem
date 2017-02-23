@@ -6,7 +6,7 @@
     <display-name>ExamSystem</display-name>
     
     <welcome-file-list>
-        <welcome-file>/login</welcome-file>
+        <welcome-file>/login.jsp</welcome-file>
     </welcome-file-list>
     
     <servlet>
@@ -37,4 +37,5 @@
         <filter-name>shiroFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
 </web-app>

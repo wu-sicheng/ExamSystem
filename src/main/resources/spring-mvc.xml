@@ -21,4 +21,26 @@
     </bean>
 
     <context:component-scan base-package="com.wsc.web"/>
+
+    <mvc:annotation-driven />
+
+    <!-- EasyUI样式，JS配置 -->
+    <mvc:resources location="WEB-INF/res/easy_ui/demo/" mapping="/easy_ui/demo/**"></mvc:resources>
+    <mvc:resources location="WEB-INF/res/easy_ui/locale/" mapping="/easy_ui/locale/**"></mvc:resources>
+    <mvc:resources location="WEB-INF/res/easy_ui/plugins/" mapping="/easy_ui/demo/**"></mvc:resources>
+    <mvc:resources location="WEB-INF/res/easy_ui/themes/" mapping="/easy_ui/themes/**"></mvc:resources>
+    <mvc:resources location="WEB-INF/res/easy_ui/src/" mapping="/easy_ui/src/**"></mvc:resources>
+    <mvc:resources location="WEB-INF/res/easy_ui/" mapping="/easy_ui/**"></mvc:resources>
+
+    <!--jQuery-->
+    <mvc:resources location="WEB-INF/res/jQuery/" mapping="/jQuery/**"></mvc:resources>
+
+
+    <!--js目录设置-->
+    <mvc:resources location="WEB-INF/js/background/" mapping="/js/background/**"></mvc:resources>
+    <mvc:resources location="WEB-INF/js/" mapping="/js/**"></mvc:resources>
+
+    <!--jsp目录-->
+    <mvc:resources location="WEB-INF/jsp/background/admin/" mapping="/background/admin/**"></mvc:resources>
+    <mvc:resources location="WEB-INF/jsp/background/" mapping="/background/**"></mvc:resources>
 </beans>

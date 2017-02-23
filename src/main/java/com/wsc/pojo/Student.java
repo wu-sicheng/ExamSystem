@@ -7,30 +7,32 @@ import java.util.Date;
  */
 public class Student {
     private int studentId;
-    private int classId;
-    private String paperId;
-    private String studentName;
+    private int classId=-1;
+    private String paperId="";
+    private String studentName="";
+    private String studentDisplayName;
     private String studentPassword;
-    private int studentGander;
-    private String studentNo;
-    private String studentMajor;
-    private int studentGrader;
-    private String studentNum;
+    private int studentGander=-1;
+    private String studentNo="";
+    private String studentMajor="";
+    private int studentGrader=-1;
+    private String studentNum="";
     private String studentMail;
-    private String studentPhone;
-    private int roleId;
-    private int studentState;
+    private String studentPhone="";
+    private int roleId=1;
+    private int studentState=1;
     private Date studentCreateTime;
     private Date studentDeleteTime;
 
     public Student() {
     }
 
-    public Student(int studentId, int classId, String paperId, String studentName, String studentPassword, int studentGander, String studentNo, String studentMajor, int studentGrader, String studentNum, String studentMail, String studentPhone, int roleId, int studentState, Date studentCreateTime, Date studentDeleteTime) {
+    public Student(int studentId, int classId, String paperId, String studentName,String studentDisplayName, String studentPassword, int studentGander, String studentNo, String studentMajor, int studentGrader, String studentNum, String studentMail, String studentPhone, int roleId, int studentState, Date studentCreateTime, Date studentDeleteTime) {
         this.studentId = studentId;
         this.classId = classId;
         this.paperId = paperId;
         this.studentName = studentName;
+        this.studentDisplayName=studentDisplayName;
         this.studentPassword = studentPassword;
         this.studentGander = studentGander;
         this.studentNo = studentNo;
@@ -75,6 +77,14 @@ public class Student {
 
     public void setStudentName(String studentName) {
         this.studentName = studentName;
+    }
+
+    public String getStudentDisplayName() {
+        return studentDisplayName;
+    }
+
+    public void setStudentDisplayName(String studentDisplayName) {
+        this.studentDisplayName = studentDisplayName;
     }
 
     public String getStudentPassword() {

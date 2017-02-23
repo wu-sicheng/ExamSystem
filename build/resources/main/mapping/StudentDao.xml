@@ -5,10 +5,10 @@
 <mapper namespace="com.wsc.dao.inter.IStudentDao">
     <!--添加一个学生-->
     <update id="addStudent" parameterType="com.wsc.pojo.Student">
-        INSERT INTO student (id,studentId,classId,paperId,studentName,studentPassword,studentGander,studentNo,studentMajor,
-        studentGrader,studentNum,studentMail,studentPhone,studentPower,studentState,studentCreateTime,studentDeleteTime)
-        VALUES (NULL,#{studentId},#{classId},#{paperId},#{studentName},#{studentPassword},#{studentGander},#{studentNo},#{studentMajor},
-        #{studentGrader},#{studentNum},#{studentMail},#{studentPhone},#{studentPower},#{studentState},now(),NULL);
+        INSERT INTO student (id,studentId,classId,paperId,studentName,studentDisplayName,studentPassword,studentGander,studentNo,studentMajor,
+        studentGrader,studentNum,studentMail,studentPhone,roleId,studentState,studentCreateTime,studentDeleteTime)
+        VALUES (NULL,#{studentId},#{classId},#{paperId},#{studentName},#{studentDisplayName},#{studentPassword},#{studentGander},#{studentNo},#{studentMajor},
+        #{studentGrader},#{studentNum},#{studentMail},#{studentPhone},#{roleId},#{studentState},now(),NULL);
     </update>
 
     <!--删除学生信息-->
@@ -18,7 +18,7 @@
 
     <!--更新学生信息-->
     <update id="updateStudent">
-        UPDATE student SET classId=#{classId},paperId=#{paperId},studentName=#{studentName},studentGander=#{studentGander},studentNo=#{studentNo},studentMajor=#{studentMajor},studentGrader=#{studentGrader},studentNum=#{studentNum},studentMail=#{studentMail},studentPhone=#{studentPhone},studentPower=#{studentPower},studentState=#{studentState}
+        UPDATE student SET classId=#{classId},paperId=#{paperId},studentName=#{studentName},studentGander=#{studentGander},studentNo=#{studentNo},studentMajor=#{studentMajor},studentGrader=#{studentGrader},studentNum=#{studentNum},studentMail=#{studentMail},studentPhone=#{studentPhone},roleId=#{roleId},studentState=#{studentState}
         WHERE studentId=#{studentId} AND studentState=1;
     </update>
 
@@ -52,13 +52,40 @@
         SELECT * FROM student WHERE studentName LIKE CONCAT('%',#{studentName},'%') AND studentState=1;
     </select>
 
+    <select id="queryStudentByStudentMail" resultType="Student" parameterType="String">
+        SELECT * FROM student WHERE studentMail=#{studentMail} AND studentState=1;
+    </select>
+
+    <select id="queryStudentByStudentNo" resultType="Student" parameterType="String">
+        SELECT * FROM student WHERE studentNo=#{studentNo} AND studentState=1;
+    </select>
+
+    <select id="queryStudentByStudentPhone" resultType="Student" parameterType="String">
+        SELECT * FROM student WHERE studentPhone=#{studentPhone} AND studentState=1;
+    </select>
+
+    <select id="querySetStudentMail" resultType="String">
+        SELECT studentMail FROM student WHERE studentState=1;
+    </select>
+
+    <select id="querySetStudentPhone" resultType="String">
+        SELECT studentPhone FROM student WHERE studentState=1;
+    </select>
+
+    <select id="querySetStudentName" resultType="String">
+        SELECT studentName FROM student WHERE studentState=1;
+    </select>
+
+
     <select id="findRoles" parameterType="String" resultType="String">
-        select r.roleName from student s,role r where s.roleId=r.id and s.studentName=#{studentName};
+        select r.roleName from student s,role r where s.roleId=r.id and s.studentMail=#{studentMail};
     </select>
 
     <select id="findPermissions" parameterType="String" resultType="String">
         select p.permissionName from student s,role r,permission p
-        where s.roleId=r.id and p.roleId=r.id and s.studentName=#{studentName};
+        where s.roleId=r.id and p.roleId=r.id and s.studentMail=#{studentMail};
     </select>
+
+
 
 </mapper>

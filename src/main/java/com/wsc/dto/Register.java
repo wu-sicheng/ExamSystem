@@ -6,10 +6,12 @@ package com.wsc.dto;
 public class Register {
     public String mail;
     public String password;
+    public String role;
 
-    public Register(String mail, String password) {
+    public Register(String mail, String password,String role) {
         this.mail = mail;
         this.password = password;
+        this.role=role;
     }
 
     public Register() {
@@ -29,6 +31,14 @@ public class Register {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     @Override

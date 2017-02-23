@@ -9,35 +9,20 @@ import java.util.Date;
 /**
  * Created by wsc on 17-1-13.
  */
-@XmlRootElement(name="teacher")
-@XmlAccessorType(XmlAccessType.FIELD)
 public class Teacher {
-    @XmlElement
-    private int teacherId=-1;
-    @XmlElement
+    private int teacherId;
     private String classId="";
-    @XmlElement
     private String paperId="";
-    @XmlElement
     private String teacherName="";
     private String teacherDisplayName="";
-    @XmlElement
     private String teacherPassword;
-    @XmlElement
     private int teacherGander=-1;
-    @XmlElement
     private String teacherNo="";
-    @XmlElement
     private String teacherMail;
-    @XmlElement
     private String teacherPhone="";
-    @XmlElement
     private int teacherState=-1;
-    @XmlElement
     private int roleId=-1;
-    @XmlElement
     private Date teacherCreateTime;
-    @XmlElement
     private Date teacherDeleteTime;
 
     public Teacher() {

@@ -28,6 +28,7 @@ public class PersonController {
     /*
      * 教师及管理员的人员管理
      */
+
     @RequiresRoles(value ={"teacher","admin","student"},logical = Logical.OR)
     @RequestMapping(value = "/teacher/{id}",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
@@ -121,28 +122,28 @@ public class PersonController {
     @RequiresRoles(value ={"teacher","admin","student"},logical = Logical.OR)
     @RequestMapping(value = "student/list",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
-    public List<Student> queryStudentAll(){
+    public Set<Student> queryStudentAll(){
         return iPersonService.queryStudentAll();
     }
 
     @RequiresRoles(value ={"teacher","admin","student"},logical = Logical.OR)
     @RequestMapping(value = "student/paper-id/{paperId}",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
-    public List<Student> queryStudentByPaperId(@PathVariable int paperId){
+    public Set<Student> queryStudentByPaperId(@PathVariable int paperId){
         return iPersonService.queryStudentByPaperId(paperId);
     }
 
     @RequiresRoles(value ={"teacher","admin","student"},logical = Logical.OR)
     @RequestMapping(value = "student/class-id/{classId}",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
-    public List<Student> queryStudentByClassId(@PathVariable int classId){
+    public Set<Student> queryStudentByClassId(@PathVariable int classId){
         return iPersonService.queryStudentByClassId(classId);
     }
 
     @RequiresRoles(value ={"teacher","admin","student"},logical = Logical.OR)
     @RequestMapping(value = "student/student-name/{name}",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
-    public List<Student> queryStudentByStudentName(@PathVariable String name){
+    public Student queryStudentByStudentName(@PathVariable String name){
         return iPersonService.queryStudentByStudentName(name);
     }
 

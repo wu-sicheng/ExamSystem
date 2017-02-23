@@ -1,7 +1,11 @@
 package com.wsc.shiro;
 
+import com.wsc.exceptions.StudentNotExistException;
+import com.wsc.exceptions.TeacherNotExistException;
+import com.wsc.pojo.Student;
 import com.wsc.pojo.Teacher;
 import com.wsc.service.inter.IPersonService;
+import com.wsc.web.LoginController;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -21,9 +25,11 @@ import java.util.Set;
  */
 public class LoginRealm extends AuthorizingRealm {
     private static final Logger LOGGER= LoggerFactory.getLogger(LoginRealm.class);
-
     @Resource
     private IPersonService iPersonService;
+
+    @Resource
+    private LoginController loginController;
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
@@ -38,17 +44,24 @@ public class LoginRealm extends AuthorizingRealm {
 
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
-        String mail = token.getPrincipal().toString() ;
-        LOGGER.info(token.toString());
-        Teacher teacher = iPersonService.queryTeacherByMail(mail);
-        if (teacher != null){
-            //将查询到的用户账号和密码存放到 authenticationInfo用于后面的权限判断。第三个参数传入realName。
-            AuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(teacher.getTeacherMail(),teacher.getTeacherPassword(),
+        String mail = token.getPrincipal().toString();
+        String loginType=loginController.getLoginType();
+        if("admin".equals(loginType)||"teacher".equals(loginType)){
+            Teacher teacher = iPersonService.queryTeacherByMail(mail);
+            AuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(teacher.getTeacherMail(),
+                    teacher.getTeacherPassword(),
                     "a") ;
-            LOGGER.info("realm登录操作");
+            LOGGER.info("teacher_realm登录操作");
             return authenticationInfo ;
-        }else{
-            return null ;
         }
+        else if("student".equals(loginType)||"guest".equals(loginType)){
+            Student student = iPersonService.queryStudentByMail(mail);
+            AuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(student.getStudentMail(),
+                    student.getStudentPassword(),
+                    "a") ;
+            LOGGER.info("student_realm登录操作");
+            return authenticationInfo ;
+        }
+        return null ;
     }
 }

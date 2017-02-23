@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by wsc on 17-1-25.
@@ -158,12 +159,12 @@ public class ResultServiceImpl implements IResultService {
 
     @Override
     public List<Result> queryResultListByTheClassId ( int theClassId){
-        List<Student> studentList = iPersonService.queryStudentByClassId(theClassId);
+        Set<Student> studentList = iPersonService.queryStudentByClassId(theClassId);
         List<Result> studentResultByClassId = new ArrayList<>();
         for (int i = 0; i < studentList.size(); i++) {
-            studentResultByClassId.addAll(iResultDao.queryResultListByStudentId(studentList.get(i).getStudentId()));
+           /* studentResultByClassId.addAll(iResultDao.queryResultListByStudentId(studentList..getStudentId()));*/
         }
-        return studentResultByClassId;
+        return null;
     }
 
     private List<Integer> getResultIdList () {

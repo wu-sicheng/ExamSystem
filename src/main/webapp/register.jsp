@@ -16,15 +16,14 @@
             <div id="mail">邮箱<input id="mail_input" name="mail" type="text"/></div>
             <div id="password">密码<input id="password_input" name="password" type="password"/></div>
             <div id="submit"><input id="submit_input" name="submit_input" type="submit" value="提交"/></div>
+            <div id="type"><input type="radio" name="role" value="teacher" checked="checked"/>教师
+                <input type="radio" name="role" value="student"/>学生
+            </div>
+            <div >是否同意<a href="regulation.jsp">条例</a><input id="regulation_yes_no" type="checkbox"/></div>
         </form>
     </div>
     <div>
-        <form id="regulation">
-            <input id="regulation_yes_no" type="checkbox"/>
-        </form>
-    </div>
-    <div>
-        <a href="regulation.jsp">条例</a>
+
     </div>
 </body>
 </html>
