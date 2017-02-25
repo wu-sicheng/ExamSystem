@@ -5,11 +5,11 @@
 <mapper namespace="com.wsc.dao.inter.ITeacherDao">
     <!--创建一个教师-->
     <insert id="addTeacher" parameterType="Teacher">
-        INSERT INTO teacher (id,teacherId,classId,paperId,teacherName,teacherPassword,
+        INSERT INTO teacher (id,teacherId,classId,paperId,teacherName,teacherDisplayName,teacherPassword,
         teacherGander,teacherNo,teacherMail,teacherPhone,teacherState,roleId,
-        teacherCreateTime) VALUES (NULL,#{teacherId},#{classId},#{paperId},#{teacherName},
+        teacherCreateTime) VALUES (NULL,#{teacherId},#{classId},#{paperId},#{teacherName},#{teacherDisplayName},
         #{teacherPassword},#{teacherGander},#{teacherNo},#{teacherMail},#{teacherPhone},
-        1,2,now());
+        1,#{roleId},now());
     </insert>
 
     <!--删除一个教师数据，将标志位置为0并插入删除时间-->
@@ -20,7 +20,7 @@
     <!--更新教师数据-->
     <update id="updateTeacher">
         UPDATE teacher SET classId=#{classId},paperId=#{paperId},
-        teacherName=#{teacherName},teacherPassword=#{teacherPassword},
+        teacherName=#{teacherName},teacherDisplayName=#{teacherDisplayName},teacherPassword=#{teacherPassword},
         teacherGander=#{teacherGander},teacherNo=#{teacherNo},
         teacherMail=#{teacherMail},teacherPhone=#{teacherPhone} WHERE teacherId=#{teacherId};
     </update>

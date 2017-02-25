@@ -39,9 +39,30 @@
 <div data-options="region:'west',split:true,title:'导航菜单'" style="width:150px;padding:10px;">
     <!-- 子模块：模板管理 -->
     <div class="easyui-accordion" data-options="fit:true,border:false">
-
-        <div title="人员管理" style="padding:10px;">
-            <li><a href="#powerManager" class="easyui-linkbutton" onclick="addTab('权限管理','${pageContext.request.contextPath}/background/admin/powerManager')">权限管理</a></li>
+        <div title="人员管理" style="overflow:auto;padding:10px;">
+            <ul id="tree" class="easyui-tree" data-options="lines:true">
+                <li><span>教师管理</span>
+                    <ul>
+                        <li><a href="#teacherMessage" onclick="addTab('信息数据','${pageContext.request.contextPath}/background/admin/teacherMess')">信息数据</a></li>
+                        <li><a href="#classMessage">班级数据</a></li>
+                        <li><a href="#paperMessage">试卷数据</a></li>
+                    </ul>
+                </li>
+                <li><span>学生管理</span>
+                    <ul>
+                        <li><a href="#studentMessage">个人信息</a></li>
+                        <li><a href="#classMessage">班级信息</a></li>
+                        <li><a href="#paperMessage">试卷信息</a></li>
+                    </ul>
+                </li>
+                <li><span>权限管理</span>
+                    <ul>
+                        <li><a href="#">注册审核</a></li>
+                        <li><a href="#">教师权限</a></li>
+                        <li><a href="#">学生权限</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
 
         <div title="题库管理" style="padding:10px;">
@@ -57,6 +78,7 @@
         <div title="系统管理" style="padding:10px;">
         </div>
     </div>
+
 </div>
 <%--<!-- 东部区域 -->--%>
 <%--<div data-options="region:'east',split:true" style="width:10px;padding:10px;"></div>--%>
@@ -79,4 +101,3 @@
 </body>
 </body>
 </html>
-

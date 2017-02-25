@@ -59,6 +59,12 @@ public class PersonController {
     @ResponseBody
     public Teacher updateTeacher(@RequestBody Teacher teacher){
         Teacher teacherRe=iPersonService.queryTeacherByTeacherId(teacher.getTeacherId());
+        if(teacherRe.getTeacherPassword().equals(teacher.getTeacherPassword())){
+            teacher.setTeacherPassword(teacherRe.getTeacherPassword());
+        }
+        else{
+            teacher.setTeacherPassword(Encryption.md5En(teacher.getTeacherPassword()));
+        }
         iPersonService.updateTeacher(teacher.getTeacherId(),teacher);
         return teacherRe;
     }

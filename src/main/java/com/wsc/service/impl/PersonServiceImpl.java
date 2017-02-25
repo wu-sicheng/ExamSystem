@@ -48,7 +48,9 @@ public class PersonServiceImpl implements IPersonService {
         int maxTeacherId=Collections.max(iTeacherDao.queryListTeacherId());
         if(!judgeExistMail(teacher)){
             teacher.setTeacherId(maxTeacherId+1);
-            teacher.setTeacherDisplayName(teacher.getTeacherMail());
+            if("".equals(teacher.getTeacherDisplayName())){
+                teacher.setTeacherDisplayName(teacher.getTeacherMail());
+            }
             if (!judgeNull(teacher)) {
                 iTeacherDao.addTeacher(teacher);
                 return true;

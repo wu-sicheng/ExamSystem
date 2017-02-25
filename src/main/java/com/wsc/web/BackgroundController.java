@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class BackgroundController {
     @RequestMapping(value = "/admin/powerManager",method = RequestMethod.GET)
     public String powerManager(){
-        return "/background/admin/powerManager";
+        return "background/admin/powerManager";
+    }
+
+    @RequestMapping(value = "/admin/teacherMess",method = RequestMethod.GET)
+    public String teacherMess(){
+        return "/background/admin/teacherMess";
     }
 }
