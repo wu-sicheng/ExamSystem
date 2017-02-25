@@ -2,35 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86f9bc11-dc71-4a55-ac9b-0e1004cc31bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/classMess.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/registCheck.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/studentClassMess.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/studentMess.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/studentPaperMess.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/studentPermiss.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/teacherClassMess.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/teacherPaperMess.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/teacherPermiss.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/service/impl/PersonServiceImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/service/impl/PersonServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/shiro/LoginRealm.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/shiro/LoginRealm.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/web/BackgroundController.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/web/BackgroundController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/web/PersonController.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/web/PersonController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/ExamSystem-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/build/libs/ExamSystem-1.0-SNAPSHOT.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/com/wsc/service/impl/PersonServiceImpl.class" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/com/wsc/service/impl/PersonServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/com/wsc/shiro/LoginRealm.class" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/com/wsc/shiro/LoginRealm.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/com/wsc/web/BackgroundController.class" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/com/wsc/web/BackgroundController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/com/wsc/web/PersonController.class" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/com/wsc/web/PersonController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/log4j.properties" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/log4j.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/mapping/StudentDao.xml" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/mapping/StudentDao.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/js/background/admin.js" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/js/background/admin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/jsp/background/admin/admin.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/jsp/background/admin/admin.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/jsp/background/admin/teacherMess.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/jsp/background/admin/teacherMess.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/log4j.properties" afterPath="$PROJECT_DIR$/build/resources/main/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/shiro/LoginRealm.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/shiro/LoginRealm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/web/BackgroundController.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/web/BackgroundController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring-shiro.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring-shiro.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/jsp/background/admin/personContro/studentMess.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/jsp/background/admin/personContro/studentMess.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/mapping/StudentDao.xml" afterPath="$PROJECT_DIR$/build/resources/main/mapping/StudentDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/web/PersonController.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/web/PersonController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapping/StudentDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/StudentDao.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/js/background/admin.js" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/js/background/admin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/admin.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/admin.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/teacherMess.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/teacherMess.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/classMess.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/classMess.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/studentMess.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/studentMess.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -94,55 +78,118 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PersonController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/web/PersonController.java">
+      <file leaf-file-name="studentMess.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/studentMess.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1260">
-              <caret line="127" column="4" lean-forward="false" selection-start-line="127" selection-start-column="4" selection-end-line="127" selection-end-column="4" />
+            <state relative-caret-position="331">
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="122" selection-end-column="6" />
               <folding>
-                <element signature="e#5558#5559#0" expanded="true" />
-                <element signature="e#5613#5614#0" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shiro.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/shiro.ini">
+      <file leaf-file-name="classMess.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/classMess.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="767">
+              <caret line="55" column="40" lean-forward="true" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/js/background/admin.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="77">
+              <caret line="308" column="9" lean-forward="false" selection-start-line="308" selection-start-column="9" selection-end-line="308" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#37#0" expanded="false" />
+                <marker date="1488021976227" expanded="true" signature="1520:1543" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/web/LoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="684">
+              <caret line="138" column="39" lean-forward="false" selection-start-line="138" selection-start-column="39" selection-end-line="138" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spring-shiro.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/spring-shiro.xml">
+      <file leaf-file-name="PersonController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/web/PersonController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="33" column="4" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="37" selection-end-column="48" />
+            <state relative-caret-position="320">
+              <caret line="121" column="30" lean-forward="false" selection-start-line="121" selection-start-column="30" selection-end-line="121" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="log4j.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+      <file leaf-file-name="IPersonService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IPersonService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+            <state relative-caret-position="185">
+              <caret line="39" column="12" lean-forward="false" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="studentMess.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/studentMess.jsp">
+      <file leaf-file-name="PersonServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="75" column="8" lean-forward="true" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
+            <state relative-caret-position="293">
+              <caret line="238" column="31" lean-forward="false" selection-start-line="238" selection-start-column="31" selection-end-line="238" selection-end-column="31" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IStudentDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IStudentDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudentDao.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/StudentDao.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="21" column="56" lean-forward="true" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
+              <folding>
+                <marker date="1488021298000" expanded="true" signature="268:784" ph="INSERT INTO student... " />
+                <marker date="1488021298000" expanded="true" signature="859:945" ph="UPDATE stude... " />
+                <marker date="1488021298000" expanded="true" signature="1020:1447" ph="UPDATE stude... " />
+                <marker date="1488021298000" expanded="true" signature="1575:1644" ph="SELECT * FRO... student" />
+                <marker date="1488021298000" expanded="true" signature="1744:1876" ph="SELECT * FRO... student" />
+                <marker date="1488021298000" expanded="true" signature="1989:2035" ph="SELECT * FRO... student" />
+                <marker date="1488021298000" expanded="true" signature="2126:2178" ph="SELECT * FRO... student" />
+                <marker date="1488021298000" expanded="true" signature="2287:2355" ph="SELECT * FRO... student" />
+                <marker date="1488021298000" expanded="true" signature="2437:2466" ph="SELECT stude... student" />
+                <marker date="1488021298000" expanded="true" signature="2579:2673" ph="SELECT * FRO... student" />
+                <marker date="1488021298000" expanded="true" signature="2786:2859" ph="SELECT * FRO... student" />
+                <marker date="1488021298000" expanded="true" signature="2970:3039" ph="SELECT * FRO... student" />
+                <marker date="1488021298000" expanded="true" signature="3153:3228" ph="SELECT * FRO... student" />
+                <marker date="1488021298000" expanded="true" signature="3311:3363" ph="SELECT stude... student" />
+                <marker date="1488021298000" expanded="true" signature="3447:3500" ph="SELECT stude... student" />
+                <marker date="1488021298000" expanded="true" signature="3583:3635" ph="SELECT stude... student" />
+                <marker date="1488021298000" expanded="true" signature="3732:3824" ph="select r.rol... student" />
+                <marker date="1488021298000" expanded="true" signature="3926:4063" ph="select p.per... student" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -182,6 +229,7 @@
       <find>width=&quot;50&quot;</find>
       <find>&quot;</find>
       <find>'</find>
+      <find>dg</find>
     </findStrings>
     <replaceStrings>
       <replace>managerId</replace>
@@ -565,7 +613,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/exceptions/StudentNotExistException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/dto/Register.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/pojo/Question.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/StudentDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/exceptions/TeacherNotExistException.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/register.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/proscenium/student/teacher.jsp" />
@@ -585,7 +632,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/pojo/Teacher.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/powerManager.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/TeacherDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/js/background/admin.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/teacherPaperMess.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/teacherClassMess.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/studentPaperMess.jsp" />
@@ -597,13 +643,15 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/teacherMess.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/admin.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/web/BackgroundController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/classMess.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/shiro/LoginRealm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wsc/web/PersonController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-shiro.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wsc/web/PersonController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/StudentDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/js/background/admin.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/studentMess.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/classMess.jsp" />
       </list>
     </option>
   </component>
@@ -824,6 +872,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1058,15 +1107,11 @@
               <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="wsc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="mapping" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1093,112 +1138,13 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="wsc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExamSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wsc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shiro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExamSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wsc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="inter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExamSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wsc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1876,7 +1822,8 @@
       <workItem from="1487834148765" duration="14321000" />
       <workItem from="1487920395717" duration="23403000" />
       <workItem from="1488007952061" duration="2812000" />
-      <workItem from="1488010794217" duration="4495000" />
+      <workItem from="1488010794217" duration="8820000" />
+      <workItem from="1488021509006" duration="1630000" />
     </task>
     <servers />
   </component>
@@ -1913,7 +1860,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="540010000" />
+    <option name="totallyTimeSpent" value="545965000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1930,7 +1877,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3188406" sideWeight="0.5037274" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32823366" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -1950,11 +1897,11 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32775453" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914925" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6683761" sideWeight="0.49627262" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6683761" sideWeight="0.49627262" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328541" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914925" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23867069" sideWeight="0.4792746" order="10" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24244712" sideWeight="0.4792746" order="10" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24622357" sideWeight="0.52072537" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2076,13 +2023,6 @@
         <state relative-caret-position="360">
           <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/StudentDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
-          <caret line="66" column="4" lean-forward="false" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -2321,13 +2261,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/js/background/admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-252">
-          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/teacherClassMess.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="367">
@@ -2400,14 +2333,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/classMess.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/admin.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-288">
@@ -2429,17 +2354,9 @@
         <state relative-caret-position="414">
           <caret line="64" column="27" lean-forward="false" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
           <folding>
-            <element signature="e#1588#1589#0" expanded="true" />
-            <element signature="e#1660#1661#0" expanded="true" />
+            <element signature="e#1588#1589#0" expanded="false" />
+            <element signature="e#1660#1661#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IStudentDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="48" column="17" lean-forward="false" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2448,16 +2365,8 @@
         <state relative-caret-position="-144">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/web/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="138" column="39" lean-forward="false" selection-start-line="138" selection-start-column="39" selection-end-line="138" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2469,38 +2378,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IPersonService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="43" column="26" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="284" column="45" lean-forward="false" selection-start-line="284" selection-start-column="45" selection-end-line="284" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/web/PersonController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="127" column="4" lean-forward="false" selection-start-line="127" selection-start-column="4" selection-end-line="127" selection-end-column="4" />
-          <folding>
-            <element signature="e#5558#5559#0" expanded="true" />
-            <element signature="e#5613#5614#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2508,7 +2389,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2520,11 +2400,101 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/web/PersonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="121" column="30" lean-forward="false" selection-start-line="121" selection-start-column="30" selection-end-line="121" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IPersonService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="39" column="12" lean-forward="false" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/IStudentDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/StudentDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="21" column="56" lean-forward="true" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
+          <folding>
+            <marker date="1488021298000" expanded="true" signature="268:784" ph="INSERT INTO student... " />
+            <marker date="1488021298000" expanded="true" signature="859:945" ph="UPDATE stude... " />
+            <marker date="1488021298000" expanded="true" signature="1020:1447" ph="UPDATE stude... " />
+            <marker date="1488021298000" expanded="true" signature="1575:1644" ph="SELECT * FRO... student" />
+            <marker date="1488021298000" expanded="true" signature="1744:1876" ph="SELECT * FRO... student" />
+            <marker date="1488021298000" expanded="true" signature="1989:2035" ph="SELECT * FRO... student" />
+            <marker date="1488021298000" expanded="true" signature="2126:2178" ph="SELECT * FRO... student" />
+            <marker date="1488021298000" expanded="true" signature="2287:2355" ph="SELECT * FRO... student" />
+            <marker date="1488021298000" expanded="true" signature="2437:2466" ph="SELECT stude... student" />
+            <marker date="1488021298000" expanded="true" signature="2579:2673" ph="SELECT * FRO... student" />
+            <marker date="1488021298000" expanded="true" signature="2786:2859" ph="SELECT * FRO... student" />
+            <marker date="1488021298000" expanded="true" signature="2970:3039" ph="SELECT * FRO... student" />
+            <marker date="1488021298000" expanded="true" signature="3153:3228" ph="SELECT * FRO... student" />
+            <marker date="1488021298000" expanded="true" signature="3311:3363" ph="SELECT stude... student" />
+            <marker date="1488021298000" expanded="true" signature="3447:3500" ph="SELECT stude... student" />
+            <marker date="1488021298000" expanded="true" signature="3583:3635" ph="SELECT stude... student" />
+            <marker date="1488021298000" expanded="true" signature="3732:3824" ph="select r.rol... student" />
+            <marker date="1488021298000" expanded="true" signature="3926:4063" ph="select p.per... student" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="238" column="31" lean-forward="false" selection-start-line="238" selection-start-column="31" selection-end-line="238" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/web/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="138" column="39" lean-forward="false" selection-start-line="138" selection-start-column="39" selection-end-line="138" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/js/background/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="308" column="9" lean-forward="false" selection-start-line="308" selection-start-column="9" selection-end-line="308" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+            <marker date="1488021976227" expanded="true" signature="1520:1543" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/studentMess.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="75" column="8" lean-forward="true" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
-          <folding />
+        <state relative-caret-position="331">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="122" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/classMess.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="767">
+          <caret line="55" column="40" lean-forward="true" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

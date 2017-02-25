@@ -103,6 +103,7 @@ public class PersonController {
     @RequestMapping(value = "student/create",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     @ResponseBody
     public Student createStudent(@RequestBody Student student){
+        student.setStudentPassword(Encryption.md5En(student.getPaperId()));
         iPersonService.createStudent(student);
         return student;
     }
@@ -112,6 +113,12 @@ public class PersonController {
     @ResponseBody
     public Student updateStudent(@RequestBody Student student){
         Student studentRe=iPersonService.queryStudentByStudentId(student.getStudentId());
+        if(studentRe.getStudentPassword().equals(student.getStudentPassword())){
+            student.setStudentPassword(studentRe.getStudentPassword());
+        }
+        else{
+            student.setStudentPassword(Encryption.md5En(student.getStudentPassword()));
+        }
         iPersonService.updateStudent(student.getStudentId(),student);
         return studentRe;
     }

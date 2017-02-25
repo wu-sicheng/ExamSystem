@@ -201,6 +201,141 @@ function destroyUser(){
         });
     }
 }
+
+function addStudent(){
+    $("#dlgStudent").dialog("open").dialog("setTitle","新建用户");
+    $("#fmStudent").form("clear");
+}
+
+function editStudent(){
+    var row = $("#dgStudent").datagrid("getSelected");
+    console.log(row.studentId);
+    console.log(row);
+    if (row){
+        $("#dlgStudent").dialog("open").dialog("setTitle","编辑用户");
+        $("#fmStudent").form("load",row);
+    }
+}
+
+function newStudent(){
+    var title=$('#dlgStudent').panel('options').title;
+    console.log(title);
+    if(title=="新建用户"){
+        var url=window.location.href;
+        var urlTo=url.replace("/background/admin/personContro/studentMess","/person/student/create");
+        var all={};
+        var studentJSON=JSON.stringify($("#fmStudent").serializeObject());
+        var student=JSON.parse(studentJSON);
+
+        student.studentId=1;
+        student.studentGander=Number(student.studentGander);
+        student.roleId=Number(student.roleId);
+        student.classId=Number(student.classId);
+        student.studentGrader=Number(student.studentGrader);
+
+        var addJSON={"studentState":1,"teacherCreateTime":null,"teacherDeleteTime":null};
+        $.extend(all,student,addJSON);
+
+        var toServer=JSON.stringify(all);
+
+        console.log(all);
+        console.log(JSON.stringify(all));
+        console.log(studentJSON);
+
+        $.ajax({
+            type:"POST",
+            url:urlTo,
+            data:toServer,
+            contentType:"application/json",
+            dataType:"json",
+            success:function(data){
+                console.log(data);
+                alert("创建用户数据成功");
+                $("#dlgStudent").dialog("close");
+                $('#dgStudent').datagrid('reload');
+            },
+            error:function(data){
+                console.log("error");
+                alert("创建用户失败"+data);
+            }
+        });
+    }
+    else if(title=="编辑用户"){
+        var row = $("#dgStudent").datagrid("getSelected");
+        var url=window.location.href;
+        var urlTo=url.replace("/background/admin/personContro/studentMess","/person/student/update");
+        var all={};
+        var studentJSON=JSON.stringify($("#fmStudent").serializeObject());
+        var student=JSON.parse(studentJSON);
+
+        student.studentId=row.studentId;
+        student.classId=Number(student.classId);
+        student.paperId=Number(student.paperId);
+        student.studentGander=Number(student.studentGander);
+        student.roleId=Number(student.roleId);
+        student.studentGrader=Number(student.studentGrader);
+
+
+        var addJSON={"studentState":1,"studentCreateTime":null,"studentDeleteTime":null};
+        $.extend(all,student,addJSON);
+
+        var toServer=JSON.stringify(all);
+
+        console.log(all);
+        console.log(JSON.stringify(all));
+        console.log(studentJSON);
+
+
+        $.ajax({
+            type:"PUT",
+            url:urlTo,
+            data:toServer,
+            contentType:"application/json",
+            dataType:"json",
+            success:function(data){
+                console.log(data);
+                alert("修改用户数据成功");
+                $("#dlgStudent").dialog("close");
+                $('#dgStudent').datagrid('reload');
+            },
+            error:function(data){
+                console.log("error");
+                alert("修改用户失败"+data);
+            }
+        });
+    }
+}
+
+function destroyStudent(){
+    var row = $('#dgStudent').datagrid('getSelected');
+    var url=window.location.href;
+    var urlTo=url.replace("/background/admin/personContro/studentMess","/person/student/delete/").concat(row.studentId);
+    console.log(row.studentId);
+    console.log(urlTo);
+
+    if (row){
+        $.messager.confirm('注意','你确定删除该用户吗？',function(r){
+            console.log(r);
+            if (r){
+                alert(r);
+                $.ajax({
+                    url:urlTo,
+                    type:"DELETE",
+                    contentType:"application/json",
+                    dataType:"json",
+                    success:function(data){
+                        alert("删除用户成功"+data);
+                        $("#dgStudent").datagrid("reload");
+                    },
+                    error:function(data){
+                        alert("删除用户失败"+data);
+                    }
+                });
+            }
+        });
+    }
+}
+
 function loadMess(){
     var url=window.location.href;
     var urlTo=url.replace("/background/admin/teacherMess","/person/teacher/list");

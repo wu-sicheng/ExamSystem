@@ -36,25 +36,6 @@
        toolbar="#toolbar"
        rownumbers="true" fitColumns="true" singleSelect="true">
     <thead>
-
-<%--        "studentId": 2,
-        "classId": 2,
-        "paperId": "2,3",
-        "studentName": "wusic",
-        "studentDisplayName": "",
-        "studentPassword": "password",
-        "studentGander": 1,
-        "studentNo": "studentNo",
-        "studentMajor": "major",
-        "studentGrader": 2,
-        "studentNum": "num",
-        "studentMail": "mail@mail.com",
-        "studentPhone": "18826222446",
-        "roleId": 1,
-    "studentState": 1,
-        "studentCreateTime": 1454392800000,
-    "studentDeleteTime": 1486059141000--%>
-
     <tr>
         <th field="studentId" nowrap>编号(唯一)</th>
         <th field="studentName" nowrap>名字(唯一)</th>
@@ -75,47 +56,70 @@
     </thead>
 </table>
 <div id="toolbar">
-    <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="addUser()">新建用户</a>
-    <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">编辑用户</a>
-    <a class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">删除用户</a>
-    <button onclick="loadMess()">点击</button>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="addStudent()">新建用户</a>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editStudent()">编辑用户</a>
+    <a class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyStudent()">删除用户</a>
 </div>
-<div id="dlg" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
+<div id="dlgStudent" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
      closed="true" buttons="#dlg-buttons">
-    <form id="fm" method="post" enctype="application/json">
-        <div id="teacherName" class="fitem">
+    <form id="fmStudent" method="post" enctype="application/json">
+        <div id="studentName" class="fitem">
             <label>名字(唯一)</label>
-            <input name="teacherName" class="easyui-validatebox" required="true">
+            <input name="studentName" class="easyui-validatebox" required="true">
         </div>
-        <div id="teacherDisplay" class="fitem">
+        <div id="studentDisplayName" class="fitem">
             <label>网名</label>
-            <input name="teacherDisplayName" class="easyui-validatebox" required="true">
+            <input name="studentDisplayName" class="easyui-validatebox" required="true">
         </div>
-        <div id="teacherPassword" class="fitem">
+        <div id="studentPassword" class="fitem">
             <label>密码(md5加密)</label>
-            <input name="teacherPassword" class="easyui-validatebox" required="true">
+            <input name="studentPassword" class="easyui-validatebox" required="true">
         </div>
-        <div id="teacherGander" class="fitem">
+        <div id="studentGander" class="fitem">
             <label>性别</label>
-            <input name="teacherGander" class="easyui-validatebox" required="true">
+            <input name="studentGander" class="easyui-validatebox" required="true">
         </div>
-        <div id="teacherNo" class="fitem">
-            <label>职工号(唯一)</label>
-            <input name="teacherNo" class="easyui-validatebox" required="true">
+        <div id="studentNo" class="fitem">
+            <label>学号(唯一)</label>
+            <input name="studentNo" class="easyui-validatebox" required="true">
         </div>
-        <div id="teacherMail" class="fitem">
+        <div id="studentMail" class="fitem">
             <label>邮箱(唯一)</label>
-            <input name="teacherMail" class="easyui-validatebox" required="true">
+            <input name="studentMail" class="easyui-validatebox" required="true">
         </div>
-        <div id="teacherPhone" class="fitem">
+        <div id="studentPhone" class="fitem">
             <label>电话(唯一)</label>
-            <input name="teacherPhone" class="easyui-validatebox" required="true">
+            <input name="studentPhone" class="easyui-validatebox" required="true">
+        </div>
+        <div id="studentMajor" class="fitem">
+            <label>专业</label>
+            <input name="studentMajor" class="easyui-validatebox" required="true">
+        </div>
+        <div id="studentGrader" class="fitem">
+            <label>年级</label>
+            <input name="studentGrader" class="easyui-validatebox" required="true">
+        </div>
+        <div id="studentNum" class="fitem">
+            <label>准考证号(唯一)</label>
+            <input name="studentNum" class="easyui-validatebox" required="true">
+        </div>
+        <div id="roleId" class="fitem">
+            <label>权限</label>
+            <input name="roleId" class="easyui-validatebox" required="true">
+        </div>
+        <div id="classId" class="fitem">
+            <label>班级</label>
+            <input name="classId" class="easyui-validatebox" required="true">
+        </div>
+        <div id="paperId" class="fitem">
+            <label>试卷编号</label>
+            <input name="paperId" class="easyui-validatebox" required="true">
         </div>
     </form>
 </div>
 <div id="dlg-buttons">
-    <a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="newUser()">保存</a>
-    <a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="newStudent()">保存</a>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlgStudent').dialog('close')">取消</a>
 </div>
 </body>
 </html>

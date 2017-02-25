@@ -18,7 +18,7 @@
 
     <!--更新学生信息-->
     <update id="updateStudent">
-        UPDATE student SET classId=#{classId},paperId=#{paperId},studentName=#{studentName},studentGander=#{studentGander},studentNo=#{studentNo},studentMajor=#{studentMajor},studentGrader=#{studentGrader},studentNum=#{studentNum},studentMail=#{studentMail},studentPhone=#{studentPhone},roleId=#{roleId},studentState=#{studentState}
+        UPDATE student SET classId=#{classId},paperId=#{paperId},studentName=#{studentName},studentDisplayName=#{studentDisplayName},studentPassword=#{studentPassword},studentGander=#{studentGander},studentNo=#{studentNo},studentMajor=#{studentMajor},studentGrader=#{studentGrader},studentNum=#{studentNum},studentMail=#{studentMail},studentPhone=#{studentPhone},roleId=#{roleId}
         WHERE studentId=#{studentId} AND studentState=1;
     </update>
 
