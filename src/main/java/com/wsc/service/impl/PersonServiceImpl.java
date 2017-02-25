@@ -278,7 +278,6 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
-
     public Set<Student> queryStudentAll() {
         listStudentId = getAllStudentId();
         try {

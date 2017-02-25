@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>权限管理</title>
+    <title>教师信息</title>
     <!--导入easy_ui相关数据-->
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/easy_ui/themes/default/easyui.css">
@@ -45,8 +45,8 @@
         <th field="teacherMail" nowrap>邮箱(唯一)</th>
         <th field="teacherPhone" nowrap>电话(唯一)</th>
         <th field="roleId" nowrap>权限</th>
-        <th field="classId" nowrap>班级编号</th>
-        <th field="paperId" nowrap>试卷编号</th>
+        <th field="classId" nowrap onclick="addTab('班级数据','${pageContext.request.contextPath}/background/admin/personContro/teacherClassMess')">班级编号</th>
+        <th field="paperId" nowrap onclick="javascript:alert('点击');">试卷编号</th>
         <th field="roleId" nowrap>权限</th>
         <th field="teacherCreateTime" nowrap>创建时间</th>
     </tr>

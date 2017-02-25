@@ -31,11 +31,11 @@
                 /register=anon
 
                 <!--authc表示需要认证 没有进行身份认证是不能进行访问的-->
-                /admin*=authc
+<!--                /admin*=authc
                 /person/student/*=authc
 
-                /person/student/*=roles[teacher]
-                /teacher=perms["user:create"]
+                /person/student/*=roles[admin]
+                /teacher=perms["user:create"]-->
             </value>
         </property>
     </bean>

@@ -6,19 +6,53 @@ var noSet=[];
 var emailSet=[];
 var phoneSet=[];
 
+/*
+* 判断编辑用户以及新建用户的时候的值是否有重复
+* */
 $(document).ready(function(){
     loadMess();
     var row=$("#dg").datagrid("getSelected");
+    //判断教师的名字
     $("#teacherName").keyup(function(e){
         var input=e.target.value;
         console.log(input);
-        //
-        if(nameSet.indexOf(input)!=-1||row.teacherName==input){
-            console.log("输入值重复");
+        if(nameSet.indexOf(input)!=-1){
+            if(row.teacherName!=input){
+                console.log("输入值重复");
+            }
+        }
+    });
+    //教师的职工号
+    $("#teacherNo").keyup(function(e){
+        var input=e.target.value;
+        console.log(input);
+        if(noSet.indexOf(input)!=-1){
+            if(row.teacherNo!=input){
+                console.log("输入值重复");
+            }
+        }
+    });
+    //教师的邮件
+    $("#teacherMail").keyup(function(e){
+        var input=e.target.value;
+        console.log(input);
+        if(emailSet.indexOf(input)!=-1){
+            if(row.teacherMail!=input){
+                console.log("输入值重复");
+            }
+        }
+    });
+    //教师的电话号码
+    $("#teacherPhone").keyup(function(e){
+        var input=e.target.value;
+        console.log(input);
+        if(phoneSet.indexOf(input)!=-1){
+            if(row.teacherPhone!=input){
+                console.log("输入值重复");
+            }
         }
     });
 });
-
 
 
 function addTab(title, url){

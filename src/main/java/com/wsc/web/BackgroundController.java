@@ -19,4 +19,50 @@ public class BackgroundController {
     public String teacherMess(){
         return "/background/admin/teacherMess";
     }
+
+    @RequestMapping(value = "/admin/personContro/teacherClassMess",method = RequestMethod.GET)
+    public String teacherClassMess(){
+        return "/background/admin/personContro/teacherClassMess";
+    }
+
+    @RequestMapping(value = "/admin/personContro/teacherPaperMess",method = RequestMethod.GET)
+    public String teacherPaperMess(){
+        return "/background/admin/personContro/teacherPaperMess";
+    }
+
+
+    @RequestMapping(value = "/admin/personContro/studentMess",method = RequestMethod.GET)
+    public String studentMess(){
+        return "/background/admin/personContro/studentMess";
+    }
+
+    @RequestMapping(value = "/admin/personContro/studentPaperMess",method = RequestMethod.GET)
+    public String studentPaperMess(){
+        return "/background/admin/personContro/studentPaperMess";
+    }
+
+    @RequestMapping(value = "/admin/personContro/studentClassMess",method = RequestMethod.GET)
+    public String studentClassMess(){
+        return "/background/admin/personContro/studentClassMess";
+    }
+
+    @RequestMapping(value = "/admin/personContro/registCheck",method = RequestMethod.GET)
+    public String registCheck(){
+        return "/background/admin/personContro/registCheck";
+    }
+
+    @RequestMapping(value = "/admin/personContro/teacherPermiss",method = RequestMethod.GET)
+    public String teacherPermiss(){
+        return "/background/admin/personContro/teacherPermiss";
+    }
+
+    @RequestMapping(value = "/admin/personContro/studentPermiss",method = RequestMethod.GET)
+    public String studentPermiss(){
+        return "/background/admin/personContro/studentPermiss";
+    }
+
+    @RequestMapping(value = "/admin/personContro/classMess",method = RequestMethod.GET)
+    public String classMess(){
+        return "/background/admin/personContro/classMess";
+    }
 }

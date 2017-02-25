@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context.xsd
+                        http://www.springframework.org/schema/mvc
+                        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <mvc:annotation-driven/>
+
+    <mvc:default-servlet-handler/>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <context:component-scan base-package="com.wsc.web"/>
+
+    <mvc:annotation-driven />
+
+    <!-- EasyUI样式，JS配置 -->
+    <mvc:resources location="WEB-INF/res/easy_ui/demo/" mapping="/easy_ui/demo/**"></mvc:resources>
+    <mvc:resources location="WEB-INF/res/easy_ui/locale/" mapping="/easy_ui/locale/**"></mvc:resources>
+    <mvc:resources location="WEB-INF/res/easy_ui/plugins/" mapping="/easy_ui/demo/**"></mvc:resources>
+    <mvc:resources location="WEB-INF/res/easy_ui/themes/" mapping="/easy_ui/themes/**"></mvc:resources>
+    <mvc:resources location="WEB-INF/res/easy_ui/src/" mapping="/easy_ui/src/**"></mvc:resources>
+    <mvc:resources location="WEB-INF/res/easy_ui/" mapping="/easy_ui/**"></mvc:resources>
+
+    <!--jQuery-->
+    <mvc:resources location="WEB-INF/res/jQuery/" mapping="/jQuery/**"></mvc:resources>
+
+
+    <!--js目录设置-->
+    <mvc:resources location="WEB-INF/js/background/" mapping="/js/background/**"></mvc:resources>
+    <mvc:resources location="WEB-INF/js/" mapping="/js/**"></mvc:resources>
+
+    <!--jsp目录-->
+    <mvc:resources location="WEB-INF/jsp/background/admin/" mapping="/background/admin/**"></mvc:resources>
+    <mvc:resources location="WEB-INF/jsp/background/" mapping="/background/**"></mvc:resources>
+</beans>

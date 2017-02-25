@@ -1,0 +1,109 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wsc.dao.inter.ITeacherDao">
+    <!--创建一个教师-->
+    <insert id="addTeacher" parameterType="Teacher">
+        INSERT INTO teacher (id,teacherId,classId,paperId,teacherName,teacherDisplayName,teacherPassword,
+        teacherGander,teacherNo,teacherMail,teacherPhone,teacherState,roleId,
+        teacherCreateTime) VALUES (NULL,#{teacherId},#{classId},#{paperId},#{teacherName},#{teacherDisplayName},
+        #{teacherPassword},#{teacherGander},#{teacherNo},#{teacherMail},#{teacherPhone},
+        1,#{roleId},now());
+    </insert>
+
+    <!--删除一个教师数据，将标志位置为0并插入删除时间-->
+    <update id="deleteTeacherByTeacherId" parameterType="int">
+        UPDATE teacher SET teacherState=0,teacherDeleteTime=now() WHERE teacherId=#{teacherId};
+    </update>
+
+    <!--更新教师数据-->
+    <update id="updateTeacher">
+        UPDATE teacher SET classId=#{classId},paperId=#{paperId},
+        teacherName=#{teacherName},teacherDisplayName=#{teacherDisplayName},teacherPassword=#{teacherPassword},
+        teacherGander=#{teacherGander},teacherNo=#{teacherNo},
+        teacherMail=#{teacherMail},teacherPhone=#{teacherPhone} WHERE teacherId=#{teacherId};
+    </update>
+
+    <!--通过id来查询教师信息-->
+    <select id="queryTeacherById" parameterType="Integer" resultType="Teacher">
+        SELECT * from teacher WHERE teacherId=#{teacherId} AND teacherState=1;
+    </select>
+
+    <!--查询教师列表-->
+    <select id="queryTeacherList" resultType="Teacher">
+        SELECT * FROM teacher WHERE teacherId <![CDATA[>=]]> #{fromTeacherId} AND teacherId <![CDATA[<=]]> #{toTeacherId} AND teacherState=1;
+    </select>
+
+    <!--通过class id来查询教师数据集-->
+    <select id="queryTeacherByClassId" parameterType="String">
+        SELECT * FROM teacher WHERE classId LIKE CONCAT('%',#{classId},',%');
+    </select>
+
+    <select id="queryTeacherByPaperId" resultType="Teacher">
+        SELECT * FROM teacher WHERE paperId LIKE CONCAT('%',#{paperId},',%');
+    </select>
+
+    <select id="queryTeacherByTeacherName" resultType="Teacher">
+        SELECT * FROM teacher WHERE teacherName LIKE CONCAT('%',#{teacherName},'%');
+    </select>
+
+    <select id="queryTeacherIdAll" resultType="Integer">
+        SELECT teacherId FROM teacher WHERE teacherState=1;
+    </select>
+
+    <!--权限管理-->
+    <select id="findRoles" parameterType="String" resultType="String">
+        select r.roleName from teacher t,role r where t.roleId=r.id and t.teacherMail=#{teacherMail};
+    </select>
+
+    <select id="findPermissions" parameterType="String" resultType="String">
+        select p.permissionName from teacher t,role r,permission p
+        where t.roleId=r.id and p.roleId=r.id and t.teacherMail=#{teacherMail};
+    </select>
+
+    <!--select teacher mail,name,phone as unity key-->
+    <!--mail-->
+    <select id="queryTeacherByMail" parameterType="String" resultType="Teacher">
+        SELECT * from teacher WHERE teacherMail=#{teacherMail} AND teacherState=1;
+    </select>
+    <!--name-->
+    <select id="queryTeacherByName" parameterType="String" resultType="Teacher">
+        SELECT * from teacher WHERE teacherName=#{teacherName} AND teacherState=1;
+    </select>
+    <!--phone-->
+    <select id="queryTeacherByPhone" parameterType="String" resultType="Teacher">
+        SELECT * from teacher WHERE teacherPhone=#{teacherPhone} AND teacherState=1;
+    </select>
+
+    <!--select teacher_id mail,name,phone as unity key-->
+    <!--mail-->
+    <select id="queryTeacherIdByMail" parameterType="String" resultType="Integer">
+        SELECT teacherId from teacher WHERE teacherMail=#{teacherMail} AND teacherState=1;
+    </select>
+    <!--name-->
+    <select id="queryTeacherIdByName" parameterType="String" resultType="Integer">
+        SELECT teacherId from teacher WHERE teacherName=#{teacherName} AND teacherState=1;
+    </select>
+    <!--phone-->
+    <select id="queryTeacherIdByPhone" parameterType="String" resultType="Integer">
+        SELECT teacherId from teacher WHERE teacherPhone=#{teacherPhone} AND teacherState=1;
+    </select>
+
+    <!--list_teacher_id-->
+    <select id="queryListTeacherId" resultType="Integer">
+        SELECT teacherId from teacher WHERE teacherState=1;
+    </select>
+    <!--list_teacher_name-->
+    <select id="queryListTeacherName" resultType="String">
+        SELECT teacherName from teacher WHERE teacherState=1;
+    </select>
+    <!--list_teacher_mail-->
+    <select id="queryListTeacherMail" resultType="String">
+        SELECT teacherMail from teacher WHERE teacherState=1;
+    </select>
+    <!--list_teacher_phone-->
+    <select id="queryListTeacherPhone" resultType="String">
+        SELECT teacherPhone from teacher WHERE teacherState=1;
+    </select>
+</mapper>

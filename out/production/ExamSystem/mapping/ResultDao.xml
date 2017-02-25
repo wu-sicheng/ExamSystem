@@ -1,0 +1,44 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wsc.dao.inter.IResultDao">
+    <!--创建一个result-->
+    <insert id="createResult" parameterType="Result">
+        INSERT INTO result (id,resultId,studentId,paperId,resultScorce,resultDetail,
+        resultCreateTime,resultState) VALUES (NULL,#{resultId},#{studentId},
+        #{paperId},#{resultScorce},#{resultDetail},now(),1)
+    </insert>
+
+    <!--删除一个result-->
+    <update id="deleteResult" parameterType="Integer">
+        UPDATE result SET resultState=0,resultDeleteTime=now() WHERE resultId=#{resultId};
+    </update>
+
+    <!--更新一个result-->
+    <update id="updateResult">
+        UPDATE result SET studentId=#{studentId},paperId=#{paperId},resultScorce=#{resultScorce},resultDetail=#{resultDetail} WHERE resultId=#{resultId} AND resultState=1;
+    </update>
+
+    <!--查询一个Result-->
+    <select id="queryResult" parameterType="Integer" resultType="Result">
+        SELECT * FROM result WHERE resultId=#{resultId} AND resultState=1;
+    </select>
+
+    <!--查询一个结果集-->
+    <select id="queryResultList" resultType="Result">
+        SELECT * FROM result WHERE resultId <![CDATA[>=]]> #{fromResultId} AND resultId <![CDATA[<=]]> #{toResultId} AND resultState=1;
+    </select>
+
+    <select id="queryResultIdList" resultType="Integer">
+        SELECT resultId FROM result WHERE resultState=1;
+    </select>
+
+    <select id="queryResultListByStudentId" resultType="Result">
+        SELECT * FROM result WHERE studentId=#{studentId} AND resultState=1;
+    </select>
+
+    <select id="queryResultListByPaperId" resultType="Result">
+        SELECT * FROM result WHERE paperId=#{paperId} AND resultState=1;
+    </select>
+</mapper>

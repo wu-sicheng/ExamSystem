@@ -44,22 +44,27 @@
                 <li><span>教师管理</span>
                     <ul>
                         <li><a href="#teacherMessage" onclick="addTab('信息数据','${pageContext.request.contextPath}/background/admin/teacherMess')">信息数据</a></li>
-                        <li><a href="#classMessage">班级数据</a></li>
-                        <li><a href="#paperMessage">试卷数据</a></li>
+                      <%--  <li><a href="#teacheClassMessage" onclick="addTab('班级数据','${pageContext.request.contextPath}/background/admin/personContro/teacherClassMess')">班级数据</a></li>
+                        <li><a href="#teacherPaperMessage" onclick="addTab('试卷数据','${pageContext.request.contextPath}/background/admin/personContro/teacherPaperMess')">试卷数据</a></li>--%>
                     </ul>
                 </li>
                 <li><span>学生管理</span>
                     <ul>
-                        <li><a href="#studentMessage">个人信息</a></li>
-                        <li><a href="#classMessage">班级信息</a></li>
-                        <li><a href="#paperMessage">试卷信息</a></li>
+                        <li><a href="#studentMessage" onclick="addTab('学生信息','${pageContext.request.contextPath}/background/admin/personContro/studentMess')">个人信息</a></li>
+                        <%--<li><a href="#studentClassMessage" onclick="addTab('班级信息','${pageContext.request.contextPath}/background/admin/personContro/studentClassMess')">班级信息</a></li>
+                        <li><a href="#studentPaperMessage" onclick="addTab('试卷信息','${pageContext.request.contextPath}/background/admin/personContro/studentPaperMess')">试卷信息</a></li>--%>
+                    </ul>
+                </li>
+                <li><span>班级管理</span>
+                    <ul>
+                        <li><a href="#classMess" onclick="addTab('班级信息','${pageContext.request.contextPath}/background/admin/personContro/classMess')">班级信息</a></li>
                     </ul>
                 </li>
                 <li><span>权限管理</span>
                     <ul>
-                        <li><a href="#">注册审核</a></li>
-                        <li><a href="#">教师权限</a></li>
-                        <li><a href="#">学生权限</a></li>
+                        <li><a href="#registCheck" onclick="addTab('注册审核','${pageContext.request.contextPath}/background/admin/personContro/registCheck')">注册审核</a></li>
+                        <li><a href="#teacherPermiss" onclick="addTab('教师权限','${pageContext.request.contextPath}/background/admin/personContro/teacherPermiss')">教师权限</a></li>
+                        <li><a href="#studentPermiss" onclick="addTab('学生权限','${pageContext.request.contextPath}/background/admin/personContro/studentPermiss')">学生权限</a></li>
                     </ul>
                 </li>
             </ul>

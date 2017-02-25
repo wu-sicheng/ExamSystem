@@ -1,7 +1,5 @@
 package com.wsc.shiro;
 
-import com.wsc.exceptions.StudentNotExistException;
-import com.wsc.exceptions.TeacherNotExistException;
 import com.wsc.pojo.Student;
 import com.wsc.pojo.Teacher;
 import com.wsc.service.inter.IPersonService;
