@@ -15,10 +15,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by wsc on 17-1-18.
@@ -38,7 +35,7 @@ public class PersonServiceImpl implements IPersonService {
 
     private Set<Integer> listTeacherId;
     private Set<Integer> listStudentId;
-    private List<Integer> listTheClassId;
+    private Set<Integer> listTheClassId;
 
     /*
      * 教师及管理员的人员管理
@@ -430,13 +427,21 @@ public class PersonServiceImpl implements IPersonService {
     @Override
 
     public boolean createTheClass(TheClass theClass) {
-        listTheClassId = getAllTheClassId();
-        if (!listTheClassId.contains(theClass.getTheClassId())) {
-            iTheClassDao.createTheClass(theClass);
-            return true;
-        } else {
-            LOGGER.info("数据库the_class中含有数据the_class_id为" + theClass.getTheClassId() + "的数据");
-            throw new PersonException("数据库the_class中含有数据the_class_id为" + theClass.getTheClassId() + "的数据");
+        int maxTheClassId=Collections.max(iTheClassDao.queryTheClassIdAll());
+        if(!judgeExistTheClassName(theClass)){
+            theClass.setTheClassId(maxTheClassId+1);
+            if(!judgeNullTheClass(theClass)){
+                iTheClassDao.createTheClass(theClass);
+                return true;
+            }
+            else {
+                LOGGER.info("create teacher中存在空值");
+                throw new PersonException("存储的数据存在空值");
+            }
+        }
+        else{
+            LOGGER.info("数据库theClass中已存在数据为"+theClass.toString()+"的数据");
+            throw new PersonException("数据库theClass中已存在数据为"+theClass.toString()+"的数据");
         }
     }
 
@@ -481,10 +486,10 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
-    public List<TheClass> queryTheClassList(int fromTheClassId, int toTheClassId) {
+    public Set<TheClass> queryTheClassList(int fromTheClassId, int toTheClassId) {
         listTheClassId = getAllTheClassId();
         try {
-            if (listTheClassId.get(0) != null) {
+            if (listTheClassId != null) {
                 return iTheClassDao.queryTheClassList(fromTheClassId, toTheClassId);
             }
         } catch (IndexOutOfBoundsException e) {
@@ -496,7 +501,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
-    public List<TheClass> queryTheClassListAll() {
+    public Set<TheClass> queryTheClassListAll() {
         listTheClassId = getAllTheClassId();
         return queryTheClassList(Collections.min(listTheClassId), Collections.max(listTheClassId));
     }
@@ -545,7 +550,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
 
-    private List<Integer> getAllTheClassId() {
+    private Set<Integer> getAllTheClassId() {
         return iTheClassDao.queryTheClassIdAll();
     }
 
@@ -597,6 +602,31 @@ public class PersonServiceImpl implements IPersonService {
         Set<String> studentMailSet=iStudentDao.querySetStudentMail();
         if(studentMailSet.contains(student.getStudentMail())){
             LOGGER.info("数据库student中存在student_mail为"+student.getStudentMail()+"的用户");
+            return true;
+        }
+        return false;
+    }
+
+    private boolean judgeExistTheClassName(TheClass theClass){
+        Set<TheClass> theClassSet=iTheClassDao.queryTheClassList(Collections.min(iTheClassDao.queryTheClassIdAll()),
+                Collections.max(iTheClassDao.queryTheClassIdAll()));
+        LOGGER.info(theClassSet.toString());
+        LOGGER.info(theClass.toString());
+        Set<String> stringSet=new HashSet<>(theClassSet.size());
+        Iterator<TheClass> iterator=theClassSet.iterator();
+        while(iterator.hasNext()){
+            TheClass theClazz=iterator.next();
+            stringSet.add(theClazz.getTheClassName());
+        }
+        LOGGER.info(stringSet.toString());
+        if(stringSet.contains(theClass.getTheClassName())){
+            return true;
+        }
+        return false;
+    }
+
+    private boolean judgeNullTheClass(TheClass theClass){
+        if(theClass.getTheClassName()==null||theClass.getTheClassName().equals("")){
             return true;
         }
         return false;

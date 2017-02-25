@@ -3,8 +3,15 @@ package com.wsc.web;
 import com.wsc.pojo.Paper;
 import com.wsc.pojo.Question;
 import com.wsc.pojo.Subject;
+import com.wsc.pojo.Teacher;
+import com.wsc.service.inter.ITestDBService;
+import com.wsc.util.Encryption;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.File;
 import java.util.List;
@@ -16,63 +23,83 @@ import java.util.List;
 @RequestMapping("/test-db")
 @Controller
 public class TestDBController {
+
+    @Autowired
+    private ITestDBService iTestDBService;
+
+    /*    @RequiresRoles(value ={"teacher","admin"},logical = Logical.OR)*/
+    @RequestMapping(value = "/teacher/create",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public Teacher createTeacher(@RequestBody Teacher teacher){
+        teacher.setTeacherPassword(Encryption.md5En(teacher.getTeacherPassword()));
+        iPersonService.createTeacher(teacher);
+        return teacher;
+    }
+
     /*
      * 试题
      */
-/*    boolean createQuestion(int powerId,Question question);
+    @RequestMapping(value = "/question/create",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public Question createQuestion(Question question){
+        iTestDBService.createQuestion(question);
+        return question;
+    }
 
-    void createQuestionList(int powerId,List<Question> questions);
+    void createQuestionList(List<Question> questions){}
 
-    Question deleteQuestion(int powerId,int questionId);
+    Question deleteQuestion(int questionId){
 
-    Question updateQuestion(int powerId,int questionId,Question question);
+    }
 
-    Question queryQuestion(int powerId,int questionId);
+    Question updateQuestion(int questionId,Question question){}
 
-    List<Question> queryQuestionByQuestionType(int powerId,int questionType);
+    Question queryQuestion(int questionId){}
 
-    List<Question> queryQuestionList(int powerId,int fromQuestionId, int manyQuestionId);
+    List<Question> queryQuestionByQuestionType(int questionType){}
 
-    List<Question> queryQuestionListBySubject(int powerId,int subjectId);
+    List<Question> queryQuestionList(int fromQuestionId, int manyQuestionId){}
 
-    File outPutQuestionBySubject(int subjectId);
+    List<Question> queryQuestionListBySubject(int subjectId){}
 
-    void inputQuesrtionByExcel(File file);
+    File outPutQuestionBySubject(int subjectId){}
 
-    *//*
-     * 试卷
-     *//*
+    void inputQuesrtionByExcel(File file){}
 
-    boolean createPaper(int powerId,Paper paper);
 
-    void createPaperTemple1(int powerId,String questionId);
+    /* 试卷*/
 
-    void createPaperTemple2(int powerId,String questionId);
 
-    void createPaperTemple3(int powerId,String questionId);
+    boolean createPaper(Paper paper){}
 
-    Paper deletePaper(int powerId,int paperId);
+    void createPaperTemple1(String questionId){}
 
-    Paper updatePaper(int powerId,int paperId,Paper paper);
+    void createPaperTemple2(String questionId){}
 
-    Paper queryPaper(int powerId,int paperId);
+    void createPaperTemple3(String questionId){}
 
-    List<Paper> queryPaperList(int powerId,int fromPaperId,int manyPaperId);
+    Paper deletePaper(int paperId){}
 
-    List<Paper> queryPaperBySubjectId(int powerId,int subjectId);
+    Paper updatePaper(int paperId,Paper paper){}
 
-    File outputPaperByPaperId(int paperId);
+    Paper queryPaper(int paperId){}
 
-    *//*
-     * 科目
-     *//*
-    boolean createSubject(int powerId,Subject subject);
+    List<Paper> queryPaperList(int fromPaperId,int manyPaperId){}
 
-    Subject deleteSubject(int powerId,int subjectId);
+    List<Paper> queryPaperBySubjectId(int subjectId){}
 
-    Subject updateSubject(int powerId,Subject subject);
+    File outputPaperByPaperId(int paperId){}
 
-    Subject querySubject(int powerId,int subjectId);
 
-    List<Subject> querySubjectList(int powerId,int formSubjectId,int manySubjectId);*/
+     /* 科目*/
+
+    boolean createSubject(Subject subject){}
+
+    Subject deleteSubject(int subjectId){}
+
+    Subject updateSubject(Subject subject){}
+
+    Subject querySubject(int subjectId){}
+
+    List<Subject> querySubjectList(int formSubjectId,int manySubjectId){}
 }

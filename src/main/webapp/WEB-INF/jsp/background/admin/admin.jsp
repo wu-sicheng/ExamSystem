@@ -71,7 +71,29 @@
         </div>
 
         <div title="题库管理" style="padding:10px;">
-            <a href="${pageContext.request.contextPath}/background/admin/powerManager" type="_blank">powerManager</a>
+            <ul id="treeTestDB" class="easyui-tree" data-options="lines:true">
+                <li><span>试卷管理</span>
+                    <ul>
+                        <li><a href="#paperMess" onclick="addTab('试题数据','${pageContext.request.contextPath}/background/admin/testDBContro/paperMess')">试题数据</a></li>
+                        <%--  <li><a href="#teacheClassMessage" onclick="addTab('班级数据','${pageContext.request.contextPath}/background/admin/personContro/teacherClassMess')">班级数据</a></li>
+                          <li><a href="#teacherPaperMessage" onclick="addTab('试卷数据','${pageContext.request.contextPath}/background/admin/personContro/teacherPaperMess')">试卷数据</a></li>--%>
+                    </ul>
+                </li>
+                <li><span>试题管理</span>
+                    <ul>
+                        <li><a href="#questionMess" onclick="addTab('问题数据','${pageContext.request.contextPath}/background/admin/testDBContro/questionMess')">问题数据</a></li>
+                        <%--  <li><a href="#teacheClassMessage" onclick="addTab('班级数据','${pageContext.request.contextPath}/background/admin/personContro/teacherClassMess')">班级数据</a></li>
+                          <li><a href="#teacherPaperMessage" onclick="addTab('试卷数据','${pageContext.request.contextPath}/background/admin/personContro/teacherPaperMess')">试卷数据</a></li>--%>
+                    </ul>
+                </li>
+                <li><span>科目管理</span>
+                    <ul>
+                        <li><a href="#subjectMess" onclick="addTab('科目数据','${pageContext.request.contextPath}/background/admin/testDBContro/subjectMess')">科目数据</a></li>
+                        <%--  <li><a href="#teacheClassMessage" onclick="addTab('班级数据','${pageContext.request.contextPath}/background/admin/personContro/teacherClassMess')">班级数据</a></li>
+                          <li><a href="#teacherPaperMessage" onclick="addTab('试卷数据','${pageContext.request.contextPath}/background/admin/personContro/teacherPaperMess')">试卷数据</a></li>--%>
+                    </ul>
+                </li>
+            </ul>
         </div>
 
         <div title="考试管理" style="padding:10px;">

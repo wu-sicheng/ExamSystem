@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/background")
 @Controller
 public class BackgroundController {
+    /*
+    * 教师，学生，班级，权限
+    * */
     @RequestMapping(value = "/admin/powerManager",method = RequestMethod.GET)
     public String powerManager(){
         return "background/admin/powerManager";
@@ -64,5 +67,25 @@ public class BackgroundController {
     @RequestMapping(value = "/admin/personContro/classMess",method = RequestMethod.GET)
     public String classMess(){
         return "/background/admin/personContro/classMess";
+    }
+
+
+    /*
+    试卷，试题，科目
+    * */
+    @RequestMapping(value = "/admin/testDBContro/paperMess",method = RequestMethod.GET)
+    public String paperMess(){
+        return "/background/admin/testDBContro/paperMess";
+    }
+
+    @RequestMapping(value = "/admin/testDBContro/questionMess",method = RequestMethod.GET)
+    public String questionMess(){
+        return "/background/admin/testDBContro/questionMess";
+    }
+
+
+    @RequestMapping(value = "/admin/testDBContro/subjectMess",method = RequestMethod.GET)
+    public String subjectMess(){
+        return "/background/admin/testDBContro/subjectMess";
     }
 }

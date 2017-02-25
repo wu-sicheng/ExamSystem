@@ -6,6 +6,7 @@ import com.wsc.pojo.Subject;
 
 import java.io.File;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by wsc on 17-1-18.
@@ -24,11 +25,11 @@ public interface ITestDBService {
 
     Question queryQuestion(int questionId);
 
-    List<Question> queryQuestionByQuestionType(int questionType);
+    Set<Question> queryQuestionByQuestionType(int questionType);
 
-    List<Question> queryQuestionList(int fromQuestionId, int manyQuestionId);
+    Set<Question> queryQuestionList(int fromQuestionId, int manyQuestionId);
 
-    List<Question> queryQuestionListBySubject(int subjectId);
+    Set<Question> queryQuestionListBySubject(int subjectId);
 
     File outPutQuestionBySubject(int subjectId);
 
@@ -52,9 +53,9 @@ public interface ITestDBService {
 
     Paper queryPaper(int paperId);
 
-    List<Paper> queryPaperList(int fromPaperId,int manyPaperId);
+    Set<Paper> queryPaperList(int fromPaperId,int manyPaperId);
 
-    List<Paper> queryPaperBySubjectId(int subjectId);
+    Set<Paper> queryPaperBySubjectId(int subjectId);
 
     File outputPaperByPaperId(int paperId);
 

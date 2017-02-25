@@ -4,6 +4,7 @@ import com.wsc.pojo.Paper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by wsc on 17-1-13.
@@ -43,9 +44,9 @@ public interface IPaperDao {
      * @param  toPaperId 数量
      * @return 查询到的paper
      */
-    List<Paper> queryPaperList(@Param("fromPaperId") int fromPaperId,@Param("toPaperId") int toPaperId);
+    Set<Paper> queryPaperList(@Param("fromPaperId") int fromPaperId,@Param("toPaperId") int toPaperId);
 
-    List<Integer> queryPaperIdList();
+    Set<Integer> querypaperIdSet();
 
-    List<Paper> queryPaperBySubjectId(int subjectId);
+    Set<Paper> queryPaperBySubjectId(int subjectId);
 }

@@ -4,6 +4,7 @@ import com.wsc.pojo.TheClass;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by wsc on 17-1-13.
@@ -43,6 +44,6 @@ public interface ITheClassDao {
      * @param toTheClassId 数量
      * @return 返回列表
      */
-    List<TheClass> queryTheClassList(@Param("fromTheClassId") int fromTheClassId,@Param("toTheClassId") int toTheClassId);
-    List<Integer> queryTheClassIdAll();
+    Set<TheClass> queryTheClassList(@Param("fromTheClassId") int fromTheClassId, @Param("toTheClassId") int toTheClassId);
+    Set<Integer> queryTheClassIdAll();
 }

@@ -3,7 +3,7 @@ package com.wsc.dao.inter;
 import com.wsc.pojo.Question;
 import org.apache.ibatis.annotations.Param;
 
-import java.util.List;
+import java.util.Set;
 
 /**
  * Created by wsc on 17-1-13.
@@ -43,11 +43,11 @@ public interface IQuestionDao {
      * @param toQuestionId 结束的id
      * @return 问题列表
      */
-    List<Question> queryQuestionList(@Param("fromQuestionId") int fromQuestionId,@Param("toQuestionId") int toQuestionId);
+    Set<Question> queryQuestionList(@Param("fromQuestionId") int fromQuestionId,@Param("toQuestionId") int toQuestionId);
 
-    List<Integer> queryQuestionIdList();
+    Set<Integer> queryquestionIdSet();
 
-    List<Question> queryQuestionByQuestionType(int questionType);
+    Set<Question> queryQuestionByQuestionType(int questionType);
 
-    List<Question> queryQuestionBySubjectId(int subjectId);
+    Set<Question> queryQuestionBySubjectId(int subjectId);
 }

@@ -203,7 +203,7 @@ public class PersonController {
     @RequiresRoles(value = {"admin","teacher","student"},logical = Logical.OR)
     @RequestMapping(value = "class/list",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     @ResponseBody
-    List<TheClass> queryTheClassList(){
+    Set<TheClass> queryTheClassList(){
         return iPersonService.queryTheClassListAll();
     }
 }

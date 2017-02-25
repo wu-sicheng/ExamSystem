@@ -61,8 +61,8 @@ public interface IPersonService {
     TheClass deleteTheClass(int theClassId);
     TheClass updateTheClass(TheClass theClass);
     TheClass queryTheClass(int theClassId);
-    List<TheClass> queryTheClassList(int fromTheClassId,int toTheClassId);
-    List<TheClass> queryTheClassListAll();
+    Set<TheClass> queryTheClassList(int fromTheClassId,int toTheClassId);
+    Set<TheClass> queryTheClassListAll();
 
     Set<String> findRoles(String name);
     Set<String> findPermissions(String name);

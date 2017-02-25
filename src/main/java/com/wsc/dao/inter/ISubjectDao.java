@@ -15,5 +15,5 @@ public interface ISubjectDao {
     Subject querySubject(int subjectId);
     List<Subject> querySubjectList(@Param("fromSubjectId") int fromSubjectId,@Param("toSubjectId") int toSubjectId);
 
-    List<Integer> querySubjectIdList();
+    List<Integer> querysubjectIdSet();
 }

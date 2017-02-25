@@ -336,6 +336,132 @@ function destroyStudent(){
     }
 }
 
+function addTheClass(){
+    $("#dlgTheClass").dialog("open").dialog("setTitle","新建班级");
+    $("#fmTheClass").form("clear");
+}
+
+function editTheClass(){
+    var row = $("#dgTheClass").datagrid("getSelected");
+    console.log(row.theClassId);
+    console.log(row);
+    if (row){
+        $("#dlgTheClass").dialog("open").dialog("setTitle","编辑班级");
+        $("#fmTheClass").form("load",row);
+    }
+}
+
+function destroyTheClass(){
+    var row = $('#dgTheClass').datagrid('getSelected');
+    var url=window.location.href;
+    var urlTo=url.replace("/background/admin/personContro/classMess","/person/class/delete/").concat(row.theClassId);
+    console.log(row.theClassId);
+    console.log(urlTo);
+
+    if (row){
+        $.messager.confirm('注意','你确定删除该班级吗？',function(r){
+            console.log(r);
+            if (r){
+                alert(r);
+                $.ajax({
+                    url:urlTo,
+                    type:"DELETE",
+                    contentType:"application/json",
+                    dataType:"json",
+                    success:function(data){
+                        alert("删除班级成功"+data);
+                        $("#dgTheClass").datagrid("reload");
+                    },
+                    error:function(data){
+                        alert("删除班级失败"+data);
+                    }
+                });
+            }
+        });
+    }
+}
+
+function newTheClass(){
+    var title=$('#dlgTheClass').panel('options').title;
+    console.log(title);
+    if(title=="新建班级"){
+        var url=window.location.href;
+        var urlTo=url.replace("/background/admin/personContro/classMess","/person/class/create");
+        var all={};
+        var theClassJSON=JSON.stringify($("#fmTheClass").serializeObject());
+        var theClass=JSON.parse(theClassJSON);
+
+        theClass.theClassId=1;
+
+        var addJSON={"theClassState":1,"theClassCreateTime":null,"theClassDeleteTime":null};
+        $.extend(all,theClass,addJSON);
+
+        var toServer=JSON.stringify(all);
+
+        console.log(all);
+        console.log(JSON.stringify(all));
+        console.log(theClassJSON);
+
+
+        $.ajax({
+            type:"POST",
+            url:urlTo,
+            data:toServer,
+            contentType:"application/json",
+            dataType:"json",
+            success:function(data){
+                console.log(data);
+                alert("创建用户数据成功");
+                $("#dlgTheClass").dialog("close");
+                $('#dgTheClass').datagrid('reload');
+            },
+            error:function(data){
+                console.log("error");
+                alert("创建用户失败"+data);
+            }
+        });
+    }
+    else if(title=="编辑班级"){
+        var row = $("#dgTheClass").datagrid("getSelected");
+        var url=window.location.href;
+        var urlTo=url.replace("/background/admin/personContro/classMess","/person/class/update");
+        var all={};
+        var theClassJSON=JSON.stringify($("#fmTheClass").serializeObject());
+        var theClass=JSON.parse(theClassJSON);
+
+        theClass.theClassId=row.theClassId;
+
+        var addJSON={"theClassState":1,"theClassCreateTime":null,"theClassDeleteTime":null};
+        $.extend(all,theClass,addJSON);
+
+        var toServer=JSON.stringify(all);
+
+        console.log(all);
+        console.log(JSON.stringify(all));
+        console.log(theClassJSON);
+
+
+        $.ajax({
+            type:"PUT",
+            url:urlTo,
+            data:toServer,
+            contentType:"application/json",
+            dataType:"json",
+            success:function(data){
+                console.log(data);
+                alert("修改用户数据成功");
+                $("#dlgTheClass").dialog("close");
+                $('#dgTheClass').datagrid('reload');
+            },
+            error:function(data){
+                console.log("error");
+                alert("修改用户失败"+data);
+            }
+        });
+    }
+}
+
+
 function loadMess(){
     var url=window.location.href;
     var urlTo=url.replace("/background/admin/teacherMess","/person/teacher/list");

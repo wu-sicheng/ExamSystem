@@ -30,7 +30,7 @@
 </head>
 <body>
 <p>班级信息</p>
-<table id="dgTheClass" title="人员" class="easyui-datagrid" fit="true"
+<table id="dgTheClass" title="班级信息" class="easyui-datagrid" fit="true"
        url="${pageContext.request.contextPath}/person/class/list"
        method="get"
        toolbar="#toolbar"

@@ -19,7 +19,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
+import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by wsc on 17-1-21.
@@ -41,30 +43,32 @@ public class TestDBServiceImpl implements ITestDBService{
     @Autowired
     private IPersonService iPersonService;
 
-    private List<Integer> questionIdList;
-    private List<Integer> paperIdList;
-    private List<Integer> subjectIdList;
+    private Set<Integer> questionIdSet;
+    private Set<Integer> paperIdSet;
+    private Set<Integer> subjectIdSet;
 
     /*
      * 试题
      */
+
     @Override
     public boolean createQuestion(Question question) {
-        questionIdList=getQuestionIdList();
-        if(!questionIdList.contains(question.getQuestionId())){
+        int maxQuestionId= Collections.max(questionIdSet);
+        questionIdSet=getquestionIdSet();
+        if(!questionIdSet.contains(question.getQuestionId())){
             iQuestionDao.createQuestion(question);
             return true;
         }
         else{
-            throw new TestDBException("题库中已经存在该题目");
+            throw new TestDBException("数据库中已经存在该题目");
         }
     }
 
     @Override
     public void createQuestionList(List<Question> questions) {
-        questionIdList=getQuestionIdList();
+        questionIdSet=getquestionIdSet();
         for(int i=0;i<questions.size();i++){
-            if(!questionIdList.contains(questions.get(i).getQuestionId())){
+            if(!questionIdSet.contains(questions.get(i).getQuestionId())){
                 iQuestionDao.createQuestion(questions.get(i));
             }
             else{
@@ -75,9 +79,9 @@ public class TestDBServiceImpl implements ITestDBService{
 
     @Override
     public Question deleteQuestion(int questionId) {
-        questionIdList=getQuestionIdList();
+        questionIdSet=getquestionIdSet();
         Question question=null;
-        if(questionIdList.contains(questionId)){
+        if(questionIdSet.contains(questionId)){
             question=iQuestionDao.queryQuestion(questionId);
             iQuestionDao.deleteQuestion(questionId);
             return question;
@@ -90,9 +94,9 @@ public class TestDBServiceImpl implements ITestDBService{
 
     @Override
     public Question updateQuestion(int questionId, Question question) {
-        questionIdList=getQuestionIdList();
+        questionIdSet=getquestionIdSet();
         Question questionRe=null;
-        if(questionIdList.contains(questionId)){
+        if(questionIdSet.contains(questionId)){
             questionRe=iQuestionDao.queryQuestion(questionId);
             question.setQuestionId(questionId);
             iQuestionDao.updateQuestion(question);
@@ -106,8 +110,8 @@ public class TestDBServiceImpl implements ITestDBService{
 
     @Override
     public Question queryQuestion(int questionId) {
-        questionIdList=getQuestionIdList();
-        if(questionIdList.contains(questionId)){
+        questionIdSet=getquestionIdSet();
+        if(questionIdSet.contains(questionId)){
             return iQuestionDao.queryQuestion(questionId);
         }
         else{
@@ -132,14 +136,14 @@ public class TestDBServiceImpl implements ITestDBService{
     }
 
     @Override
-    public List<Question> queryQuestionList(int fromQuestionId, int toQuestionId) {
-        List<Question> questions=iQuestionDao.queryQuestionList(fromQuestionId,toQuestionId);
+    public Set<Question> queryQuestionList(int fromQuestionId, int toQuestionId) {
+        Set<Question> questions=iQuestionDao.queryQuestionList(fromQuestionId,toQuestionId);
         return questions;
     }
 
     @Override
-    public List<Question> queryQuestionListBySubject(int subjectId) {
-        List<Question> questions=iQuestionDao.queryQuestionBySubjectId(subjectId);
+    public Set<Question> queryQuestionListBySubject(int subjectId) {
+        Set<Question> questions=iQuestionDao.queryQuestionBySubjectId(subjectId);
         return questions;
     }
 
@@ -158,8 +162,8 @@ public class TestDBServiceImpl implements ITestDBService{
      */
     @Override
     public boolean createPaper(Paper paper) {
-        paperIdList=qetPapaerIdList();
-        if(!paperIdList.contains(paper.getPaperId())){
+        paperIdSet=qetPapaerIdList();
+        if(!paperIdSet.contains(paper.getPaperId())){
             iPaperDao.createPaper(paper);
             return true;
         }
@@ -172,7 +176,7 @@ public class TestDBServiceImpl implements ITestDBService{
 
     @Override
     public void createPaperTemple1(String questionId) {
-        paperIdList=qetPapaerIdList();
+        paperIdSet=qetPapaerIdList();
 
     }
 
@@ -188,9 +192,9 @@ public class TestDBServiceImpl implements ITestDBService{
 
     @Override
     public Paper deletePaper(int paperId) {
-        paperIdList=qetPapaerIdList();
+        paperIdSet=qetPapaerIdList();
         Paper paper=null;
-        if(paperIdList.contains(paperId)){
+        if(paperIdSet.contains(paperId)){
             paper=iPaperDao.queryPaper(paperId);
             iPaperDao.deletePaper(paperId);
             return paper;
@@ -203,9 +207,9 @@ public class TestDBServiceImpl implements ITestDBService{
 
     @Override //TODO //ERROR
     public Paper updatePaper(int paperId, Paper paper) {
-        paperIdList=qetPapaerIdList();
+        paperIdSet=qetPapaerIdList();
         Paper paperRe=null;
-        if(paperIdList.contains(paperId)){
+        if(paperIdSet.contains(paperId)){
             paper=iPaperDao.queryPaper(paperId);
             paper.setPaperId(paperId);
             iPaperDao.updatePaper(paper);
@@ -220,8 +224,8 @@ public class TestDBServiceImpl implements ITestDBService{
 
     @Override
     public Paper queryPaper(int paperId) {
-        paperIdList=qetPapaerIdList();
-        if(paperIdList.contains(paperId)){
+        paperIdSet=qetPapaerIdList();
+        if(paperIdSet.contains(paperId)){
             return iPaperDao.queryPaper(paperId);
         }
         else{
@@ -245,8 +249,8 @@ public class TestDBServiceImpl implements ITestDBService{
     }
 
     @Override
-    public List<Paper> queryPaperBySubjectId(int subjectId) {
-        List<Paper> paperRe=iPaperDao.queryPaperBySubjectId(subjectId);
+    public Set<Paper> queryPaperBySubjectId(int subjectId) {
+        Set<Paper> paperRe=iPaperDao.queryPaperBySubjectId(subjectId);
         try{
             if(paperRe.get(0)!=null){
                 return paperRe;
@@ -270,8 +274,8 @@ public class TestDBServiceImpl implements ITestDBService{
      */
     @Override
     public boolean createSubject(Subject subject) {
-        subjectIdList=getSubjectIdList();
-        if(!subjectIdList.contains(subject.getSubjectId())){
+        subjectIdSet=getsubjectIdSet();
+        if(!subjectIdSet.contains(subject.getSubjectId())){
             iSubjectDao.createSubject(subject);
             return true;
         }
@@ -283,8 +287,8 @@ public class TestDBServiceImpl implements ITestDBService{
 
     @Override
     public Subject deleteSubject(int subjectId) {
-        subjectIdList=getSubjectIdList();
-        if(subjectIdList.contains(subjectId)){
+        subjectIdSet=getsubjectIdSet();
+        if(subjectIdSet.contains(subjectId)){
             Subject subject=iSubjectDao.querySubject(subjectId);
             iSubjectDao.deleteSubject(subjectId);
             return subject;
@@ -297,8 +301,8 @@ public class TestDBServiceImpl implements ITestDBService{
 
     @Override
     public Subject updateSubject(Subject subject) {
-        subjectIdList=getSubjectIdList();
-        if(subjectIdList.contains(subject.getSubjectId())){
+        subjectIdSet=getsubjectIdSet();
+        if(subjectIdSet.contains(subject.getSubjectId())){
             Subject subjectRe=iSubjectDao.querySubject(subject.getSubjectId());
             iSubjectDao.updateSubject(subject);
             return subjectRe;
@@ -311,8 +315,8 @@ public class TestDBServiceImpl implements ITestDBService{
 
     @Override
     public Subject querySubject(int subjectId) {
-        subjectIdList=getSubjectIdList();
-        if(subjectIdList.contains(subjectId)){
+        subjectIdSet=getsubjectIdSet();
+        if(subjectIdSet.contains(subjectId)){
             return iSubjectDao.querySubject(subjectId);
         }
         else{
@@ -336,15 +340,15 @@ public class TestDBServiceImpl implements ITestDBService{
         return null;
     }
 
-    private List<Integer> getQuestionIdList(){
-        return iQuestionDao.queryQuestionIdList();
+    private Set<Integer> getquestionIdSet(){
+        return iQuestionDao.queryquestionIdSet();
     }
 
-    private List<Integer> qetPapaerIdList(){
-        return iPaperDao.queryPaperIdList();
+    private Set<Integer> qetPaperIdSet(){
+        return iPaperDao.querypaperIdSet();
     }
 
-    private List<Integer> getSubjectIdList(){
-        return iSubjectDao.querySubjectIdList();
+    private Set<Integer> getsubjectIdSet(){
+        return iSubjectDao.querysubjectIdSet();
     }
 }
