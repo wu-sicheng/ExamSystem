@@ -43,4 +43,8 @@
     <select id="queryQuestionBySubjectId" resultType="Question" parameterType="Integer">
         SELECT * FROM question WHERE subjectId=#{subjectId} AND questionState=1;
     </select>
+
+    <select id="queryQuestionTitle" resultType="String">
+        SELECT questionTitle FROM question WHERE questionStata=1;
+    </select>
 </mapper>

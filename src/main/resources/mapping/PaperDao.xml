@@ -35,4 +35,12 @@
     <select id="queryPaperBySubjectId" resultType="Paper" parameterType="Integer">
         SELECT * FROM paper WHERE subjectId=#{subjectId} AND paperState=1;
     </select>
+
+    <select id="queryPaperName" resultType="String">
+        SELECT paperName FROM paper WHERE paperState=1;
+    </select>
+
+    <select id="querypaperIdSet" resultType="Integer">
+        SELECT paperId FROM paper WHERE paperState=1;
+    </select>
 </mapper>

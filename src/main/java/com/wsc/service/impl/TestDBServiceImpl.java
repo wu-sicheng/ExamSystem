@@ -5,6 +5,7 @@ import com.wsc.dao.inter.IPaperDao;
 import com.wsc.dao.inter.IQuestionDao;
 import com.wsc.dao.inter.ISubjectDao;
 import com.wsc.exceptions.ManagerException;
+import com.wsc.exceptions.PersonException;
 import com.wsc.exceptions.TestDBException;
 import com.wsc.pojo.Paper;
 import com.wsc.pojo.Question;
@@ -19,7 +20,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
+import java.lang.reflect.Field;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -52,28 +55,34 @@ public class TestDBServiceImpl implements ITestDBService{
      */
 
     @Override
-    public boolean createQuestion(Question question) {
-        int maxQuestionId= Collections.max(questionIdSet);
-        questionIdSet=getquestionIdSet();
-        if(!questionIdSet.contains(question.getQuestionId())){
-            iQuestionDao.createQuestion(question);
-            return true;
+    public Question createQuestion(Question question){
+        int maxQuestionId= Collections.max(iQuestionDao.queryquestionIdSet());
+        if(!judgeExistQuestion(question)) {
+            question.setQuestionId(maxQuestionId + 1);
+            try {
+                if (!judgeQuestionNull(question)) {
+                    iQuestionDao.createQuestion(question);
+                    return question;
+                } else {
+                    LOGGER.info("create teacher中存在空值");
+                    throw new PersonException("存储的数据存在空值");
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
         }
         else{
-            throw new TestDBException("数据库中已经存在该题目");
+            LOGGER.info("数据库question中已存在数据为"+question.toString()+"的数据");
+            throw new TestDBException("数据库question中已存在数据为"+question.toString()+"的数据");
         }
+        return null;
     }
 
     @Override
-    public void createQuestionList(List<Question> questions) {
-        questionIdSet=getquestionIdSet();
-        for(int i=0;i<questions.size();i++){
-            if(!questionIdSet.contains(questions.get(i).getQuestionId())){
-                iQuestionDao.createQuestion(questions.get(i));
-            }
-            else{
-                LOGGER.info("题库中含有该题目:"+questions.get(i).toString());
-            }
+    public void createQuestionList(Set<Question> questions) throws IllegalAccessException {
+        Iterator<Question> questionIterator=questions.iterator();
+        while(questionIterator.hasNext()){
+            createQuestion(questionIterator.next());
         }
     }
 
@@ -93,18 +102,17 @@ public class TestDBServiceImpl implements ITestDBService{
     }
 
     @Override
-    public Question updateQuestion(int questionId, Question question) {
+    public Question updateQuestion(Question question) {
         questionIdSet=getquestionIdSet();
         Question questionRe=null;
-        if(questionIdSet.contains(questionId)){
-            questionRe=iQuestionDao.queryQuestion(questionId);
-            question.setQuestionId(questionId);
+        if(questionIdSet.contains(question.getQuestionId())){
+            questionRe=iQuestionDao.queryQuestion(question.getQuestionId());
             iQuestionDao.updateQuestion(question);
             return questionRe;
         }
         else{
-            LOGGER.info("数据库中没有id为:"+questionId+"的数据");
-            throw new TestDBException("数据库中没有该数据");
+            LOGGER.info("数据库question中没有id为:"+question.getQuestionId()+"的数据");
+            throw new TestDBException("数据库question中没有id为:"+question.getQuestionId()+"的数据");
         }
     }
 
@@ -115,69 +123,93 @@ public class TestDBServiceImpl implements ITestDBService{
             return iQuestionDao.queryQuestion(questionId);
         }
         else{
-            LOGGER.info("数据库中没有该数据");
-            throw new TestDBException("数据库中没有该数据");
+            LOGGER.info("数据库question中没有questionId为"+questionId+"的数据");
+            throw new TestDBException("数据库question中没有questionId为"+questionId+"的数据");
         }
     }
 
     @Override
-    public List<Question> queryQuestionByQuestionType(int questionType) {
-        List<Question> questions=null;
+    public Set<Question> queryQuestionByQuestionType(int questionType) {
+        Set<Question> questions=null;
         questions=iQuestionDao.queryQuestionByQuestionType(questionType);
-        try{
-            if(questions.get(0)!=null){
-                return questions;
-            }
-        }catch (IndexOutOfBoundsException e){
-            LOGGER.info(e.getMessage());
-            throw new TestDBException("找不到符合条件的数据");
+        if(questions!=null){
+            return questions;
         }
-        return null;
+        else{
+            LOGGER.info("数据库question中没有questionType为"+questionType+"的数据");
+            throw new TestDBException("数据库question中没有questionType为"+questionType+"的数据");
+        }
     }
 
     @Override
     public Set<Question> queryQuestionList(int fromQuestionId, int toQuestionId) {
-        Set<Question> questions=iQuestionDao.queryQuestionList(fromQuestionId,toQuestionId);
-        return questions;
+        Set<Question> questions=null;
+        questions=iQuestionDao.queryQuestionList(fromQuestionId,toQuestionId);
+        if(questions!=null){
+            return questions;
+        }
+        else{
+            LOGGER.info("数据库question中没有数据");
+            throw new TestDBException("数据库question中没有数据");
+        }
+    }
+
+    @Override
+    public Set<Question> queryQuestionAll(){
+        return queryQuestionList(Collections.min(iQuestionDao.queryquestionIdSet()),
+                Collections.max(iQuestionDao.queryquestionIdSet()));
     }
 
     @Override
     public Set<Question> queryQuestionListBySubject(int subjectId) {
-        Set<Question> questions=iQuestionDao.queryQuestionBySubjectId(subjectId);
-        return questions;
+        Set<Question> questions=null;
+        questions=iQuestionDao.queryQuestionBySubjectId(subjectId);
+        if(questions!=null){
+            return questions;
+        }
+        else{
+            LOGGER.info("数据库question中没有subjectId为"+subjectId+"数据");
+            throw new TestDBException("数据库question中没有subjectId为"+subjectId+"数据");
+        }
     }
 
     @Override
     public File outPutQuestionBySubject(int subjectId) {
-        return null;//TODO
+        return null;//TODO 文件下载
     }
 
     @Override
     public void inputQuesrtionByExcel(File file) {
-        //TODO
+        //TODO 文件上传
     }
 
     /*
      * 试卷
      */
     @Override
-    public boolean createPaper(Paper paper) {
-        paperIdSet=qetPapaerIdList();
-        if(!paperIdSet.contains(paper.getPaperId())){
-            iPaperDao.createPaper(paper);
-            return true;
+    public Paper createPaper(Paper paper) throws IllegalAccessException {
+        int maxPaperId=Collections.max(iPaperDao.querypaperIdSet());
+        if(!judgeExistPaper(paper)){
+            paper.setPaperId(maxPaperId+1);
+            if(!judgePaperNull(paper)){
+                iPaperDao.createPaper(paper);
+                return paper;
+            }
+            else{
+                LOGGER.info("create paper中存在空值");
+                throw new PersonException("存储的数据存在空值");
+            }
         }
         else{
-            LOGGER.info("数据库中含有该数据");
-            throw new TestDBException("数据库中含有该数据");
+            LOGGER.info("数据库paper中已存在数据为"+paper.toString()+"的数据");
+            throw new TestDBException("数据库paper中已存在数据为"+paper.toString()+"的数据");
         }
     }
 
 
     @Override
     public void createPaperTemple1(String questionId) {
-        paperIdSet=qetPapaerIdList();
-
+        //TODO
     }
 
     @Override
@@ -192,7 +224,7 @@ public class TestDBServiceImpl implements ITestDBService{
 
     @Override
     public Paper deletePaper(int paperId) {
-        paperIdSet=qetPapaerIdList();
+        paperIdSet=getPaperIdSet();
         Paper paper=null;
         if(paperIdSet.contains(paperId)){
             paper=iPaperDao.queryPaper(paperId);
@@ -200,71 +232,72 @@ public class TestDBServiceImpl implements ITestDBService{
             return paper;
         }
         else{
-            LOGGER.info("数据库中不包含符合条件的数据");
-            throw new TestDBException("数据库中不包含符合条件的数据库");
+            LOGGER.info("数据库paper中不包含paperId为"+paperId+"条件的数据");
+            throw new TestDBException("数据库paper中不包含paperId为"+paperId+"条件的数据");
         }
     }
 
     @Override //TODO //ERROR
-    public Paper updatePaper(int paperId, Paper paper) {
-        paperIdSet=qetPapaerIdList();
+    public Paper updatePaper(Paper paper) {
+        paperIdSet=getPaperIdSet();
         Paper paperRe=null;
-        if(paperIdSet.contains(paperId)){
-            paper=iPaperDao.queryPaper(paperId);
-            paper.setPaperId(paperId);
+        if(paperIdSet.contains(paper.getPaperId())){
+            paper=iPaperDao.queryPaper(paper.getPaperId());
             iPaperDao.updatePaper(paper);
             LOGGER.info("更新数据成功");
             return paper;
         }
         else{
-            LOGGER.info("数据库中不包含符合条件的数据");
-            throw new TestDBException("数据库中不包含符合条件的数据库");
+            LOGGER.info("数据库paper中不包含paperId为"+paper.getPaperId()+"条件的数据");
+            throw new TestDBException("数据库paper中不包含paperId为"+paper.getPaperId()+"条件的数据");
         }
     }
 
     @Override
     public Paper queryPaper(int paperId) {
-        paperIdSet=qetPapaerIdList();
+        paperIdSet=getPaperIdSet();
         if(paperIdSet.contains(paperId)){
             return iPaperDao.queryPaper(paperId);
         }
         else{
-            LOGGER.info("数据库中不包含符合条件的数据");
-            throw new TestDBException("数据库中不包含符合条件的数据库");
+            LOGGER.info("数据库paper中不包含paperId为"+paperId+"条件的数据");
+            throw new TestDBException("数据库paper中不包含paperId为"+paperId+"条件的数据");
         }
     }
 
     @Override
-    public List<Paper> queryPaperList(int fromPaperId, int toPaperId) {
-        List<Paper> paperRe=iPaperDao.queryPaperList(fromPaperId,toPaperId);
-        try{
-            if(paperRe.get(0)!=null){
-                return paperRe;
-            }
-        }catch(IndexOutOfBoundsException e){
-            LOGGER.info(e.getMessage());
-            throw new TestDBException("没有符合条件的paper");
+    public Set<Paper> queryPaperList(int fromPaperId, int toPaperId) {
+        Set<Paper> paperRe=iPaperDao.queryPaperList(fromPaperId,toPaperId);
+        if(paperRe!=null){
+            return paperRe;
         }
-        return null;
+        else{
+            LOGGER.info("数据库paper中没有文件");
+            throw new TestDBException("数据库paper中没有文件");
+        }
+    }
+
+    @Override //好消耗资源，要执行3次查询才完成方法
+    public Set<Paper> queryPaperAll(){
+        return queryPaperList(Collections.min(iPaperDao.querypaperIdSet()),
+                Collections.max(iPaperDao.querypaperIdSet()));
     }
 
     @Override
     public Set<Paper> queryPaperBySubjectId(int subjectId) {
         Set<Paper> paperRe=iPaperDao.queryPaperBySubjectId(subjectId);
-        try{
-            if(paperRe.get(0)!=null){
-                return paperRe;
-            }
-        }catch(IndexOutOfBoundsException e){
-            LOGGER.info(e.getMessage());
-            throw new TestDBException("找不到符合条件的数据");
+        if(paperRe !=null){
+            return paperRe;
         }
-        return null;
+        else {
+            LOGGER.info("数据库paper中找不到subjectId为" + subjectId + "的数据");
+            throw new TestDBException("数据库paper中找不到subjectId为" + subjectId + "的数据");
+        }
     }
 
     @Override
     public File outputPaperByPaperId(int paperId) {
-        return null;
+        return null; //Todo 文件下载
     }
 
     /**
@@ -273,15 +306,22 @@ public class TestDBServiceImpl implements ITestDBService{
      * @param subject
      */
     @Override
-    public boolean createSubject(Subject subject) {
-        subjectIdSet=getsubjectIdSet();
-        if(!subjectIdSet.contains(subject.getSubjectId())){
-            iSubjectDao.createSubject(subject);
-            return true;
+    public Subject createSubject(Subject subject) throws IllegalAccessException {
+        int maxSubjectId=Collections.max(iSubjectDao.querysubjectIdSet());
+        if(!judgeExistSubject(subject)){
+            subject.setSubjectId(maxSubjectId+1);
+            if(!judgeSubjectNull(subject)){
+                iSubjectDao.createSubject(subject);
+                return subject;
+            }
+            else{
+                LOGGER.info("create subject中存在空值");
+                throw new TestDBException("create subject中存在空值");
+            }
         }
         else{
-            LOGGER.info("数据库subject中已经包含id为"+subject.getSubjectId()+"的数据");
-            throw new TestDBException("数据库subject中已经包含id为"+subject.getSubjectId()+"的数据");
+            LOGGER.info("数据库subject中已存在数据为"+subject.toString()+"的数据");
+            throw new TestDBException("数据库subject中已存在数据为"+subject.toString()+"的数据");
         }
     }
 
@@ -326,29 +366,90 @@ public class TestDBServiceImpl implements ITestDBService{
     }
 
     @Override
-    public List<Subject> querySubjectList(int fromSubjectId, int toSubjectId) {
-        List<Subject> subjects=null;
+    public Set<Subject> querySubjectList(int fromSubjectId, int toSubjectId) {
+        Set<Subject> subjects=null;
         subjects=iSubjectDao.querySubjectList(fromSubjectId,toSubjectId);
-        try{
-            if(subjects.get(0)!=null){
-                return subjects;
-            }
-        }catch (IndexOutOfBoundsException e){
-            LOGGER.info(e.getMessage());
-            throw new TestDBException("数据库subject找不到数据符合条件的数据");
+        if(subjects != null){
+            return subjects;
         }
-        return null;
+        else{
+            LOGGER.info("数据库subject找不到数据符合条件"+fromSubjectId+"到"+toSubjectId+"的数据");
+            throw new TestDBException("数据库subject找不到数据符合条件"+fromSubjectId+"到"+toSubjectId+"的数据");
+        }
+    }
+
+    public Set<Subject> querySubjectAll(){
+        return querySubjectList(Collections.min(iSubjectDao.querysubjectIdSet()),
+                Collections.max(iSubjectDao.querysubjectIdSet()));
     }
 
     private Set<Integer> getquestionIdSet(){
         return iQuestionDao.queryquestionIdSet();
     }
 
-    private Set<Integer> qetPaperIdSet(){
+    private Set<Integer> getPaperIdSet(){
         return iPaperDao.querypaperIdSet();
     }
 
     private Set<Integer> getsubjectIdSet(){
         return iSubjectDao.querysubjectIdSet();
+    }
+
+    private boolean judgeExistQuestion(Question question){
+        Set<String> questions=iQuestionDao.queryQuestionTitle();
+        if(questions.contains(question.getQuestionTitle())){
+            return true;
+        }
+        return false;
+    }
+
+
+    //TODO 没有测试过
+    public boolean judgeQuestionNull(Question question) throws IllegalAccessException {
+        for (Field f : question.getClass().getDeclaredFields()) {
+            f.setAccessible(true);
+            if (f.get(question) == null) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean judgeExistPaper(Paper paper){
+        Set<String> papers=iPaperDao.queryPaperName();
+        if(papers.contains(paper.getPaperName())){
+            return true;
+        }
+        return false;
+    }
+
+    //TODO 没有测试过
+    public boolean judgePaperNull(Paper paper) throws IllegalAccessException {
+        for (Field f : paper.getClass().getDeclaredFields()) {
+            f.setAccessible(true);
+            if (f.get(paper) == null) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean judgeExistSubject(Subject subject){
+        Set<String> subjectNames=iSubjectDao.querySubjectNames();
+        if(subjectNames.contains(subject.getSubjectName())){
+            return true;
+        }
+        return false;
+    }
+
+    //TODO 没有测试过
+    private boolean judgeSubjectNull(Subject subject) throws IllegalAccessException {
+        for (Field f : subject.getClass().getDeclaredFields()) {
+            f.setAccessible(true);
+            if (f.get(subject) == null) {
+                return true;
+            }
+        }
+        return false;
     }
 }

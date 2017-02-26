@@ -50,4 +50,6 @@ public interface IQuestionDao {
     Set<Question> queryQuestionByQuestionType(int questionType);
 
     Set<Question> queryQuestionBySubjectId(int subjectId);
+
+    Set<String> queryQuestionTitle();
 }

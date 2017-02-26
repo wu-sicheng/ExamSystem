@@ -7,6 +7,7 @@ import java.util.Date;
  */
 public class Paper {
     private int paperId;
+    private String paperName;
     private String questionId;
     private Date paperTimeBegin;
     private Date paperTimeEnd;
@@ -18,9 +19,10 @@ public class Paper {
     public Paper() {
     }
 
-    public Paper(int paperId, String questionId, Date paperTimeBegin, Date paperTimeEnd, int subjectId, int paperState, Date createTime, Date deleteTime) {
+    public Paper(int paperId, String paperName,String questionId, Date paperTimeBegin, Date paperTimeEnd, int subjectId, int paperState, Date createTime, Date deleteTime) {
         this.paperId = paperId;
         this.questionId = questionId;
+        this.paperName=paperName;
         this.paperTimeBegin = paperTimeBegin;
         this.paperTimeEnd = paperTimeEnd;
         this.subjectId = subjectId;
@@ -35,6 +37,14 @@ public class Paper {
 
     public void setPaperId(int paperId) {
         this.paperId = paperId;
+    }
+
+    public String getPaperName() {
+        return paperName;
+    }
+
+    public void setPaperName(String paperName) {
+        this.paperName = paperName;
     }
 
     public String getQuestionId() {

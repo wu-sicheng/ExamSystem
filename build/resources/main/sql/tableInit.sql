@@ -106,6 +106,7 @@ CREATE TABLE manager(
 CREATE TABLE paper(
   id INT AUTO_INCREMENT NOT NULL UNIQUE,
   paperId INT PRIMARY KEY NOT NULL UNIQUE,#试卷id
+  paperName VARCHAR(50),#试卷名字唯一
   questionId TEXT,#问题列表 question:{{1,2,3,4}}
   subjectId INT, #科目
   paperTimeBegin DATETIME, #考试开始时间

@@ -49,4 +49,6 @@ public interface IPaperDao {
     Set<Integer> querypaperIdSet();
 
     Set<Paper> queryPaperBySubjectId(int subjectId);
+
+    Set<String> queryPaperName();
 }

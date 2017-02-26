@@ -15,19 +15,21 @@ public interface ITestDBService {
     /**
      * 试题
      */
-    boolean createQuestion(Question question);
+    Question createQuestion(Question question) throws IllegalAccessException;
 
-    void createQuestionList(List<Question> questions);
+    void createQuestionList(Set<Question> questions) throws IllegalAccessException;
 
     Question deleteQuestion(int questionId);
 
-    Question updateQuestion(int questionId,Question question);
+    Question updateQuestion(Question question);
 
     Question queryQuestion(int questionId);
 
     Set<Question> queryQuestionByQuestionType(int questionType);
 
-    Set<Question> queryQuestionList(int fromQuestionId, int manyQuestionId);
+    Set<Question> queryQuestionList(int fromQuestionId, int toQuestionId);
+
+    Set<Question> queryQuestionAll();
 
     Set<Question> queryQuestionListBySubject(int subjectId);
 
@@ -39,7 +41,7 @@ public interface ITestDBService {
      * 试卷
      */
 
-    boolean createPaper(Paper paper);
+    Paper createPaper(Paper paper) throws IllegalAccessException;
 
     void createPaperTemple1(String questionId);
 
@@ -49,11 +51,13 @@ public interface ITestDBService {
 
     Paper deletePaper(int paperId);
 
-    Paper updatePaper(int paperId,Paper paper);
+    Paper updatePaper(Paper paper);
 
     Paper queryPaper(int paperId);
 
     Set<Paper> queryPaperList(int fromPaperId,int manyPaperId);
+
+    Set<Paper> queryPaperAll();
 
     Set<Paper> queryPaperBySubjectId(int subjectId);
 
@@ -62,7 +66,7 @@ public interface ITestDBService {
     /**
      * 科目
      */
-    boolean createSubject(Subject subject);
+    Subject createSubject(Subject subject) throws IllegalAccessException;
 
     Subject deleteSubject(int subjectId);
 
@@ -70,7 +74,7 @@ public interface ITestDBService {
 
     Subject querySubject(int subjectId);
 
-    List<Subject> querySubjectList(int formSubjectId,int manySubjectId);
+    Set<Subject> querySubjectList(int formSubjectId,int manySubjectId);
 
-
+    Set<Subject> querySubjectAll();
 }

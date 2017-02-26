@@ -28,5 +28,7 @@
         SELECT * FROM subject WHERE subjectId <![CDATA[>=]]> #{fromSubjectId} AND subjectId <![CDATA[<=]]> #{toSubjectId} AND subjectState=1;
     </select>
 
-
+    <select id="querySubjectNames" resultType="String">
+        SELECT subjectName FROM subject WHERE subjectState=1;
+    </select>
 </mapper>

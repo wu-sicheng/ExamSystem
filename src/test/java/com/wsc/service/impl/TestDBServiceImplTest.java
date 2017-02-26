@@ -18,6 +18,7 @@ import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by wsc on 17-1-21.
@@ -172,8 +173,17 @@ public class TestDBServiceImplTest {
 
     @Test
     public void querySubjectList() throws Exception {
-        List<Subject> subjects=iTestDBService.querySubjectList(1,2);
+        Set<Subject> subjects=iTestDBService.querySubjectList(1,2);
         LOGGER.info(subjects.toString());
+    }
+
+    public void test(){
+        Question question=new Question();
+        try {
+            LOGGER.info(String.valueOf(TestDBServiceImpl.judgeQuestionNull(question)));
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
     }
 
 }
