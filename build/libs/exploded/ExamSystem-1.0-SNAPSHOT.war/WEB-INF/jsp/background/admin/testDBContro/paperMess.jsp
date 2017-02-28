@@ -46,9 +46,9 @@
     </thead>
 </table>
 <div id="toolbar">
-    <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="addPaper()">新建班级</a>
-    <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editPaper()">编辑班级</a>
-    <a class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="deletePaper()">删除班级</a>
+    <a href="#addPaper" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="addPaper()">新建试卷</a>
+    <a href="#editPaper" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editPaper()">编辑试卷</a>
+    <a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="deletePaper()">删除试卷</a>
 </div>
 <div id="dlgPaper" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
      closed="true" buttons="#dlg-buttons">
@@ -77,7 +77,7 @@
 </div>
 <div id="dlg-buttons">
     <a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="newPaper()">保存</a>
-    <a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlgPaper').dialog('close')">取消</a>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlgQuestion').dialog('close')">取消</a>
 </div>
 </body>
 </html>

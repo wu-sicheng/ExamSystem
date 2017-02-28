@@ -21,6 +21,7 @@
     </bean>
 
     <context:component-scan base-package="com.wsc.web"/>
+    <context:component-scan base-package="com.wsc.controller"/>
 
     <mvc:annotation-driven />
 
@@ -40,7 +41,13 @@
     <mvc:resources location="WEB-INF/js/background/" mapping="/js/background/**"></mvc:resources>
     <mvc:resources location="WEB-INF/js/" mapping="/js/**"></mvc:resources>
 
-    <!--jsp目录-->
-    <mvc:resources location="WEB-INF/jsp/background/admin/" mapping="/background/admin/**"></mvc:resources>
-    <mvc:resources location="WEB-INF/jsp/background/" mapping="/background/**"></mvc:resources>
+    <!--bootstrap目录-->
+    <mvc:resources location="WEB-INF/res/bootstrap/" mapping="/bootstrap/**"></mvc:resources>
+    <mvc:resources location="WEB-INF/res/bootstrap/js/" mapping="/bootstrap/js/**"></mvc:resources>
+    <mvc:resources location="WEB-INF/res/bootstrap/css/" mapping="/bootstrap/css/**"></mvc:resources>
+    <mvc:resources location="WEB-INF/res/bootstrap/fonts/" mapping="/bootstrap/fonts/**"></mvc:resources>
+
+
+    <!--img-->
+    <mvc:resources location="WEB-INF/img/" mapping="/img/**"></mvc:resources>
 </beans>

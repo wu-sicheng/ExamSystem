@@ -197,7 +197,7 @@ public class TestDBServiceImpl implements ITestDBService{
             }
             else{
                 LOGGER.info("create paper中存在空值");
-                throw new PersonException("存储的数据存在空值");
+                throw new TestDBException("存储的数据存在空值");
             }
         }
         else{
@@ -242,10 +242,25 @@ public class TestDBServiceImpl implements ITestDBService{
         paperIdSet=getPaperIdSet();
         Paper paperRe=null;
         if(paperIdSet.contains(paper.getPaperId())){
-            paper=iPaperDao.queryPaper(paper.getPaperId());
-            iPaperDao.updatePaper(paper);
-            LOGGER.info("更新数据成功");
-            return paper;
+            Set<String> paperNames=iPaperDao.queryPaperName();
+            if(paperNames.contains(paper.getPaperName())){
+                if(paper.getPaperName().equals(iPaperDao.queryPaper(paper.getPaperId()))){
+                    paper=iPaperDao.queryPaper(paper.getPaperId());
+                    iPaperDao.updatePaper(paper);
+                    LOGGER.info("更新数据成功");
+                    return paper;
+                }
+                else{
+                    LOGGER.info("数据库paper中已存在数据为"+paper.toString()+"的数据");
+                    throw new TestDBException("数据库question中已存在数据为"+paper.toString()+"的数据");
+                }
+            }
+            else{
+                paper=iPaperDao.queryPaper(paper.getPaperId());
+                iPaperDao.updatePaper(paper);
+                LOGGER.info("更新数据成功");
+                return paper;
+            }
         }
         else{
             LOGGER.info("数据库paper中不包含paperId为"+paper.getPaperId()+"条件的数据");

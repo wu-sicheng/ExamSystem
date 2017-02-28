@@ -10,11 +10,15 @@ import com.wsc.pojo.Student;
 import com.wsc.pojo.Teacher;
 import com.wsc.pojo.TheClass;
 import com.wsc.service.inter.IPersonService;
+import com.wsc.web.LoginController;
+import org.apache.shiro.authc.AuthenticationInfo;
+import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.*;
 
 /**
@@ -32,6 +36,9 @@ public class PersonServiceImpl implements IPersonService {
 
     @Autowired
     private ITheClassDao iTheClassDao;
+
+    @Resource
+    private LoginController loginController;
 
     private Set<Integer> listTeacherId;
     private Set<Integer> listStudentId;
@@ -509,34 +516,28 @@ public class PersonServiceImpl implements IPersonService {
 
     @Override
     public Set<String> findRoles(String mail) {
-        Teacher teacher=iTeacherDao.queryTeacherByMail(mail);
-        Student student=iStudentDao.queryStudentByStudentMail(mail);
-        if(teacher!=null){
+        String loginType=loginController.getLoginType();
+        LOGGER.info("================================================================="+loginType);
+        if("admin".equals(loginType)||"teacher".equals(loginType)){
+            LOGGER.info("进入admin,teacher认证");
             return iTeacherDao.findRoles(mail);
         }
-        else if (student!=null){
-            return iStudentDao.findRoles(mail);
-        }
         else{
-            LOGGER.info("数据库teacher和student中找不到mail为"+mail+"的人员");
-            throw new PersonNotExistException("数据库teacher和student中找不到mail为"+mail+"的人员");
+            LOGGER.info("进入student,guest认证");
+            return iStudentDao.findRoles(mail);
         }
     }
 
     @Override
     public Set<String> findPermissions(String mail) {
-        Teacher teacher=iTeacherDao.queryTeacherByMail(mail);
-        Student student=iStudentDao.queryStudentByStudentMail(mail);
-        if(teacher!=null){
+        String loginType=loginController.getLoginType();
+        if("admin".equals(loginType)||"teacher".equals(loginType)){
             return iTeacherDao.findPermissions(mail);
         }
-        else if (student!=null){
-            return iStudentDao.findPermissions(mail);
+        else if("student".equals(loginType)||"guest".equals(loginType)){
+            return iTeacherDao.findRoles(mail);
         }
-        else{
-            LOGGER.info("数据库teacher和student中找不到mail为"+mail+"的人员");
-            throw new PersonNotExistException("数据库teacher和student中找不到mail为"+mail+"的人员");
-        }
+        return null;
     }
 
 

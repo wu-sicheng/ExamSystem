@@ -29,7 +29,7 @@
 
     <!--查询一个问题列表-->
     <select id="queryQuestionList" parameterType="Integer" resultType="Question">
-        SELECT * FROM question WHERE questionId <![CDATA[>=]]> #{fromQuestionId} AND questionId <![CDATA[<=]]> #{toQuestionId};
+        SELECT * FROM question WHERE questionId <![CDATA[>=]]> #{fromQuestionId} AND questionId <![CDATA[<=]]> #{toQuestionId} AND questionState=1;
     </select>
 
     <select id="queryQuestionIdList" resultType="Integer">
@@ -45,6 +45,10 @@
     </select>
 
     <select id="queryQuestionTitle" resultType="String">
-        SELECT questionTitle FROM question WHERE questionStata=1;
+        SELECT questionTitle FROM question WHERE questionState=1;
+    </select>
+
+    <select id="queryquestionIdSet" resultType="Integer">
+        SELECT questionId FROM question WHERE questionState=1;
     </select>
 </mapper>

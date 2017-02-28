@@ -59,7 +59,7 @@ public class TestDBController {
     }
 
     @RequiresRoles(value ={"admin","teacher"},logical = Logical.OR)
-    @RequestMapping(value = "/question/update/",method = RequestMethod.PUT,produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/question/update",method = RequestMethod.PUT,produces = "application/json;charset=UTF-8")
     @ResponseBody
     Question updateQuestion(@RequestBody Question question){
         return iTestDBService.updateQuestion(question);

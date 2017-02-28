@@ -1,6 +1,5 @@
 package com.wsc.dto;
 
-import com.wsc.pojo.Paper;
 import com.wsc.pojo.Question;
 import org.joda.time.DateTime;
 

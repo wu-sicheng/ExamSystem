@@ -31,4 +31,8 @@
     <select id="querySubjectNames" resultType="String">
         SELECT subjectName FROM subject WHERE subjectState=1;
     </select>
+
+    <select id="querysubjectIdSet" resultType="Integer">
+        SELECT subjectId FROM subject WHERE subjectState=1;
+    </select>
 </mapper>

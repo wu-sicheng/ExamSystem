@@ -5,7 +5,7 @@
 <mapper namespace="com.wsc.dao.inter.IPaperDao">
     <!--创建一份试卷-->
     <update id="createPaper" parameterType="Paper">
-        INSERT INTO paper (id,paperId,questionId,subjectId,paperTimeBegin,paperTimeEnd,paperState,createTime,deleteTime) VALUES (NULL,#{paperId},#{questionId},#{subjectId},#{paperTimeBegin},#{paperTimeEnd},#{paperState},#{createTime},NULL);
+        INSERT INTO paper (id,paperId,paperName,questionId,subjectId,paperTimeBegin,paperTimeEnd,paperState,createTime,deleteTime) VALUES (NULL,#{paperId},#{paperName},#{questionId},#{subjectId},#{paperTimeBegin},#{paperTimeEnd},#{paperState},#{createTime},NULL);
     </update>
 
     <!--删除一份试卷-->
