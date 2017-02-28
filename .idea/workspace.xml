@@ -2,98 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86f9bc11-dc71-4a55-ac9b-0e1004cc31bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/img/picture1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/img/picture2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/img/picture3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/img/picture4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/res/bootstrap/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/res/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/res/bootstrap/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/res/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/controller/StudentController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/proscenium/student/exam.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/proscenium/student/examNotify.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/proscenium/student/logout.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/proscenium/student/personalZone.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/proscenium/student/practise.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/proscenium/student/result.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/proscenium/student/settings.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/res/bootstrap/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/res/bootstrap/css/bootstrap-theme.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/res/bootstrap/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/res/bootstrap/css/bootstrap-theme.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/res/bootstrap/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/res/bootstrap/css/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/res/bootstrap/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/res/bootstrap/css/bootstrap.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/res/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/res/bootstrap/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/res/bootstrap/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/res/bootstrap/js/npm.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/test/com/wsc/dao/inter/IStudentDaoTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/test/com/wsc/service/impl/InitServiceImplTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/test/com/wsc/service/impl/TestDBServiceImplTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/test/other/TestShiro.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ExamSystem/jdbc.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ExamSystem/log4j.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ExamSystem/mapping/ManagerDao.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ExamSystem/mapping/PaperDao.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ExamSystem/mapping/QuestionDao.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ExamSystem/mapping/ResultDao.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ExamSystem/mapping/StudentDao.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ExamSystem/mapping/SubjectDao.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ExamSystem/mapping/TeacherDao.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ExamSystem/mapping/TheClassDao.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ExamSystem/md5.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ExamSystem/mybatis-config.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ExamSystem/shiro.ini" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ExamSystem/spring-mvc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ExamSystem/spring-mybatis.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ExamSystem/spring-service.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ExamSystem/spring-shiro.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ExamSystem/sql/tableInit.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ExamSystem/test.properties" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/dto/ExamPaper.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/dto/ExamPaper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/service/impl/PersonServiceImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/service/impl/PersonServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/service/impl/TestDBServiceImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/service/impl/TestDBServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/web/ExamController.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/web/ExamController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/wsc/web/TestDBController.class" afterPath="$PROJECT_DIR$/build/classes/main/com/wsc/web/TestDBController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/ExamSystem-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/build/libs/ExamSystem-1.0-SNAPSHOT.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/com/wsc/dto/ExamPaper.class" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/com/wsc/dto/ExamPaper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/com/wsc/service/impl/PersonServiceImpl.class" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/com/wsc/service/impl/PersonServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/com/wsc/service/impl/TestDBServiceImpl.class" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/com/wsc/service/impl/TestDBServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/com/wsc/web/ExamController.class" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/com/wsc/web/ExamController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/com/wsc/web/TestDBController.class" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/com/wsc/web/TestDBController.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/js/proscenium/student/exam.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/mapping/PaperDao.xml" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/mapping/PaperDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/mapping/QuestionDao.xml" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/mapping/QuestionDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/mapping/SubjectDao.xml" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/mapping/SubjectDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/spring-mvc.xml" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/classes/spring-mvc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/js/background/testDB.js" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/js/background/testDB.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/jsp/background/admin/testDBContro/paperMess.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/jsp/background/admin/testDBContro/paperMess.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/jsp/background/admin/testDBContro/questionMess.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/jsp/background/admin/testDBContro/questionMess.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/jsp/background/admin/testDBContro/subjectMess.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/jsp/background/admin/testDBContro/subjectMess.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/jsp/proscenium/student/student.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/WEB-INF/jsp/proscenium/student/student.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/login.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/ExamSystem-1.0-SNAPSHOT.war/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/mapping/PaperDao.xml" afterPath="$PROJECT_DIR$/build/resources/main/mapping/PaperDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/mapping/QuestionDao.xml" afterPath="$PROJECT_DIR$/build/resources/main/mapping/QuestionDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/mapping/SubjectDao.xml" afterPath="$PROJECT_DIR$/build/resources/main/mapping/SubjectDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/spring-mvc.xml" afterPath="$PROJECT_DIR$/build/resources/main/spring-mvc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/dto/ExamPaper.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/dto/ExamPaper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/TestDBServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/TestDBServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/web/ExamController.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/web/ExamController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wsc/web/TestDBController.java" afterPath="$PROJECT_DIR$/src/main/java/com/wsc/web/TestDBController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapping/PaperDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/PaperDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapping/QuestionDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/QuestionDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapping/SubjectDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/SubjectDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/js/background/testDB.js" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/js/background/testDB.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/testDBContro/paperMess.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/testDBContro/paperMess.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/testDBContro/questionMess.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/testDBContro/questionMess.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/testDBContro/subjectMess.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/testDBContro/subjectMess.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/proscenium/student/student.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/proscenium/student/student.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -170,10 +80,23 @@
       <file leaf-file-name="testDB.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/js/background/testDB.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="828">
+            <state relative-caret-position="18">
               <caret line="48" column="20" lean-forward="false" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
               <folding>
                 <element signature="n#!!doc;n#addPaper#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/js/background/admin.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8766">
+              <caret line="489" column="0" lean-forward="false" selection-start-line="489" selection-start-column="0" selection-end-line="503" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#37#0" expanded="false" />
+                <marker date="1488024046395" expanded="true" signature="1520:1543" ph="..." />
               </folding>
             </state>
           </provider>
@@ -189,6 +112,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="exam.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/js/proscenium/student/exam.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#37#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="IPersonService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IPersonService.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -199,10 +134,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PersonServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PersonServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
+            <state relative-caret-position="-166">
               <caret line="441" column="28" lean-forward="true" selection-start-line="441" selection-start-column="28" selection-end-line="441" selection-end-column="28" />
               <folding />
             </state>
@@ -290,9 +225,9 @@
         <option value="Interface" />
         <option value="JUnit4 Test Class" />
         <option value="spring-beans.schema" />
-        <option value="JavaScript File" />
         <option value="Class" />
         <option value="Jsp File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -697,7 +632,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/TeacherDao.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/teacherPaperMess.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/teacherClassMess.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/studentPaperMess.jsp" />
@@ -748,6 +682,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/testDBContro/subjectMess.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/js/background/testDB.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/js/proscenium/student/exam.js" />
       </list>
     </option>
   </component>
@@ -1021,6 +956,138 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExamSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExamSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExamSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proscenium" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="student" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExamSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="background" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1067,6 +1134,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mapping" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExamSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wsc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1770,7 +1863,7 @@
       <workItem from="1488007952061" duration="2812000" />
       <workItem from="1488010794217" duration="8820000" />
       <workItem from="1488021509006" duration="49668000" />
-      <workItem from="1488210177808" duration="2141000" />
+      <workItem from="1488210177808" duration="3181000" />
     </task>
     <servers />
   </component>
@@ -1807,7 +1900,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="596144000" />
+    <option name="totallyTimeSpent" value="597184000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1820,7 +1913,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="707" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1844,7 +1937,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32775453" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914925" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36581197" sideWeight="0.49627262" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36581197" sideWeight="0.49627262" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328541" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914925" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1943,13 +2036,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/dao/inter/ITheClassDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/personContro/classMess.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
@@ -2056,13 +2142,6 @@
             <marker date="1488109356977" expanded="true" signature="1692:1738" ph="SELECT paper... paper" />
             <marker date="1488109356977" expanded="true" signature="1818:1862" ph="SELECT paper... paper" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/js/background/admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1312">
-          <caret line="489" column="0" lean-forward="false" selection-start-line="489" selection-start-column="0" selection-end-line="503" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -2338,16 +2417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/js/background/testDB.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="48" column="20" lean-forward="false" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
-          <folding>
-            <element signature="n#!!doc;n#addPaper#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/background/admin/testDBContro/subjectMess.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
@@ -2394,14 +2463,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/shiro/LoginRealm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="35" column="50" lean-forward="false" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/inter/IPersonService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
@@ -2439,9 +2500,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/service/impl/PersonServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
+        <state relative-caret-position="-166">
           <caret line="441" column="28" lean-forward="true" selection-start-line="441" selection-start-column="28" selection-end-line="441" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/js/background/testDB.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="48" column="20" lean-forward="false" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
+          <folding>
+            <element signature="n#!!doc;n#addPaper#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wsc/shiro/LoginRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="35" column="50" lean-forward="false" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/js/background/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8766">
+          <caret line="489" column="0" lean-forward="false" selection-start-line="489" selection-start-column="0" selection-end-line="503" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+            <marker date="1488024046395" expanded="true" signature="1520:1543" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/js/proscenium/student/exam.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
